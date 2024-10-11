@@ -14,10 +14,10 @@ class Agent(pygame.sprite.Sprite):
 
         """
         super().__init__()
-        self.width = 20
-        self.height = 20
-        self.image = pygame.Surface([self.width, self.height])
-        self.image.fill(AGENT_COLOR)
+        self.image = pygame.image.load("assets/doggy_man_running_1.png").convert_alpha()
+        self.width = 40
+        self.height = 55
+        self.image = pygame.transform.scale(self.image, (self.width, self.height))
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
