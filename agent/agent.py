@@ -3,6 +3,8 @@ import numpy as np
 import pygame
 
 AGENT_COLOR = (0, 255, 0)
+SCREEN_HEIGHT = 600
+JUMP_HEIGHT = 10
 
 class Agent(pygame.sprite.Sprite):
     def __init__(self, x, y, genome_size=3):
@@ -14,8 +16,8 @@ class Agent(pygame.sprite.Sprite):
 
         """
         super().__init__()
-        self.width = 20
-        self.height = 20
+        self.width = 32
+        self.height = 32
         self.image = pygame.Surface([self.width, self.height])
         self.image.fill(AGENT_COLOR)
         self.rect = self.image.get_rect()
@@ -24,6 +26,7 @@ class Agent(pygame.sprite.Sprite):
         # Velocity
         self.change_x = 0
         self.change_y = 0
+        self.jump_height = JUMP_HEIGHT
 
         # Genome represents the AI's decision-making process (like weights in a neural network)
         self.genome = np.random.uniform(-1, 1, genome_size)
