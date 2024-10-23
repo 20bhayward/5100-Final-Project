@@ -1,0 +1,710 @@
+Training Results
+===============
+
+Episode 1:
+  Level: 1
+  Reward: 11.80
+  Steps: 1000
+  Epsilon: 1.000
+  Consecutive Successes: 0
+---------------
+Episode 2:
+  Level: 1
+  Reward: 1.40
+  Steps: 1000
+  Epsilon: 0.995
+  Consecutive Successes: 0
+---------------
+Episode 3:
+  Level: 1
+  Reward: -3.60
+  Steps: 1000
+  Epsilon: 0.990
+  Consecutive Successes: 0
+---------------
+Episode 4:
+  Level: 1
+  Reward: 17.20
+  Steps: 1000
+  Epsilon: 0.985
+  Consecutive Successes: 0
+---------------
+Episode 5:
+  Level: 1
+  Reward: 12.20
+  Steps: 1000
+  Epsilon: 0.980
+  Consecutive Successes: 0
+---------------
+Episode 6:
+  Level: 1
+  Reward: -6.20
+  Steps: 1000
+  Epsilon: 0.975
+  Consecutive Successes: 0
+---------------
+Episode 7:
+  Level: 1
+  Reward: -5.80
+  Steps: 1000
+  Epsilon: 0.970
+  Consecutive Successes: 0
+---------------
+Episode 8:
+  Level: 1
+  Reward: -12.60
+  Steps: 1000
+  Epsilon: 0.966
+  Consecutive Successes: 0
+---------------
+Episode 9:
+  Level: 1
+  Reward: 27.00
+  Steps: 1000
+  Epsilon: 0.961
+  Consecutive Successes: 0
+---------------
+Episode 10:
+  Level: 1
+  Reward: -5.60
+  Steps: 1000
+  Epsilon: 0.956
+  Consecutive Successes: 0
+---------------
+Episode 11:
+  Level: 1
+  Reward: 5.40
+  Steps: 1000
+  Epsilon: 0.951
+  Consecutive Successes: 0
+---------------
+Episode 12:
+  Level: 1
+  Reward: 4.20
+  Steps: 1000
+  Epsilon: 0.946
+  Consecutive Successes: 0
+---------------
+Episode 13:
+  Level: 1
+  Reward: -19.80
+  Steps: 1000
+  Epsilon: 0.942
+  Consecutive Successes: 0
+---------------
+Episode 14:
+  Level: 1
+  Reward: 44.00
+  Steps: 1000
+  Epsilon: 0.937
+  Consecutive Successes: 0
+---------------
+Episode 15:
+  Level: 1
+  Reward: -26.40
+  Steps: 1000
+  Epsilon: 0.932
+  Consecutive Successes: 0
+---------------
+Episode 16:
+  Level: 1
+  Reward: -4.20
+  Steps: 1000
+  Epsilon: 0.928
+  Consecutive Successes: 0
+---------------
+Episode 17:
+  Level: 1
+  Reward: -19.80
+  Steps: 1000
+  Epsilon: 0.923
+  Consecutive Successes: 0
+---------------
+Episode 18:
+  Level: 1
+  Reward: -12.00
+  Steps: 1000
+  Epsilon: 0.918
+  Consecutive Successes: 1
+---------------
+Episode 19:
+  Level: 1
+  Reward: 59.40
+  Steps: 1000
+  Epsilon: 0.914
+  Consecutive Successes: 1
+---------------
+Episode 20:
+  Level: 1
+  Reward: 1.20
+  Steps: 1000
+  Epsilon: 0.909
+  Consecutive Successes: 1
+---------------
+Episode 21:
+  Level: 1
+  Reward: -8.40
+  Steps: 1000
+  Epsilon: 0.905
+  Consecutive Successes: 1
+---------------
+Episode 22:
+  Level: 1
+  Reward: -9.00
+  Steps: 1000
+  Epsilon: 0.900
+  Consecutive Successes: 1
+---------------
+Episode 23:
+  Level: 1
+  Reward: -42.20
+  Steps: 1000
+  Epsilon: 0.896
+  Consecutive Successes: 2
+---------------
+Episode 24:
+  Level: 1
+  Reward: 71.20
+  Steps: 1000
+  Epsilon: 0.891
+  Consecutive Successes: 3
+---------------
+Episode 25:
+  Level: 2
+  Reward: -66.80
+  Steps: 1000
+  Epsilon: 0.887
+  Consecutive Successes: 0
+---------------
+Episode 26:
+  Level: 2
+  Reward: 12.60
+  Steps: 1000
+  Epsilon: 0.882
+  Consecutive Successes: 0
+---------------
+Episode 27:
+  Level: 2
+  Reward: -22.20
+  Steps: 1000
+  Epsilon: 0.878
+  Consecutive Successes: 0
+---------------
+Episode 28:
+  Level: 2
+  Reward: 15.00
+  Steps: 1000
+  Epsilon: 0.873
+  Consecutive Successes: 0
+---------------
+Episode 29:
+  Level: 2
+  Reward: -13.20
+  Steps: 1000
+  Epsilon: 0.869
+  Consecutive Successes: 0
+---------------
+Episode 30:
+  Level: 2
+  Reward: 19.40
+  Steps: 1000
+  Epsilon: 0.865
+  Consecutive Successes: 0
+---------------
+Episode 31:
+  Level: 2
+  Reward: -9.20
+  Steps: 1000
+  Epsilon: 0.860
+  Consecutive Successes: 0
+---------------
+Episode 32:
+  Level: 2
+  Reward: 10.40
+  Steps: 1000
+  Epsilon: 0.856
+  Consecutive Successes: 0
+---------------
+Episode 33:
+  Level: 2
+  Reward: 49.60
+  Steps: 1000
+  Epsilon: 0.852
+  Consecutive Successes: 0
+---------------
+Episode 34:
+  Level: 2
+  Reward: -78.20
+  Steps: 1000
+  Epsilon: 0.848
+  Consecutive Successes: 0
+---------------
+Episode 35:
+  Level: 2
+  Reward: 21.80
+  Steps: 1000
+  Epsilon: 0.843
+  Consecutive Successes: 0
+---------------
+Episode 36:
+  Level: 2
+  Reward: -6.00
+  Steps: 1000
+  Epsilon: 0.839
+  Consecutive Successes: 0
+---------------
+Episode 37:
+  Level: 2
+  Reward: -11.40
+  Steps: 1000
+  Epsilon: 0.835
+  Consecutive Successes: 0
+---------------
+Episode 38:
+  Level: 2
+  Reward: 16.80
+  Steps: 1000
+  Epsilon: 0.831
+  Consecutive Successes: 0
+---------------
+Episode 39:
+  Level: 2
+  Reward: 30.60
+  Steps: 1000
+  Epsilon: 0.827
+  Consecutive Successes: 0
+---------------
+Episode 40:
+  Level: 2
+  Reward: -37.20
+  Steps: 1000
+  Epsilon: 0.822
+  Consecutive Successes: 0
+---------------
+Episode 41:
+  Level: 2
+  Reward: -9.60
+  Steps: 1000
+  Epsilon: 0.818
+  Consecutive Successes: 0
+---------------
+Episode 42:
+  Level: 2
+  Reward: 17.40
+  Steps: 1000
+  Epsilon: 0.814
+  Consecutive Successes: 0
+---------------
+Episode 43:
+  Level: 2
+  Reward: 1.80
+  Steps: 1000
+  Epsilon: 0.810
+  Consecutive Successes: 0
+---------------
+Episode 44:
+  Level: 2
+  Reward: 45.20
+  Steps: 1000
+  Epsilon: 0.806
+  Consecutive Successes: 0
+---------------
+Episode 45:
+  Level: 2
+  Reward: -61.40
+  Steps: 1000
+  Epsilon: 0.802
+  Consecutive Successes: 0
+---------------
+Episode 46:
+  Level: 2
+  Reward: 44.40
+  Steps: 1000
+  Epsilon: 0.798
+  Consecutive Successes: 0
+---------------
+Episode 47:
+  Level: 2
+  Reward: -19.00
+  Steps: 1000
+  Epsilon: 0.794
+  Consecutive Successes: 0
+---------------
+Episode 48:
+  Level: 2
+  Reward: -12.20
+  Steps: 1000
+  Epsilon: 0.790
+  Consecutive Successes: 0
+---------------
+Episode 49:
+  Level: 2
+  Reward: -18.60
+  Steps: 1000
+  Epsilon: 0.786
+  Consecutive Successes: 0
+---------------
+Episode 50:
+  Level: 2
+  Reward: 44.00
+  Steps: 1000
+  Epsilon: 0.782
+  Consecutive Successes: 0
+---------------
+Episode 51:
+  Level: 2
+  Reward: -37.40
+  Steps: 1000
+  Epsilon: 0.778
+  Consecutive Successes: 0
+---------------
+Episode 52:
+  Level: 2
+  Reward: 30.60
+  Steps: 1000
+  Epsilon: 0.774
+  Consecutive Successes: 0
+---------------
+Episode 53:
+  Level: 2
+  Reward: -7.80
+  Steps: 1000
+  Epsilon: 0.771
+  Consecutive Successes: 0
+---------------
+Episode 54:
+  Level: 2
+  Reward: -3.00
+  Steps: 1000
+  Epsilon: 0.767
+  Consecutive Successes: 0
+---------------
+Episode 55:
+  Level: 2
+  Reward: -0.60
+  Steps: 1000
+  Epsilon: 0.763
+  Consecutive Successes: 0
+---------------
+Episode 56:
+  Level: 2
+  Reward: -22.80
+  Steps: 1000
+  Epsilon: 0.759
+  Consecutive Successes: 0
+---------------
+Episode 57:
+  Level: 2
+  Reward: 15.00
+  Steps: 1000
+  Epsilon: 0.755
+  Consecutive Successes: 0
+---------------
+Episode 58:
+  Level: 2
+  Reward: 20.40
+  Steps: 1000
+  Epsilon: 0.751
+  Consecutive Successes: 0
+---------------
+Episode 59:
+  Level: 2
+  Reward: -27.60
+  Steps: 1000
+  Epsilon: 0.748
+  Consecutive Successes: 0
+---------------
+Episode 60:
+  Level: 2
+  Reward: 8.40
+  Steps: 1000
+  Epsilon: 0.744
+  Consecutive Successes: 0
+---------------
+Episode 61:
+  Level: 2
+  Reward: 18.80
+  Steps: 1000
+  Epsilon: 0.740
+  Consecutive Successes: 0
+---------------
+Episode 62:
+  Level: 2
+  Reward: -35.00
+  Steps: 1000
+  Epsilon: 0.737
+  Consecutive Successes: 0
+---------------
+Episode 63:
+  Level: 2
+  Reward: 16.80
+  Steps: 1000
+  Epsilon: 0.733
+  Consecutive Successes: 0
+---------------
+Episode 64:
+  Level: 2
+  Reward: 0.60
+  Steps: 1000
+  Epsilon: 0.729
+  Consecutive Successes: 0
+---------------
+Episode 65:
+  Level: 2
+  Reward: 6.00
+  Steps: 1000
+  Epsilon: 0.726
+  Consecutive Successes: 0
+---------------
+Episode 66:
+  Level: 2
+  Reward: 53.60
+  Steps: 1000
+  Epsilon: 0.722
+  Consecutive Successes: 0
+---------------
+Episode 67:
+  Level: 2
+  Reward: -43.40
+  Steps: 1000
+  Epsilon: 0.718
+  Consecutive Successes: 0
+---------------
+Episode 68:
+  Level: 2
+  Reward: -0.60
+  Steps: 1000
+  Epsilon: 0.715
+  Consecutive Successes: 0
+---------------
+Episode 69:
+  Level: 2
+  Reward: -26.40
+  Steps: 1000
+  Epsilon: 0.711
+  Consecutive Successes: 0
+---------------
+Episode 70:
+  Level: 2
+  Reward: 31.20
+  Steps: 1000
+  Epsilon: 0.708
+  Consecutive Successes: 0
+---------------
+Episode 71:
+  Level: 2
+  Reward: -28.80
+  Steps: 1000
+  Epsilon: 0.704
+  Consecutive Successes: 0
+---------------
+Episode 72:
+  Level: 2
+  Reward: 59.00
+  Steps: 1000
+  Epsilon: 0.701
+  Consecutive Successes: 0
+---------------
+Episode 73:
+  Level: 2
+  Reward: -29.00
+  Steps: 1000
+  Epsilon: 0.697
+  Consecutive Successes: 0
+---------------
+Episode 74:
+  Level: 2
+  Reward: 16.40
+  Steps: 1000
+  Epsilon: 0.694
+  Consecutive Successes: 0
+---------------
+Episode 75:
+  Level: 2
+  Reward: -12.80
+  Steps: 1000
+  Epsilon: 0.690
+  Consecutive Successes: 0
+---------------
+Episode 76:
+  Level: 2
+  Reward: 13.40
+  Steps: 1000
+  Epsilon: 0.687
+  Consecutive Successes: 0
+---------------
+Episode 77:
+  Level: 2
+  Reward: 13.60
+  Steps: 1000
+  Epsilon: 0.683
+  Consecutive Successes: 0
+---------------
+Episode 78:
+  Level: 2
+  Reward: -61.20
+  Steps: 1000
+  Epsilon: 0.680
+  Consecutive Successes: 0
+---------------
+Episode 79:
+  Level: 2
+  Reward: 11.40
+  Steps: 1000
+  Epsilon: 0.676
+  Consecutive Successes: 0
+---------------
+Episode 80:
+  Level: 2
+  Reward: -21.00
+  Steps: 1000
+  Epsilon: 0.673
+  Consecutive Successes: 0
+---------------
+Episode 81:
+  Level: 2
+  Reward: 10.20
+  Steps: 1000
+  Epsilon: 0.670
+  Consecutive Successes: 0
+---------------
+Episode 82:
+  Level: 2
+  Reward: 6.60
+  Steps: 1000
+  Epsilon: 0.666
+  Consecutive Successes: 0
+---------------
+Episode 83:
+  Level: 2
+  Reward: 5.40
+  Steps: 1000
+  Epsilon: 0.663
+  Consecutive Successes: 1
+---------------
+Episode 84:
+  Level: 2
+  Reward: 15.00
+  Steps: 1000
+  Epsilon: 0.660
+  Consecutive Successes: 1
+---------------
+Episode 85:
+  Level: 2
+  Reward: -6.00
+  Steps: 1000
+  Epsilon: 0.656
+  Consecutive Successes: 1
+---------------
+Episode 86:
+  Level: 2
+  Reward: 98.00
+  Steps: 1000
+  Epsilon: 0.653
+  Consecutive Successes: 1
+---------------
+Episode 87:
+  Level: 2
+  Reward: -122.60
+  Steps: 1000
+  Epsilon: 0.650
+  Consecutive Successes: 1
+---------------
+Episode 88:
+  Level: 2
+  Reward: 39.00
+  Steps: 1000
+  Epsilon: 0.647
+  Consecutive Successes: 1
+---------------
+Episode 89:
+  Level: 2
+  Reward: -46.80
+  Steps: 1000
+  Epsilon: 0.643
+  Consecutive Successes: 1
+---------------
+Episode 90:
+  Level: 2
+  Reward: 30.60
+  Steps: 1000
+  Epsilon: 0.640
+  Consecutive Successes: 1
+---------------
+Episode 91:
+  Level: 2
+  Reward: 6.20
+  Steps: 1000
+  Epsilon: 0.637
+  Consecutive Successes: 1
+---------------
+Episode 92:
+  Level: 2
+  Reward: 10.00
+  Steps: 1000
+  Epsilon: 0.634
+  Consecutive Successes: 1
+---------------
+Episode 93:
+  Level: 2
+  Reward: 23.40
+  Steps: 1000
+  Epsilon: 0.631
+  Consecutive Successes: 1
+---------------
+Episode 94:
+  Level: 2
+  Reward: -52.20
+  Steps: 1000
+  Epsilon: 0.627
+  Consecutive Successes: 1
+---------------
+Episode 95:
+  Level: 2
+  Reward: -6.60
+  Steps: 1000
+  Epsilon: 0.624
+  Consecutive Successes: 1
+---------------
+Episode 96:
+  Level: 2
+  Reward: 25.80
+  Steps: 1000
+  Epsilon: 0.621
+  Consecutive Successes: 1
+---------------
+Episode 97:
+  Level: 2
+  Reward: 29.40
+  Steps: 1000
+  Epsilon: 0.618
+  Consecutive Successes: 1
+---------------
+Episode 98:
+  Level: 2
+  Reward: -58.20
+  Steps: 1000
+  Epsilon: 0.615
+  Consecutive Successes: 1
+---------------
+Episode 99:
+  Level: 2
+  Reward: 2.40
+  Steps: 1000
+  Epsilon: 0.612
+  Consecutive Successes: 1
+---------------
+Episode 100:
+  Level: 2
+  Reward: 46.20
+  Steps: 1000
+  Epsilon: 0.609
+  Consecutive Successes: 1
+---------------
+Episode 101:
+  Level: 2
+  Reward: 4.20
+  Steps: 1000
+  Epsilon: 0.606
+  Consecutive Successes: 1
+---------------
