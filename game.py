@@ -55,13 +55,20 @@ class Game:
         self.camera_x = 0
         self.camera_y = 0
         # Training stats
-        self.consecutive_successes = {1: 0, 2: 0, 3: 0}  # Track successes per level
         self.training_stats = []  # Store episode results
         # Training-specific variables
         self.current_reward = 0
         self.episode_steps = 0
-        self.max_steps = 1000  # Maximum steps per episode
+        self.max_steps = 5000  # Maximum steps per episode
         self.last_x_position = 50  # Track progress
+
+         # Add jump cooldown tracking
+        self.last_jump_time = 0
+        self.jump_cooldown = 400  # milliseconds
+        self.successful_completion_times = []  # Track only successful runs
+        self.best_completion_time = float('inf')
+        self.current_run_steps = 0
+
         if training_mode:
             # Initialize DQN components
             self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -73,19 +80,24 @@ class Game:
             self.training_steps = 0
             self.target_update_freq = 10
 
-    def train_ai(self, num_episodes=1000, successes_required=3):
-        """Main training loop for AI"""
-        for episode in range(num_episodes):
-            self.restart_level()
+    def train_ai(self, num_episodes=1000):
+        """Main training loop focusing on single level mastery"""
+        episode = 0
+        
+        print(f"Starting training on level {self.level_number}")
+        print("Training will continue until manually stopped...")
+        
+        while True:
+            episode += 1
+            self.reset_episode()
             episode_reward = 0
-            steps = 0
-            current_level = self.level_number
             
-            while self.running and steps < self.max_steps:
+            while self.running and self.current_run_steps < self.max_steps:
+                self.events()
+                
                 state = self.get_state()
                 action = self.dqn_agent.choose_action(state)
                 
-                # Execute action and get reward
                 self.handle_ai_action(action)
                 self.update()
                 
@@ -93,15 +105,13 @@ class Game:
                 reward = self.get_reward()
                 done = not self.running
                 
-                # Store experience
                 self.store_experience(state, action, reward, next_state, done)
                 
-                # Train the network
                 if len(self.replay_buffer) >= self.batch_size:
                     self.train_step()
                 
                 episode_reward += reward
-                steps += 1
+                self.current_run_steps += 1
                 
                 if self.render_enabled:
                     self.draw()
@@ -109,27 +119,20 @@ class Game:
                 if done:
                     break
             
-            # Record episode statistics
-            episode_data = {
-                'episode': episode + 1,
-                'level': current_level,
-                'reward': episode_reward,
-                'steps': steps,
-                'epsilon': self.dqn_agent.epsilon,
-                'consecutive_successes': self.consecutive_successes[current_level]
-            }
-            self.training_stats.append(episode_data)
+            # Print progress
+            print(f"Episode {episode}:")
+            print(f"  Steps: {self.current_run_steps}")
+            print(f"  Reward: {episode_reward:.2f}")
+            print(f"  Current ε: {self.dqn_agent.epsilon:.3f}")
+            if self.best_completion_time != float('inf'):
+                print(f"  Best Completion Time: {self.best_completion_time}")
+            print("------------------------")
             
-            # Print and save progress
-            print(f"Episode {episode + 1}: Level = {current_level}, Reward = {episode_reward:.2f}, Steps = {steps}")
-            print(f"Consecutive successes: {self.consecutive_successes}")
-            
-            # Save model periodically
+            # Save progress periodically
             if episode % 100 == 0:
-                self.dqn_agent.save(f"ai_model_ep{episode}.pth")
+                self.dqn_agent.save(f"checkpoint_level{self.level_number}_ep{episode}.pth")
                 self.save_training_stats()
             
-            # Decay exploration rate
             self.dqn_agent.decay_epsilon()
 
     def save_training_stats(self):
@@ -144,7 +147,6 @@ class Game:
                 f.write(f"  Reward: {stat['reward']:.2f}\n")
                 f.write(f"  Steps: {stat['steps']}\n")
                 f.write(f"  Epsilon: {stat['epsilon']:.3f}\n")
-                f.write(f"  Consecutive Successes: {stat['consecutive_successes']}\n")
                 f.write("---------------\n")
 
     def store_experience(self, state, action, reward, next_state, done):
@@ -207,32 +209,57 @@ class Game:
         ], dtype=np.float32)
 
     def get_reward(self):
-        """Calculate reward for the current state"""
+        """Calculate reward with jump penalties"""
         reward = 0
         
-        # Reward for moving right (progress)
+        # Progress reward
         progress = self.agent.rect.x - self.last_x_position
         reward += progress * 0.1
         self.last_x_position = self.agent.rect.x
+        
+        # Penalty for jumping
+        if self.agent.change_y < 0:  # Agent is moving upward (jumping)
+            reward -= 0.6  # penalty for jumping
+        
+        # Small time penalty to encourage speed
+        reward -= 0.01
 
-        # Penalty for death
-        if self.agent.rect.y > self.level.height:
+        # Death penalties
+        if self.agent.rect.y > self.level.height * 2:
             reward -= 100
             self.running = False
+            print(f"Failed: Fell out of bounds after {self.current_run_steps} steps")
+            return reward
 
-        # Check for trap collision
+        # Trap collision
         trap_hit_list = pygame.sprite.spritecollide(self.agent, self.level.trap_list, False)
         if trap_hit_list:
             reward -= 100
             self.running = False
+            print(f"Failed: Hit trap after {self.current_run_steps} steps")
+            return reward
 
-        # Reward for reaching goal
+        # Goal completion
         goal_hit_list = pygame.sprite.spritecollide(self.agent, self.level.goal_list, False)
         if goal_hit_list:
-            reward += 500
-            self.level_completed()
-
+            # Record completion time
+            if self.current_run_steps < self.best_completion_time:
+                self.best_completion_time = self.current_run_steps
+                print(f"\nNew best completion time: {self.best_completion_time} steps!")
+                # Save best performing model
+                self.dqn_agent.save(f"best_model_level{self.level_number}.pth")
+            
+            # Reward based on completion speed
+            time_bonus = max(0, 1000 - self.current_run_steps)
+            reward += 500 + time_bonus  # Base completion reward plus time bonus
+            
+            self.successful_completion_times.append(self.current_run_steps)
+            print(f"Level completed in {self.current_run_steps} steps!")
+            print(f"Average completion time: {sum(self.successful_completion_times[-10:]) / len(self.successful_completion_times[-10:]):.1f} steps")
+            self.running = False
+            
         return reward
+
 
     def step(self, action):
         """Execute one time step within the environment"""
@@ -256,13 +283,18 @@ class Game:
         return state, reward, done, {}
 
     def handle_ai_action(self, action):
-        """Handle AI actions"""
+        """Handle AI actions with jump cooldown"""
+        current_time = pygame.time.get_ticks()
+        
         if action == 0:  # LEFT
             self.agent.go_left()
         elif action == 1:  # RIGHT
             self.agent.go_right()
         elif action == 2:  # JUMP
-            self.agent.jump(self.block_list)
+            # Only allow jumping if cooldown has passed
+            if current_time - self.last_jump_time >= self.jump_cooldown:
+                self.agent.jump(self.block_list)
+                self.last_jump_time = current_time
         elif action == 3:  # NOTHING
             self.agent.stop()
 
@@ -273,9 +305,10 @@ class Game:
         self.agent.change_x = 0
         self.agent.change_y = 0
         self.running = True
-        self.episode_steps = 0
         self.last_x_position = 50
         self.current_reward = 0
+        self.current_run_steps = 0
+        self.last_jump_time = 0 
         return self.get_state()
 
     def run(self):
@@ -301,7 +334,7 @@ class Game:
         self.update_camera()
 
         # Check for out of bounds (death)
-        if self.agent.rect.y > self.level.height:
+        if self.agent.rect.y > self.level.height*2:
             self.restart_level()
 
         # Enforce world bounds
@@ -321,7 +354,7 @@ class Game:
             self.level_completed()
 
     def restart_level(self):
-        print("Agent hit a trap! Restarting level...")
+        print("Restarting level...")
         # Reset agent position and other necessary states
         self.agent.rect.x = 50
         self.agent.rect.y = SCREEN_HEIGHT - 80
@@ -329,23 +362,18 @@ class Game:
         self.agent.change_y = 0
 
     def level_completed(self):
+        if self.training_mode:
+            return
         print(f"Level {self.level_number} Completed!")
-        self.consecutive_successes[self.level_number] += 1
         
-        if self.check_level_mastery():
-            if self.level_number < self.max_levels:
-                # Move to next level
-                self.level_number += 1
-                self.consecutive_successes[self.level_number] = 0  # Reset counter for new level
-                print(f"Loading level {self.level_number}...")
-                self.load_level()
-            else:
-                print("Congratulations! You've completed all levels!")
-                self.running = False
+        if self.level_number < self.max_levels:
+            # Move to next level
+            self.level_number += 1
+            print(f"Loading level {self.level_number}...")
+            self.load_level()
         else:
-            # Reset to retry current level
-            print(f"Retrying level {self.level_number}. Consecutive successes: {self.consecutive_successes[self.level_number]}")
-            self.restart_level()
+            print("Congratulations! You've completed all levels!")
+            self.running = False
 
     def draw(self):
         if not self.render_enabled:
@@ -355,12 +383,6 @@ class Game:
         for entity in self.all_sprites_list:
             self.screen.blit(entity.image, (entity.rect.x + self.camera_x, entity.rect.y + self.camera_y))
         pygame.display.flip()
-
-    def check_level_mastery(self, successes_required=3):
-        """Check if current level is mastered"""
-        if self.consecutive_successes[self.level_number] >= successes_required:
-            return True
-        return False
     
     def quit(self):
         pygame.quit()
@@ -447,7 +469,6 @@ if __name__ == "__main__":
     parser.add_argument('--l', type=int, default=1, help='Select level number to load.')
     parser.add_argument('--t', action='store_true', help='Enable AI training mode.')
     parser.add_argument('--r', action='store_true', help='Enable visualization during training.')
-    parser.add_argument('--s', type=int, default=3, help='Number of consecutive successes required to advance.')
     args = parser.parse_args()
 
     game = Game(
@@ -458,6 +479,6 @@ if __name__ == "__main__":
     )
     
     if args.t:
-        game.train_ai(successes_required=args.s)
+        game.train_ai()
     else:
         game.run()

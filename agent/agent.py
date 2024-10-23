@@ -7,13 +7,6 @@ AGENT_COLOR = (0, 0, 255)
 
 class Agent(pygame.sprite.Sprite):
     def __init__(self, x, y, genome_size=3, screen_height=600):
-
-        """
-        Initialize the agent with a random genome.
-
-        genome_size: The number of decision parameters (e.g., weights) in the genome.
-
-        """
         super().__init__()
         self.width = 20
         self.height = 20
@@ -22,14 +15,106 @@ class Agent(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
-        # Velocity
+        
+        # Movement physics
         self.change_x = 0
         self.change_y = 0
+        self.target_speed_x = 0
+        self.acceleration = 0.5
+        self.deceleration = 0.3
+        self.max_speed_x = 6
         self.screen_height = screen_height
-        # Genome represents the AI's decision-making process (like weights in a neural network)
+        
+        # Jump physics
+        self.jump_speed = -8.5
+        self.gravity_acc = 0.35
+        self.terminal_velocity = 12
+        self.is_jumping = False
+        self.jump_pressed = False
+        
+        # AI-related attributes
         self.genome = np.random.uniform(-1, 1, genome_size)
         self.fitness = 0
         self.mask = pygame.mask.from_surface(self.image)
+
+    def update(self, blocks):
+        # Apply horizontal acceleration/deceleration
+        if self.target_speed_x != 0:
+            # Accelerate towards target speed
+            if self.change_x < self.target_speed_x:
+                self.change_x = min(self.target_speed_x, self.change_x + self.acceleration)
+            elif self.change_x > self.target_speed_x:
+                self.change_x = max(self.target_speed_x, self.change_x - self.acceleration)
+        else:
+            # Decelerate to stop
+            if abs(self.change_x) < self.deceleration:
+                self.change_x = 0
+            elif self.change_x > 0:
+                self.change_x -= self.deceleration
+            elif self.change_x < 0:
+                self.change_x += self.deceleration
+
+        # Apply horizontal movement
+        self.rect.x += self.change_x
+
+        # Horizontal collision detection
+        block_hit_list = pygame.sprite.spritecollide(self, blocks, False, pygame.sprite.collide_mask)
+        for block in block_hit_list:
+            if isinstance(block, GoalBlock):
+                continue
+            
+            if self.change_x > 0:
+                self.rect.right = block.rect.left
+                self.change_x = 0
+            elif self.change_x < 0:
+                self.rect.left = block.rect.right
+                self.change_x = 0
+
+        # Apply gravity and vertical movement
+        self.gravity()
+        self.rect.y += self.change_y
+
+        # Vertical collision detection
+        block_hit_list = pygame.sprite.spritecollide(self, blocks, False, pygame.sprite.collide_mask)
+        for block in block_hit_list:
+            if isinstance(block, GoalBlock):
+                continue
+            
+            if self.change_y > 0:
+                self.rect.bottom = block.rect.top
+                self.change_y = 0
+                self.is_jumping = False
+            elif self.change_y < 0:
+                self.rect.top = block.rect.bottom
+                self.change_y = 0
+
+    def gravity(self):
+        if self.change_y == 0:
+            self.change_y = 1
+        else:
+            self.change_y += self.gravity_acc
+            # Limit falling speed
+            if self.change_y > self.terminal_velocity:
+                self.change_y = self.terminal_velocity
+
+    def jump(self, blocks):
+        # Check if on ground
+        self.rect.y += 2
+        block_hit_list = pygame.sprite.spritecollide(self, blocks, False)
+        self.rect.y -= 2
+
+        if (len(block_hit_list) > 0 or self.rect.bottom >= self.screen_height) and not self.is_jumping:
+            self.change_y = self.jump_speed
+            self.is_jumping = True
+
+    def go_left(self):
+        self.target_speed_x = -self.max_speed_x
+
+    def go_right(self):
+        self.target_speed_x = self.max_speed_x
+
+    def stop(self):
+        self.target_speed_x = 0
 
     def get_action(self, inputs):
         """
@@ -98,64 +183,3 @@ class Agent(pygame.sprite.Sprite):
 
         return child1, child2
 
-    def update(self, blocks):
-        # Apply gravity
-        self.gravity()
-
-        # Move left/right
-        self.rect.x += self.change_x
-
-        # Horizontal collision detection
-        block_hit_list = pygame.sprite.spritecollide(self, blocks, False, pygame.sprite.collide_mask)
-        for block in block_hit_list:
-            # Skip collision response for goal blocks
-            if isinstance(block, GoalBlock):
-                continue
-                
-            if self.change_x > 0:
-                self.rect.right = block.rect.left
-            elif self.change_x < 0:
-                self.rect.left = block.rect.right
-            self.change_x = 0
-
-        # Move up/down
-        self.rect.y += self.change_y
-
-        # Vertical collision detection
-        block_hit_list = pygame.sprite.spritecollide(self, blocks, False, pygame.sprite.collide_mask)
-        for block in block_hit_list:
-            # Skip collision response for goal blocks
-            if isinstance(block, GoalBlock):
-                continue
-                
-            if self.change_y > 0:
-                self.rect.bottom = block.rect.top
-            elif self.change_y < 0:
-                self.rect.top = block.rect.bottom
-            self.change_y = 0
-
-    def gravity(self):
-        if self.change_y == 0:
-            self.change_y = 1
-        else:
-            self.change_y += 0.35  # Adjust gravity here
-
-    def jump(self, blocks):
-        # Move down a bit to see if we are on the ground
-        self.rect.y += 2
-        block_hit_list = pygame.sprite.spritecollide(self, blocks, False)
-        self.rect.y -= 2
-
-        # If it is ok to jump, set our speed upwards
-        if len(block_hit_list) > 0 or self.rect.bottom >= self.screen_height:
-            self.change_y = -10  # Adjust jump strength here
-
-
-    def go_left(self):
-        self.change_x = -6  # Adjust movement speed here
-
-    def go_right(self):
-        self.change_x = 6
-
-    def stop(self):
-        self.change_x = 0
