@@ -1,5 +1,10 @@
 import pygame
 import random
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from agent.agent_2 import Agent
+from components.obstacle import Obstacle
 
 # Initialize Pygame
 pygame.init()
@@ -25,42 +30,6 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("2D Runner")
 
 # Agent class
-class Agent:
-    def __init__(self):
-        self.rect = pygame.Rect(100, GROUND_LEVEL, AGENT_SIZE, AGENT_SIZE)
-        self.velocity_y = 0
-        self.is_jumping = False
-
-    def move(self, action):
-        if action == 0:  # Move left
-            self.rect.x -= SPEED
-        elif action == 1:  # Move right
-            self.rect.x += SPEED
-        elif action == 2 and not self.is_jumping:  # Jump
-            self.is_jumping = True
-            self.velocity_y = -JUMP_STRENGTH
-
-    def apply_gravity(self):
-        if self.is_jumping:
-            self.rect.y += self.velocity_y
-            self.velocity_y += GRAVITY
-            if self.rect.y >= GROUND_LEVEL:
-                self.rect.y = GROUND_LEVEL
-                self.is_jumping = False
-
-    def draw(self, screen):
-        pygame.draw.rect(screen, BLACK, self.rect)
-
-# Obstacle class
-class Obstacle:
-    def __init__(self):
-        self.rect = pygame.Rect(SCREEN_WIDTH, GROUND_LEVEL - OBSTACLE_HEIGHT, OBSTACLE_WIDTH, OBSTACLE_HEIGHT)
-
-    def update(self):
-        self.rect.x -= SPEED
-
-    def draw(self, screen):
-        pygame.draw.rect(screen, RED, self.rect)
 
 def main():
     clock = pygame.time.Clock()
@@ -92,10 +61,11 @@ def main():
             agent.move(action)
 
         # Apply gravity
-        agent.apply_gravity()
+        agent.apply_gravity(obstacles)
+        agent.update_position()
 
         # Randomly spawn obstacles
-        if random.randint(1, 100) < 5:  # Small chance of spawning an obstacle
+        if random.randint(1, 100) < 3:  # Small chance of spawning an obstacle
             obstacles.append(Obstacle())
 
         # Update obstacles

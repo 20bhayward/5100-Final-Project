@@ -25,7 +25,7 @@ for episode in range(n_episodes):
     total_reward = 0
 
     while not done:
-        # env.render()
+        env.render()
         action = agent.choose_action(state)
         next_state, reward, done, _ = env.step(action)
         total_reward += reward
@@ -44,6 +44,5 @@ for episode in range(n_episodes):
 
     path_str = "dqn_agent_2.pth"
     agent.save(path_str)
-    print(f"Trained model saved as {path_str}")
 
 env.close()

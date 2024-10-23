@@ -49,10 +49,10 @@ class RunnerEnv(gym.Env):
 
     def step(self, action):
         if self.done:
-            return self.reset()
+            return self.reset()  # Consider separating logic here
 
         # Check if the agent has fallen out of the screen
-        if self.agent.rect.center[0] < 0 or self.agent.rect.center[0] > 0.7 * SCREEN_WIDTH:
+        if self.agent.rect.center[0] < 0 or self.agent.rect.center[0] > 0.5 * SCREEN_WIDTH:
             self.done = True  # Set done to True, terminate the episode
             return self._get_obs(), -10, True, {}  # Penalty for going out of bounds
 
@@ -70,7 +70,8 @@ class RunnerEnv(gym.Env):
             self.agent.move(2)
             self.agent.move(1)
 
-        self.agent.apply_gravity(self.obstacles)
+        self.agent.apply_gravity(self.obstacles)  # Ensure gravity is applied correctly
+        self.agent.update_position()
 
         # Spawn and update obstacles
         spawn_obstacle(self.obstacles)
@@ -94,11 +95,6 @@ class RunnerEnv(gym.Env):
     def _calculate_reward(self, done):
         """
         Calculate the reward based on the agent's actions and environment state.
-
-        - Penalize the agent heavily for collisions with obstacles.
-        - Reward the agent for jumping over obstacles.
-        - Penalize slightly for unnecessary jumps.
-        - Reward left/right movement if it brings the agent closer to an ideal jump position.
         """
         if done:
             return -20  # Higher penalty for hitting an obstacle
@@ -106,31 +102,37 @@ class RunnerEnv(gym.Env):
         nearest_obstacle = None
         if self.obstacles:
             nearest_obstacle = min(self.obstacles, key=lambda o: o.rect.x)
-            distance_to_obstacle = nearest_obstacle.rect.x - self.agent.rect.x
+            obstacles_ahead = [o for o in self.obstacles if o.rect.x > self.agent.rect.x]
+            distance_to_obstacle = 0
+            if obstacles_ahead:
+                nearest_obstacle_ahead = min(obstacles_ahead, key=lambda o: o.rect.x)
+                distance_to_obstacle = nearest_obstacle_ahead.rect.x - self.agent.rect.x
 
             # Ideal jumping distance window (tune these values for your game mechanics)
             min_jump_distance = 20
-            max_jump_distance = 60
+            max_jump_distance = 40
 
             # Reward for jumping within the ideal window
-            if  min_jump_distance < distance_to_obstacle < max_jump_distance and self.agent.is_jumping:
-                return 10  # High reward for jumping within the ideal window
+            if min_jump_distance < distance_to_obstacle < max_jump_distance and self.agent.is_jumping:
+                return 1  # High reward for jumping within the ideal window
 
-            # Reward for moving right if too far from the obstacle
-            if distance_to_obstacle > max_jump_distance:
-                if self.agent.velocity_x > 0:  # Moving right toward the obstacle
-                    return 2  # Reward for moving closer to the obstacle
+            if self.agent.rect.x > nearest_obstacle.rect.x and self.agent.rect.y >= nearest_obstacle.rect.y:
+                print("jumped over an obstacle")
+                return 50  # Reward for successfully jumping over the obstacle
 
-            # Reward for moving left if too close to the obstacle (within 20 pixels)
+            # Reward for moving closer to the obstacle if too far
+            if distance_to_obstacle > max_jump_distance and self.agent.velocity_x > 0:
+                return 1  # Reward for moving closer to the obstacle
+
+            # Reward for backing up if too close
             if 0 < distance_to_obstacle < min_jump_distance and self.agent.velocity_x < 0:
                 return 2  # Reward for backing up to better position for the jump
 
             # Penalize slightly for unnecessary jumping
-            if self.agent.is_jumping and (distance_to_obstacle > max_jump_distance or distance_to_obstacle <= 0):
-                return -2  # Small penalty for jumping unnecessarily
+            if self.agent.is_jumping and distance_to_obstacle > max_jump_distance:
+                return -5  # Small penalty for jumping unnecessarily
 
-        # Default reward for moving forward and passing obstacles
-        return 1
+        return 0
 
     def render(self, mode='human'):
         self.screen.fill(WHITE)

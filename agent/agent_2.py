@@ -28,26 +28,21 @@ class Agent:
             self.velocity_y = -JUMP_STRENGTH
 
     def apply_gravity(self, obstacles):
-        if self.is_jumping:
-            # Apply gravity to vertical velocity
-            self.velocity_y += GRAVITY
-            self.rect.y += self.velocity_y
-
-            # Check if the agent is landing on the ground
-            if self.rect.y >= GROUND_LEVEL:
-                self.rect.y = GROUND_LEVEL
+        # Apply gravity to vertical velocity
+        self.velocity_y += GRAVITY
+        self.rect.y += self.velocity_y
+        # Check if the agent is landing on the ground
+        if self.rect.y >= GROUND_LEVEL:
+            self.rect.y = GROUND_LEVEL
+            self.is_jumping = False
+            self.velocity_y = 0  # Stop falling
+        # Check for collision with any obstacles
+        for obstacle in obstacles:
+            if self.rect.colliderect(obstacle.rect):
+                self.rect.y = obstacle.rect.top - self.rect.height  # Position agent on top of obstacle
                 self.is_jumping = False
                 self.velocity_y = 0  # Stop falling
-
-            # Check for collision with any obstacles
-            for obstacle in obstacles:
-                if self.rect.colliderect(obstacle.rect):
-                    if self.is_falling_on_top(obstacle):
-                        self.rect.y = obstacle.rect.top - AGENT_SIZE  # Position agent on top of obstacle
-                        self.is_jumping = False
-                        self.velocity_y = 0  # Stop falling
-                        break  # Stop checking once landed
-
+                break  # Stop checking once landed
 
 
     def is_falling_on_top(self, obstacle):
