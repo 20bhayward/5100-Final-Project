@@ -3,11 +3,13 @@ import numpy as np
 from dqn_agent import DQNAgent
 from replay_buffer import ReplayBuffer
 from gym_env import RunnerEnv
+import random
 
 device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 
 # Initialize environment
 env = RunnerEnv()
+env.seed(42)
 
 state_dim = env.observation_space.shape[0]
 action_dim = env.action_space.n
@@ -15,7 +17,7 @@ action_dim = env.action_space.n
 agent = DQNAgent(state_dim, action_dim, device)
 replay_buffer = ReplayBuffer(buffer_size=10000, batch_size=64)
 
-n_episodes = 10000
+n_episodes = 5000
 target_update_freq = 10
 batch_size = 64
 
@@ -34,6 +36,7 @@ for episode in range(n_episodes):
         agent.train(replay_buffer, batch_size)
 
         state = next_state
+
 
     # Update target network every few episodes
     if episode % target_update_freq == 0:

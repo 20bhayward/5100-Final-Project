@@ -4,6 +4,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from gym import spaces
 import pygame
+import random
 import numpy as np
 from agent.agent_2 import Agent
 from game_logic import spawn_obstacle, update_obstacles, check_collisions
@@ -18,10 +19,11 @@ class RunnerEnv(gym.Env):
         super(RunnerEnv, self).__init__()
 
         # Define action space and observation space
-        self.action_space = spaces.Discrete(5)  # 0: left, 1: right, 2: jump, 3: jump + left, 4: jump + right
+        self.action_space = spaces.Discrete(3)  # 0: left, 1: right, 2: jump
+
         self.observation_space = spaces.Box(
-            low=np.array([0, 0, 0, 0, 0, 0, 0]),  # Agent x, y, velocity, nearest obstacle x, nearest obstacle y, nearest obstacle height
-            high=np.array([SCREEN_WIDTH, SCREEN_HEIGHT, 100, 100, SCREEN_WIDTH, SCREEN_HEIGHT, 100]),
+            low=np.array([0, 0, -100, -100, 0, 0]),  # Agent x, y, velocity_x, velocity_y, distance to nearest obstacle ahead, distance to nearest obstacle behind
+            high=np.array([SCREEN_WIDTH, SCREEN_HEIGHT, 100, 100, SCREEN_WIDTH, SCREEN_WIDTH]),  # Max values for each
             dtype=np.float32
         )
 
@@ -40,6 +42,14 @@ class RunnerEnv(gym.Env):
         self.done = False
         self.clock = pygame.time.Clock()
 
+    def seed(self, seed=None):
+        random.seed(seed)
+        np.random.seed(seed)
+        if hasattr(self, 'action_space'):
+            self.action_space.seed(seed)
+        if hasattr(self, 'observation_space'):
+            self.observation_space.seed(seed)
+
     def reset(self):
         self.agent = Agent()  # Reset agent
         self.obstacles = []  # Reset obstacles
@@ -48,30 +58,17 @@ class RunnerEnv(gym.Env):
         return self._get_obs()
 
     def step(self, action):
+        # print(self.agent.rect.y)
         if self.done:
             return self.reset()  # Consider separating logic here
 
-        # Check if the agent has fallen out of the screen
+        # Check if the agent has fallen out of the screen horizontally
         if self.agent.rect.center[0] < 0 or self.agent.rect.center[0] > 0.5 * SCREEN_WIDTH:
             self.done = True  # Set done to True, terminate the episode
-            return self._get_obs(), -10, True, {}  # Penalty for going out of bounds
+            return self._get_obs(), -1000, True, {}  # Penalty for going out of bounds
 
-        # Move the agent and apply gravity based on the action
-        if action == 0:  # Move left
-            self.agent.move(0)
-        elif action == 1:  # Move right
-            self.agent.move(1)
-        elif action == 2:  # Jump
-            self.agent.move(2)
-        elif action == 3:  # Jump + Move Left
-            self.agent.move(2)
-            self.agent.move(0)
-        elif action == 4:  # Jump + Move Right
-            self.agent.move(2)
-            self.agent.move(1)
-
-        self.agent.apply_gravity(self.obstacles)  # Ensure gravity is applied correctly
-        self.agent.update_position()
+        # Intelligent movement based on multiple obstacles
+        self.agent.intelligent_move(self.obstacles, action)
 
         # Spawn and update obstacles
         spawn_obstacle(self.obstacles)
@@ -92,47 +89,83 @@ class RunnerEnv(gym.Env):
 
         return self._get_obs(), reward, done, {}
 
+
     def _calculate_reward(self, done):
-        """
-        Calculate the reward based on the agent's actions and environment state.
-        """
+        reward = 0
+
+        # High penalty if the agent collides with an obstacle
         if done:
-            return -20  # Higher penalty for hitting an obstacle
+            reward -= 100
 
-        nearest_obstacle = None
-        if self.obstacles:
-            nearest_obstacle = min(self.obstacles, key=lambda o: o.rect.x)
-            obstacles_ahead = [o for o in self.obstacles if o.rect.x > self.agent.rect.x]
-            distance_to_obstacle = 0
-            if obstacles_ahead:
-                nearest_obstacle_ahead = min(obstacles_ahead, key=lambda o: o.rect.x)
-                distance_to_obstacle = nearest_obstacle_ahead.rect.x - self.agent.rect.x
+        # Identify obstacles ahead and behind
+        obstacles_ahead = [o for o in self.obstacles if o.rect.x > self.agent.rect.x]
+        obstacles_behind = [o for o in self.obstacles if o.rect.x <= self.agent.rect.x]
 
-            # Ideal jumping distance window (tune these values for your game mechanics)
-            min_jump_distance = 20
-            max_jump_distance = 40
+        # Sort obstacles by distance
+        obstacles_ahead.sort(key=lambda o: o.rect.x)
+        obstacles_behind.sort(key=lambda o: o.rect.x, reverse=True)
 
-            # Reward for jumping within the ideal window
-            if min_jump_distance < distance_to_obstacle < max_jump_distance and self.agent.is_jumping:
-                return 1  # High reward for jumping within the ideal window
+        # Get the nearest obstacles
+        obstacle_ahead = obstacles_ahead[0] if obstacles_ahead else None
+        obstacle_behind = obstacles_behind[0] if obstacles_behind else None
 
-            if self.agent.rect.x > nearest_obstacle.rect.x and self.agent.rect.y >= nearest_obstacle.rect.y:
-                print("jumped over an obstacle")
-                return 50  # Reward for successfully jumping over the obstacle
+        # Reward for optimal jump over obstacle ahead
+        if obstacle_ahead:
+            distance_to_obstacle_ahead = obstacle_ahead.rect.x - self.agent.rect.x
 
-            # Reward for moving closer to the obstacle if too far
-            if distance_to_obstacle > max_jump_distance and self.agent.velocity_x > 0:
-                return 1  # Reward for moving closer to the obstacle
+            # Reward for jumping at the right distance
+            if self.agent.is_jumping:
+                if 15 <= distance_to_obstacle_ahead <= 40:
+                    print("jumped at the right time")
+                    reward += 20  # Optimal timing
+                elif distance_to_obstacle_ahead < 5:
+                    print("jumped too late")
+                    reward -= 10  # Penalty for jumping too late
+                    print("jumped too early")
+                elif distance_to_obstacle_ahead > 40:
+                    reward -= 1  # Penalty for jumping too early
+            elif not self.agent.is_jumping and distance_to_obstacle_ahead > 50:
+                print("not jumping when no obstacle nearby")
+                reward += 1
 
-            # Reward for backing up if too close
-            if 0 < distance_to_obstacle < min_jump_distance and self.agent.velocity_x < 0:
-                return 2  # Reward for backing up to better position for the jump
+        # Penalty for jumping with no obstacles in range
+        if self.agent.is_jumping and not obstacle_ahead and not obstacle_behind:
+            print("jumping for no reason")
+            reward -= 1
 
-            # Penalize slightly for unnecessary jumping
-            if self.agent.is_jumping and distance_to_obstacle > max_jump_distance:
-                return -5  # Small penalty for jumping unnecessarily
+        # Encourage forward motion away from close obstacles behind
+        if obstacle_behind:
+            distance_to_obstacle_behind = self.agent.rect.x - obstacle_behind.rect.x
+            if distance_to_obstacle_behind > 15:
+                print("keeping a good distance from the last object behind")
+                reward += 5  # Small reward for keeping distance from obstacle behind
+            elif distance_to_obstacle_behind <= 5:
+                print("too close to the object behind")
+                reward -= 10  # Penalty if too close to an obstacle behind
 
-        return 0
+        # New: Reward/Penalty for Adjusting X-Position (Better Jump/Land Positioning)
+        if self.agent.is_jumping:
+            # Encourage the agent to aim for a landing zone between obstacles if in the air
+            if obstacle_ahead and obstacle_behind:
+                gap_between_obstacles = obstacle_ahead.rect.x - obstacle_behind.rect.x
+                distance_to_next_obstacle = distance_to_obstacle_ahead
+
+                if gap_between_obstacles > 20:  # Sufficient space to land
+                    if 15 <= distance_to_next_obstacle <= 40:
+                        reward += 10  # Reward for optimal x-position while in the air
+                    else:
+                        reward -= 5  # Penalty for suboptimal position while in the air
+        else:
+            # If the agent is on the ground, encourage movement towards the next obstacle for better jump position
+            if obstacle_ahead:
+                distance_to_obstacle_ahead = obstacle_ahead.rect.x - self.agent.rect.x
+                if 10 <= distance_to_obstacle_ahead <= 40:
+                    reward += 5  # Reward for positioning well on the ground
+                elif distance_to_obstacle_ahead < 15:
+                    reward -= 5  # Penalty for being too close without jumping
+
+        # Default to zero if no reward or penalty conditions are met
+        return reward if reward != 0 else 0
 
     def render(self, mode='human'):
         self.screen.fill(WHITE)
@@ -149,18 +182,25 @@ class RunnerEnv(gym.Env):
         pygame.event.get()
         self.clock.tick(60)  # 60 FPS
 
-
-
     def close(self):
         pygame.quit()
 
     def _get_obs(self):
         nearest_obstacle = None
+        distance_to_obstacle_ahead = None
+        distance_to_obstacle_behind = None
         if self.obstacles:
-            nearest_obstacle = min(self.obstacles, key=lambda o: o.rect.x)
-            distance_to_obstacle = nearest_obstacle.rect.x - self.agent.rect.x
-            obstacle_y = nearest_obstacle.rect.y
-            obstacle_height = nearest_obstacle.rect.height
+            obstacles_ahead = [o for o in self.obstacles if o.rect.x > self.agent.rect.x]
+            obstacles_behind = [o for o in self.obstacles if o.rect.x <= self.agent.rect.x]
+
+            obstacles_ahead.sort(key=lambda o: o.rect.x)
+            obstacles_behind.sort(key=lambda o: o.rect.x, reverse=True)
+
+            obstacle_ahead = obstacles_ahead[0] if len(obstacles_ahead) > 0 else None
+            obstacle_behind = obstacles_behind[0] if len(obstacles_behind) > 0 else None
+
+            distance_to_obstacle_ahead = obstacle_ahead.rect.x - self.agent.rect.x if obstacle_ahead else None
+            distance_to_obstacle_behind = np.abs(obstacle_behind.rect.x - self.agent.rect.x) if obstacle_behind else None
         else:
             distance_to_obstacle = SCREEN_WIDTH
             obstacle_y = SCREEN_HEIGHT
@@ -172,9 +212,8 @@ class RunnerEnv(gym.Env):
             self.agent.rect.y,
             self.agent.velocity_x,
             self.agent.velocity_y,
-            distance_to_obstacle,
-            obstacle_y,
-            obstacle_height
+            distance_to_obstacle_ahead,
+            distance_to_obstacle_behind
         ], dtype=np.float32)
 
 # Testing the environment

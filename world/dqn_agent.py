@@ -8,6 +8,7 @@ from q_network import QNetwork
 
 class DQNAgent:
     def __init__(self, state_dim, action_dim, device):
+        print(f"dqn_agent: {state_dim}")
         self.q_network = QNetwork(state_dim, action_dim).to(device)
         self.target_network = QNetwork(state_dim, action_dim).to(device)
         self.optimizer = optim.Adam(self.q_network.parameters(), lr=1e-3)
@@ -22,7 +23,7 @@ class DQNAgent:
         # Update target network weights to match the main Q network
         self.update_target_network()
 
-    def choose_action(self, state, epsilon=0.999):
+    def choose_action(self, state, epsilon=0.995):
         if np.random.rand() < epsilon:
             return np.random.randint(0, self.q_network.fc3.out_features)
         else:

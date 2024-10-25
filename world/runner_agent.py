@@ -48,7 +48,7 @@ def main():
         # Get agent action (0: left, 1: right, 2: jump)
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
-            action = 0
+            action = 0 
         elif keys[pygame.K_RIGHT]:
             action = 1
         elif keys[pygame.K_SPACE]:
@@ -59,10 +59,6 @@ def main():
         # Move the agent
         if action != -1:
             agent.move(action)
-
-        # Apply gravity
-        agent.apply_gravity(obstacles)
-        agent.update_position()
 
         # Randomly spawn obstacles
         if random.randint(1, 100) < 3:  # Small chance of spawning an obstacle
@@ -79,6 +75,8 @@ def main():
         for obstacle in obstacles:
             if agent.rect.colliderect(obstacle.rect):
                 running = False  # End the game on collision
+
+        agent.update(obstacles, action)
 
         # Draw agent and obstacles
         agent.draw(screen)

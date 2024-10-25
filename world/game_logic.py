@@ -7,7 +7,7 @@ GROUND_LEVEL = SCREEN_HEIGHT - AGENT_SIZE
 
 # Function to spawn obstacles randomly
 def spawn_obstacle(obstacles):
-    if random.randint(1, 100) < 6:  # Random chance of spawning
+    if random.randint(1, 100) < 4:  # Random chance of spawning
         obstacles.append(Obstacle())
 
 # Function to update obstacles
