@@ -4,7 +4,6 @@ import pygame
 import sys
 import numpy as np
 import torch
-from collections import deque
 import random
 import os
 
@@ -18,16 +17,26 @@ from world.levels.level6 import Level6
 from world.levels.level7 import Level7
 from world.levels.level8 import Level8
 from world.dqn.dqn_agent import DQNAgent
+from world.dqn.replay_buffer import ReplayBuffer
 
 # Screen dimensions
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
+# Simplified action space (movement only)
+MOVEMENT_ACTIONS = {
+    0: 'left',
+    1: 'right',
+    2: 'nothing'
+}
+
+ACTION_DIM = len(MOVEMENT_ACTIONS)  # 3 actions
+
 # Colors
 BG_COLOR = (255, 255, 255)  # Gray color
 
 class Game:
-    def __init__(self, manual_control=False, level_number=1, training_mode=False, render_enabled=True):
+    def __init__(self, manual_control=False, level_number=1, training_mode=False, render_enabled=True, load_model=None):
         if not render_enabled:
             os.environ["SDL_VIDEODRIVER"] = "dummy"
         pygame.init()
@@ -45,6 +54,7 @@ class Game:
         self.max_levels = 3
         self.training_mode = training_mode
         self.render_enabled = render_enabled
+        self.training_active = False
 
         # Create the agent
         self.agent = Agent(50, SCREEN_HEIGHT - 80, screen_height=SCREEN_HEIGHT)
@@ -69,63 +79,72 @@ class Game:
         self.max_steps = 5000  # Maximum steps per episode
         self.last_x_position = 50  # Track progress
 
-         # Add jump cooldown tracking
+        # Add jump cooldown tracking
         self.last_jump_time = 0
         self.jump_cooldown = 400  # milliseconds
         self.successful_completion_times = []  # Track only successful runs
         self.best_completion_time = float('inf')
         self.current_run_steps = 0
+        self.last_action_index = 0 
 
         if training_mode:
             # Initialize DQN components
             self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-            state_dim = 8  # Size of our state vector
-            action_dim = 4  # Number of possible actions
+            state_dim = 10  # Updated state dimension
+            action_dim = ACTION_DIM  # Updated action_dim
             self.dqn_agent = DQNAgent(state_dim, action_dim, self.device)
-            self.replay_buffer = deque(maxlen=10000)
+            # Use ReplayBuffer
+            self.replay_buffer = ReplayBuffer(buffer_size=50000, batch_size=64)
             self.batch_size = 64
             self.training_steps = 0
-            self.target_update_freq = 10
+            self.target_update_freq = 1000  # Adjusted target network update frequency
+            if load_model:
+                self.dqn_agent.load(load_model)
+                if not self.training_mode:
+                    self.dqn_agent.epsilon = 0.0  # No exploration during inference
 
     def train_ai(self, num_episodes=1000):
         """Main training loop focusing on single level mastery"""
         episode = 0
+        self.training_active = True
         
         print(f"Starting training on level {self.level_number}")
-        print("Training will continue until manually stopped...")
-        
-        while True:
+        print("Press 'q' at any time to stop training...")
+
+        while self.training_active:
             episode += 1
             self.reset_episode()
             episode_reward = 0
-            
+            self.episode_steps = 0  # Reset episode steps
+
             while self.running and self.current_run_steps < self.max_steps:
                 self.events()
-                
+
                 state = self.get_state()
                 action = self.dqn_agent.choose_action(state)
-                
+
                 self.handle_ai_action(action)
                 self.update()
-                
+
                 next_state = self.get_state()
                 reward = self.get_reward()
                 done = not self.running
-                
+
                 self.store_experience(state, action, reward, next_state, done)
-                
-                if len(self.replay_buffer) >= self.batch_size:
+
+                if self.replay_buffer.size() >= self.batch_size:
                     self.train_step()
-                
+
                 episode_reward += reward
                 self.current_run_steps += 1
-                
+                self.episode_steps += 1
+
                 if self.render_enabled:
                     self.draw()
-                
-                if done:
-                    break
-            
+
+                if done or not self.training_active:
+                    break  # Exit the inner loop if training is no longer active
+
             # Print progress
             print(f"Episode {episode}:")
             print(f"  Steps: {self.current_run_steps}")
@@ -134,13 +153,21 @@ class Game:
             if self.best_completion_time != float('inf'):
                 print(f"  Best Completion Time: {self.best_completion_time}")
             print("------------------------")
-            
+
             # Save progress periodically
             if episode % 100 == 0:
                 self.dqn_agent.save(f"checkpoint_level{self.level_number}_ep{episode}.pth")
                 self.save_training_stats()
-            
+
             self.dqn_agent.decay_epsilon()
+            self.clock.tick(60)
+            # Check if training was stopped
+            if not self.training_active:
+                print("Training terminated by user.")
+                self.dqn_agent.save(f"checkpoint_level{self.level_number}_ep{episode}.pth")  # Save progress
+                self.save_training_stats()
+                pygame.quit()
+                sys.exit()
 
     def save_training_stats(self):
         """Save training statistics to a file"""
@@ -158,16 +185,15 @@ class Game:
 
     def store_experience(self, state, action, reward, next_state, done):
         """Store experience in replay buffer"""
-        self.replay_buffer.append((state, action, reward, next_state, done))
+        self.replay_buffer.store(state, action, reward, next_state, done)
 
     def train_step(self):
         """Perform one training step"""
-        if len(self.replay_buffer) < self.batch_size:
+        if self.replay_buffer.size() < self.batch_size:
             return
 
         # Sample random batch from replay buffer
-        batch = random.sample(self.replay_buffer, self.batch_size)
-        states, actions, rewards, next_states, dones = zip(*batch)
+        states, actions, rewards, next_states, dones = self.replay_buffer.sample()
 
         # Train the network
         loss = self.dqn_agent.train(
@@ -184,52 +210,112 @@ class Game:
         if self.training_steps % self.target_update_freq == 0:
             self.dqn_agent.update_target_network()
 
+    def is_jump_necessary(self):
+        # Define a rectangle in front of the agent
+        look_ahead_rect = pygame.Rect(
+            self.agent.rect.right,
+            self.agent.rect.bottom - self.agent.height,
+            50,  # Look ahead distance
+            self.agent.height
+        )
+
+        # Check for obstacles ahead
+        obstacles_ahead = any(
+            look_ahead_rect.colliderect(block.rect)
+            for block in self.block_list
+        )
+
+        # **Check for traps ahead**
+        traps_ahead = any(
+            look_ahead_rect.colliderect(trap.rect)
+            for trap in self.level.trap_list
+        )
+
+        # Check for gaps (no ground below)
+        ground_rect = pygame.Rect(
+            self.agent.rect.x,
+            self.agent.rect.bottom + 1,
+            self.agent.width,
+            5
+        )
+        ground_below = any(
+            ground_rect.colliderect(block.rect)
+            for block in self.block_list
+        )
+
+        # Jump is necessary if there's an obstacle, trap ahead, or no ground below
+        return obstacles_ahead or traps_ahead or not ground_below
+
     def get_state(self):
-        """Get the current state for AI training"""
-        # Find nearest trap
-        nearest_trap_dist = float('inf')
-        for trap in self.level.trap_list:
-            dist = ((trap.rect.x - self.agent.rect.x) ** 2 + 
-                   (trap.rect.y - self.agent.rect.y) ** 2) ** 0.5
-            nearest_trap_dist = min(nearest_trap_dist, dist)
+        # Existing state variables
+        agent_x = self.agent.rect.x / self.level.width
+        agent_y = self.agent.rect.y / self.level.height
+        agent_vel_x = self.agent.change_x / self.agent.max_speed_x
+        agent_vel_y = self.agent.change_y / self.agent.terminal_velocity
+        goal_distance = self.get_goal_distance() / (self.level.width + self.level.height)
+        on_ground = 1.0 if self.agent.on_ground else 0.0
+        nearest_obstacle_dist, obstacle_in_front = self.get_nearest_block_info()
 
-        # Find goal distance
-        goal = next(iter(self.level.goal_list))
-        goal_dist = ((goal.rect.x - self.agent.rect.x) ** 2 + 
-                    (goal.rect.y - self.agent.rect.y) ** 2) ** 0.5
-
-        # Check if on ground
-        self.agent.rect.y += 2
-        block_hit_list = pygame.sprite.spritecollide(self.agent, self.block_list, False)
-        self.agent.rect.y -= 2
-        on_ground = 1.0 if len(block_hit_list) > 0 else 0.0
+        # **New**: Trap information
+        trap_ahead = self.is_trap_ahead()
+        trap_distance = self.get_nearest_trap_distance() / 500.0  # Normalize
 
         return np.array([
-            self.agent.rect.x / self.level.width,
-            self.agent.rect.y / self.level.height,
-            self.agent.change_x / 10.0,
-            self.agent.change_y / 10.0,
-            min(1.0, nearest_trap_dist / 500.0),
-            min(1.0, goal_dist / 1000.0),
+            agent_x,
+            agent_y,
+            agent_vel_x,
+            agent_vel_y,
+            goal_distance,
             on_ground,
-            float(self.level_number) / self.max_levels
+            obstacle_in_front,
+            nearest_obstacle_dist / 500.0,
+            trap_ahead,
+            trap_distance
         ], dtype=np.float32)
 
+    def get_goal_distance(self):
+        goal = next(iter(self.level.goal_list))
+        distance = ((goal.rect.centerx - self.agent.rect.centerx) ** 2 +
+                    (goal.rect.centery - self.agent.rect.centery) ** 2) ** 0.5
+        return distance
+    
+    def get_nearest_block_info(self):
+            look_ahead_rect = pygame.Rect(
+                self.agent.rect.right,
+                self.agent.rect.y,
+                100,
+                self.agent.height
+            )
+            obstacles = [block for block in self.block_list if block.rect.colliderect(look_ahead_rect)]
+            obstacle_in_front = 1.0 if obstacles else 0.0
+            if obstacles:
+                nearest_obstacle = min(obstacles, key=lambda block: block.rect.x)
+                distance = nearest_obstacle.rect.x - self.agent.rect.x
+            else:
+                distance = 500.0  # Max look-ahead distance
+
+            return distance, obstacle_in_front
     def get_reward(self):
-        """Calculate reward with jump penalties"""
         reward = 0
-        
-        # Progress reward
-        progress = self.agent.rect.x - self.last_x_position
-        reward += progress * 0.1
-        self.last_x_position = self.agent.rect.x
-        
-        # Penalty for jumping
-        if self.agent.change_y < 0:  # Agent is moving upward (jumping)
-            reward -= 0.6  # penalty for jumping
-        
-        # Small time penalty to encourage speed
-        reward -= 0.01
+
+        # Existing reward calculations
+        current_goal_distance = self.get_goal_distance()
+        distance_progress = self.last_goal_distance - current_goal_distance
+        reward += distance_progress * 0.1
+        self.last_goal_distance = current_goal_distance
+
+        if distance_progress < 0:
+            reward += distance_progress * 0.5  # Stronger penalty for moving backward
+
+        # Penalty for standing still
+        if self.agent.change_x == 0:
+            reward -= 0.1
+
+        # **New**: Penalize for being close to a trap
+        trap_ahead = self.is_trap_ahead()
+        trap_distance = self.get_nearest_trap_distance()
+        if trap_ahead:
+            reward -= (1 - (trap_distance / 500.0)) * 0.1  # Penalty increases as the agent gets closer to the trap
 
         # Death penalties
         if self.agent.rect.y > self.level.height * 2:
@@ -238,10 +324,10 @@ class Game:
             print(f"Failed: Fell out of bounds after {self.current_run_steps} steps")
             return reward
 
-        # Trap collision
+        # **Increased penalty for hitting a trap**
         trap_hit_list = pygame.sprite.spritecollide(self.agent, self.level.trap_list, False)
         if trap_hit_list:
-            reward -= 100
+            reward -= 200  # Increase penalty from -100 to -200
             self.running = False
             print(f"Failed: Hit trap after {self.current_run_steps} steps")
             return reward
@@ -249,24 +335,50 @@ class Game:
         # Goal completion
         goal_hit_list = pygame.sprite.spritecollide(self.agent, self.level.goal_list, False)
         if goal_hit_list:
-            # Record completion time
             if self.current_run_steps < self.best_completion_time:
                 self.best_completion_time = self.current_run_steps
                 print(f"\nNew best completion time: {self.best_completion_time} steps!")
-                # Save best performing model
                 self.dqn_agent.save(f"best_model_level{self.level_number}.pth")
-            
-            # Reward based on completion speed
+
             time_bonus = max(0, 1000 - self.current_run_steps)
-            reward += 500 + time_bonus  # Base completion reward plus time bonus
-            
+            reward += 500 + time_bonus
             self.successful_completion_times.append(self.current_run_steps)
             print(f"Level completed in {self.current_run_steps} steps!")
-            print(f"Average completion time: {sum(self.successful_completion_times[-10:]) / len(self.successful_completion_times[-10:]):.1f} steps")
+            avg_time = sum(self.successful_completion_times[-10:]) / len(self.successful_completion_times[-10:])
+            print(f"Average completion time: {avg_time:.1f} steps")
             self.running = False
-            
-        return reward
 
+        return reward        
+    
+    def is_trap_ahead(self):
+        # Define a rectangle in front of the agent
+        look_ahead_rect = pygame.Rect(
+            self.agent.rect.right,
+            self.agent.rect.y,
+            100,  # Look ahead distance
+            self.agent.height
+        )
+        # Check for traps ahead
+        traps_ahead = any(
+            look_ahead_rect.colliderect(trap.rect)
+            for trap in self.level.trap_list
+        )
+        return 1.0 if traps_ahead else 0.0
+
+    def get_nearest_trap_distance(self):
+        look_ahead_rect = pygame.Rect(
+            self.agent.rect.right,
+            self.agent.rect.y,
+            500,  # Max look-ahead distance
+            self.agent.height
+        )
+        traps = [trap for trap in self.level.trap_list if trap.rect.colliderect(look_ahead_rect)]
+        if traps:
+            nearest_trap = min(traps, key=lambda trap: trap.rect.x)
+            distance = nearest_trap.rect.x - self.agent.rect.x
+        else:
+            distance = 500.0  # Max look-ahead distance
+        return distance
 
     def step(self, action):
         """Execute one time step within the environment"""
@@ -289,21 +401,26 @@ class Game:
 
         return state, reward, done, {}
 
-    def handle_ai_action(self, action):
-        """Handle AI actions with jump cooldown"""
-        current_time = pygame.time.get_ticks()
+    def handle_ai_action(self, action_index):
+        # Get the movement command from MOVEMENT_ACTIONS
+        command = MOVEMENT_ACTIONS[action_index]
+        self.last_action_index = action_index  # Store last action
         
-        if action == 0:  # LEFT
+        # Set horizontal movement
+        if command == 'left':
             self.agent.go_left()
-        elif action == 1:  # RIGHT
+        elif command == 'right':
             self.agent.go_right()
-        elif action == 2:  # JUMP
-            # Only allow jumping if cooldown has passed
-            if current_time - self.last_jump_time >= self.jump_cooldown:
-                self.agent.jump(self.block_list)
-                self.last_jump_time = current_time
-        elif action == 3:  # NOTHING
+        else:
             self.agent.stop()
+
+        # The direction is maintained until the next action changes it
+        # Handle jump if necessary
+        if self.is_jump_necessary():
+            current_time = pygame.time.get_ticks()
+            if current_time - self.last_jump_time >= self.jump_cooldown:
+                self.agent.jump()
+                self.last_jump_time = current_time
 
     def reset_episode(self):
         """Reset the environment for a new episode"""
@@ -315,7 +432,8 @@ class Game:
         self.last_x_position = 50
         self.current_reward = 0
         self.current_run_steps = 0
-        self.last_jump_time = 0 
+        self.last_jump_time = 0
+        self.last_goal_distance = self.get_goal_distance()
         return self.get_state()
 
     def run(self):
@@ -341,7 +459,7 @@ class Game:
         self.update_camera()
 
         # Check for out of bounds (death)
-        if self.agent.rect.y > self.level.height*2:
+        if self.agent.rect.y > self.level.height * 2:
             self.restart_level()
 
         # Enforce world bounds
@@ -398,23 +516,6 @@ class Game:
         pygame.quit()
         sys.exit()
 
-    def get_agent_inputs(self):
-        # Placeholder for actual sensory inputs
-        # You need to define how the agent perceives the environment
-        # For example, distances to the nearest obstacles
-        inputs = [0, 0, 0]  # Example inputs
-        return inputs
-
-    def handle_agent_action(self, action):
-        if action == "left":
-            self.agent.go_left()
-        elif action == "right":
-            self.agent.go_right()
-        elif action == "jump":
-            self.agent.jump(self.block_list)
-        elif action == "stop":
-            self.agent.stop()
-
     def update_camera(self):
         # Calculate target camera position (centered on agent)
         target_x = -self.agent.rect.x + SCREEN_WIDTH // 2
@@ -431,11 +532,16 @@ class Game:
         
         self.camera_x = target_x
         self.camera_y = target_y
-    
+        
     def events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
+                self.training_active = False
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_q:
+                    self.running = False
+                    self.training_active = False
 
         if self.manual_control and not self.training_mode:
             # Manual control using keyboard inputs
@@ -447,13 +553,7 @@ class Game:
             else:
                 self.agent.stop()
             if keys[pygame.K_SPACE]:
-                self.agent.jump(self.block_list)
-        else:
-            # AI control
-            inputs = self.get_agent_inputs()
-            action = self.agent.get_action(inputs)
-            self.handle_agent_action(action)
-
+                self.agent.jump()
 
     def load_level(self):
         # You can expand this dictionary as you add more levels
@@ -484,13 +584,16 @@ if __name__ == "__main__":
     parser.add_argument('--l', type=int, default=1, help='Select level number to load.')
     parser.add_argument('--t', action='store_true', help='Enable AI training mode.')
     parser.add_argument('--r', action='store_true', help='Enable visualization during training.')
+    parser.add_argument('--lm', type=str, help='Load Model: Path to the trained model file.')
+
     args = parser.parse_args()
 
     game = Game(
         manual_control=args.m,
         level_number=args.l,
         training_mode=args.t,
-        render_enabled=args.r if args.t else True
+        render_enabled=args.r if args.t else True,
+        load_model=args.lm
     )
     
     if args.t:
