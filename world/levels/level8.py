@@ -4,8 +4,10 @@ import pygame
 from world.levels.level import Level
 from world.components.blocks.static.square_block import SquareBlock
 from world.components.blocks.interactive.moving_block import MovingBlock
+from world.components.blocks.interactive.moving_trap import MovingTrap
 from world.components.blocks.interactive.trap_block import TrapBlock
 from world.components.blocks.interactive.goal_block import GoalBlock
+from world.components.blocks.interactive.water_block import WaterBlock
 
 class Level8(Level):
     def __init__(self):
@@ -20,8 +22,14 @@ class Level8(Level):
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
+        # Add water below the starting platform
+        for i in range(220, 2500, 40):
+            water = WaterBlock(i, 560)  # Adjust y-coordinate for water below platform
+            self.trap_list.add(water)
+            self.all_sprites_list.add(water)
+
         # Vertical moving trap
-        trap1 = MovingBlock(
+        trap1 = MovingTrap(
             x=270, y=300, width=40, height=40, color=(255, 0, 0),
             speed=2, direction='vertical', start_pos=300, end_pos=560
         )
@@ -29,7 +37,7 @@ class Level8(Level):
         self.all_sprites_list.add(trap1)
 
         # Vertical moving trap
-        trap2 = MovingBlock(
+        trap2 = MovingTrap(
             x=330, y=360, width=40, height=40, color=(255, 0, 0),
             speed=1, direction='vertical', start_pos=360, end_pos=560
         )
@@ -62,7 +70,7 @@ class Level8(Level):
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
-        trap4 = MovingBlock(
+        trap4 = MovingTrap(
             x=1350, y=75, width=30, height=30, color=(255, 0, 0),
             speed=2, direction='horizontal', start_pos=1350, end_pos=1500  # Right-to-left movement
         )
@@ -77,7 +85,7 @@ class Level8(Level):
             self.all_sprites_list.add(block)
 
         # Additional trap before third platform
-        trap5 = MovingBlock(
+        trap5 = MovingTrap(
             x=1440, y=250, width=40, height=40, color=(255, 0, 0),
             speed=2, direction='horizontal', start_pos=1440, end_pos=1600  # Right-to-left movement
         )

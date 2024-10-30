@@ -3,7 +3,9 @@
 import pygame
 from world.levels.level import Level
 from world.components.blocks.static.square_block import SquareBlock
+from world.components.blocks.interactive.water_block import WaterBlock
 from world.components.blocks.interactive.moving_block import MovingBlock
+from world.components.blocks.interactive.moving_trap import MovingTrap
 from world.components.blocks.interactive.trap_block import TrapBlock
 from world.components.blocks.interactive.goal_block import GoalBlock
 
@@ -20,9 +22,15 @@ class Level5(Level):
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
+        # Add water
+        for i in range(200, 2000, 40):
+            water = WaterBlock(i, 590)
+            self.trap_list.add(water)
+            self.all_sprites_list.add(water)
+
         # Corridor with spaced moving traps and platforms
         for i in range(250, 700, 200):  # Adding more spacing between moving traps
-            trap = MovingBlock(
+            trap = MovingTrap(
                 x=i, y=500, width=40, height=40, color=(255, 0, 0),
                 speed=2, direction='vertical', start_pos=480, end_pos=600
             )

@@ -3,7 +3,9 @@
 import pygame
 from world.levels.level import Level
 from world.components.blocks.static.square_block import SquareBlock
+from world.components.blocks.interactive.water_block import WaterBlock
 from world.components.blocks.interactive.moving_block import MovingBlock
+from world.components.blocks.interactive.moving_trap import MovingTrap
 from world.components.blocks.interactive.trap_block import TrapBlock
 from world.components.blocks.interactive.goal_block import GoalBlock
 
@@ -19,6 +21,12 @@ class Level7(Level):
             block = SquareBlock(i, 560)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
+
+        # Add water below the starting platform
+        for i in range(200, 400, 40):
+            water = WaterBlock(i, 570)  # Adjust y-coordinate for water below platform
+            self.trap_list.add(water)
+            self.all_sprites_list.add(water)
 
         # Vertical section with staggered platforms
         platforms = [
@@ -36,10 +44,12 @@ class Level7(Level):
 
         # Wall
         x_position = 400  # x-coordinate of the wall
-        for y_position in range(560, 200, -40):  # Adjust range for desired wall height
-            block = SquareBlock(x_position, y_position)
-            self.block_list.add(block)
-            self.all_sprites_list.add(block)
+        while x_position < 1000:
+            for y_position in range(560, 200, -40):  # Adjust range for desired wall height
+                block = SquareBlock(x_position, y_position)
+                self.block_list.add(block)
+                self.all_sprites_list.add(block)
+            x_position += 40
 
         # Second platform for movement
         for i in range(400, 1000, 40):
@@ -47,8 +57,14 @@ class Level7(Level):
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
+        # Add water below the second platform
+        for i in range(1000, 2000, 40):
+            water = WaterBlock(i, 570)  # Adjust y-coordinate for water below platform
+            self.trap_list.add(water)
+            self.all_sprites_list.add(water)
+
         # First moving trap between the second platform and the moving platform
-        trap1 = MovingBlock(
+        trap1 = MovingTrap(
             x=1000, y=300, width=40, height=40, color=(255, 0, 0),
             speed=1, direction='horizontal', start_pos=1000, end_pos=1500
         )
@@ -62,7 +78,7 @@ class Level7(Level):
         self.block_list.add(moving_platform)
         self.all_sprites_list.add(moving_platform)
 
-        trap2 = MovingBlock(
+        trap2 = MovingTrap(
             x=1000, y=380, width=40, height=40, color=(255, 0, 0),
             speed=1, direction='horizontal', start_pos=1000, end_pos=1500
         )

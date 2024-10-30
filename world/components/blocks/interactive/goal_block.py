@@ -6,11 +6,11 @@ from world.components.blocks.block import Block
 class GoalBlock(Block):
     def __init__(self, x, y, width=40, height=40, color=(0, 255, 0)):
         super().__init__(x, y)
+        # self.color = color  # Green color for the goal
+        self.image = pygame.image.load('world/assets/new_door.jpeg').convert_alpha()
         self.width = width
         self.height = height
-        self.color = color  # Green color for the goal
-        self.image = pygame.Surface([width, height])
-        self.image.fill(color)
+        self.image = pygame.transform.scale(self.image, (width, height))
         self.rect = self.image.get_rect(topleft=(x, y))
         self.mask = pygame.mask.from_surface(self.image)
 

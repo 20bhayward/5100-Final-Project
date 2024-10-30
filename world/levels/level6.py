@@ -3,7 +3,9 @@
 import pygame
 from world.levels.level import Level
 from world.components.blocks.static.square_block import SquareBlock
+from world.components.blocks.interactive.water_block import WaterBlock
 from world.components.blocks.interactive.moving_block import MovingBlock
+from world.components.blocks.interactive.moving_trap import MovingTrap
 from world.components.blocks.interactive.trap_block import TrapBlock
 from world.components.blocks.interactive.goal_block import GoalBlock
 
@@ -20,7 +22,13 @@ class Level6(Level):
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
-        for i in range(250, 300, 40):
+        # Add water
+        for i in range(200, 500, 40):
+            water = WaterBlock(i, 570)  # Adjust y-coordinate for water below platform
+            self.trap_list.add(water)
+            self.all_sprites_list.add(water)
+
+        for i in range(250, 300, 120):
             block = SquareBlock(i, 480)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
@@ -37,6 +45,12 @@ class Level6(Level):
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
+        # Add water
+        for i in range(540, 2000, 40):
+            water = WaterBlock(i, 480, height=120)  # Adjust y-coordinate for water below platform
+            self.trap_list.add(water)
+            self.all_sprites_list.add(water)
+
         # Second platform for movement
         for i in range(550, 900, 40):  # Shorter second platform
             block = SquareBlock(i, 250)
@@ -52,7 +66,7 @@ class Level6(Level):
         self.all_sprites_list.add(moving_platform)
 
         # Traps
-        trap1 = MovingBlock(
+        trap1 = MovingTrap(
             x=900, y=330, width=40, height=40, color=(255, 0, 0),
             speed=1, direction='horizontal', start_pos=900, end_pos=1400
         )
