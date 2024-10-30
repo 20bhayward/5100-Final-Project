@@ -4,13 +4,10 @@ import pygame
 from world.components.blocks.block import Block
 
 class TrapBlock(Block):
-    def __init__(self, x, y, width=40, height=40, color=(255, 0, 0)):
+    def __init__(self, x, y, width=50, height=30, color=(255, 0, 0)):
         super().__init__(x, y)
-        self.width = width
-        self.height = height
-        self.color = color  # Red color for the trap
-        self.image = pygame.Surface([width, height])
-        self.image.fill(color)
+        self.image = pygame.image.load("world/assets/spike-sprite.png")
+        self.image = pygame.transform.scale(self.image, (width, height))
         self.rect = self.image.get_rect(topleft=(x, y))
         self.mask = pygame.mask.from_surface(self.image)
 

@@ -13,6 +13,7 @@ class Level8(Level):
     def __init__(self):
         self.width = 2500
         self.height = 800
+        self.water_blocks = []
         super().__init__()
 
     def create_level(self):
@@ -23,10 +24,11 @@ class Level8(Level):
             self.all_sprites_list.add(block)
 
         # Add water below the starting platform
-        for i in range(220, 2500, 40):
-            water = WaterBlock(i, 560)  # Adjust y-coordinate for water below platform
+        for i in range(240, 2500, 40):
+            water = WaterBlock(i, 520)  # Adjust y-coordinate for water below platform
             self.trap_list.add(water)
             self.all_sprites_list.add(water)
+            self.water_blocks.append(water)
 
         # Vertical moving trap
         trap1 = MovingTrap(

@@ -24,13 +24,14 @@ SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
 # Colors
-BG_COLOR = (128, 128, 128)  # Gray color
+BG_COLOR = (255, 255, 255)  # Gray color
 
 class Game:
     def __init__(self, manual_control=False, level_number=1, training_mode=False, render_enabled=True):
         if not render_enabled:
             os.environ["SDL_VIDEODRIVER"] = "dummy"
         pygame.init()
+
         if render_enabled:
             self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
             pygame.display.set_caption("AI Agent World")
@@ -385,7 +386,10 @@ class Game:
         if not self.render_enabled:
             return
             
-        self.screen.fill(BG_COLOR)
+        # self.screen.fill(BG_COLOR)
+        background_image = pygame.image.load('world/assets/background-sprite.png').convert()
+        background_image = pygame.transform.scale(background_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
+        self.screen.blit(background_image, (0, 0))
         for entity in self.all_sprites_list:
             self.screen.blit(entity.image, (entity.rect.x + self.camera_x, entity.rect.y + self.camera_y))
         pygame.display.flip()

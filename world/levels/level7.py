@@ -24,7 +24,7 @@ class Level7(Level):
 
         # Add water below the starting platform
         for i in range(200, 400, 40):
-            water = WaterBlock(i, 570)  # Adjust y-coordinate for water below platform
+            water = WaterBlock(i, 520)  # Adjust y-coordinate for water below platform
             self.trap_list.add(water)
             self.all_sprites_list.add(water)
 
@@ -59,7 +59,7 @@ class Level7(Level):
 
         # Add water below the second platform
         for i in range(1000, 2000, 40):
-            water = WaterBlock(i, 570)  # Adjust y-coordinate for water below platform
+            water = WaterBlock(i, 520)  # Adjust y-coordinate for water below platform
             self.trap_list.add(water)
             self.all_sprites_list.add(water)
 

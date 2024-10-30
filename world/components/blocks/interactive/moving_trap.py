@@ -6,13 +6,10 @@ from world.components.blocks.interactive.interactive_block import InteractiveBlo
 class MovingTrap(InteractiveBlock):
     def __init__(self, x, y, width, height, color, speed, direction, start_pos=None, end_pos=None):
         super().__init__(x, y)
-        self.width = width
-        self.height = height
-        self.color = color
         self.speed = speed
         self.direction = direction  # 'horizontal' or 'vertical'
-        self.image = pygame.Surface([width, height])
-        self.image.fill(color)
+        self.image = pygame.image.load("world/assets/spike-sprite.png")
+        self.image = pygame.transform.scale(self.image, (width, height))
         self.rect = self.image.get_rect(topleft=(x, y))
         self.mask = pygame.mask.from_surface(self.image)
 

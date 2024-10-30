@@ -3,18 +3,14 @@ import pygame
 from world.components.blocks.block import Block
 
 class WaterBlock(Block):
-    def __init__(self, x, y, width=40, height=40, color=(28,163,236)):
+    def __init__(self, x, y, width=100, height=120, color=(28,163,236)):
         super().__init__(x, y)
-        self.width = width
-        self.height = height
-        self.color = color  # Red color for the trap
-        self.image = pygame.Surface([width, height])
-        self.image.fill(color)
+        self.image = pygame.image.load("world/assets/New Piskel-2.png").convert_alpha()
+        self.image = pygame.transform.scale(self.image, (width, height))
         self.rect = self.image.get_rect(topleft=(x, y))
         self.mask = pygame.mask.from_surface(self.image)
 
     def update(self):
-        # WaterBlock might have animation or other behaviors
         pass
 
     def interact(self, agent):

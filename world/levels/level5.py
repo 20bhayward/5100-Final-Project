@@ -24,7 +24,7 @@ class Level5(Level):
 
         # Add water
         for i in range(200, 2000, 40):
-            water = WaterBlock(i, 590)
+            water = WaterBlock(i, 530)
             self.trap_list.add(water)
             self.all_sprites_list.add(water)
 
