@@ -15,6 +15,7 @@ class Agent:
         self.velocity_x = 0  # Horizontal velocity
         self.velocity_y = 0  # Vertical velocity
         self.is_jumping = False
+        self.on_moving_platform = None  # Track a moving platform the agent might be on
 
     def move(self, action):
         if action == 0:  # Move left
@@ -44,6 +45,18 @@ class Agent:
                 self.velocity_y = 0  # Stop falling
                 break  # Stop checking once landed
 
+    def check_on_moving_platform(self, platforms):
+        """
+        Check if the agent is on a moving platform 
+        and update position accordingly.
+        """
+        self.on_moving_platform = None  # Reset the reference each frame
+        for platform in platforms:
+            if self.rect.colliderect(platform.rect):
+                print(f"Agent is colliding with platform at {platform.rect.topleft}")
+                self.on_moving_platform = platform
+                break  # Stop checking if on a platform
+
 
     def is_falling_on_top(self, obstacle):
         """
@@ -61,6 +74,11 @@ class Agent:
     def update_position(self):
         # Update the horizontal position based on velocity
         self.rect.x += self.velocity_x
+
+        # Check if on a moving platform and update position based on its movement
+        if self.on_moving_platform:
+            print("Inside moving block")
+            self.rect.x += self.on_moving_platform.speed  # Adjust according to platform speed
 
         # Reset horizontal velocity after movement
         self.velocity_x = 0

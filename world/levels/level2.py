@@ -4,6 +4,7 @@ import pygame
 from world.levels.level import Level
 from world.components.blocks.static.square_block import SquareBlock
 from world.components.blocks.static.rectangle_block import RectangleBlock
+from world.components.blocks.interactive.water_block import WaterBlock
 from world.components.blocks.interactive.moving_block import MovingBlock
 from world.components.blocks.interactive.goal_block import GoalBlock
 from world.components.blocks.interactive.trap_block import TrapBlock
@@ -20,6 +21,12 @@ class Level2(Level):
             block = SquareBlock(i, 560)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
+
+        # Water
+        for i in range(240, 1800, 40):
+            water = WaterBlock(i, 520)
+            self.trap_list.add(water)
+            self.all_sprites_list.add(water)
 
         # First gap with safe landing
         for i in range(360, 520, 40):  # Wider platform for safe landing
