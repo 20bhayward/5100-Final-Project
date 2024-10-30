@@ -11,6 +11,11 @@ from agent.agent import Agent
 from world.levels.level1 import Level1
 from world.levels.level2 import Level2
 from world.levels.level3 import Level3
+from world.levels.level4 import Level4
+from world.levels.level5 import Level5
+from world.levels.level6 import Level6
+from world.levels.level7 import Level7
+from world.levels.level8 import Level8
 from world.dqn.dqn_agent import DQNAgent
 from world.dqn.replay_buffer import ReplayBuffer
 
@@ -28,13 +33,14 @@ MOVEMENT_ACTIONS = {
 ACTION_DIM = len(MOVEMENT_ACTIONS)  # 3 actions
 
 # Colors
-BG_COLOR = (128, 128, 128)  # Gray color
+BG_COLOR = (255, 255, 255)  # Gray color
 
 class Game:
     def __init__(self, manual_control=False, level_number=1, training_mode=False, render_enabled=True, load_model=None):
         if not render_enabled:
             os.environ["SDL_VIDEODRIVER"] = "dummy"
         pygame.init()
+
         if render_enabled:
             self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
             pygame.display.set_caption("AI Agent World")
@@ -58,6 +64,7 @@ class Game:
         self.all_sprites_list = pygame.sprite.Group()
         self.all_sprites_list.add(self.level.get_all_sprites())
         self.all_sprites_list.add(self.agent)
+        self.moving_blocks = pygame.sprite.Group()
 
         self.block_list = self.level.get_blocks()
 
@@ -497,7 +504,10 @@ class Game:
         if not self.render_enabled:
             return
             
-        self.screen.fill(BG_COLOR)
+        # self.screen.fill(BG_COLOR)
+        background_image = pygame.image.load('world/assets/background-sprite.png').convert()
+        background_image = pygame.transform.scale(background_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
+        self.screen.blit(background_image, (0, 0))
         for entity in self.all_sprites_list:
             self.screen.blit(entity.image, (entity.rect.x + self.camera_x, entity.rect.y + self.camera_y))
         pygame.display.flip()
@@ -551,6 +561,11 @@ class Game:
             1: Level1,
             2: Level2,
             3: Level3,
+            4: Level4,
+            5: Level5,
+            6: Level6,
+            7: Level7,
+            8: Level8
             # Add more levels here
         }
 
