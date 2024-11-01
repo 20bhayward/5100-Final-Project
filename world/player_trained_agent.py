@@ -1,4 +1,36 @@
 import torch
+"""
+This script demonstrates how to use a pre-trained DQN agent to interact with a custom environment.
+
+Modules:
+    torch: PyTorch library for tensor computations and deep learning.
+    dqn_agent: Custom module containing the DQNAgent class.
+    gym_env: Custom module containing the RunnerEnv class.
+
+Constants:
+    state_dim (int): Dimension of the state space.
+    action_dim (int): Dimension of the action space.
+    device (torch.device): Device to run the computations on (CPU or GPU).
+
+Classes:
+    RunnerEnv: Custom environment class.
+    DQNAgent: Custom DQN agent class.
+
+Functions:
+    None
+
+Execution:
+    1. Initialize the environment and the agent.
+    2. Load the pre-trained weights into the agent.
+    3. Set the agent to evaluation mode.
+    4. Run a specified number of episodes where the agent interacts with the environment.
+    5. For each episode, reset the environment and run until the episode is done.
+    6. Choose actions based on the current state using the agent.
+    7. Step the environment and accumulate rewards.
+    8. Optionally render the environment.
+    9. Print the total reward for each episode.
+    10. Close the environment when done.
+"""
 from dqn_agent import DQNAgent  # Adjust the import based on your file structure
 from gym_env import RunnerEnv  # Import your environment
 

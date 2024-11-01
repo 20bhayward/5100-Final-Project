@@ -7,17 +7,44 @@ GROUND_LEVEL = SCREEN_HEIGHT - AGENT_SIZE
 
 # Function to spawn obstacles randomly
 def spawn_obstacle(obstacles):
+    """
+    Spawns a new obstacle with a certain probability and adds it to the obstacles list.
+
+    Args:
+        obstacles (list): The list of current obstacles in the game.
+
+    Returns:
+        None
+    """
     if random.randint(1, 100) < 6:  # Random chance of spawning
         obstacles.append(Obstacle())
 
 # Function to update obstacles
 def update_obstacles(obstacles):
+    """
+    Update the position of each obstacle in the list and remove any obstacles that have moved off-screen.
+
+    Args:
+        obstacles (list): A list of obstacle objects. Each obstacle object must have an `update` method and a `rect` attribute with a `right` property.
+    """
     for obstacle in obstacles[:]:
         obstacle.update()
         if obstacle.rect.right < 0:  # Remove obstacle if off-screen
             obstacles.remove(obstacle)
 
 def check_collisions(agent, obstacles):
+    """
+    Check for collisions between an agent and a list of obstacles.
+
+    Args:
+        agent: The agent object which has a 'rect' attribute representing its position and size,
+               and 'velocity_y' attribute representing its vertical velocity.
+        obstacles: A list of obstacle objects, each having a 'rect' attribute representing their position and size.
+
+    Returns:
+        bool: True if a side collision is detected (which should terminate the game), 
+              False if no collision or a safe landing on top of an obstacle is detected.
+    """
     for obstacle in obstacles:
         if agent.rect.colliderect(obstacle.rect):
             # Get overlap area in both horizontal and vertical directions

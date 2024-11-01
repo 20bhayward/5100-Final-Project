@@ -10,6 +10,33 @@ import os
 import time
 
 def train():
+    """
+    Train a Deep Q-Network (DQN) agent to play a platformer game.
+    This function initializes the game environment, DQN agent, and replay buffer,
+    and then runs the training loop for a specified number of episodes. During
+    each episode, the agent interacts with the environment, stores transitions
+    in the replay buffer, and trains the network using sampled experiences. The
+    function also tracks and prints training statistics, saves the best performing
+    model, and periodically updates the target network.
+    
+    Training settings:
+    - BATCH_SIZE: Number of transitions to sample from the replay buffer for training.
+    - GAMMA: Discount factor for future rewards.
+    - TARGET_UPDATE: Frequency (in episodes) to update the target network.
+    - MEMORY_SIZE: Maximum size of the replay buffer.
+    - LEARNING_RATE: Learning rate for the optimizer.
+    - EPISODES: Total number of episodes to train the agent.
+    Training stats:
+    - best_reward: Highest reward achieved during training.
+    - level_completion_count: Dictionary tracking the number of times each level is completed.
+    - episode_rewards: List of rewards for each episode.
+    The function prints training statistics every 10 episodes and saves a checkpoint
+    of the model every 100 episodes. It also decays the exploration rate of the agent
+    after each episode.
+    
+    Returns:
+        None
+    """
     # Training settings
     BATCH_SIZE = 64
     GAMMA = 0.99
@@ -113,7 +140,22 @@ def train():
             print("------------------------\n")
 
 def test_trained_agent(model_path, num_episodes=5):
-    """Test a trained model"""
+    """
+    Test a trained model on the game environment.
+    
+    Parameters:
+    model_path (str): The file path to the trained model.
+    num_episodes (int): The number of episodes to test the model. Default is 5.
+    
+    Returns:
+    None
+    
+    This function initializes the game environment and the DQN agent, loads the trained model,
+    and tests the agent for a specified number of episodes. During each episode, the agent
+    interacts with the game environment, and the total reward and level reached are printed
+    at the end of each episode.
+    """
+    
     game = Game(manual_control=False, level_number=1, training_mode=False)
     
     state_size = 8
