@@ -27,6 +27,27 @@ RED = (255, 0, 0)
 #         pygame.draw.rect(screen, RED, self.rect)
 
 class Obstacle(pygame.sprite.Sprite):
+    """
+    A class to represent an obstacle in the game world.
+
+    Attributes
+    ----------
+    x : int
+        The x-coordinate of the obstacle.
+    y : int
+        The y-coordinate of the obstacle.
+    image : pygame.Surface
+        The image representing the obstacle.
+    rect : pygame.Rect
+        The rectangular area of the obstacle.
+    mask : pygame.mask.Mask
+        The mask for pixel-perfect collision detection.
+
+    Methods
+    -------
+    update():
+        Placeholder method for future updates.
+    """
     def __init__(self, x, y):
         super().__init__()
         self.image = None
