@@ -6,6 +6,65 @@ from world.components.blocks.interactive.goal_block import GoalBlock
 AGENT_COLOR = (0, 0, 255)
 
 class Agent(pygame.sprite.Sprite):
+
+
+    """
+    A class to represent an agent in a game.
+
+    Attributes
+    ----------
+    width : int
+        The width of the agent.
+    height : int
+        The height of the agent.
+    image : pygame.Surface
+        The surface representing the agent.
+    rect : pygame.Rect
+        The rectangle representing the agent's position and size.
+    change_x : float
+        The horizontal speed of the agent.
+    change_y : float
+        The vertical speed of the agent.
+    direction : int
+        The direction of the agent's movement (-1 for left, 1 for right, 0 for no movement).
+    acceleration : float
+        The acceleration of the agent.
+    friction : float
+        The friction applied to the agent's movement.
+    max_speed_x : float
+        The maximum horizontal speed of the agent.
+    screen_height : int
+        The height of the game screen.
+    jump_speed : float
+        The speed at which the agent jumps.
+    gravity_acc : float
+        The acceleration due to gravity.
+    terminal_velocity : float
+        The maximum falling speed of the agent.
+    on_ground : bool
+        Whether the agent is on the ground.
+    mask : pygame.Mask
+        The mask for pixel-perfect collision detection.
+
+    Methods
+    -------
+    update(blocks):
+        Updates the agent's position and handles collisions with blocks.
+    accelerate():
+        Applies acceleration and friction to the agent's horizontal movement.
+    apply_gravity():
+        Applies gravity to the agent's vertical movement.
+    jump():
+        Makes the agent jump if it is on the ground.
+    collide_with_blocks(dx, dy, blocks):
+        Handles collisions with blocks.
+    go_left():
+        Sets the agent's direction to left.
+    go_right():
+        Sets the agent's direction to right.
+    stop():
+        Stops the agent's horizontal movement.
+    """
     def __init__(self, x, y, screen_height=600):
         super().__init__()
         self.width = 20
