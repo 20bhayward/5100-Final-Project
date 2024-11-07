@@ -38,7 +38,7 @@ BG_COLOR = (255, 255, 255)  # Gray color
 class Game:
     """
     A class to represent the game environment.
-    
+
     Attributes:
     -----------
     manual_control : bool
@@ -51,7 +51,7 @@ class Game:
         Flag to enable rendering of the game.
     load_model : str or None
         Path to a pre-trained model to load.
-        
+
     Methods:
     --------
     train_ai(num_episodes=1000):
@@ -101,7 +101,7 @@ class Game:
     load_level():
         Load the current level.
     """
-    
+
     def __init__(self, manual_control=False, level_number=1, training_mode=False, render_enabled=True, load_model=None):
         """
         Initialize the game environment.
@@ -146,17 +146,24 @@ class Game:
         training_steps (int): The number of training steps taken.
         target_update_freq (int): The frequency of updating the target network.
         """
-        
+
+        # Initialize pygame with the dummy video driver if render is disabled
         if not render_enabled:
             os.environ["SDL_VIDEODRIVER"] = "dummy"
+
         pygame.init()
 
+        # Set up the display
         if render_enabled:
             self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
             pygame.display.set_caption("AI Agent World")
         else:
             self.screen = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT))
-            
+
+        # Initialize pygame display even if we're not rendering
+        if not pygame.display.get_surface():
+            pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), flags=pygame.HIDDEN)
+
         self.clock = pygame.time.Clock()
         self.running = True
         self.manual_control = manual_control
@@ -169,7 +176,7 @@ class Game:
         # Create the agent
         self.agent = Agent(50, SCREEN_HEIGHT - 80, screen_height=SCREEN_HEIGHT)
         self.load_level()
-        
+
         # Sprite groups
         self.all_sprites_list = pygame.sprite.Group()
         self.all_sprites_list.add(self.level.get_all_sprites())
@@ -195,7 +202,7 @@ class Game:
         self.successful_completion_times = []  # Track only successful runs
         self.best_completion_time = float('inf')
         self.current_run_steps = 0
-        self.last_action_index = 0 
+        self.last_action_index = 0
 
         if training_mode:
             # Initialize DQN components
@@ -215,56 +222,46 @@ class Game:
 
     def train_ai(self, num_episodes=1000):
         """
-        Main training loop focusing on single level mastery.
-        Args:
-            num_episodes (int): The number of episodes to train the AI. Default is 1000.
-        Description:
-            This method initiates the training process for the AI agent. It runs a loop for the specified number of episodes,
-            where each episode consists of multiple steps. During each step, the AI agent selects an action based on the current
-            state, performs the action, and receives a reward. The experience is stored in a replay buffer, and the agent is 
-            trained periodically using batches from this buffer.
-            The training loop continues until the specified number of episodes is reached or the training is manually stopped
-            by the user. The progress is periodically saved, and the epsilon value for the epsilon-greedy policy is decayed 
-            after each episode.
-        Attributes:
-            episode (int): The current episode number.
-            training_active (bool): Flag indicating if the training is active.
-            episode_steps (int): The number of steps taken in the current episode.
-            current_run_steps (int): The number of steps taken in the current run.
-            render_enabled (bool): Flag indicating if rendering is enabled.
-            best_completion_time (float): The best completion time achieved so far.
-            replay_buffer (ReplayBuffer): The buffer storing experiences for training.
-            batch_size (int): The size of the batch used for training.
-            dqn_agent (DQNAgent): The AI agent being trained.
-            clock (pygame.time.Clock): The clock object to control the frame rate.
-        Prints:
-            Progress information including episode number, steps taken, reward obtained, current epsilon value, and best 
-            completion time.
-        Saves:
-            Periodically saves the agent's progress and training statistics to files.
+        Main training loop with explicit episode limit and better controls.
         """
-        
         episode = 0
         self.training_active = True
-        
-        print(f"Starting training on level {self.level_number}")
-        print("Press 'q' at any time to stop training...")
 
-        while self.training_active:
+        print(f"Starting training on level {self.level_number}")
+        print("Controls:")
+        print("- Press 'q' to quit training")
+        print("- Press 's' to save current progress")
+        print(f"Will train for {num_episodes} episodes unless stopped...")
+
+        while self.training_active and episode < num_episodes:
             episode += 1
             self.reset_episode()
             episode_reward = 0
-            self.episode_steps = 0  # Reset episode steps
+            self.episode_steps = 0
 
             while self.running and self.current_run_steps < self.max_steps:
-                self.events()
+                # Handle events - check for quit
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        self.training_active = False
+                        break
+                    elif event.type == pygame.KEYDOWN:
+                        if event.key == pygame.K_q:
+                            print("\nStopping training...")
+                            self.training_active = False
+                            break
+                        elif event.key == pygame.K_s:
+                            print("\nManually saving progress...")
+                            self.save_training_stats()
+                            self.dqn_agent.save(f"checkpoint_level{self.level_number}_ep{episode}.pth")
+
+                if not self.training_active:
+                    break
 
                 state = self.get_state()
                 action = self.dqn_agent.choose_action(state)
-
                 self.handle_ai_action(action)
                 self.update()
-
                 next_state = self.get_state()
                 reward = self.get_reward()
                 done = not self.running
@@ -281,62 +278,92 @@ class Game:
                 if self.render_enabled:
                     self.draw()
 
-                if done or not self.training_active:
-                    break  # Exit the inner loop if training is no longer active
+                if done:
+                    break
 
-            # Print progress
-            print(f"Episode {episode}:")
-            print(f"  Steps: {self.current_run_steps}")
-            print(f"  Reward: {episode_reward:.2f}")
-            print(f"  Current ε: {self.dqn_agent.epsilon:.3f}")
-            if self.best_completion_time != float('inf'):
-                print(f"  Best Completion Time: {self.best_completion_time}")
-            print("------------------------")
+            # Always store the episode statistics
+            episode_data = {
+                'episode': episode,
+                'level': self.level_number,
+                'reward': float(episode_reward),  # Convert to float to ensure it's serializable
+                'steps': self.current_run_steps,
+                'epsilon': float(self.dqn_agent.epsilon)  # Convert to float to ensure it's serializable
+            }
+            self.training_stats.append(episode_data)
 
-            # Save progress periodically
+            # Print progress every 10 episodes
+            if episode % 10 == 0:
+                self.save_training_stats()  # Save more frequently
+                print(f"\nEpisode {episode}/{num_episodes}:")
+                print(f"  Steps: {self.current_run_steps}")
+                print(f"  Reward: {episode_reward:.2f}")
+                print(f"  Current ε: {self.dqn_agent.epsilon:.3f}")
+                if self.best_completion_time != float('inf'):
+                    print(f"  Best Completion Time: {self.best_completion_time}")
+                print("------------------------")
+
+            # Save model checkpoint every 100 episodes
             if episode % 100 == 0:
                 self.dqn_agent.save(f"checkpoint_level{self.level_number}_ep{episode}.pth")
-                self.save_training_stats()
 
             self.dqn_agent.decay_epsilon()
-            self.clock.tick(60)
-            # Check if training was stopped
-            if not self.training_active:
-                print("Training terminated by user.")
-                self.dqn_agent.save(f"checkpoint_level{self.level_number}_ep{episode}.pth")  # Save progress
-                self.save_training_stats()
-                pygame.quit()
-                sys.exit()
+
+        # Always save at the end of training
+        print("\nTraining finished!")
+        print(f"Completed {episode} episodes")
+        self.save_training_stats()
+        self.dqn_agent.save(f"final_model_level{self.level_number}.pth")
 
     def save_training_stats(self):
         """
-        Save training statistics to a file.
-        This method writes the training statistics stored in `self.training_stats`
-        to a file named 'training_results.txt'. The file will contain a header
-        followed by the statistics for each episode, including the episode number,
-        level, reward, steps, and epsilon value.
-        The format of the file will be:
-        Training Results
-        ===============
-        Episode <episode_number>:
-          Level: <level>
-          Reward: <reward>
-          Steps: <steps>
-          Epsilon: <epsilon>
-        ---------------
+        Enhanced version of save_training_stats with better error handling
         """
-        
-        with open('training_results.txt', 'w') as f:
-            f.write("Training Results\n")
-            f.write("===============\n\n")
-            
-            for stat in self.training_stats:
-                f.write(f"Episode {stat['episode']}:\n")
-                f.write(f"  Level: {stat['level']}\n")
-                f.write(f"  Reward: {stat['reward']:.2f}\n")
-                f.write(f"  Steps: {stat['steps']}\n")
-                f.write(f"  Epsilon: {stat['epsilon']:.3f}\n")
+        if not self.training_stats:
+            print("Warning: No training stats to save!")
+            return
+
+        try:
+            # Save as TXT
+            with open('training_results.txt', 'w') as f:
+                f.write("Training Results\n")
+                f.write("===============\n\n")
+
+                # Calculate summary statistics
+                total_episodes = len(self.training_stats)
+                avg_reward = sum(stat['reward'] for stat in self.training_stats) / total_episodes
+                avg_steps = sum(stat['steps'] for stat in self.training_stats) / total_episodes
+                best_reward = max(stat['reward'] for stat in self.training_stats)
+
+                # Write summary
+                f.write(f"Summary Statistics\n")
+                f.write(f"Total Episodes: {total_episodes}\n")
+                f.write(f"Average Reward: {avg_reward:.2f}\n")
+                f.write(f"Average Steps: {avg_steps:.2f}\n")
+                f.write(f"Best Reward: {best_reward:.2f}\n")
+                f.write(f"Best Completion Time: {self.best_completion_time if self.best_completion_time != float('inf') else 'N/A'}\n\n")
+
+                # Write episode details
+                f.write("Episode Details\n")
                 f.write("---------------\n")
+                for stat in self.training_stats:
+                    f.write(f"Episode {stat['episode']}:\n")
+                    f.write(f"  Level: {stat['level']}\n")
+                    f.write(f"  Reward: {stat['reward']:.2f}\n")
+                    f.write(f"  Steps: {stat['steps']}\n")
+                    f.write(f"  Epsilon: {stat['epsilon']:.3f}\n")
+                    f.write("---------------\n")
+
+            # Save as CSV
+            import pandas as pd
+            df = pd.DataFrame(self.training_stats)
+            df.to_csv('training_results.csv', index=False)
+
+            print(f"Successfully saved {len(self.training_stats)} training episodes to files")
+
+        except Exception as e:
+            print(f"Error saving training stats: {e}")
+            import traceback
+            traceback.print_exc()
 
     def store_experience(self, state, action, reward, next_state, done):
         """
@@ -352,21 +379,21 @@ class Game:
         Returns:
             None
         """
-        
+
         self.replay_buffer.store(state, action, reward, next_state, done)
 
     def train_step(self):
         """
         Perform one training step for the DQN agent.
-        This method samples a random batch from the replay buffer and uses it to 
-        train the DQN agent. If the replay buffer does not have enough samples 
-        to form a batch, the method returns immediately. After training, the 
+        This method samples a random batch from the replay buffer and uses it to
+        train the DQN agent. If the replay buffer does not have enough samples
+        to form a batch, the method returns immediately. After training, the
         target network is updated periodically based on the specified frequency.
-        
+
         Returns:
             None
         """
-       
+
         if self.replay_buffer.size() < self.batch_size:
             return
 
@@ -383,7 +410,7 @@ class Game:
         )
 
         self.training_steps += 1
-        
+
         # Update target network periodically
         if self.training_steps % self.target_update_freq == 0:
             self.dqn_agent.update_target_network()
@@ -492,7 +519,7 @@ class Game:
         distance = ((goal.rect.centerx - self.agent.rect.centerx) ** 2 +
                     (goal.rect.centery - self.agent.rect.centery) ** 2) ** 0.5
         return distance
-    
+
     def get_nearest_block_info(self):
             """
             Determines the distance to the nearest block in front of the agent and whether there is an obstacle in front.
@@ -521,7 +548,7 @@ class Game:
                 distance = 500.0  # Max look-ahead distance
 
             return distance, obstacle_in_front
-        
+
     def get_reward(self):
         """
         Calculate and return the reward for the agent based on its current state and actions.
@@ -588,8 +615,8 @@ class Game:
             print(f"Average completion time: {avg_time:.1f} steps")
             self.running = False
 
-        return reward        
-    
+        return reward
+
     def is_trap_ahead(self):
         """
         Checks if there is a trap ahead of the agent.
@@ -619,8 +646,8 @@ class Game:
         Calculate the distance to the nearest trap in the agent's look-ahead path.
 
         This method creates a rectangular area in front of the agent to check for any traps
-        within a specified maximum look-ahead distance. It then calculates the distance to 
-        the nearest trap within this area. If no traps are found, it returns the maximum 
+        within a specified maximum look-ahead distance. It then calculates the distance to
+        the nearest trap within this area. If no traps are found, it returns the maximum
         look-ahead distance.
 
         Returns:
@@ -645,7 +672,7 @@ class Game:
         Execute one time step within the environment.
         Parameters:
         action (int): The action to be executed in the environment.
-        
+
         Returns:
         tuple: A tuple containing:
             - state (object): The current state of the environment.
@@ -653,7 +680,7 @@ class Game:
             - done (bool): A flag indicating whether the episode has ended.
             - info (dict): Additional information about the environment.
         """
-    
+
         if not self.running:
             return self.get_state(), 0, True, {}
 
@@ -662,11 +689,11 @@ class Game:
 
         # Update game state
         self.update()
-        
+
         # Get reward and next state
         reward = self.get_reward()
         state = self.get_state()
-        
+
         # Check if episode is done
         self.episode_steps += 1
         done = not self.running or self.episode_steps >= self.max_steps
@@ -676,7 +703,7 @@ class Game:
     def handle_ai_action(self, action_index):
         """
         Handles the AI action based on the given action index.
-        
+
         Parameters:
         action_index (int): The index of the action to be performed by the AI.
         The function retrieves the movement command corresponding to the action index
@@ -689,7 +716,7 @@ class Game:
         # Get the movement command from MOVEMENT_ACTIONS
         command = MOVEMENT_ACTIONS[action_index]
         self.last_action_index = action_index  # Store last action
-        
+
         # Set horizontal movement
         if command == 'left':
             self.agent.go_left()
@@ -718,7 +745,7 @@ class Game:
         Returns:
             tuple: The initial state of the environment after reset.
         """
-    
+
         self.agent.rect.x = 50
         self.agent.rect.y = SCREEN_HEIGHT - 80
         self.agent.change_x = 0
@@ -737,7 +764,7 @@ class Game:
 
         This method will raise a ValueError if the game is attempted to be run with visualization disabled.
         The game loop will continue to run while the `self.running` flag is True, processing events, updating
-        the game state, drawing the game, and limiting the frame rate to 60 FPS. Once the loop exits, the 
+        the game state, drawing the game, and limiting the frame rate to 60 FPS. Once the loop exits, the
         `self.quit()` method is called to perform any necessary cleanup.
         """
         if not self.render_enabled:
@@ -746,7 +773,7 @@ class Game:
             self.events()
             self.update()
             self.draw()
-            self.clock.tick(60)  # Limit to 60 FPS
+            # self.clock.tick(60)  # Limit to 60 FPS
         self.quit()
 
     def update(self):
@@ -814,15 +841,15 @@ class Game:
         Handles the completion of a level in the game.
         If the game is in training mode, the function returns immediately without any action.
         Otherwise, it prints a message indicating the current level has been completed.
-        If there are more levels to play, it increments the level number, prints a message 
+        If there are more levels to play, it increments the level number, prints a message
         indicating the next level is loading, and calls the load_level method to load the next level.
-        If the current level is the last level, it prints a congratulatory message and sets 
+        If the current level is the last level, it prints a congratulatory message and sets
         the running attribute to False, indicating the game has ended.
         """
         if self.training_mode:
             return
         print(f"Level {self.level_number} Completed!")
-        
+
         if self.level_number < self.max_levels:
             # Move to next level
             self.level_number += 1
@@ -840,13 +867,13 @@ class Game:
         It then iterates through all sprites in the `all_sprites_list` and blits
         each sprite onto the screen at its respective position adjusted by the
         camera offsets. Finally, it updates the display.
-        
+
         Returns:
             None
         """
         if not self.render_enabled:
             return
-            
+
         # self.screen.fill(BG_COLOR)
         background_image = pygame.image.load('world/assets/background-sprite.png').convert()
         background_image = pygame.transform.scale(background_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -854,7 +881,7 @@ class Game:
         for entity in self.all_sprites_list:
             self.screen.blit(entity.image, (entity.rect.x + self.camera_x, entity.rect.y + self.camera_y))
         pygame.display.flip()
-    
+
     def quit(self):
         """
         Quits the game by shutting down the Pygame library and exiting the program.
@@ -870,7 +897,7 @@ class Game:
         Updates the camera position to center on the agent while respecting the level bounds.
         The camera position is calculated such that the agent is centered on the screen.
         The camera is then adjusted to ensure it does not show areas outside the level bounds.
-        
+
         Attributes:
             self.agent.rect.x (int): The x-coordinate of the agent's rectangle.
             self.agent.rect.y (int): The y-coordinate of the agent's rectangle.
@@ -884,19 +911,19 @@ class Game:
         # Calculate target camera position (centered on agent)
         target_x = -self.agent.rect.x + SCREEN_WIDTH // 2
         target_y = -self.agent.rect.y + SCREEN_HEIGHT // 2
-        
+
         # Apply camera bounds
         # Left/Right bounds
         target_x = min(0, target_x)
         target_x = max(-(self.level.width - SCREEN_WIDTH), target_x)
-        
+
         # Top/Bottom bounds
         target_y = min(0, target_y)  # Don't show above top of level
         target_y = max(-(self.level.height - SCREEN_HEIGHT), target_y)  # Don't show below bottom of level
-        
+
         self.camera_x = target_x
         self.camera_y = target_y
-        
+
     def events(self):
         """
         Handles the events in the game loop.
@@ -979,6 +1006,7 @@ if __name__ == "__main__":
     parser.add_argument('--t', action='store_true', help='Enable AI training mode.')
     parser.add_argument('--r', action='store_true', help='Enable visualization during training.')
     parser.add_argument('--lm', type=str, help='Load Model: Path to the trained model file.')
+    parser.add_argument('--episodes', type=int, default=1000, help='Number of episodes to train')
 
     args = parser.parse_args()
 
@@ -989,8 +1017,8 @@ if __name__ == "__main__":
         render_enabled=args.r if args.t else True,
         load_model=args.lm
     )
-    
+
     if args.t:
-        game.train_ai()
+        game.train_ai(num_episodes=args.episodes)
     else:
         game.run()
