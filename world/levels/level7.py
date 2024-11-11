@@ -30,11 +30,14 @@ class Level7(Level):
 
         # Vertical section with staggered platforms
         platforms = [
-            (230, 500),   # First step up, left
-            (310, 430),   # Step up, right
-            (230, 360),   # Step up, left
-            (310, 290),   # Step up, right
-            (230, 220)    # Final step up, left
+            (230, 520),   # First step up, left
+            (310, 470),   # Step up, right
+            (230, 420),   # Step up, left
+            (310, 370),   # Step up, right
+            (230, 320),   # Step up, left
+            (310, 270),   # Step up, right
+            (230, 220),   # Step up, left
+            (310, 170),   # Final step up, right
         ]
         
         for x, y in platforms:

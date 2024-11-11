@@ -6,7 +6,7 @@ from world.components.blocks.interactive.goal_block import GoalBlock
 AGENT_COLOR = (0, 0, 255)
 
 class Agent(pygame.sprite.Sprite):
-    def __init__(self, x, y, screen_height=600):
+    def __init__(self, x, y, screen_height=600, max_jump_height=140):
         super().__init__()
         self.width = 20
         self.height = 20
@@ -26,10 +26,11 @@ class Agent(pygame.sprite.Sprite):
         self.screen_height = screen_height
 
         # Jump physics
-        self.jump_speed = -7 
         self.gravity_acc = 0.4
         self.terminal_velocity = 3
         self.on_ground = False  # Initialize on_ground attribute
+        # self.max_jump_height = max_jump_height
+        self.jump_speed = -7
 
         self.mask = pygame.mask.from_surface(self.image)
 

@@ -41,23 +41,23 @@ class Level3(Level):
             self.all_sprites_list.add(block)
 
         # Third platform introducing single trap
-        for i in range(720, 880, 40):
+        for i in range(720, 900, 40):
             block = SquareBlock(i, 520)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
         
         # Single trap to introduce hazards
-        trap = TrapBlock(800, 480)
+        trap = TrapBlock(800, 500)
         self.trap_list.add(trap)
         self.all_sprites_list.add(trap)
 
         # Vertical section with staggered platforms
         platforms = [
-            (960, 520),   # Start of vertical section
-            (1040, 460),  # First step up
+            (960, 500),   # Start of vertical section
+            (1040, 450),  # First step up
             (960, 400),   # Second step up
-            (1040, 340),  # Third step up
-            (960, 280),   # Final platform
+            (1040, 350),  # Third step up
+            (960, 300),   # Final platform
         ]
         
         for x, y in platforms:
@@ -67,14 +67,14 @@ class Level3(Level):
                 self.all_sprites_list.add(block)
 
         # Upper section with traps
-        for i in range(1120, 1440, 40):
+        for i in range(1070, 1440, 40):
             block = SquareBlock(i, 280)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
         # Traps on upper section with safe spots
-        for i in range(1160, 1400, 120):
-            trap = TrapBlock(i, 240)
+        for i in range(1170, 1400, 120):
+            trap = TrapBlock(i, 260)
             self.trap_list.add(trap)
             self.all_sprites_list.add(trap)
 
@@ -100,8 +100,8 @@ class Level3(Level):
             self.all_sprites_list.add(block)
 
         # Final traps
-        for i in range(1640, 1760, 120):
-            trap = TrapBlock(i, 400)
+        for i in range(1620, 1740, 120):
+            trap = TrapBlock(i, 380)
             self.trap_list.add(trap)
             self.all_sprites_list.add(trap)
 
