@@ -14,7 +14,68 @@ SCREEN_HEIGHT = 400
 WHITE = (255, 255, 255)
 
 class RunnerEnv(gym.Env):
+    """
+    RunnerEnv is a custom OpenAI Gym environment for a 2D runner game using Pygame.
+
+    Attributes:
+        action_space (gym.spaces.Discrete): Action space representing 5 discrete actions:
+            0: Move left
+            1: Move right
+            2: Jump
+            3: Jump + Move Left
+            4: Jump + Move Right
+        observation_space (gym.spaces.Box): Observation space representing the state of the environment.
+        screen_width (int): Width of the game screen.
+        screen_height (int): Height of the game screen.
+        screen (pygame.Surface): Pygame display surface.
+        clock (pygame.time.Clock): Pygame clock to control the frame rate.
+        agent (Agent): The agent controlled by the player.
+        obstacles (list): List of obstacle objects in the game.
+        score (int): The current score of the player.
+        done (bool): Flag indicating whether the current episode is done.
+
+    Methods:
+        __init__(): Initializes the environment and its attributes.
+        reset(): Resets the environment to its initial state.
+        step(action): Executes a step in the environment based on the given action.
+        _calculate_reward(done): Calculates the reward based on the agent's actions and environment state.
+        render(mode='human'): Renders the game screen.
+        close(): Closes the Pygame window.
+        _get_obs(): Returns the current observation of the environment.
+    """
+        
     def __init__(self):
+        """
+        Initialize the RunnerEnv environment.
+
+        This method sets up the action space, observation space, and initializes
+        the game elements including the screen, agent, and obstacles.
+
+        Action space:
+            - Discrete(5): 
+                0: move left
+                1: move right
+                2: jump
+                3: jump + move left
+                4: jump + move right
+
+        Observation space:
+            - Box(low, high, dtype=np.float32): 
+                - Agent x position
+                - Agent y position
+                - Agent velocity
+                - Nearest obstacle x position
+                - Nearest obstacle y position
+                - Nearest obstacle height
+
+        Initializes:
+            - Pygame and screen with specified width and height.
+            - Agent object.
+            - List of obstacles.
+            - Score counter.
+            - Done flag to indicate if the game is over.
+            - Pygame clock for controlling the frame rate.
+        """
         super(RunnerEnv, self).__init__()
 
         # Define action space and observation space
@@ -41,6 +102,16 @@ class RunnerEnv(gym.Env):
         self.clock = pygame.time.Clock()
 
     def reset(self):
+        """
+        Resets the environment to its initial state.
+
+        This method resets the agent, clears the obstacles, sets the score to 0,
+        and marks the environment as not done. It returns the initial observation
+        of the environment.
+
+        Returns:
+            object: The initial observation of the environment.
+        """
         self.agent = Agent()  # Reset agent
         self.obstacles = []  # Reset obstacles
         self.score = 0
@@ -48,6 +119,24 @@ class RunnerEnv(gym.Env):
         return self._get_obs()
 
     def step(self, action):
+        """
+        Execute one time step within the environment.
+
+        Parameters:
+        action (int): The action to be taken by the agent. 
+                      0 - Move left
+                      1 - Move right
+                      2 - Jump
+                      3 - Jump + Move Left
+                      4 - Jump + Move Right
+
+        Returns:
+        tuple: A tuple containing:
+            - observation (object): The current observation of the environment.
+            - reward (float): The reward obtained from taking the action.
+            - done (bool): Whether the episode has ended.
+            - info (dict): Additional information about the environment.
+        """
         if self.done:
             return self.reset()  # Consider separating logic here
 
@@ -94,8 +183,24 @@ class RunnerEnv(gym.Env):
 
     def _calculate_reward(self, done):
         """
-        Calculate the reward based on the agent's actions and environment state.
+        Calculate the reward for the agent based on its current state and actions.
+
+        Parameters:
+        done (bool): A flag indicating whether the episode is done (e.g., the agent hit an obstacle).
+
+        Returns:
+        int: The calculated reward based on the agent's actions and proximity to obstacles.
+
+        Reward Structure:
+        - If the episode is done (agent hit an obstacle), return a penalty of -20.
+        - If the agent successfully jumps over an obstacle, return a reward of 50.
+        - If the agent jumps within the ideal distance window (20 < distance < 40), return a reward of 1.
+        - If the agent moves closer to an obstacle when too far (distance > 40), return a reward of 1.
+        - If the agent backs up when too close to an obstacle (0 < distance < 20), return a reward of 2.
+        - If the agent jumps unnecessarily (distance > 40), return a small penalty of -5.
+        - Otherwise, return a neutral reward of 0.
         """
+
         if done:
             return -20  # Higher penalty for hitting an obstacle
 
@@ -135,6 +240,21 @@ class RunnerEnv(gym.Env):
         return 0
 
     def render(self, mode='human'):
+        """
+        Renders the current state of the environment.
+
+        Args:
+            mode (str): The mode in which to render the environment. Default is 'human'.
+
+        This method performs the following steps:
+        1. Fills the screen with a white background.
+        2. Draws the agent on the screen.
+        3. Draws all obstacles on the screen.
+        4. Flips the display to update the rendered content.
+        5. Updates the display.
+        6. Handles events such as window closing.
+        7. Maintains a frame rate of 60 frames per second.
+        """
         self.screen.fill(WHITE)
         self.agent.draw(self.screen)
         for obstacle in self.obstacles:
@@ -152,9 +272,32 @@ class RunnerEnv(gym.Env):
 
 
     def close(self):
+        """
+        Shuts down the Pygame library and closes the game window.
+        """
         pygame.quit()
 
     def _get_obs(self):
+        """
+        Get the current observation of the environment.
+
+        This method returns the state of the environment as a numpy array, which includes:
+        - The agent's x-coordinate.
+        - The agent's y-coordinate.
+        - The agent's velocity in the x direction.
+        - The agent's velocity in the y direction.
+        - The distance to the nearest obstacle in the x direction.
+        - The y-coordinate of the nearest obstacle.
+        - The height of the nearest obstacle.
+
+        If there are no obstacles, the distance to the nearest obstacle is set to the screen width,
+        the y-coordinate of the nearest obstacle is set to the screen height, and the height of the
+        nearest obstacle is set to 0.
+
+        Returns:
+            np.ndarray: A numpy array containing the agent's position, velocity, and information
+                        about the nearest obstacle.
+        """
         nearest_obstacle = None
         if self.obstacles:
             nearest_obstacle = min(self.obstacles, key=lambda o: o.rect.x)

@@ -1,3 +1,3012 @@
 Training Results
 ===============
 
+Summary Statistics
+Total Episodes: 500
+Average Reward: 1142.05
+Average Steps: 534.91
+Best Reward: 1334.03
+Best Completion Time: 235
+
+Episode Details
+---------------
+Episode 1:
+  Level: 1
+  Reward: -658.21
+  Steps: 5000
+  Epsilon: 1.000
+---------------
+Episode 2:
+  Level: 1
+  Reward: -659.22
+  Steps: 5000
+  Epsilon: 0.995
+---------------
+Episode 3:
+  Level: 1
+  Reward: -631.58
+  Steps: 5000
+  Epsilon: 0.990
+---------------
+Episode 4:
+  Level: 1
+  Reward: -566.77
+  Steps: 5000
+  Epsilon: 0.985
+---------------
+Episode 5:
+  Level: 1
+  Reward: -553.37
+  Steps: 5000
+  Epsilon: 0.980
+---------------
+Episode 6:
+  Level: 1
+  Reward: 167.20
+  Steps: 3862
+  Epsilon: 0.975
+---------------
+Episode 7:
+  Level: 1
+  Reward: 101.66
+  Steps: 4032
+  Epsilon: 0.970
+---------------
+Episode 8:
+  Level: 1
+  Reward: -616.39
+  Steps: 5000
+  Epsilon: 0.966
+---------------
+Episode 9:
+  Level: 1
+  Reward: -542.88
+  Steps: 5000
+  Epsilon: 0.961
+---------------
+Episode 10:
+  Level: 1
+  Reward: 252.21
+  Steps: 3080
+  Epsilon: 0.956
+---------------
+Episode 11:
+  Level: 1
+  Reward: 138.35
+  Steps: 4094
+  Epsilon: 0.951
+---------------
+Episode 12:
+  Level: 1
+  Reward: 249.05
+  Steps: 3445
+  Epsilon: 0.946
+---------------
+Episode 13:
+  Level: 1
+  Reward: 180.28
+  Steps: 3700
+  Epsilon: 0.942
+---------------
+Episode 14:
+  Level: 1
+  Reward: 346.57
+  Steps: 2644
+  Epsilon: 0.937
+---------------
+Episode 15:
+  Level: 1
+  Reward: 301.36
+  Steps: 2831
+  Epsilon: 0.932
+---------------
+Episode 16:
+  Level: 1
+  Reward: 399.21
+  Steps: 2106
+  Epsilon: 0.928
+---------------
+Episode 17:
+  Level: 1
+  Reward: 447.69
+  Steps: 1670
+  Epsilon: 0.923
+---------------
+Episode 18:
+  Level: 1
+  Reward: 315.11
+  Steps: 2908
+  Epsilon: 0.918
+---------------
+Episode 19:
+  Level: 1
+  Reward: 390.57
+  Steps: 2267
+  Epsilon: 0.914
+---------------
+Episode 20:
+  Level: 1
+  Reward: 365.51
+  Steps: 2335
+  Epsilon: 0.909
+---------------
+Episode 21:
+  Level: 1
+  Reward: 457.00
+  Steps: 1598
+  Epsilon: 0.905
+---------------
+Episode 22:
+  Level: 1
+  Reward: 491.66
+  Steps: 1375
+  Epsilon: 0.900
+---------------
+Episode 23:
+  Level: 1
+  Reward: 397.08
+  Steps: 2154
+  Epsilon: 0.896
+---------------
+Episode 24:
+  Level: 1
+  Reward: 505.84
+  Steps: 1216
+  Epsilon: 0.891
+---------------
+Episode 25:
+  Level: 1
+  Reward: 536.46
+  Steps: 1149
+  Epsilon: 0.887
+---------------
+Episode 26:
+  Level: 1
+  Reward: 454.47
+  Steps: 1767
+  Epsilon: 0.882
+---------------
+Episode 27:
+  Level: 1
+  Reward: 464.89
+  Steps: 1742
+  Epsilon: 0.878
+---------------
+Episode 28:
+  Level: 1
+  Reward: 519.16
+  Steps: 1155
+  Epsilon: 0.873
+---------------
+Episode 29:
+  Level: 1
+  Reward: 505.92
+  Steps: 1303
+  Epsilon: 0.869
+---------------
+Episode 30:
+  Level: 1
+  Reward: 489.78
+  Steps: 1336
+  Epsilon: 0.865
+---------------
+Episode 31:
+  Level: 1
+  Reward: 530.74
+  Steps: 1043
+  Epsilon: 0.860
+---------------
+Episode 32:
+  Level: 1
+  Reward: 499.52
+  Steps: 1291
+  Epsilon: 0.856
+---------------
+Episode 33:
+  Level: 1
+  Reward: 505.10
+  Steps: 1327
+  Epsilon: 0.852
+---------------
+Episode 34:
+  Level: 1
+  Reward: 528.51
+  Steps: 1168
+  Epsilon: 0.848
+---------------
+Episode 35:
+  Level: 1
+  Reward: 485.31
+  Steps: 1406
+  Epsilon: 0.843
+---------------
+Episode 36:
+  Level: 1
+  Reward: 507.31
+  Steps: 1255
+  Epsilon: 0.839
+---------------
+Episode 37:
+  Level: 1
+  Reward: 620.74
+  Steps: 927
+  Epsilon: 0.835
+---------------
+Episode 38:
+  Level: 1
+  Reward: 530.25
+  Steps: 1108
+  Epsilon: 0.831
+---------------
+Episode 39:
+  Level: 1
+  Reward: 523.00
+  Steps: 1145
+  Epsilon: 0.827
+---------------
+Episode 40:
+  Level: 1
+  Reward: 514.79
+  Steps: 1176
+  Epsilon: 0.822
+---------------
+Episode 41:
+  Level: 1
+  Reward: 612.68
+  Steps: 926
+  Epsilon: 0.818
+---------------
+Episode 42:
+  Level: 1
+  Reward: 594.41
+  Steps: 935
+  Epsilon: 0.814
+---------------
+Episode 43:
+  Level: 1
+  Reward: 530.88
+  Steps: 1117
+  Epsilon: 0.810
+---------------
+Episode 44:
+  Level: 1
+  Reward: 644.80
+  Steps: 895
+  Epsilon: 0.806
+---------------
+Episode 45:
+  Level: 1
+  Reward: 508.66
+  Steps: 1155
+  Epsilon: 0.802
+---------------
+Episode 46:
+  Level: 1
+  Reward: 555.57
+  Steps: 989
+  Epsilon: 0.798
+---------------
+Episode 47:
+  Level: 1
+  Reward: 814.57
+  Steps: 745
+  Epsilon: 0.794
+---------------
+Episode 48:
+  Level: 1
+  Reward: 899.47
+  Steps: 663
+  Epsilon: 0.790
+---------------
+Episode 49:
+  Level: 1
+  Reward: 885.35
+  Steps: 680
+  Epsilon: 0.786
+---------------
+Episode 50:
+  Level: 1
+  Reward: 721.60
+  Steps: 823
+  Epsilon: 0.782
+---------------
+Episode 51:
+  Level: 1
+  Reward: 911.95
+  Steps: 646
+  Epsilon: 0.778
+---------------
+Episode 52:
+  Level: 1
+  Reward: 656.69
+  Steps: 892
+  Epsilon: 0.774
+---------------
+Episode 53:
+  Level: 1
+  Reward: 899.59
+  Steps: 665
+  Epsilon: 0.771
+---------------
+Episode 54:
+  Level: 1
+  Reward: 772.89
+  Steps: 782
+  Epsilon: 0.767
+---------------
+Episode 55:
+  Level: 1
+  Reward: 936.46
+  Steps: 628
+  Epsilon: 0.763
+---------------
+Episode 56:
+  Level: 1
+  Reward: 815.34
+  Steps: 744
+  Epsilon: 0.759
+---------------
+Episode 57:
+  Level: 1
+  Reward: 741.75
+  Steps: 797
+  Epsilon: 0.755
+---------------
+Episode 58:
+  Level: 1
+  Reward: 953.75
+  Steps: 609
+  Epsilon: 0.751
+---------------
+Episode 59:
+  Level: 1
+  Reward: 819.02
+  Steps: 742
+  Epsilon: 0.748
+---------------
+Episode 60:
+  Level: 1
+  Reward: 991.83
+  Steps: 576
+  Epsilon: 0.744
+---------------
+Episode 61:
+  Level: 1
+  Reward: 972.47
+  Steps: 594
+  Epsilon: 0.740
+---------------
+Episode 62:
+  Level: 1
+  Reward: 884.16
+  Steps: 678
+  Epsilon: 0.737
+---------------
+Episode 63:
+  Level: 1
+  Reward: 975.76
+  Steps: 586
+  Epsilon: 0.733
+---------------
+Episode 64:
+  Level: 1
+  Reward: 1056.31
+  Steps: 513
+  Epsilon: 0.729
+---------------
+Episode 65:
+  Level: 1
+  Reward: 869.99
+  Steps: 690
+  Epsilon: 0.726
+---------------
+Episode 66:
+  Level: 1
+  Reward: 824.01
+  Steps: 732
+  Epsilon: 0.722
+---------------
+Episode 67:
+  Level: 1
+  Reward: 866.46
+  Steps: 693
+  Epsilon: 0.718
+---------------
+Episode 68:
+  Level: 1
+  Reward: 910.68
+  Steps: 652
+  Epsilon: 0.715
+---------------
+Episode 69:
+  Level: 1
+  Reward: 1047.12
+  Steps: 522
+  Epsilon: 0.711
+---------------
+Episode 70:
+  Level: 1
+  Reward: 928.81
+  Steps: 631
+  Epsilon: 0.708
+---------------
+Episode 71:
+  Level: 1
+  Reward: 902.76
+  Steps: 655
+  Epsilon: 0.704
+---------------
+Episode 72:
+  Level: 1
+  Reward: 889.88
+  Steps: 662
+  Epsilon: 0.701
+---------------
+Episode 73:
+  Level: 1
+  Reward: 1065.07
+  Steps: 498
+  Epsilon: 0.697
+---------------
+Episode 74:
+  Level: 1
+  Reward: 1016.63
+  Steps: 544
+  Epsilon: 0.694
+---------------
+Episode 75:
+  Level: 1
+  Reward: 910.44
+  Steps: 643
+  Epsilon: 0.690
+---------------
+Episode 76:
+  Level: 1
+  Reward: 982.86
+  Steps: 584
+  Epsilon: 0.687
+---------------
+Episode 77:
+  Level: 1
+  Reward: 1006.58
+  Steps: 561
+  Epsilon: 0.683
+---------------
+Episode 78:
+  Level: 1
+  Reward: 1081.68
+  Steps: 485
+  Epsilon: 0.680
+---------------
+Episode 79:
+  Level: 1
+  Reward: 922.11
+  Steps: 634
+  Epsilon: 0.676
+---------------
+Episode 80:
+  Level: 1
+  Reward: 963.80
+  Steps: 595
+  Epsilon: 0.673
+---------------
+Episode 81:
+  Level: 1
+  Reward: 895.78
+  Steps: 659
+  Epsilon: 0.670
+---------------
+Episode 82:
+  Level: 1
+  Reward: 1117.26
+  Steps: 450
+  Epsilon: 0.666
+---------------
+Episode 83:
+  Level: 1
+  Reward: 1019.01
+  Steps: 549
+  Epsilon: 0.663
+---------------
+Episode 84:
+  Level: 1
+  Reward: 1004.68
+  Steps: 556
+  Epsilon: 0.660
+---------------
+Episode 85:
+  Level: 1
+  Reward: 1065.31
+  Steps: 501
+  Epsilon: 0.656
+---------------
+Episode 86:
+  Level: 1
+  Reward: 1043.11
+  Steps: 524
+  Epsilon: 0.653
+---------------
+Episode 87:
+  Level: 1
+  Reward: 1058.99
+  Steps: 510
+  Epsilon: 0.650
+---------------
+Episode 88:
+  Level: 1
+  Reward: 1041.49
+  Steps: 527
+  Epsilon: 0.647
+---------------
+Episode 89:
+  Level: 1
+  Reward: 1017.32
+  Steps: 544
+  Epsilon: 0.643
+---------------
+Episode 90:
+  Level: 1
+  Reward: 1016.08
+  Steps: 553
+  Epsilon: 0.640
+---------------
+Episode 91:
+  Level: 1
+  Reward: 1087.57
+  Steps: 480
+  Epsilon: 0.637
+---------------
+Episode 92:
+  Level: 1
+  Reward: 999.10
+  Steps: 565
+  Epsilon: 0.634
+---------------
+Episode 93:
+  Level: 1
+  Reward: 1003.53
+  Steps: 558
+  Epsilon: 0.631
+---------------
+Episode 94:
+  Level: 1
+  Reward: 1013.55
+  Steps: 548
+  Epsilon: 0.627
+---------------
+Episode 95:
+  Level: 1
+  Reward: 1087.39
+  Steps: 478
+  Epsilon: 0.624
+---------------
+Episode 96:
+  Level: 1
+  Reward: 1143.40
+  Steps: 426
+  Epsilon: 0.621
+---------------
+Episode 97:
+  Level: 1
+  Reward: 1074.60
+  Steps: 494
+  Epsilon: 0.618
+---------------
+Episode 98:
+  Level: 1
+  Reward: 1091.71
+  Steps: 477
+  Epsilon: 0.615
+---------------
+Episode 99:
+  Level: 1
+  Reward: 917.88
+  Steps: 641
+  Epsilon: 0.612
+---------------
+Episode 100:
+  Level: 1
+  Reward: 1063.11
+  Steps: 506
+  Epsilon: 0.609
+---------------
+Episode 101:
+  Level: 1
+  Reward: 1162.93
+  Steps: 407
+  Epsilon: 0.606
+---------------
+Episode 102:
+  Level: 1
+  Reward: 1041.41
+  Steps: 526
+  Epsilon: 0.603
+---------------
+Episode 103:
+  Level: 1
+  Reward: 970.12
+  Steps: 592
+  Epsilon: 0.600
+---------------
+Episode 104:
+  Level: 1
+  Reward: 1144.11
+  Steps: 425
+  Epsilon: 0.597
+---------------
+Episode 105:
+  Level: 1
+  Reward: 1171.97
+  Steps: 398
+  Epsilon: 0.594
+---------------
+Episode 106:
+  Level: 1
+  Reward: 1134.79
+  Steps: 434
+  Epsilon: 0.591
+---------------
+Episode 107:
+  Level: 1
+  Reward: 1137.01
+  Steps: 432
+  Epsilon: 0.588
+---------------
+Episode 108:
+  Level: 1
+  Reward: 1113.65
+  Steps: 456
+  Epsilon: 0.585
+---------------
+Episode 109:
+  Level: 1
+  Reward: 1122.61
+  Steps: 447
+  Epsilon: 0.582
+---------------
+Episode 110:
+  Level: 1
+  Reward: 1069.87
+  Steps: 496
+  Epsilon: 0.579
+---------------
+Episode 111:
+  Level: 1
+  Reward: 1164.50
+  Steps: 405
+  Epsilon: 0.576
+---------------
+Episode 112:
+  Level: 1
+  Reward: 1162.31
+  Steps: 405
+  Epsilon: 0.573
+---------------
+Episode 113:
+  Level: 1
+  Reward: 1135.10
+  Steps: 435
+  Epsilon: 0.570
+---------------
+Episode 114:
+  Level: 1
+  Reward: 1129.97
+  Steps: 439
+  Epsilon: 0.568
+---------------
+Episode 115:
+  Level: 1
+  Reward: 1194.02
+  Steps: 376
+  Epsilon: 0.565
+---------------
+Episode 116:
+  Level: 1
+  Reward: 1135.11
+  Steps: 435
+  Epsilon: 0.562
+---------------
+Episode 117:
+  Level: 1
+  Reward: 1143.40
+  Steps: 425
+  Epsilon: 0.559
+---------------
+Episode 118:
+  Level: 1
+  Reward: 1140.55
+  Steps: 428
+  Epsilon: 0.556
+---------------
+Episode 119:
+  Level: 1
+  Reward: 1206.86
+  Steps: 361
+  Epsilon: 0.554
+---------------
+Episode 120:
+  Level: 1
+  Reward: 1158.29
+  Steps: 410
+  Epsilon: 0.551
+---------------
+Episode 121:
+  Level: 1
+  Reward: 1158.92
+  Steps: 410
+  Epsilon: 0.548
+---------------
+Episode 122:
+  Level: 1
+  Reward: 1166.11
+  Steps: 404
+  Epsilon: 0.545
+---------------
+Episode 123:
+  Level: 1
+  Reward: 1170.88
+  Steps: 399
+  Epsilon: 0.543
+---------------
+Episode 124:
+  Level: 1
+  Reward: 1183.09
+  Steps: 387
+  Epsilon: 0.540
+---------------
+Episode 125:
+  Level: 1
+  Reward: 1117.00
+  Steps: 452
+  Epsilon: 0.537
+---------------
+Episode 126:
+  Level: 1
+  Reward: 1165.40
+  Steps: 404
+  Epsilon: 0.534
+---------------
+Episode 127:
+  Level: 1
+  Reward: 1176.81
+  Steps: 392
+  Epsilon: 0.532
+---------------
+Episode 128:
+  Level: 1
+  Reward: 1179.70
+  Steps: 390
+  Epsilon: 0.529
+---------------
+Episode 129:
+  Level: 1
+  Reward: 1174.89
+  Steps: 395
+  Epsilon: 0.526
+---------------
+Episode 130:
+  Level: 1
+  Reward: 1177.06
+  Steps: 393
+  Epsilon: 0.524
+---------------
+Episode 131:
+  Level: 1
+  Reward: 1204.77
+  Steps: 365
+  Epsilon: 0.521
+---------------
+Episode 132:
+  Level: 1
+  Reward: 1213.36
+  Steps: 356
+  Epsilon: 0.519
+---------------
+Episode 133:
+  Level: 1
+  Reward: 1199.95
+  Steps: 370
+  Epsilon: 0.516
+---------------
+Episode 134:
+  Level: 1
+  Reward: 1171.97
+  Steps: 398
+  Epsilon: 0.513
+---------------
+Episode 135:
+  Level: 1
+  Reward: 1185.08
+  Steps: 383
+  Epsilon: 0.511
+---------------
+Episode 136:
+  Level: 1
+  Reward: 1165.85
+  Steps: 401
+  Epsilon: 0.508
+---------------
+Episode 137:
+  Level: 1
+  Reward: 1142.87
+  Steps: 427
+  Epsilon: 0.506
+---------------
+Episode 138:
+  Level: 1
+  Reward: 1197.11
+  Steps: 373
+  Epsilon: 0.503
+---------------
+Episode 139:
+  Level: 1
+  Reward: 1179.95
+  Steps: 390
+  Epsilon: 0.501
+---------------
+Episode 140:
+  Level: 1
+  Reward: 1207.11
+  Steps: 363
+  Epsilon: 0.498
+---------------
+Episode 141:
+  Level: 1
+  Reward: 1221.11
+  Steps: 349
+  Epsilon: 0.496
+---------------
+Episode 142:
+  Level: 1
+  Reward: 1220.92
+  Steps: 349
+  Epsilon: 0.493
+---------------
+Episode 143:
+  Level: 1
+  Reward: 1214.48
+  Steps: 355
+  Epsilon: 0.491
+---------------
+Episode 144:
+  Level: 1
+  Reward: 1190.40
+  Steps: 379
+  Epsilon: 0.488
+---------------
+Episode 145:
+  Level: 1
+  Reward: 1190.11
+  Steps: 380
+  Epsilon: 0.486
+---------------
+Episode 146:
+  Level: 1
+  Reward: 1192.51
+  Steps: 377
+  Epsilon: 0.483
+---------------
+Episode 147:
+  Level: 1
+  Reward: 1194.81
+  Steps: 375
+  Epsilon: 0.481
+---------------
+Episode 148:
+  Level: 1
+  Reward: 1198.60
+  Steps: 371
+  Epsilon: 0.479
+---------------
+Episode 149:
+  Level: 1
+  Reward: 1213.08
+  Steps: 357
+  Epsilon: 0.476
+---------------
+Episode 150:
+  Level: 1
+  Reward: 1215.11
+  Steps: 355
+  Epsilon: 0.474
+---------------
+Episode 151:
+  Level: 1
+  Reward: 1186.39
+  Steps: 383
+  Epsilon: 0.471
+---------------
+Episode 152:
+  Level: 1
+  Reward: 1242.92
+  Steps: 327
+  Epsilon: 0.469
+---------------
+Episode 153:
+  Level: 1
+  Reward: 1227.71
+  Steps: 342
+  Epsilon: 0.467
+---------------
+Episode 154:
+  Level: 1
+  Reward: 1169.97
+  Steps: 400
+  Epsilon: 0.464
+---------------
+Episode 155:
+  Level: 1
+  Reward: 1238.80
+  Steps: 330
+  Epsilon: 0.462
+---------------
+Episode 156:
+  Level: 1
+  Reward: 1192.26
+  Steps: 376
+  Epsilon: 0.460
+---------------
+Episode 157:
+  Level: 1
+  Reward: 1179.61
+  Steps: 390
+  Epsilon: 0.458
+---------------
+Episode 158:
+  Level: 1
+  Reward: 1201.99
+  Steps: 368
+  Epsilon: 0.455
+---------------
+Episode 159:
+  Level: 1
+  Reward: 1245.06
+  Steps: 325
+  Epsilon: 0.453
+---------------
+Episode 160:
+  Level: 1
+  Reward: 1218.11
+  Steps: 352
+  Epsilon: 0.451
+---------------
+Episode 161:
+  Level: 1
+  Reward: 1253.03
+  Steps: 317
+  Epsilon: 0.448
+---------------
+Episode 162:
+  Level: 1
+  Reward: 1195.15
+  Steps: 374
+  Epsilon: 0.446
+---------------
+Episode 163:
+  Level: 1
+  Reward: 1179.78
+  Steps: 388
+  Epsilon: 0.444
+---------------
+Episode 164:
+  Level: 1
+  Reward: 1257.10
+  Steps: 313
+  Epsilon: 0.442
+---------------
+Episode 165:
+  Level: 1
+  Reward: 1234.61
+  Steps: 335
+  Epsilon: 0.440
+---------------
+Episode 166:
+  Level: 1
+  Reward: 1225.74
+  Steps: 344
+  Epsilon: 0.437
+---------------
+Episode 167:
+  Level: 1
+  Reward: 1238.11
+  Steps: 332
+  Epsilon: 0.435
+---------------
+Episode 168:
+  Level: 1
+  Reward: 1193.89
+  Steps: 375
+  Epsilon: 0.433
+---------------
+Episode 169:
+  Level: 1
+  Reward: 1230.10
+  Steps: 340
+  Epsilon: 0.431
+---------------
+Episode 170:
+  Level: 1
+  Reward: 1241.81
+  Steps: 328
+  Epsilon: 0.429
+---------------
+Episode 171:
+  Level: 1
+  Reward: 1208.41
+  Steps: 361
+  Epsilon: 0.427
+---------------
+Episode 172:
+  Level: 1
+  Reward: 1271.11
+  Steps: 299
+  Epsilon: 0.424
+---------------
+Episode 173:
+  Level: 1
+  Reward: 1229.86
+  Steps: 340
+  Epsilon: 0.422
+---------------
+Episode 174:
+  Level: 1
+  Reward: 1241.11
+  Steps: 329
+  Epsilon: 0.420
+---------------
+Episode 175:
+  Level: 1
+  Reward: 1241.88
+  Steps: 328
+  Epsilon: 0.418
+---------------
+Episode 176:
+  Level: 1
+  Reward: 1241.89
+  Steps: 328
+  Epsilon: 0.416
+---------------
+Episode 177:
+  Level: 1
+  Reward: 1237.01
+  Steps: 333
+  Epsilon: 0.414
+---------------
+Episode 178:
+  Level: 1
+  Reward: 1252.01
+  Steps: 318
+  Epsilon: 0.412
+---------------
+Episode 179:
+  Level: 1
+  Reward: 1255.81
+  Steps: 314
+  Epsilon: 0.410
+---------------
+Episode 180:
+  Level: 1
+  Reward: 1259.05
+  Steps: 311
+  Epsilon: 0.408
+---------------
+Episode 181:
+  Level: 1
+  Reward: 1247.93
+  Steps: 322
+  Epsilon: 0.406
+---------------
+Episode 182:
+  Level: 1
+  Reward: 1231.99
+  Steps: 338
+  Epsilon: 0.404
+---------------
+Episode 183:
+  Level: 1
+  Reward: 1266.11
+  Steps: 304
+  Epsilon: 0.402
+---------------
+Episode 184:
+  Level: 1
+  Reward: 1260.11
+  Steps: 310
+  Epsilon: 0.400
+---------------
+Episode 185:
+  Level: 1
+  Reward: 1224.61
+  Steps: 344
+  Epsilon: 0.398
+---------------
+Episode 186:
+  Level: 1
+  Reward: 1233.01
+  Steps: 337
+  Epsilon: 0.396
+---------------
+Episode 187:
+  Level: 1
+  Reward: 1265.09
+  Steps: 305
+  Epsilon: 0.394
+---------------
+Episode 188:
+  Level: 1
+  Reward: 1269.11
+  Steps: 301
+  Epsilon: 0.392
+---------------
+Episode 189:
+  Level: 1
+  Reward: 1269.09
+  Steps: 301
+  Epsilon: 0.390
+---------------
+Episode 190:
+  Level: 1
+  Reward: 1195.91
+  Steps: 374
+  Epsilon: 0.388
+---------------
+Episode 191:
+  Level: 1
+  Reward: 1259.04
+  Steps: 311
+  Epsilon: 0.386
+---------------
+Episode 192:
+  Level: 1
+  Reward: 1243.08
+  Steps: 327
+  Epsilon: 0.384
+---------------
+Episode 193:
+  Level: 1
+  Reward: 1263.11
+  Steps: 307
+  Epsilon: 0.382
+---------------
+Episode 194:
+  Level: 1
+  Reward: 1262.86
+  Steps: 307
+  Epsilon: 0.380
+---------------
+Episode 195:
+  Level: 1
+  Reward: 1257.00
+  Steps: 313
+  Epsilon: 0.378
+---------------
+Episode 196:
+  Level: 1
+  Reward: 1261.00
+  Steps: 309
+  Epsilon: 0.376
+---------------
+Episode 197:
+  Level: 1
+  Reward: 1253.09
+  Steps: 317
+  Epsilon: 0.374
+---------------
+Episode 198:
+  Level: 1
+  Reward: 1254.08
+  Steps: 316
+  Epsilon: 0.373
+---------------
+Episode 199:
+  Level: 1
+  Reward: 1245.09
+  Steps: 325
+  Epsilon: 0.371
+---------------
+Episode 200:
+  Level: 1
+  Reward: 1242.06
+  Steps: 328
+  Epsilon: 0.369
+---------------
+Episode 201:
+  Level: 1
+  Reward: 1265.02
+  Steps: 305
+  Epsilon: 0.367
+---------------
+Episode 202:
+  Level: 1
+  Reward: 1272.06
+  Steps: 298
+  Epsilon: 0.365
+---------------
+Episode 203:
+  Level: 1
+  Reward: 1282.93
+  Steps: 287
+  Epsilon: 0.363
+---------------
+Episode 204:
+  Level: 1
+  Reward: 1229.07
+  Steps: 337
+  Epsilon: 0.361
+---------------
+Episode 205:
+  Level: 1
+  Reward: 1256.06
+  Steps: 314
+  Epsilon: 0.360
+---------------
+Episode 206:
+  Level: 1
+  Reward: 1266.01
+  Steps: 304
+  Epsilon: 0.358
+---------------
+Episode 207:
+  Level: 1
+  Reward: 1276.06
+  Steps: 294
+  Epsilon: 0.356
+---------------
+Episode 208:
+  Level: 1
+  Reward: 1275.00
+  Steps: 295
+  Epsilon: 0.354
+---------------
+Episode 209:
+  Level: 1
+  Reward: 1283.57
+  Steps: 286
+  Epsilon: 0.353
+---------------
+Episode 210:
+  Level: 1
+  Reward: 1255.71
+  Steps: 314
+  Epsilon: 0.351
+---------------
+Episode 211:
+  Level: 1
+  Reward: 1259.73
+  Steps: 310
+  Epsilon: 0.349
+---------------
+Episode 212:
+  Level: 1
+  Reward: 1283.10
+  Steps: 287
+  Epsilon: 0.347
+---------------
+Episode 213:
+  Level: 1
+  Reward: 1261.06
+  Steps: 309
+  Epsilon: 0.346
+---------------
+Episode 214:
+  Level: 1
+  Reward: 1278.09
+  Steps: 292
+  Epsilon: 0.344
+---------------
+Episode 215:
+  Level: 1
+  Reward: 1256.01
+  Steps: 314
+  Epsilon: 0.342
+---------------
+Episode 216:
+  Level: 1
+  Reward: 1275.08
+  Steps: 295
+  Epsilon: 0.340
+---------------
+Episode 217:
+  Level: 1
+  Reward: 1278.00
+  Steps: 292
+  Epsilon: 0.339
+---------------
+Episode 218:
+  Level: 1
+  Reward: 1265.68
+  Steps: 304
+  Epsilon: 0.337
+---------------
+Episode 219:
+  Level: 1
+  Reward: 1274.11
+  Steps: 296
+  Epsilon: 0.335
+---------------
+Episode 220:
+  Level: 1
+  Reward: 1258.10
+  Steps: 312
+  Epsilon: 0.334
+---------------
+Episode 221:
+  Level: 1
+  Reward: 1278.99
+  Steps: 291
+  Epsilon: 0.332
+---------------
+Episode 222:
+  Level: 1
+  Reward: 1267.09
+  Steps: 303
+  Epsilon: 0.330
+---------------
+Episode 223:
+  Level: 1
+  Reward: 1264.11
+  Steps: 306
+  Epsilon: 0.329
+---------------
+Episode 224:
+  Level: 1
+  Reward: 1284.05
+  Steps: 286
+  Epsilon: 0.327
+---------------
+Episode 225:
+  Level: 1
+  Reward: 1292.73
+  Steps: 277
+  Epsilon: 0.325
+---------------
+Episode 226:
+  Level: 1
+  Reward: 1254.09
+  Steps: 316
+  Epsilon: 0.324
+---------------
+Episode 227:
+  Level: 1
+  Reward: 1287.09
+  Steps: 283
+  Epsilon: 0.322
+---------------
+Episode 228:
+  Level: 1
+  Reward: 1270.99
+  Steps: 299
+  Epsilon: 0.321
+---------------
+Episode 229:
+  Level: 1
+  Reward: 1280.95
+  Steps: 289
+  Epsilon: 0.319
+---------------
+Episode 230:
+  Level: 1
+  Reward: 1267.97
+  Steps: 302
+  Epsilon: 0.317
+---------------
+Episode 231:
+  Level: 1
+  Reward: 1288.10
+  Steps: 282
+  Epsilon: 0.316
+---------------
+Episode 232:
+  Level: 1
+  Reward: 1276.08
+  Steps: 294
+  Epsilon: 0.314
+---------------
+Episode 233:
+  Level: 1
+  Reward: 1282.07
+  Steps: 288
+  Epsilon: 0.313
+---------------
+Episode 234:
+  Level: 1
+  Reward: 1289.20
+  Steps: 276
+  Epsilon: 0.311
+---------------
+Episode 235:
+  Level: 1
+  Reward: 1277.82
+  Steps: 292
+  Epsilon: 0.309
+---------------
+Episode 236:
+  Level: 1
+  Reward: 1253.06
+  Steps: 317
+  Epsilon: 0.308
+---------------
+Episode 237:
+  Level: 1
+  Reward: 1281.10
+  Steps: 289
+  Epsilon: 0.306
+---------------
+Episode 238:
+  Level: 1
+  Reward: 1284.88
+  Steps: 285
+  Epsilon: 0.305
+---------------
+Episode 239:
+  Level: 1
+  Reward: 1264.09
+  Steps: 306
+  Epsilon: 0.303
+---------------
+Episode 240:
+  Level: 1
+  Reward: 1275.83
+  Steps: 294
+  Epsilon: 0.302
+---------------
+Episode 241:
+  Level: 1
+  Reward: 1268.10
+  Steps: 302
+  Epsilon: 0.300
+---------------
+Episode 242:
+  Level: 1
+  Reward: 1294.02
+  Steps: 276
+  Epsilon: 0.299
+---------------
+Episode 243:
+  Level: 1
+  Reward: 1259.11
+  Steps: 311
+  Epsilon: 0.297
+---------------
+Episode 244:
+  Level: 1
+  Reward: 1314.06
+  Steps: 255
+  Epsilon: 0.296
+---------------
+Episode 245:
+  Level: 1
+  Reward: 1266.99
+  Steps: 303
+  Epsilon: 0.294
+---------------
+Episode 246:
+  Level: 1
+  Reward: 1286.10
+  Steps: 284
+  Epsilon: 0.293
+---------------
+Episode 247:
+  Level: 1
+  Reward: 1280.98
+  Steps: 289
+  Epsilon: 0.291
+---------------
+Episode 248:
+  Level: 1
+  Reward: 1266.11
+  Steps: 304
+  Epsilon: 0.290
+---------------
+Episode 249:
+  Level: 1
+  Reward: 1290.10
+  Steps: 280
+  Epsilon: 0.288
+---------------
+Episode 250:
+  Level: 1
+  Reward: 1295.11
+  Steps: 275
+  Epsilon: 0.287
+---------------
+Episode 251:
+  Level: 1
+  Reward: 1278.10
+  Steps: 292
+  Epsilon: 0.286
+---------------
+Episode 252:
+  Level: 1
+  Reward: 1281.09
+  Steps: 289
+  Epsilon: 0.284
+---------------
+Episode 253:
+  Level: 1
+  Reward: 1298.05
+  Steps: 272
+  Epsilon: 0.283
+---------------
+Episode 254:
+  Level: 1
+  Reward: 1274.10
+  Steps: 296
+  Epsilon: 0.281
+---------------
+Episode 255:
+  Level: 1
+  Reward: 1275.98
+  Steps: 294
+  Epsilon: 0.280
+---------------
+Episode 256:
+  Level: 1
+  Reward: 1291.11
+  Steps: 279
+  Epsilon: 0.279
+---------------
+Episode 257:
+  Level: 1
+  Reward: 1286.75
+  Steps: 283
+  Epsilon: 0.277
+---------------
+Episode 258:
+  Level: 1
+  Reward: 1271.94
+  Steps: 298
+  Epsilon: 0.276
+---------------
+Episode 259:
+  Level: 1
+  Reward: 1277.09
+  Steps: 293
+  Epsilon: 0.274
+---------------
+Episode 260:
+  Level: 1
+  Reward: 1294.01
+  Steps: 276
+  Epsilon: 0.273
+---------------
+Episode 261:
+  Level: 1
+  Reward: 1296.11
+  Steps: 274
+  Epsilon: 0.272
+---------------
+Episode 262:
+  Level: 1
+  Reward: 1278.94
+  Steps: 291
+  Epsilon: 0.270
+---------------
+Episode 263:
+  Level: 1
+  Reward: 1279.95
+  Steps: 290
+  Epsilon: 0.269
+---------------
+Episode 264:
+  Level: 1
+  Reward: 1294.88
+  Steps: 273
+  Epsilon: 0.268
+---------------
+Episode 265:
+  Level: 1
+  Reward: 1297.78
+  Steps: 272
+  Epsilon: 0.266
+---------------
+Episode 266:
+  Level: 1
+  Reward: 1292.88
+  Steps: 274
+  Epsilon: 0.265
+---------------
+Episode 267:
+  Level: 1
+  Reward: 1294.38
+  Steps: 275
+  Epsilon: 0.264
+---------------
+Episode 268:
+  Level: 1
+  Reward: 1294.99
+  Steps: 275
+  Epsilon: 0.262
+---------------
+Episode 269:
+  Level: 1
+  Reward: 1272.15
+  Steps: 295
+  Epsilon: 0.261
+---------------
+Episode 270:
+  Level: 1
+  Reward: 1303.13
+  Steps: 267
+  Epsilon: 0.260
+---------------
+Episode 271:
+  Level: 1
+  Reward: 1291.71
+  Steps: 277
+  Epsilon: 0.258
+---------------
+Episode 272:
+  Level: 1
+  Reward: 1309.94
+  Steps: 260
+  Epsilon: 0.257
+---------------
+Episode 273:
+  Level: 1
+  Reward: 1270.47
+  Steps: 299
+  Epsilon: 0.256
+---------------
+Episode 274:
+  Level: 1
+  Reward: 1315.03
+  Steps: 255
+  Epsilon: 0.255
+---------------
+Episode 275:
+  Level: 1
+  Reward: 1318.13
+  Steps: 252
+  Epsilon: 0.253
+---------------
+Episode 276:
+  Level: 1
+  Reward: 1320.03
+  Steps: 250
+  Epsilon: 0.252
+---------------
+Episode 277:
+  Level: 1
+  Reward: 1308.78
+  Steps: 261
+  Epsilon: 0.251
+---------------
+Episode 278:
+  Level: 1
+  Reward: 1278.88
+  Steps: 288
+  Epsilon: 0.249
+---------------
+Episode 279:
+  Level: 1
+  Reward: 1289.75
+  Steps: 280
+  Epsilon: 0.248
+---------------
+Episode 280:
+  Level: 1
+  Reward: 1270.60
+  Steps: 299
+  Epsilon: 0.247
+---------------
+Episode 281:
+  Level: 1
+  Reward: 1296.09
+  Steps: 274
+  Epsilon: 0.246
+---------------
+Episode 282:
+  Level: 1
+  Reward: 1294.47
+  Steps: 275
+  Epsilon: 0.245
+---------------
+Episode 283:
+  Level: 1
+  Reward: 1294.89
+  Steps: 273
+  Epsilon: 0.243
+---------------
+Episode 284:
+  Level: 1
+  Reward: 1294.08
+  Steps: 276
+  Epsilon: 0.242
+---------------
+Episode 285:
+  Level: 1
+  Reward: 1307.71
+  Steps: 261
+  Epsilon: 0.241
+---------------
+Episode 286:
+  Level: 1
+  Reward: 1320.93
+  Steps: 249
+  Epsilon: 0.240
+---------------
+Episode 287:
+  Level: 1
+  Reward: 1281.28
+  Steps: 288
+  Epsilon: 0.238
+---------------
+Episode 288:
+  Level: 1
+  Reward: 1311.19
+  Steps: 259
+  Epsilon: 0.237
+---------------
+Episode 289:
+  Level: 1
+  Reward: 1275.90
+  Steps: 294
+  Epsilon: 0.236
+---------------
+Episode 290:
+  Level: 1
+  Reward: 1313.09
+  Steps: 256
+  Epsilon: 0.235
+---------------
+Episode 291:
+  Level: 1
+  Reward: 1291.09
+  Steps: 279
+  Epsilon: 0.234
+---------------
+Episode 292:
+  Level: 1
+  Reward: 1291.85
+  Steps: 278
+  Epsilon: 0.233
+---------------
+Episode 293:
+  Level: 1
+  Reward: 1295.38
+  Steps: 274
+  Epsilon: 0.231
+---------------
+Episode 294:
+  Level: 1
+  Reward: 1296.05
+  Steps: 274
+  Epsilon: 0.230
+---------------
+Episode 295:
+  Level: 1
+  Reward: 1286.08
+  Steps: 284
+  Epsilon: 0.229
+---------------
+Episode 296:
+  Level: 1
+  Reward: 1322.94
+  Steps: 247
+  Epsilon: 0.228
+---------------
+Episode 297:
+  Level: 1
+  Reward: 1320.03
+  Steps: 250
+  Epsilon: 0.227
+---------------
+Episode 298:
+  Level: 1
+  Reward: 1291.82
+  Steps: 276
+  Epsilon: 0.226
+---------------
+Episode 299:
+  Level: 1
+  Reward: 1318.09
+  Steps: 252
+  Epsilon: 0.225
+---------------
+Episode 300:
+  Level: 1
+  Reward: 1318.87
+  Steps: 251
+  Epsilon: 0.223
+---------------
+Episode 301:
+  Level: 1
+  Reward: 1291.99
+  Steps: 278
+  Epsilon: 0.222
+---------------
+Episode 302:
+  Level: 1
+  Reward: 1293.09
+  Steps: 277
+  Epsilon: 0.221
+---------------
+Episode 303:
+  Level: 1
+  Reward: 1322.94
+  Steps: 247
+  Epsilon: 0.220
+---------------
+Episode 304:
+  Level: 1
+  Reward: 1312.73
+  Steps: 256
+  Epsilon: 0.219
+---------------
+Episode 305:
+  Level: 1
+  Reward: 1294.58
+  Steps: 275
+  Epsilon: 0.218
+---------------
+Episode 306:
+  Level: 1
+  Reward: 1314.73
+  Steps: 254
+  Epsilon: 0.217
+---------------
+Episode 307:
+  Level: 1
+  Reward: 1296.09
+  Steps: 274
+  Epsilon: 0.216
+---------------
+Episode 308:
+  Level: 1
+  Reward: 1300.92
+  Steps: 269
+  Epsilon: 0.215
+---------------
+Episode 309:
+  Level: 1
+  Reward: 1295.14
+  Steps: 274
+  Epsilon: 0.214
+---------------
+Episode 310:
+  Level: 1
+  Reward: 1298.65
+  Steps: 270
+  Epsilon: 0.212
+---------------
+Episode 311:
+  Level: 1
+  Reward: 1318.19
+  Steps: 252
+  Epsilon: 0.211
+---------------
+Episode 312:
+  Level: 1
+  Reward: 1326.94
+  Steps: 243
+  Epsilon: 0.210
+---------------
+Episode 313:
+  Level: 1
+  Reward: 1314.71
+  Steps: 255
+  Epsilon: 0.209
+---------------
+Episode 314:
+  Level: 1
+  Reward: 1323.19
+  Steps: 247
+  Epsilon: 0.208
+---------------
+Episode 315:
+  Level: 1
+  Reward: 1291.60
+  Steps: 274
+  Epsilon: 0.207
+---------------
+Episode 316:
+  Level: 1
+  Reward: 1316.62
+  Steps: 253
+  Epsilon: 0.206
+---------------
+Episode 317:
+  Level: 1
+  Reward: 1325.84
+  Steps: 244
+  Epsilon: 0.205
+---------------
+Episode 318:
+  Level: 1
+  Reward: 1288.60
+  Steps: 277
+  Epsilon: 0.204
+---------------
+Episode 319:
+  Level: 1
+  Reward: 1321.09
+  Steps: 248
+  Epsilon: 0.203
+---------------
+Episode 320:
+  Level: 1
+  Reward: 1295.09
+  Steps: 275
+  Epsilon: 0.202
+---------------
+Episode 321:
+  Level: 1
+  Reward: 1321.19
+  Steps: 249
+  Epsilon: 0.201
+---------------
+Episode 322:
+  Level: 1
+  Reward: 1294.56
+  Steps: 275
+  Epsilon: 0.200
+---------------
+Episode 323:
+  Level: 1
+  Reward: 1322.74
+  Steps: 247
+  Epsilon: 0.199
+---------------
+Episode 324:
+  Level: 1
+  Reward: 1327.76
+  Steps: 242
+  Epsilon: 0.198
+---------------
+Episode 325:
+  Level: 1
+  Reward: 1314.05
+  Steps: 256
+  Epsilon: 0.197
+---------------
+Episode 326:
+  Level: 1
+  Reward: 1311.11
+  Steps: 259
+  Epsilon: 0.196
+---------------
+Episode 327:
+  Level: 1
+  Reward: 1314.13
+  Steps: 256
+  Epsilon: 0.195
+---------------
+Episode 328:
+  Level: 1
+  Reward: 1324.13
+  Steps: 246
+  Epsilon: 0.194
+---------------
+Episode 329:
+  Level: 1
+  Reward: 1317.03
+  Steps: 253
+  Epsilon: 0.193
+---------------
+Episode 330:
+  Level: 1
+  Reward: 1322.85
+  Steps: 247
+  Epsilon: 0.192
+---------------
+Episode 331:
+  Level: 1
+  Reward: 1328.13
+  Steps: 242
+  Epsilon: 0.191
+---------------
+Episode 332:
+  Level: 1
+  Reward: 1321.03
+  Steps: 249
+  Epsilon: 0.190
+---------------
+Episode 333:
+  Level: 1
+  Reward: 1316.88
+  Steps: 253
+  Epsilon: 0.189
+---------------
+Episode 334:
+  Level: 1
+  Reward: 1302.31
+  Steps: 265
+  Epsilon: 0.188
+---------------
+Episode 335:
+  Level: 1
+  Reward: 1320.09
+  Steps: 250
+  Epsilon: 0.187
+---------------
+Episode 336:
+  Level: 1
+  Reward: 1297.50
+  Steps: 271
+  Epsilon: 0.187
+---------------
+Episode 337:
+  Level: 1
+  Reward: 1299.06
+  Steps: 271
+  Epsilon: 0.186
+---------------
+Episode 338:
+  Level: 1
+  Reward: 1325.94
+  Steps: 244
+  Epsilon: 0.185
+---------------
+Episode 339:
+  Level: 1
+  Reward: 1324.13
+  Steps: 246
+  Epsilon: 0.184
+---------------
+Episode 340:
+  Level: 1
+  Reward: 1319.03
+  Steps: 251
+  Epsilon: 0.183
+---------------
+Episode 341:
+  Level: 1
+  Reward: 1312.13
+  Steps: 258
+  Epsilon: 0.182
+---------------
+Episode 342:
+  Level: 1
+  Reward: 1319.77
+  Steps: 250
+  Epsilon: 0.181
+---------------
+Episode 343:
+  Level: 1
+  Reward: 1322.03
+  Steps: 248
+  Epsilon: 0.180
+---------------
+Episode 344:
+  Level: 1
+  Reward: 1299.90
+  Steps: 269
+  Epsilon: 0.179
+---------------
+Episode 345:
+  Level: 1
+  Reward: 1320.03
+  Steps: 250
+  Epsilon: 0.178
+---------------
+Episode 346:
+  Level: 1
+  Reward: 1313.09
+  Steps: 256
+  Epsilon: 0.177
+---------------
+Episode 347:
+  Level: 1
+  Reward: 1315.54
+  Steps: 254
+  Epsilon: 0.177
+---------------
+Episode 348:
+  Level: 1
+  Reward: 1326.09
+  Steps: 244
+  Epsilon: 0.176
+---------------
+Episode 349:
+  Level: 1
+  Reward: 1297.44
+  Steps: 268
+  Epsilon: 0.175
+---------------
+Episode 350:
+  Level: 1
+  Reward: 1297.76
+  Steps: 270
+  Epsilon: 0.174
+---------------
+Episode 351:
+  Level: 1
+  Reward: 1300.10
+  Steps: 270
+  Epsilon: 0.173
+---------------
+Episode 352:
+  Level: 1
+  Reward: 1307.10
+  Steps: 263
+  Epsilon: 0.172
+---------------
+Episode 353:
+  Level: 1
+  Reward: 1304.09
+  Steps: 266
+  Epsilon: 0.171
+---------------
+Episode 354:
+  Level: 1
+  Reward: 1303.08
+  Steps: 267
+  Epsilon: 0.170
+---------------
+Episode 355:
+  Level: 1
+  Reward: 1301.00
+  Steps: 269
+  Epsilon: 0.170
+---------------
+Episode 356:
+  Level: 1
+  Reward: 1299.10
+  Steps: 271
+  Epsilon: 0.169
+---------------
+Episode 357:
+  Level: 1
+  Reward: 1299.01
+  Steps: 271
+  Epsilon: 0.168
+---------------
+Episode 358:
+  Level: 1
+  Reward: 1305.00
+  Steps: 265
+  Epsilon: 0.167
+---------------
+Episode 359:
+  Level: 1
+  Reward: 1309.55
+  Steps: 260
+  Epsilon: 0.166
+---------------
+Episode 360:
+  Level: 1
+  Reward: 1304.08
+  Steps: 266
+  Epsilon: 0.165
+---------------
+Episode 361:
+  Level: 1
+  Reward: 1311.08
+  Steps: 259
+  Epsilon: 0.165
+---------------
+Episode 362:
+  Level: 1
+  Reward: 1308.11
+  Steps: 262
+  Epsilon: 0.164
+---------------
+Episode 363:
+  Level: 1
+  Reward: 1322.10
+  Steps: 248
+  Epsilon: 0.163
+---------------
+Episode 364:
+  Level: 1
+  Reward: 1307.97
+  Steps: 262
+  Epsilon: 0.162
+---------------
+Episode 365:
+  Level: 1
+  Reward: 1316.11
+  Steps: 254
+  Epsilon: 0.161
+---------------
+Episode 366:
+  Level: 1
+  Reward: 1315.07
+  Steps: 255
+  Epsilon: 0.160
+---------------
+Episode 367:
+  Level: 1
+  Reward: 1314.94
+  Steps: 255
+  Epsilon: 0.160
+---------------
+Episode 368:
+  Level: 1
+  Reward: 1310.09
+  Steps: 260
+  Epsilon: 0.159
+---------------
+Episode 369:
+  Level: 1
+  Reward: 1310.00
+  Steps: 260
+  Epsilon: 0.158
+---------------
+Episode 370:
+  Level: 1
+  Reward: 1309.75
+  Steps: 260
+  Epsilon: 0.157
+---------------
+Episode 371:
+  Level: 1
+  Reward: 1294.49
+  Steps: 272
+  Epsilon: 0.157
+---------------
+Episode 372:
+  Level: 1
+  Reward: 1323.19
+  Steps: 247
+  Epsilon: 0.156
+---------------
+Episode 373:
+  Level: 1
+  Reward: 1322.29
+  Steps: 248
+  Epsilon: 0.155
+---------------
+Episode 374:
+  Level: 1
+  Reward: 1321.96
+  Steps: 248
+  Epsilon: 0.154
+---------------
+Episode 375:
+  Level: 1
+  Reward: 1321.07
+  Steps: 249
+  Epsilon: 0.153
+---------------
+Episode 376:
+  Level: 1
+  Reward: 1296.08
+  Steps: 274
+  Epsilon: 0.153
+---------------
+Episode 377:
+  Level: 1
+  Reward: 1323.29
+  Steps: 247
+  Epsilon: 0.152
+---------------
+Episode 378:
+  Level: 1
+  Reward: 1312.02
+  Steps: 258
+  Epsilon: 0.151
+---------------
+Episode 379:
+  Level: 1
+  Reward: 1315.11
+  Steps: 255
+  Epsilon: 0.150
+---------------
+Episode 380:
+  Level: 1
+  Reward: 1315.10
+  Steps: 255
+  Epsilon: 0.150
+---------------
+Episode 381:
+  Level: 1
+  Reward: 1308.08
+  Steps: 262
+  Epsilon: 0.149
+---------------
+Episode 382:
+  Level: 1
+  Reward: 1322.08
+  Steps: 248
+  Epsilon: 0.148
+---------------
+Episode 383:
+  Level: 1
+  Reward: 1313.08
+  Steps: 257
+  Epsilon: 0.147
+---------------
+Episode 384:
+  Level: 1
+  Reward: 1315.54
+  Steps: 254
+  Epsilon: 0.147
+---------------
+Episode 385:
+  Level: 1
+  Reward: 1321.79
+  Steps: 248
+  Epsilon: 0.146
+---------------
+Episode 386:
+  Level: 1
+  Reward: 1326.94
+  Steps: 243
+  Epsilon: 0.145
+---------------
+Episode 387:
+  Level: 1
+  Reward: 1332.03
+  Steps: 238
+  Epsilon: 0.144
+---------------
+Episode 388:
+  Level: 1
+  Reward: 1325.03
+  Steps: 245
+  Epsilon: 0.144
+---------------
+Episode 389:
+  Level: 1
+  Reward: 1297.83
+  Steps: 272
+  Epsilon: 0.143
+---------------
+Episode 390:
+  Level: 1
+  Reward: 1321.44
+  Steps: 248
+  Epsilon: 0.142
+---------------
+Episode 391:
+  Level: 1
+  Reward: 1298.50
+  Steps: 270
+  Epsilon: 0.142
+---------------
+Episode 392:
+  Level: 1
+  Reward: 1326.19
+  Steps: 244
+  Epsilon: 0.141
+---------------
+Episode 393:
+  Level: 1
+  Reward: 1328.03
+  Steps: 242
+  Epsilon: 0.140
+---------------
+Episode 394:
+  Level: 1
+  Reward: 1297.83
+  Steps: 270
+  Epsilon: 0.139
+---------------
+Episode 395:
+  Level: 1
+  Reward: 1294.86
+  Steps: 272
+  Epsilon: 0.139
+---------------
+Episode 396:
+  Level: 1
+  Reward: 1319.54
+  Steps: 250
+  Epsilon: 0.138
+---------------
+Episode 397:
+  Level: 1
+  Reward: 1301.06
+  Steps: 268
+  Epsilon: 0.137
+---------------
+Episode 398:
+  Level: 1
+  Reward: 1318.62
+  Steps: 251
+  Epsilon: 0.137
+---------------
+Episode 399:
+  Level: 1
+  Reward: 1318.03
+  Steps: 251
+  Epsilon: 0.136
+---------------
+Episode 400:
+  Level: 1
+  Reward: 1323.13
+  Steps: 247
+  Epsilon: 0.135
+---------------
+Episode 401:
+  Level: 1
+  Reward: 1331.96
+  Steps: 238
+  Epsilon: 0.135
+---------------
+Episode 402:
+  Level: 1
+  Reward: 1325.16
+  Steps: 245
+  Epsilon: 0.134
+---------------
+Episode 403:
+  Level: 1
+  Reward: 1323.09
+  Steps: 246
+  Epsilon: 0.133
+---------------
+Episode 404:
+  Level: 1
+  Reward: 1322.06
+  Steps: 247
+  Epsilon: 0.133
+---------------
+Episode 405:
+  Level: 1
+  Reward: 1324.07
+  Steps: 246
+  Epsilon: 0.132
+---------------
+Episode 406:
+  Level: 1
+  Reward: 1297.19
+  Steps: 271
+  Epsilon: 0.131
+---------------
+Episode 407:
+  Level: 1
+  Reward: 1327.87
+  Steps: 242
+  Epsilon: 0.131
+---------------
+Episode 408:
+  Level: 1
+  Reward: 1321.97
+  Steps: 248
+  Epsilon: 0.130
+---------------
+Episode 409:
+  Level: 1
+  Reward: 1323.19
+  Steps: 247
+  Epsilon: 0.129
+---------------
+Episode 410:
+  Level: 1
+  Reward: 1332.03
+  Steps: 238
+  Epsilon: 0.129
+---------------
+Episode 411:
+  Level: 1
+  Reward: 1331.03
+  Steps: 239
+  Epsilon: 0.128
+---------------
+Episode 412:
+  Level: 1
+  Reward: 1333.03
+  Steps: 237
+  Epsilon: 0.127
+---------------
+Episode 413:
+  Level: 1
+  Reward: 1329.13
+  Steps: 241
+  Epsilon: 0.127
+---------------
+Episode 414:
+  Level: 1
+  Reward: 1327.09
+  Steps: 243
+  Epsilon: 0.126
+---------------
+Episode 415:
+  Level: 1
+  Reward: 1323.97
+  Steps: 246
+  Epsilon: 0.126
+---------------
+Episode 416:
+  Level: 1
+  Reward: 1328.03
+  Steps: 242
+  Epsilon: 0.125
+---------------
+Episode 417:
+  Level: 1
+  Reward: 1321.09
+  Steps: 248
+  Epsilon: 0.124
+---------------
+Episode 418:
+  Level: 1
+  Reward: 1330.94
+  Steps: 239
+  Epsilon: 0.124
+---------------
+Episode 419:
+  Level: 1
+  Reward: 1325.87
+  Steps: 244
+  Epsilon: 0.123
+---------------
+Episode 420:
+  Level: 1
+  Reward: 1332.13
+  Steps: 238
+  Epsilon: 0.122
+---------------
+Episode 421:
+  Level: 1
+  Reward: 1325.19
+  Steps: 245
+  Epsilon: 0.122
+---------------
+Episode 422:
+  Level: 1
+  Reward: 1329.13
+  Steps: 241
+  Epsilon: 0.121
+---------------
+Episode 423:
+  Level: 1
+  Reward: 1332.94
+  Steps: 237
+  Epsilon: 0.121
+---------------
+Episode 424:
+  Level: 1
+  Reward: 1322.72
+  Steps: 247
+  Epsilon: 0.120
+---------------
+Episode 425:
+  Level: 1
+  Reward: 1291.20
+  Steps: 274
+  Epsilon: 0.119
+---------------
+Episode 426:
+  Level: 1
+  Reward: 1330.03
+  Steps: 240
+  Epsilon: 0.119
+---------------
+Episode 427:
+  Level: 1
+  Reward: 1331.96
+  Steps: 238
+  Epsilon: 0.118
+---------------
+Episode 428:
+  Level: 1
+  Reward: 1331.13
+  Steps: 239
+  Epsilon: 0.118
+---------------
+Episode 429:
+  Level: 1
+  Reward: 1326.09
+  Steps: 244
+  Epsilon: 0.117
+---------------
+Episode 430:
+  Level: 1
+  Reward: 1327.13
+  Steps: 243
+  Epsilon: 0.116
+---------------
+Episode 431:
+  Level: 1
+  Reward: 1321.54
+  Steps: 248
+  Epsilon: 0.116
+---------------
+Episode 432:
+  Level: 1
+  Reward: 1315.71
+  Steps: 253
+  Epsilon: 0.115
+---------------
+Episode 433:
+  Level: 1
+  Reward: 1316.62
+  Steps: 253
+  Epsilon: 0.115
+---------------
+Episode 434:
+  Level: 1
+  Reward: 1291.65
+  Steps: 274
+  Epsilon: 0.114
+---------------
+Episode 435:
+  Level: 1
+  Reward: 1319.88
+  Steps: 250
+  Epsilon: 0.114
+---------------
+Episode 436:
+  Level: 1
+  Reward: 1327.19
+  Steps: 243
+  Epsilon: 0.113
+---------------
+Episode 437:
+  Level: 1
+  Reward: 1293.50
+  Steps: 272
+  Epsilon: 0.112
+---------------
+Episode 438:
+  Level: 1
+  Reward: 1331.03
+  Steps: 239
+  Epsilon: 0.112
+---------------
+Episode 439:
+  Level: 1
+  Reward: 1324.71
+  Steps: 245
+  Epsilon: 0.111
+---------------
+Episode 440:
+  Level: 1
+  Reward: 1319.54
+  Steps: 250
+  Epsilon: 0.111
+---------------
+Episode 441:
+  Level: 1
+  Reward: 1295.49
+  Steps: 271
+  Epsilon: 0.110
+---------------
+Episode 442:
+  Level: 1
+  Reward: 1326.03
+  Steps: 244
+  Epsilon: 0.110
+---------------
+Episode 443:
+  Level: 1
+  Reward: 1322.09
+  Steps: 248
+  Epsilon: 0.109
+---------------
+Episode 444:
+  Level: 1
+  Reward: 1329.94
+  Steps: 240
+  Epsilon: 0.109
+---------------
+Episode 445:
+  Level: 1
+  Reward: 1321.29
+  Steps: 249
+  Epsilon: 0.108
+---------------
+Episode 446:
+  Level: 1
+  Reward: 1321.07
+  Steps: 249
+  Epsilon: 0.107
+---------------
+Episode 447:
+  Level: 1
+  Reward: 1324.13
+  Steps: 246
+  Epsilon: 0.107
+---------------
+Episode 448:
+  Level: 1
+  Reward: 1327.13
+  Steps: 243
+  Epsilon: 0.106
+---------------
+Episode 449:
+  Level: 1
+  Reward: 1329.69
+  Steps: 240
+  Epsilon: 0.106
+---------------
+Episode 450:
+  Level: 1
+  Reward: 1330.03
+  Steps: 240
+  Epsilon: 0.105
+---------------
+Episode 451:
+  Level: 1
+  Reward: 1334.03
+  Steps: 236
+  Epsilon: 0.105
+---------------
+Episode 452:
+  Level: 1
+  Reward: 1328.67
+  Steps: 241
+  Epsilon: 0.104
+---------------
+Episode 453:
+  Level: 1
+  Reward: 1324.04
+  Steps: 246
+  Epsilon: 0.104
+---------------
+Episode 454:
+  Level: 1
+  Reward: 558.09
+  Steps: 1785
+  Epsilon: 0.103
+---------------
+Episode 455:
+  Level: 1
+  Reward: 1333.03
+  Steps: 237
+  Epsilon: 0.103
+---------------
+Episode 456:
+  Level: 1
+  Reward: 553.60
+  Steps: 3597
+  Epsilon: 0.102
+---------------
+Episode 457:
+  Level: 1
+  Reward: -69.49
+  Steps: 5000
+  Epsilon: 0.102
+---------------
+Episode 458:
+  Level: 1
+  Reward: 1237.09
+  Steps: 333
+  Epsilon: 0.101
+---------------
+Episode 459:
+  Level: 1
+  Reward: 1139.11
+  Steps: 431
+  Epsilon: 0.101
+---------------
+Episode 460:
+  Level: 1
+  Reward: 1104.99
+  Steps: 465
+  Epsilon: 0.100
+---------------
+Episode 461:
+  Level: 1
+  Reward: 968.59
+  Steps: 601
+  Epsilon: 0.100
+---------------
+Episode 462:
+  Level: 1
+  Reward: 1181.91
+  Steps: 388
+  Epsilon: 0.099
+---------------
+Episode 463:
+  Level: 1
+  Reward: 1147.09
+  Steps: 423
+  Epsilon: 0.099
+---------------
+Episode 464:
+  Level: 1
+  Reward: 1137.09
+  Steps: 433
+  Epsilon: 0.098
+---------------
+Episode 465:
+  Level: 1
+  Reward: 1167.89
+  Steps: 402
+  Epsilon: 0.098
+---------------
+Episode 466:
+  Level: 1
+  Reward: 999.52
+  Steps: 569
+  Epsilon: 0.097
+---------------
+Episode 467:
+  Level: 1
+  Reward: 1051.60
+  Steps: 518
+  Epsilon: 0.097
+---------------
+Episode 468:
+  Level: 1
+  Reward: 994.10
+  Steps: 575
+  Epsilon: 0.096
+---------------
+Episode 469:
+  Level: 1
+  Reward: 1143.24
+  Steps: 426
+  Epsilon: 0.096
+---------------
+Episode 470:
+  Level: 1
+  Reward: 1163.99
+  Steps: 405
+  Epsilon: 0.095
+---------------
+Episode 471:
+  Level: 1
+  Reward: 1284.08
+  Steps: 286
+  Epsilon: 0.095
+---------------
+Episode 472:
+  Level: 1
+  Reward: 1299.58
+  Steps: 270
+  Epsilon: 0.094
+---------------
+Episode 473:
+  Level: 1
+  Reward: 1328.13
+  Steps: 242
+  Epsilon: 0.094
+---------------
+Episode 474:
+  Level: 1
+  Reward: 1332.03
+  Steps: 238
+  Epsilon: 0.093
+---------------
+Episode 475:
+  Level: 1
+  Reward: 1333.13
+  Steps: 237
+  Epsilon: 0.093
+---------------
+Episode 476:
+  Level: 1
+  Reward: 1327.78
+  Steps: 242
+  Epsilon: 0.092
+---------------
+Episode 477:
+  Level: 1
+  Reward: 1329.87
+  Steps: 240
+  Epsilon: 0.092
+---------------
+Episode 478:
+  Level: 1
+  Reward: 1332.96
+  Steps: 237
+  Epsilon: 0.092
+---------------
+Episode 479:
+  Level: 1
+  Reward: 1331.78
+  Steps: 238
+  Epsilon: 0.091
+---------------
+Episode 480:
+  Level: 1
+  Reward: 1329.87
+  Steps: 240
+  Epsilon: 0.091
+---------------
+Episode 481:
+  Level: 1
+  Reward: 1333.13
+  Steps: 237
+  Epsilon: 0.090
+---------------
+Episode 482:
+  Level: 1
+  Reward: 1328.94
+  Steps: 241
+  Epsilon: 0.090
+---------------
+Episode 483:
+  Level: 1
+  Reward: 1330.78
+  Steps: 239
+  Epsilon: 0.089
+---------------
+Episode 484:
+  Level: 1
+  Reward: 1328.77
+  Steps: 241
+  Epsilon: 0.089
+---------------
+Episode 485:
+  Level: 1
+  Reward: 1328.13
+  Steps: 242
+  Epsilon: 0.088
+---------------
+Episode 486:
+  Level: 1
+  Reward: 1328.96
+  Steps: 241
+  Epsilon: 0.088
+---------------
+Episode 487:
+  Level: 1
+  Reward: 1327.03
+  Steps: 243
+  Epsilon: 0.088
+---------------
+Episode 488:
+  Level: 1
+  Reward: 1327.13
+  Steps: 243
+  Epsilon: 0.087
+---------------
+Episode 489:
+  Level: 1
+  Reward: 1326.66
+  Steps: 243
+  Epsilon: 0.087
+---------------
+Episode 490:
+  Level: 1
+  Reward: 1333.13
+  Steps: 237
+  Epsilon: 0.086
+---------------
+Episode 491:
+  Level: 1
+  Reward: 1330.94
+  Steps: 239
+  Epsilon: 0.086
+---------------
+Episode 492:
+  Level: 1
+  Reward: 1330.03
+  Steps: 240
+  Epsilon: 0.085
+---------------
+Episode 493:
+  Level: 1
+  Reward: 1333.96
+  Steps: 236
+  Epsilon: 0.085
+---------------
+Episode 494:
+  Level: 1
+  Reward: 1331.94
+  Steps: 238
+  Epsilon: 0.084
+---------------
+Episode 495:
+  Level: 1
+  Reward: 1332.77
+  Steps: 237
+  Epsilon: 0.084
+---------------
+Episode 496:
+  Level: 1
+  Reward: 1334.03
+  Steps: 236
+  Epsilon: 0.084
+---------------
+Episode 497:
+  Level: 1
+  Reward: 1329.96
+  Steps: 240
+  Epsilon: 0.083
+---------------
+Episode 498:
+  Level: 1
+  Reward: 1331.96
+  Steps: 238
+  Epsilon: 0.083
+---------------
+Episode 499:
+  Level: 1
+  Reward: 1333.13
+  Steps: 237
+  Epsilon: 0.082
+---------------
+Episode 500:
+  Level: 1
+  Reward: 1328.88
+  Steps: 241
+  Epsilon: 0.082
+---------------

@@ -32,6 +32,18 @@ pygame.display.set_caption("2D Runner")
 # Agent class
 
 def main():
+    """
+    Main function to run the game loop.
+
+    This function initializes the game, creates the agent and obstacles, and 
+    handles the game loop. The game loop includes event handling, agent actions, 
+    obstacle spawning and updating, collision detection, and rendering.
+
+    The game ends when the agent collides with an obstacle, and the final score 
+    is printed.
+
+    The game runs at 60 frames per second.
+    """
     clock = pygame.time.Clock()
     agent = Agent()
     obstacles = []

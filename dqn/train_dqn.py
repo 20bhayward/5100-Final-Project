@@ -12,6 +12,28 @@ Transition = namedtuple('Transition', ('state', 'action', 'next_state', 'reward'
 
 # Define the replay memory
 class ReplayMemory(object):
+    """
+    A class to store and manage replay memory for experience replay in reinforcement learning.
+
+    Attributes:
+    -----------
+    memory : deque
+        A deque to store the transitions with a fixed maximum length.
+
+    Methods:
+    --------
+    __init__(capacity):
+        Initializes the replay memory with a given capacity.
+    
+    push(*args):
+        Saves a transition in the replay memory.
+    
+    sample(batch_size):
+        Returns a random sample of transitions from the replay memory.
+    
+    __len__():
+        Returns the current size of the replay memory.
+    """
     def __init__(self, capacity):
         self.memory = deque([], maxlen=capacity)
 
@@ -26,6 +48,22 @@ class ReplayMemory(object):
 
 # Function to optimize the model
 def optimize_model():
+    """
+    Perform a single step of optimization for the DQN model.
+
+    This function samples a batch of transitions from the replay memory, computes the expected Q-values,
+    and updates the policy network by minimizing the loss between the predicted Q-values and the expected Q-values.
+
+    The optimization process includes:
+    1. Sampling a batch of transitions from the replay memory.
+    2. Computing the state-action values for the current states.
+    3. Computing the expected state-action values for the next states.
+    4. Calculating the loss between the predicted and expected state-action values.
+    5. Performing a gradient descent step to update the policy network.
+
+    Returns:
+        None
+    """
     if len(memory) < BATCH_SIZE:
         return
     transitions = memory.sample(BATCH_SIZE)
@@ -73,6 +111,15 @@ steps_done = 0
 
 # Function to select an action based on the current state
 def select_action(state):
+    """
+    Selects an action based on the current state using an epsilon-greedy strategy.
+
+    Args:
+        state (torch.Tensor): The current state of the environment.
+
+    Returns:
+        torch.Tensor: The selected action.
+    """
     global steps_done
     sample = random.random()
     eps_threshold = EPS_END + (EPS_START - EPS_END) * np.exp(-1. * steps_done / EPS_DECAY)
