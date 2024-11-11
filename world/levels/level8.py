@@ -84,7 +84,7 @@ class Level8(Level):
 
         trap4 = MovingTrap(
             x=1350, y=110, width=30, height=30, color=(255, 0, 0),
-            speed=2, direction='horizontal', start_pos=1350, end_pos=1500  # Right-to-left movement
+            speed=1, direction='horizontal', start_pos=1350, end_pos=1500  # Right-to-left movement
         )
         self.trap_list.add(trap4)
         self.all_sprites_list.add(trap4)
