@@ -29,12 +29,22 @@ class Level6(Level):
             self.all_sprites_list.add(water)
 
         for i in range(250, 300, 120):
-            block = SquareBlock(i, 480)
+            block = SquareBlock(i, 520)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
-        for i in range(350, 400, 40):
-            block = SquareBlock(i, 400)
+        for i in range(320, 350, 120):
+            block = SquareBlock(i, 470)
+            self.block_list.add(block)
+            self.all_sprites_list.add(block)
+
+        for i in range(390, 430, 40):
+            block = SquareBlock(i, 420)
+            self.block_list.add(block)
+            self.all_sprites_list.add(block)
+
+        for i in range(440, 480, 40):
+            block = SquareBlock(i, 370)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
@@ -52,8 +62,8 @@ class Level6(Level):
             self.all_sprites_list.add(water)
 
         # Second platform for movement
-        for i in range(550, 900, 40):  # Shorter second platform
-            block = SquareBlock(i, 250)
+        for i in range(570, 900, 40):  # Shorter second platform
+            block = SquareBlock(i, 280)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
@@ -64,14 +74,6 @@ class Level6(Level):
         )
         self.block_list.add(moving_platform)
         self.all_sprites_list.add(moving_platform)
-
-        # Traps
-        trap1 = MovingTrap(
-            x=900, y=330, width=40, height=40, color=(255, 0, 0),
-            speed=1, direction='horizontal', start_pos=900, end_pos=1400
-        )
-        self.trap_list.add(trap1)
-        self.all_sprites_list.add(trap1)
 
         # 3rd Platform
         for i in range(1500, 1800, 40):

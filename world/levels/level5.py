@@ -29,16 +29,16 @@ class Level5(Level):
             self.all_sprites_list.add(water)
 
         # Corridor with spaced moving traps and platforms
-        for i in range(250, 700, 200):  # Adding more spacing between moving traps
+        for i in range(220, 700, 100):  # Adding more spacing between moving traps
             trap = MovingTrap(
                 x=i, y=500, width=40, height=40, color=(255, 0, 0),
-                speed=2, direction='vertical', start_pos=480, end_pos=600
+                speed=1, direction='vertical', start_pos=480, end_pos=600
             )
             self.trap_list.add(trap)
             self.all_sprites_list.add(trap)
 
             # Platform above each moving trap
-            platform = SquareBlock(i + 100, 550)  # Slightly above the trap's path
+            platform = SquareBlock(i + 50, 550)  # Slightly above the trap's path
             self.block_list.add(platform)
             self.all_sprites_list.add(platform)
 
@@ -50,18 +50,18 @@ class Level5(Level):
 
         moving_platform = MovingBlock(
             x=850, y=500, width=80, height=20, color=(255, 255, 255),
-            speed=2, direction='horizontal', start_pos=800, end_pos=1000
+            speed=2, direction='horizontal', start_pos=700, end_pos=1000
         )
         self.block_list.add(moving_platform)
         self.all_sprites_list.add(moving_platform)
 
         # Final platform with goal
         for i in range(1000, 1380, 40):
-            block = SquareBlock(i, 440)
+            block = SquareBlock(i, 460)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
-        goal_block = GoalBlock(1330, 400)
+        goal_block = GoalBlock(1330, 420)
         self.block_list.add(goal_block)
         self.goal_list.add(goal_block)
         self.all_sprites_list.add(goal_block)

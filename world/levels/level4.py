@@ -29,11 +29,11 @@ class Level4(Level):
             self.all_sprites_list.add(water)
 
         # First challenging section with traps
-        for i in range(320, 480, 40):
+        for i in range(320, 500, 40):
             block = SquareBlock(i, 520)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
-        trap = TrapBlock(400, 480)
+        trap = TrapBlock(400, 490)
         self.trap_list.add(trap)
         self.all_sprites_list.add(trap)
 
@@ -66,19 +66,19 @@ class Level4(Level):
             speed=2,
             direction='horizontal',
             start_pos=1160,
-            end_pos=1400
+            end_pos=1370
         )
         self.block_list.add(moving_platform)
         self.all_sprites_list.add(moving_platform)
-        # self.moving_blocks.add(moving_platform)
 
         # Elevated platforms with traps
-        for i in range(1440, 1600, 40):
-            block = SquareBlock(i, 280)
+        for i in range(1380, 1600, 40):
+            block = SquareBlock(i, 320)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
-        for i in range(1480, 1560, 80):
-            trap = TrapBlock(i, 240)
+
+        for i in range(1460, 1560, 100):
+            trap = TrapBlock(i, 310)
             self.trap_list.add(trap)
             self.all_sprites_list.add(trap)
 

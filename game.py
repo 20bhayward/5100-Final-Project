@@ -773,7 +773,7 @@ class Game:
             self.events()
             self.update()
             self.draw()
-            # self.clock.tick(60)  # Limit to 60 FPS
+            self.clock.tick(60)  # Limit to 60 FPS
         self.quit()
 
     def update(self):
