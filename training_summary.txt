@@ -1,0 +1,22 @@
+Training Analysis Summary
+========================
+
+Episode Statistics:
+Total Episodes: 500
+Training Duration: 500 episodes
+
+Reward Statistics:
+Average Reward: 1142.05
+Best Reward: 1334.03
+Worst Reward: -659.22
+Reward Standard Deviation: 330.09
+
+Performance Metrics:
+Average Steps per Episode: 534.91
+Minimum Steps: 236
+Maximum Steps: 5000
+
+Learning Progress:
+First 100 episodes average: 646.00
+Last 100 episodes average: 1267.84
+Improvement: 96.3%

@@ -16,7 +16,51 @@ BG_COLOR = (50, 50, 50)
 
 # Define the custom environment
 class PlatformEnv(gym.Env):
+    """
+    Custom environment that follows the OpenAI Gym interface.
+    This environment simulates a platformer game where an agent can move left, right, jump, or do nothing.
+
+    Attributes:
+        screen_width (int): Width of the game screen.
+        screen_height (int): Height of the game screen.
+        agent_width (int): Width of the agent.
+        agent_height (int): Height of the agent.
+        jump_height (int): Height the agent can jump.
+        action_space (gym.spaces.Discrete): The action space, consisting of 4 actions (Left, Right, Jump, Do Nothing).
+        observation_space (gym.spaces.Box): The observation space, representing the screen as an array.
+        screen (pygame.Surface): The game screen.
+        done (bool): Flag indicating if the episode is done.
+        agent (Agent): The agent in the environment.
+        block_list (pygame.sprite.Group): Group of platform blocks.
+        all_sprites_list (pygame.sprite.Group): Group of all sprites in the environment.
+
+    Methods:
+        __init__(): Initializes the environment.
+        reset(): Resets the environment to the initial state.
+        generate_platforms(): Generates platforms for the agent to navigate.
+        _get_state(): Captures the current screen state as an array.
+        step(action): Updates the agent's position based on the action and returns the current state, reward, and done flag.
+        render(mode='human'): Renders the environment.
+        close(): Closes the environment and quits Pygame.
+    """
     def __init__(self):
+        """
+        Initializes the PlatformEnv environment.
+
+        This sets up the screen dimensions, agent dimensions, jump height, action space, 
+        and observation space for the environment. It also initializes the Pygame library 
+        and sets up the display window.
+
+        Attributes:
+            screen_width (int): The width of the game screen.
+            screen_height (int): The height of the game screen.
+            agent_width (int): The width of the agent.
+            agent_height (int): The height of the agent.
+            jump_height (int): The height the agent can jump.
+            action_space (gym.spaces.Discrete): The action space for the agent, with 4 possible actions (Left, Right, Jump, Do Nothing).
+            observation_space (gym.spaces.Box): The observation space representing the screen as an array of pixel values.
+            screen (pygame.Surface): The Pygame display surface.
+        """
         super(PlatformEnv, self).__init__()
         self.screen_width = 800
         self.screen_height = 600
@@ -31,6 +75,17 @@ class PlatformEnv(gym.Env):
         self.reset()
 
     def reset(self):
+        """
+        Resets the environment to its initial state.
+
+        This method performs the following actions:
+        1. Initializes the agent at the starting position.
+        2. Generates the platforms in the environment.
+        3. Sets the done flag to False.
+
+        Returns:
+            state (object): The initial state of the environment.
+        """
         # Initialize the agent at the starting position
         self.agent = Agent(50, self.screen_height - 80)
         # Generate the platforms
@@ -41,6 +96,26 @@ class PlatformEnv(gym.Env):
         return self._get_state()
 
     def generate_platforms(self):
+        """
+        Generates platforms for the game environment.
+
+        This method creates sprite groups for blocks and all sprites, including the agent.
+        It generates platforms of varying heights and gaps, ensuring that the agent can
+        jump between them. The platforms are created by adding blocks to the block list
+        and the all sprites list.
+
+        Attributes:
+            block_list (pygame.sprite.Group): Group containing all block sprites.
+            all_sprites_list (pygame.sprite.Group): Group containing all sprites, including the agent.
+            platform_width (int): Width of each platform block.
+            platform_height (int): Height of each platform block.
+            max_platform_height (int): Maximum number of blocks in platform height.
+            min_platform_height (int): Minimum number of blocks in platform height.
+            max_gap (int): Maximum gap between platforms.
+            min_gap (int): Minimum gap between platforms.
+            x (int): Current x position for platform generation.
+            last_platform_top (int): Top position of the last generated platform.
+        """
         # Create sprite groups for blocks and all sprites
         self.block_list = pygame.sprite.Group()
         self.all_sprites_list = pygame.sprite.Group()
@@ -70,11 +145,37 @@ class PlatformEnv(gym.Env):
             x += platform_width * random.randint(1, 3) + random.randint(min_gap, max_gap)
 
     def _get_state(self):
+        """
+        Capture the current screen state as a 3D array.
+
+        This method uses the pygame library to capture the current state of the display surface
+        and returns it as a 3D array representing the RGB values of each pixel.
+
+        Returns:
+            numpy.ndarray: A 3D array representing the current screen state.
+        """
         # Capture the current screen state as an array
         state = pygame.surfarray.array3d(pygame.display.get_surface())
         return state
 
     def step(self, action):
+        """
+        Execute one time step within the environment based on the given action.
+
+        Args:
+            action (int): The action to be taken by the agent. 
+                          0 - Move Left
+                          1 - Move Right
+                          2 - Jump
+                          3 - Do Nothing
+
+        Returns:
+            tuple: A tuple containing:
+                - state (object): The current state of the environment.
+                - reward (int): The reward received after taking the action.
+                - done (bool): A flag indicating whether the episode has ended.
+                - info (dict): Additional information (empty dictionary in this case).
+        """
         # Update the agent's position based on the action
         if action == 0:  # Left
             self.agent.rect.x -= 10
@@ -96,6 +197,15 @@ class PlatformEnv(gym.Env):
         return self._get_state(), reward, self.done, {}
 
     def render(self, mode='human'):
+        """
+        Renders the current state of the environment to the screen.
+
+        Args:
+            mode (str): The mode in which to render the environment. Default is 'human'.
+
+        This method fills the screen with the background color, draws all sprites on the screen,
+        and updates the display.
+        """
         # Fill the screen with the background color
         self.screen.fill(BG_COLOR)
         # Draw all sprites on the screen
@@ -104,5 +214,11 @@ class PlatformEnv(gym.Env):
         pygame.display.flip()
 
     def close(self):
+        """
+        Closes the environment and quits Pygame.
+
+        This method should be called to properly shut down the environment and 
+        release any resources used by Pygame.
+        """
         # Quit Pygame
         pygame.quit()
