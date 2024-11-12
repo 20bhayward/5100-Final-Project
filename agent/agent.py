@@ -114,7 +114,6 @@ class Agent(pygame.sprite.Sprite):
         self.gravity_acc = 0.4
         self.terminal_velocity = 3
         self.on_ground = False  # Initialize on_ground attribute
-        # self.max_jump_height = max_jump_height
         self.jump_speed = -7
 
         self.mask = pygame.mask.from_surface(self.image)
