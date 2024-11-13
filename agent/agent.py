@@ -94,19 +94,12 @@ class Agent(pygame.sprite.Sprite):
             mask (pygame.mask.Mask): The mask for pixel-perfect collision detection.
         """
         super().__init__()
-        # self.width = 5
-        # self.height = 5
         self.frames = self.load_gif_frames("world/assets/runner-sprite.gif")
         self.current_frame = 0  # Start on the first frame
         self.image = self.frames[self.current_frame]
         self.rect = self.image.get_rect(topleft=(x, 589))
         self.animation_speed = 5  # Number of game cycles per frame
         self.frame_counter = 0
-        # self.image = pygame.Surface([self.width, self.height])
-        # self.image.fill(AGENT_COLOR)
-        # self.rect = self.image.get_rect()
-        # self.rect.x = x
-        # self.rect.y = y
 
         # Movement physics
         self.change_x = 0
