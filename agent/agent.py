@@ -1,6 +1,7 @@
 # agent.py
 import numpy as np
 import pygame
+from PIL import Image
 from world.components.blocks.interactive.goal_block import GoalBlock
 
 AGENT_COLOR = (0, 0, 255)
@@ -93,13 +94,12 @@ class Agent(pygame.sprite.Sprite):
             mask (pygame.mask.Mask): The mask for pixel-perfect collision detection.
         """
         super().__init__()
-        self.width = 20
-        self.height = 20
-        self.image = pygame.Surface([self.width, self.height])
-        self.image.fill(AGENT_COLOR)
-        self.rect = self.image.get_rect()
-        self.rect.x = x
-        self.rect.y = y
+        self.frames = self.load_gif_frames("world/assets/runner-sprite.gif")
+        self.current_frame = 0  # Start on the first frame
+        self.image = self.frames[self.current_frame]
+        self.rect = self.image.get_rect(topleft=(x, 589))
+        self.animation_speed = 5  # Number of game cycles per frame
+        self.frame_counter = 0
 
         # Movement physics
         self.change_x = 0
@@ -117,6 +117,17 @@ class Agent(pygame.sprite.Sprite):
         self.jump_speed = -7
 
         self.mask = pygame.mask.from_surface(self.image)
+
+    def load_gif_frames(self, gif_path):
+        """Load frames from a GIF and convert them to Pygame surfaces."""
+        frames = []
+        gif = Image.open(gif_path)
+        for frame in range(gif.n_frames):
+            gif.seek(frame)
+            frame_image = gif.convert("RGBA")
+            frame_surface = pygame.image.fromstring(frame_image.tobytes(), frame_image.size, frame_image.mode)
+            frames.append(frame_surface)
+        return frames
 
     def update(self, blocks):
         """
@@ -141,6 +152,17 @@ class Agent(pygame.sprite.Sprite):
         self.apply_gravity()
         self.rect.y += self.change_y
         self.collide_with_blocks(0, self.change_y, blocks)
+    
+        self.animate()
+
+    def animate(self):
+        """Animate by cycling through GIF frames."""
+        self.frame_counter += 1
+        if self.frame_counter >= self.animation_speed:
+            self.current_frame = (self.current_frame + 1) % len(self.frames)
+            self.image = self.frames[self.current_frame]
+            self.mask = pygame.mask.from_surface(self.image)
+            self.frame_counter = 0
 
     def accelerate(self):
         """
@@ -166,7 +188,6 @@ class Agent(pygame.sprite.Sprite):
             self.change_x += self.change_x * self.friction
         # Limit speed
         self.change_x = max(-self.max_speed_x, min(self.change_x, self.max_speed_x))
-
 
     def apply_gravity(self):
         """
