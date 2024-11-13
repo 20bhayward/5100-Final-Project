@@ -54,9 +54,9 @@ class Level3(Level):
         # Vertical section with staggered platforms
         platforms = [
             (960, 500),   # Start of vertical section
-            (1040, 450),  # First step up
+            (1050, 450),  # First step up
             (960, 400),   # Second step up
-            (1040, 350),  # Third step up
+            (1050, 350),  # Third step up
             (960, 300),   # Final platform
         ]
         

@@ -40,16 +40,16 @@ class Level8(Level):
 
         # Vertical moving trap
         trap1 = MovingTrap(
-            x=450, y=400, width=20, height=20, color=(255, 0, 0),
-            speed=2, direction='vertical', start_pos=400, end_pos=510
+            x=450, y=370, width=20, height=20, color=(255, 0, 0),
+            speed=2, direction='vertical', start_pos=370, end_pos=500
         )
         self.trap_list.add(trap1)
         self.all_sprites_list.add(trap1)
 
         # Vertical moving trap
         trap1 = MovingTrap(
-            x=610, y=300, width=20, height=20, color=(255, 0, 0),
-            speed=2, direction='vertical', start_pos=300, end_pos=410
+            x=610, y=270, width=20, height=20, color=(255, 0, 0),
+            speed=2, direction='vertical', start_pos=270, end_pos=400
         )
         self.trap_list.add(trap1)
         self.all_sprites_list.add(trap1)
