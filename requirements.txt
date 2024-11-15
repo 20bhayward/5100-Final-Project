@@ -2,4 +2,8 @@ pygame
 torch
 numpy
 seaborn
-
+matplotlib
+pandas
+scikit-learn
+scipy
+argparse
