@@ -1,2 +1,5 @@
-pygame==2.6.1
-torch==2.4.1
+pygame
+torch
+numpy
+seaborn
+
