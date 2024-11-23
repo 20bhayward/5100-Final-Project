@@ -22,11 +22,11 @@ class Level2(Level):
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
-        # Water
-        for i in range(240, 1800, 40):
-            water = WaterBlock(i, 520)
-            self.trap_list.add(water)
-            self.all_sprites_list.add(water)
+        # # Water
+        # for i in range(240, 1800, 40):
+        #     water = WaterBlock(i, 620)
+        #     self.trap_list.add(water)
+        #     self.all_sprites_list.add(water)
 
         # First gap with safe landing
         for i in range(300, 520, 40):  # Wider platform for safe landing
