@@ -20,30 +20,30 @@ class Level3(Level):
             self.all_sprites_list.add(block)
 
         # First jump platform
-        for i in range(320, 440, 40):
-            block = SquareBlock(i, 560)
+        for i in range(280, 440, 40):
+            block = SquareBlock(i, 550)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
         # Second platform with slight elevation
-        for i in range(520, 640, 40):
-            block = SquareBlock(i, 520)  # Slightly higher
+        for i in range(480, 640, 40):
+            block = SquareBlock(i, 530)  # Slightly higher
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
         # Third platform introducing a single trap
-        for i in range(720, 900, 40):
+        for i in range(680, 900, 40):
             block = SquareBlock(i, 520)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
-        # Single trap
-        trap = TrapBlock(800, 500)
-        self.trap_list.add(trap)
-        self.all_sprites_list.add(trap)
+        # # Single trap
+        # trap = TrapBlock(800, 500)
+        # self.trap_list.add(trap)
+        # self.all_sprites_list.add(trap)
 
         # Final stretch towards the goal
-        for i in range(1000, 1200, 40):
+        for i in range(960, 1200, 40):
             block = SquareBlock(i, 520)
             self.block_list.add(block)
             self.all_sprites_list.add(block)

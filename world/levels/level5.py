@@ -1,6 +1,7 @@
 # world/levels/level5.py
 
 import pygame
+from world.components.blocks.interactive.trap_block import TrapBlock
 from world.levels.level import Level
 from world.components.blocks.static.square_block import SquareBlock
 from world.components.blocks.interactive.water_block import WaterBlock
@@ -26,9 +27,16 @@ class Level5(Level):
             self.all_sprites_list.add(water)
 
         # Platforms without moving traps
-        for i in range(220, 700, 120):
+        for i in range(220, 700, 150):
             # Platform above the water
-            platform = SquareBlock(i + 50, 520)
+            platform = SquareBlock(i, 540)
+            self.block_list.add(platform)
+            self.all_sprites_list.add(platform)
+        
+        # Platforms without moving traps
+        for i in range(220, 700, 150):
+            # Platform above the water
+            platform = SquareBlock(i + 40, 540)
             self.block_list.add(platform)
             self.all_sprites_list.add(platform)
 

@@ -35,7 +35,7 @@ class Level2(Level):
             self.all_sprites_list.add(block)
 
         # Small elevation change
-        for i in range(520, 800, 40):
+        for i in range(575, 800, 40):
             block = SquareBlock(i, 520)  # Slightly higher
             self.block_list.add(block)
             self.all_sprites_list.add(block)

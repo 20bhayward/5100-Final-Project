@@ -116,7 +116,8 @@ class Agent(pygame.sprite.Sprite):
         self.gravity_acc = 0.4
         self.terminal_velocity = 3
         self.on_ground = False  # Initialize on_ground attribute
-        self.jump_speed = -7
+        self.jump_speed = -8
+        self.is_jumping = False 
 
         self.mask = pygame.mask.from_surface(self.image)
 
@@ -145,6 +146,8 @@ class Agent(pygame.sprite.Sprite):
         4. Applies vertical movement by updating the agent's y-coordinate based on its vertical velocity.
         5. Checks for collisions with blocks after vertical movement.
         """
+        if self.on_ground:
+            self.is_jumping = False
         # Apply horizontal movement
         self.accelerate()
         self.rect.x += self.change_x
@@ -212,7 +215,8 @@ class Agent(pygame.sprite.Sprite):
         """
         if self.on_ground:
             self.change_y = self.jump_speed
-            self.on_ground = False  # Set on_ground to False after jumping
+            self.on_ground = False
+            self.is_jumping = True
 
     def collide_with_blocks(self, dx, dy, blocks):
         """

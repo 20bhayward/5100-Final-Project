@@ -22,7 +22,7 @@ class TrapBlock(Block):
             Defines the interaction behavior when an agent hits the trap.
     """
     
-    def __init__(self, x, y, width=50, height=30, color=(255, 0, 0)):
+    def __init__(self, x, y, width=30, height=20, color=(255, 0, 0)):
         """
         Initializes a TrapBlock object.
 

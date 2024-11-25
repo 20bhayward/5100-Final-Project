@@ -1,51 +1,43 @@
+# q_network.py
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
 class QNetwork(nn.Module):
     """
-    QNetwork is a neural network model for approximating the Q-value function in reinforcement learning.
-
-    Args:
-        state_dim (int): Dimension of the input state.
-        action_dim (int): Dimension of the output action space.
-
-    Attributes:
-        fc1 (nn.Linear): First fully connected layer.
-        fc2 (nn.Linear): Second fully connected layer.
-        fc3 (nn.Linear): Third fully connected layer.
-
-    Methods:
-        forward(state):
-            Performs a forward pass through the network.
-            Args:
-                state (torch.Tensor): Input state tensor.
-            Returns:
-                torch.Tensor: Output action-value tensor.
+    Dueling DQN architecture for more efficient learning.
     """
     def __init__(self, state_dim, action_dim):
-        """
-        Initializes the QNetwork.
-
-        Args:
-            state_dim (int): Dimension of the input state.
-            action_dim (int): Dimension of the output actions.
-        """
         super(QNetwork, self).__init__()
-        self.fc1 = nn.Linear(state_dim, 128)
-        self.fc2 = nn.Linear(128, 128)
-        self.fc3 = nn.Linear(128, action_dim)
+        # Increased network size
+        self.fc1 = nn.Linear(state_dim, 256)
+        self.fc2 = nn.Linear(256, 256)
+        
+        # Advantage stream
+        self.adv_fc1 = nn.Linear(256, 128)
+        self.adv_fc2 = nn.Linear(128, action_dim)
+        
+        # Value stream
+        self.val_fc1 = nn.Linear(256, 128)
+        self.val_fc2 = nn.Linear(128, 1)
 
-    def forward(self, state):
+        
+    def forward(self, x):
         """
-        Perform a forward pass through the neural network.
-
-        Args:
-            state (torch.Tensor): The input state tensor.
-
-        Returns:
-            torch.Tensor: The output tensor after passing through the network.
+        Forward pass through the network.
         """
-        x = F.relu(self.fc1(state))
+        x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
-        return self.fc3(x)
+        
+        # Advantage stream
+        adv = F.relu(self.adv_fc1(x))
+        adv = self.adv_fc2(adv)
+        
+        # Value stream
+        val = F.relu(self.val_fc1(x))
+        val = self.val_fc2(val).expand(x.size(0), self.adv_fc2.out_features)
+        
+        # Combine streams
+        q_vals = val + adv - adv.mean(1, keepdim=True).expand(x.size(0), self.adv_fc2.out_features)
+        return q_vals

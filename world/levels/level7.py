@@ -3,67 +3,70 @@
 import pygame
 from world.levels.level import Level
 from world.components.blocks.static.square_block import SquareBlock
-from world.components.blocks.interactive.water_block import WaterBlock
-from world.components.blocks.interactive.moving_block import MovingBlock
 from world.components.blocks.interactive.trap_block import TrapBlock
+from world.components.blocks.interactive.moving_block import MovingBlock
 from world.components.blocks.interactive.goal_block import GoalBlock
 
 class Level7(Level):
     def __init__(self):
-        self.width = 1600  # Reduced level width
+        self.width = 1600
         self.height = 800
         super().__init__()
 
     def create_level(self):
-        # Starting platform
-        for i in range(0, 180, 40):
+        # Starting platform (wide for good start)
+        for i in range(0, 280, 40):
             block = SquareBlock(i, 560)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
-        # Water hazard
-        for i in range(200, 740, 40):
-            water = WaterBlock(i, 520)
-            self.all_sprites_list.add(water)
-
-        # Staggered platforms
-        platforms = [
-            (230, 520),
-            (310, 470),
-            (390, 420),
-            (470, 370),
-            (550, 320),
-            (630, 270),
-            (710, 220),
-        ]
-        for x, y in platforms:
-            block = SquareBlock(x, y)
+        # First section with small gap and trap
+        for i in range(360, 600, 40):
+            block = SquareBlock(i, 560)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
-        # Wall
-        x_position = 790
-        for y_position in range(560, 180, -40):
-            block = SquareBlock(x_position, y_position)
+        # First trap covering the gap
+        for i in range(280, 360, 40):
+            trap = TrapBlock(i, 580, 40, 40)  # Fill the gap with trap blocks
+            self.trap_list.add(trap)
+            self.all_sprites_list.add(trap)
+
+        # Second section with medium gap
+        for i in range(680, 920, 40):
+            block = SquareBlock(i, 560)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
-        # Second moving platform without traps
+        # Second trap covering the wider gap
+        for i in range(600, 680, 40):
+            trap = TrapBlock(i, 580, 40, 40)  # Fill the gap with trap blocks
+            self.trap_list.add(trap)
+            self.all_sprites_list.add(trap)
+
+        # Moving platform section
         moving_platform = MovingBlock(
-            x=1030, y=360, width=80, height=20, color=(255, 255, 255),
-            speed=2, direction='horizontal', start_pos=980, end_pos=1400
+            x=1000,
+            y=560,
+            width=160,  # Wide enough for safe landing
+            height=40,
+            color=(255, 255, 255),
+            speed=1,  # Slow speed for learnable timing
+            direction='horizontal',
+            start_pos=950,
+            end_pos=1250
         )
         self.block_list.add(moving_platform)
         self.all_sprites_list.add(moving_platform)
 
-        # Third platform
-        for i in range(1500, 1600, 40):
-            block = SquareBlock(i, 480)
+        # Final platform sequence
+        for i in range(1280, 1600, 40):
+            block = SquareBlock(i, 560)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
         # Goal block
-        goal_block = GoalBlock(1560, 440)
+        goal_block = GoalBlock(1540, 520)
         self.block_list.add(goal_block)
         self.goal_list.add(goal_block)
         self.all_sprites_list.add(goal_block)

@@ -3,79 +3,85 @@
 import pygame
 from world.levels.level import Level
 from world.components.blocks.static.square_block import SquareBlock
-from world.components.blocks.interactive.water_block import WaterBlock
 from world.components.blocks.interactive.moving_block import MovingBlock
 from world.components.blocks.interactive.goal_block import GoalBlock
 
 class Level6(Level):
     def __init__(self):
-        self.width = 1800  # Adjusted level width
+        self.width = 2000  # Extended level width for dual paths
         self.height = 800
         super().__init__()
 
     def create_level(self):
-        # Starting platform
-        for i in range(0, 200, 40):
+        # === STARTING PLATFORM ===
+        for i in range(0, 400, 40):  # Wide starting platform
             block = SquareBlock(i, 560)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
-        # Water hazard
-        for i in range(200, 540, 40):
-            water = WaterBlock(i, 520)
-            self.all_sprites_list.add(water)
-
-        # Series of platforms
-        platform_positions = [
-            (250, 520),
-            (320, 470),
-            (390, 420),
-            (440, 370)
-        ]
-
-        for x, y in platform_positions:
-            block = SquareBlock(x, y)
+        # === EASY PATH (BOTTOM) ===
+        # First straight section with a small gap
+        for i in range(480, 1000, 40):
+            block = SquareBlock(i, 560)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
-        # Wall to challenge the player
-        x_position = 500
-        for y_position in range(560, 300, -40):
-            block = SquareBlock(x_position, y_position)
+        # Second section after gap
+        for i in range(1080, 1700, 40):
+            block = SquareBlock(i, 560)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
-        # Water after the wall
-        for i in range(540, 1800, 40):
-            water = WaterBlock(i, 350, height=400)
-            self.trap_list.add(water)
-            self.all_sprites_list.add(water)
 
-        # Second platform
-        for i in range(570, 900, 40):
-            block = SquareBlock(i, 280)
+        # === PARKOUR PATH (UPPER) ===
+        # First elevated platform (using height difference from Level 2)
+        for i in range(480, 680, 40):
+            block = SquareBlock(i, 520)  # Only 40 pixels higher than base
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
-        # Moving platform with reduced speed
-        moving_platform = MovingBlock(
-            x=1000, y=380, width=120, height=20, color=(255, 255, 255),
-            speed=1.5,  # Reduced speed from 2 to 1
+        # Second elevated platform (similar to Level 4's first elevation)
+        for i in range(760, 960, 40):
+            block = SquareBlock(i, 480)  # 40 pixels higher than previous
+            self.block_list.add(block)
+            self.all_sprites_list.add(block)
+
+        # Third elevated platform
+        for i in range(1040, 1240, 40):
+            block = SquareBlock(i, 440)  # Again, 40 pixels higher
+            self.block_list.add(block)
+            self.all_sprites_list.add(block)
+
+        # Moving platform sequence (upper path)
+        moving_platform2 = MovingBlock(
+            x=1320,
+            y=440,  # Same height as previous platform
+            width=160,  # Wide platform
+            height=40,
+            color=(255, 255, 255),
+            speed=1.5,
             direction='horizontal',
-            start_pos=1000,
-            end_pos=1400
+            start_pos=1320,
+            end_pos=1520
         )
-        self.block_list.add(moving_platform)
-        self.all_sprites_list.add(moving_platform)
+        self.block_list.add(moving_platform2)
+        self.all_sprites_list.add(moving_platform2)
 
-        # Final platform
-        for i in range(1500, 1800, 40):
-            block = SquareBlock(i, 440)
+        # Final upper platform (gentle slope down to goal)
+        for i in range(1600, 1800, 40):
+            block = SquareBlock(i, 480)  # Coming down towards goal
+            self.block_list.add(block)
+            self.all_sprites_list.add(block)
+
+        # === FINAL SECTION AND GOAL ===
+        # Final platform (accessible from both paths)
+        for i in range(1800, 2000, 40):
+            block = SquareBlock(i, 560)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
         # Goal block
-        goal_block = GoalBlock(1700, 400)
+        goal_block = GoalBlock(1950, 520)
         self.block_list.add(goal_block)
         self.goal_list.add(goal_block)
         self.all_sprites_list.add(goal_block)

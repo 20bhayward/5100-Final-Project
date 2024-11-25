@@ -1,7 +1,10 @@
 # pygame_manager.py
 import pygame
+from pygame import Color
 import os
+import numpy as np
 from .config import SCREEN_WIDTH, SCREEN_HEIGHT
+import trainer.trainer
 
 class PygameManager:
     def __init__(self, render_enabled=True, game=None, agent=None):
@@ -149,14 +152,78 @@ class PygameManager:
         if not self.render_enabled:
             return
 
+        # Load and draw the background
         background_image = pygame.image.load('world/assets/background-sprite.png').convert()
         background_image = pygame.transform.scale(background_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
         self.screen.blit(background_image, (0, 0))
 
+        # Draw all sprites with camera adjustment
         for entity in self.all_sprites_list:
             self.screen.blit(entity.image, (entity.rect.x + self.camera_x, entity.rect.y + self.camera_y))
 
+        self.draw_agent_percepts()
+
         pygame.display.flip()
+
+
+
+    def draw_agent_percepts(self):
+        """Visualize the agent's percepts."""
+        agent = self.agent
+        precepts = self.game.trainer.precepts
+        percepts_data = precepts.get_visible_state()
+
+        # Adjust positions based on camera
+        agent_screen_x = agent.rect.x + self.camera_x
+        agent_screen_y = agent.rect.y + self.camera_y
+
+        # # Draw max jump distance
+        # max_jump_distance = precepts.calculate_max_jump_distance()
+        # jump_line_end_x = agent_screen_x + max_jump_distance
+        # pygame.draw.line(self.screen, Color('purple'), (agent_screen_x, agent_screen_y), (jump_line_end_x, agent_screen_y), 2)
+
+        # Draw current platform in green
+        if percepts_data['platforms']['current_platform']:
+            platform_rect = percepts_data['platforms']['current_platform']['rect']
+            rect = pygame.Rect(platform_rect.x + self.camera_x, platform_rect.y + self.camera_y,
+                            platform_rect.width, platform_rect.height)
+            pygame.draw.rect(self.screen, Color('green'), rect, 2)
+
+        # Draw gaps
+        for gap in percepts_data['platforms']['gaps']:
+            gap_start_x = gap['start_x'] + self.camera_x
+            gap_end_x = gap_start_x + gap['width']
+            y = agent.rect.bottom + self.camera_y
+            color = Color('red') if not gap['jumpable'] else Color('yellow')
+            pygame.draw.line(self.screen, color, (gap_start_x, y), (gap_end_x, y), 3)
+
+        # Draw hazards
+        for threat in percepts_data['hazards']['immediate_threats']:
+            hazard_rect = threat['rect']
+            rect = pygame.Rect(hazard_rect.x + self.camera_x, hazard_rect.y + self.camera_y,
+                            hazard_rect.width, hazard_rect.height)
+            pygame.draw.rect(self.screen, Color('red'), rect, 2)
+
+        # Draw goal direction
+        goal_direction = percepts_data['goal_direction']
+        if goal_direction != 0:
+            arrow_start = (agent.rect.centerx + self.camera_x, agent.rect.top + self.camera_y - 20)
+            arrow_end = (arrow_start[0] + 50 * goal_direction, arrow_start[1])
+            pygame.draw.line(self.screen, Color('magenta'), arrow_start, arrow_end, 2)
+            # Draw arrowhead
+            pygame.draw.polygon(self.screen, Color('magenta'), [
+                (arrow_end[0], arrow_end[1]),
+                (arrow_end[0] - 5 * goal_direction, arrow_end[1] - 5),
+                (arrow_end[0] - 5 * goal_direction, arrow_end[1] + 5)
+            ])
+
+        # Display movement state
+        font = pygame.font.SysFont(None, 24)
+        movement = percepts_data['movement']
+        movement_text = f"Vel X: {movement['velocity_x']:.2f}, Vel Y: {movement['velocity_y']:.2f}, On Ground: {movement['on_ground']}"
+        movement_surface = font.render(movement_text, True, Color('white'))
+        self.screen.blit(movement_surface, (10, SCREEN_HEIGHT - 30))
+
 
     def clear_sprites(self):
         """Clear all sprite groups"""

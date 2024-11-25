@@ -21,7 +21,7 @@ from dqn.replay_buffer import ReplayBuffer
 from core.pygame_manager import PygameManager
 from core.config import SCREEN_WIDTH, SCREEN_HEIGHT, ACTION_DIM, MOVEMENT_ACTIONS
 from trainer.trainer import Trainer
-from agent.agent_precepts import AgentPrecepts
+from agent.agent_precepts_old import AgentPrecepts
 
 class Game:
     def __init__(self, manual_control=False, level_number=1, training_mode=False, render_enabled=True, load_model=None):
