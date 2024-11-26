@@ -14,10 +14,10 @@ class CameraBasedPrecepts:
         self.screen_width = 800  # From config.SCREEN_WIDTH
         self.screen_height = 600  # From config.SCREEN_HEIGHT
 
-        # Platform analysis parameters
-        self.min_gap_width = 20  # Minimum gap width to consider for jumping
-        self.max_gap_width = 200  # Maximum gap width the agent can jump
-        self.safe_landing_width = 10  # Minimum width needed for safe landing
+        # Adjusted platform analysis parameters
+        self.min_gap_width = 35  # Minimum gap width to consider for jumping (slightly less than the actual 40)
+        self.max_gap_width = 300  # Maximum gap width the agent can jump
+        self.safe_landing_width = 40  # Minimum width needed for safe landing
 
         # Jump trajectory parameters
         self.gravity = abs(self.agent.gravity_acc)
@@ -72,12 +72,18 @@ class CameraBasedPrecepts:
         """Analyze platforms by combining adjacent blocks into continuous platforms."""
         # Sort platforms by x position
         sorted_platforms = sorted(visible_platforms, key=lambda p_info: p_info['rect'].x)
-        
-        # Combine adjacent blocks into continuous platforms
+
+        # Combine adjacent blocks into continuous platforms, but treat moving platforms separately
         continuous_platforms = []
         current_platform = None
-        
+
         for platform_info in sorted_platforms:
+            # If current platform is moving or new platform is moving, don't combine
+            if (current_platform and (current_platform['is_moving'] or platform_info['is_moving'])):
+                continuous_platforms.append(current_platform)
+                current_platform = platform_info.copy()
+                continue
+
             if current_platform is None:
                 current_platform = {
                     'rect': platform_info['rect'].copy(),
@@ -87,7 +93,7 @@ class CameraBasedPrecepts:
                     'sprite': platform_info['sprite']
                 }
             else:
-                # Check if this block is adjacent to current platform (within 1 block width = 40 pixels)
+                # Only combine if neither platform is moving and they're close enough
                 if platform_info['rect'].left - current_platform['rect'].right <= 5:
                     # Extend current platform
                     current_platform['rect'].width = (
@@ -103,7 +109,7 @@ class CameraBasedPrecepts:
                         'direction': platform_info['direction'],
                         'sprite': platform_info['sprite']
                     }
-        
+
         if current_platform:
             continuous_platforms.append(current_platform)
 
@@ -112,25 +118,58 @@ class CameraBasedPrecepts:
         for i in range(len(continuous_platforms) - 1):
             current = continuous_platforms[i]
             next_platform = continuous_platforms[i + 1]
-            
+
             # Calculate actual gap width between continuous platforms
-            gap_width = next_platform['rect'].left - current['rect'].right
-            
-            if self.min_gap_width <= gap_width <= self.max_gap_width:
-                jumpable = self._is_gap_jumpable(
-                    gap_width,
-                    current['rect'].y - next_platform['rect'].y,
-                    current,
-                    next_platform
-                )
-                gaps.append({
-                    'start_x': current['rect'].right,
-                    'width': gap_width,
-                    'start_y': current['rect'].y,
-                    'end_y': next_platform['rect'].y,
-                    'jumpable': jumpable
-                })
-        
+            base_gap_width = next_platform['rect'].left - current['rect'].right
+
+            # Adjust gap analysis for moving platforms
+            if current['is_moving'] or next_platform['is_moving']:
+                # Consider maximum possible gap width when platforms are moving
+                max_gap_width = base_gap_width
+                if current['is_moving']:
+                    max_gap_width += abs(current['speed']) * 2  # Account for full movement range
+                if next_platform['is_moving']:
+                    max_gap_width += abs(next_platform['speed']) * 2
+
+                # Use the maximum gap width for jumpability check
+                if self.min_gap_width <= max_gap_width <= self.max_gap_width * 1.5:  # Increased tolerance
+                    height_diff = current['rect'].y - next_platform['rect'].y
+                    jumpable = self._is_gap_jumpable(
+                        max_gap_width,
+                        height_diff,
+                        current,
+                        next_platform
+                    )
+
+                    gaps.append({
+                        'start_x': current['rect'].right,
+                        'width': base_gap_width,  # Store actual current width
+                        'max_width': max_gap_width,  # Store maximum possible width
+                        'start_y': current['rect'].y,
+                        'end_y': next_platform['rect'].y,
+                        'jumpable': jumpable,
+                        'involves_moving_platform': True
+                    })
+            else:
+                # Regular gap analysis for static platforms
+                if self.min_gap_width <= base_gap_width <= self.max_gap_width:
+                    height_diff = current['rect'].y - next_platform['rect'].y
+                    jumpable = self._is_gap_jumpable(
+                        base_gap_width,
+                        height_diff,
+                        current,
+                        next_platform
+                    )
+
+                    gaps.append({
+                        'start_x': current['rect'].right,
+                        'width': base_gap_width,
+                        'start_y': current['rect'].y,
+                        'end_y': next_platform['rect'].y,
+                        'jumpable': jumpable,
+                        'involves_moving_platform': False
+                    })
+
         # Get current and next platform relative to agent
         current_platform = self._get_current_platform(continuous_platforms)
         next_platform = self._get_next_platform(continuous_platforms) if current_platform else None
@@ -170,43 +209,29 @@ class CameraBasedPrecepts:
         }
 
     def _is_gap_jumpable(self, width, height_diff, current_platform_info, target_platform_info):
-        """Determine if a gap is jumpable considering platform movement."""
-        # Predict time of flight based on horizontal distance
-        v0_x = self.agent.max_speed_x
-        if v0_x == 0:
-            return False  # Cannot jump if horizontal speed is zero
-        t_flight = width / v0_x
+        """Check if gap is within jumpable range and close enough to jump."""
 
-        # Predict future position of the target platform
-        target_platform_rect = target_platform_info['rect'].copy()
-        if target_platform_info['is_moving'] and target_platform_info['direction'] == 'horizontal':
-            movement = target_platform_info['speed'] * t_flight
-            target_platform_rect.x += movement
+        # Basic jumpable width check (35-100 pixels seems reasonable for the agent's capabilities)
+        width_jumpable = 35 <= width <= 100
 
-        # Recalculate width and height_diff based on predicted position
-        adjusted_width = target_platform_rect.left - current_platform_info['rect'].right
-        adjusted_height_diff = current_platform_info['rect'].y - target_platform_rect.y
+        # Get gap start position and agent position
+        gap_start = current_platform_info['rect'].right
+        agent_x = self.agent.rect.x
 
-        # Use adjusted values to determine jumpability
-        v0_y = self.jump_velocity  # Should be negative (e.g., -7)
-        gravity = self.gravity     # Should be positive (e.g., 0.4)
+        # Consider a gap jumpable if:
+        # 1. Width is reasonable (35-100 pixels)
+        # 2. Agent is within 50 pixels of the gap start
+        distance_to_gap = abs(gap_start - agent_x)
+        close_enough = distance_to_gap <= 50
 
-        # Time to reach the peak of the jump
-        t_up = -v0_y / gravity
-        # Maximum height reached relative to jump point
-        h_max = v0_y * t_up + 0.5 * gravity * t_up ** 2
+        can_jump = width_jumpable and close_enough
 
-        # Check if agent can reach the required height difference
-        can_reach_target_height = h_max >= adjusted_height_diff
+        # print(f"\nGap Analysis:")
+        # print(f"  Width: {width} (jumpable: {width_jumpable})")
+        # print(f"  Distance to gap: {distance_to_gap} (close enough: {close_enough})")
+        # print(f"  Can jump: {can_jump}")
 
-        # Total time in air (up and down)
-        t_total = 2 * t_up
-
-        # Check if agent can cover the adjusted horizontal distance in total time
-        can_cover_distance = v0_x * t_total >= adjusted_width
-
-        # Return True or False based on calculations
-        return can_reach_target_height and can_cover_distance
+        return can_jump
 
     def _analyze_jump_opportunities(self, platforms, hazards):
         """Analyze potential jump opportunities and their success probability."""

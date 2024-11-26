@@ -8,40 +8,48 @@ import trainer.trainer
 
 class PygameManager:
     def __init__(self, render_enabled=True, game=None, agent=None):
-        self.game = game
-        self.agent = agent
+        """Initialize pygame and display first."""
         self.render_enabled = render_enabled
-        self.level = None  # Will be set by Game class
-        self.trainer = None  # Will be set by Game class
+        self.game = game
+        self.level = None
+        self.trainer = None
 
-        # Initialize pygame with the dummy video driver if render is disabled
+        # Set video driver before pygame.init()
         if not render_enabled:
             os.environ["SDL_VIDEODRIVER"] = "dummy"
 
         pygame.init()
 
-        # Set up the display
+        # IMPORTANT: Set display mode immediately after pygame.init()
         if render_enabled:
-            self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-            pygame.display.set_caption("AI Agent World")
+            self.screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
         else:
-            self.screen = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT))
+            self.screen = pygame.Surface([SCREEN_WIDTH, SCREEN_HEIGHT])
+            pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])  # Still need to set mode for image loading
 
-        # Initialize pygame display even if we're not rendering
-        if not pygame.display.get_surface():
-            pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), flags=pygame.HIDDEN)
-
-        self.clock = pygame.time.Clock()
-        self.running = True
-
-        # Sprite groups
-        self.all_sprites_list = pygame.sprite.Group()
-        self.moving_blocks = pygame.sprite.Group()
-        self.block_list = []
-
-        # Camera offset (initially zero)
         self.camera_x = 0
         self.camera_y = 0
+        self.camera_shift = 0
+
+        self.running = True
+        self.clock = pygame.time.Clock()
+
+        # Initialize sprite groups
+        self.all_sprites_list = pygame.sprite.Group()
+        self.moving_blocks = pygame.sprite.Group()
+        self.blocks = pygame.sprite.Group()
+
+        self.agent = agent
+        if agent:
+            self.all_sprites_list.add(agent)
+
+    def set_agent(self, agent):
+        """Safely set or update the agent."""
+        if self.agent:
+            self.all_sprites_list.remove(self.agent)
+        self.agent = agent
+        if agent:
+            self.all_sprites_list.add(agent)
 
     def get_screen(self):
         return self.screen
@@ -60,16 +68,22 @@ class PygameManager:
                     if hasattr(self.trainer, 'training_active'):
                         self.trainer.training_active = False
 
-        if self.game.manual_control:
+        if self.game.manual_control:  # Manual control mode
             keys = pygame.key.get_pressed()
             if keys[pygame.K_LEFT]:
                 self.agent.go_left()
             elif keys[pygame.K_RIGHT]:
                 self.agent.go_right()
             else:
-                self.agent.stop()
+                self.agent.stop()  # Important: stop when no movement keys are pressed
+
             if keys[pygame.K_SPACE]:
-                self.agent.jump()
+                if self.agent.on_ground and not self.agent.is_jumping:
+                    self.agent.jump()
+        else:  # AI control mode - make sure agent doesn't move unless commanded
+            if not hasattr(self, 'trainer') or not self.trainer.training_mode:
+                self.agent.stop()  # Stop agent if not in training mode
+
         return events
 
     def update(self, level, agent):

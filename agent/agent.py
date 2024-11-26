@@ -65,7 +65,7 @@ class Agent(pygame.sprite.Sprite):
     stop():
         Stops the agent's horizontal movement.
     """
-    
+
     def __init__(self, x, y, screen_height=600):
         """
         Initializes the Agent object with specified position and screen height.
@@ -116,8 +116,8 @@ class Agent(pygame.sprite.Sprite):
         self.gravity_acc = 0.4
         self.terminal_velocity = 3
         self.on_ground = False  # Initialize on_ground attribute
-        self.jump_speed = -8
-        self.is_jumping = False 
+        self.jump_speed = -10
+        self.is_jumping = False
 
         self.mask = pygame.mask.from_surface(self.image)
 
@@ -157,7 +157,7 @@ class Agent(pygame.sprite.Sprite):
         self.apply_gravity()
         self.rect.y += self.change_y
         self.collide_with_blocks(0, self.change_y, blocks)
-    
+
         self.animate()
 
     def animate(self):
@@ -196,8 +196,8 @@ class Agent(pygame.sprite.Sprite):
 
     def apply_gravity(self):
         """
-        Applies gravity to the agent by increasing the vertical change in position (change_y) 
-        by the gravity acceleration (gravity_acc). If the resulting change_y exceeds the 
+        Applies gravity to the agent by increasing the vertical change in position (change_y)
+        by the gravity acceleration (gravity_acc). If the resulting change_y exceeds the
         terminal velocity, it is capped at the terminal velocity to limit the falling speed.
         """
         self.change_y += self.gravity_acc
@@ -213,7 +213,7 @@ class Agent(pygame.sprite.Sprite):
         This method should be called when the agent needs to jump. It will only
         have an effect if the agent is currently on the ground.
         """
-        if self.on_ground:
+        if self.on_ground and not self.is_jumping:  # Added check for is_jumping
             self.change_y = self.jump_speed
             self.on_ground = False
             self.is_jumping = True
@@ -258,7 +258,7 @@ class Agent(pygame.sprite.Sprite):
         """
         Sets the agent's direction to left.
 
-        This method updates the agent's direction attribute to -1, 
+        This method updates the agent's direction attribute to -1,
         indicating that the agent should move to the left.
         """
         self.direction = -1

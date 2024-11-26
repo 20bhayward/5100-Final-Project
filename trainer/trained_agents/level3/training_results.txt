@@ -2,3011 +2,7011 @@ Training Results
 ===============
 
 Summary Statistics
-Total Episodes: 500
-Average Reward: -192.51
-Average Steps: 154.57
-Best Reward: -183.48
+Total Episodes: 1000
+Average Reward: 110.70
+Average Steps: 179.29
+Best Reward: 808.50
 Best Completion Time: N/A
 
 Episode Details
 ---------------
 Episode 1:
   Level: 3
-  Reward: -359.89
-  Steps: 2501
+  Reward: -52.50
+  Steps: 98
   Epsilon: 1.000
+  Loss: 0.0000
 ---------------
 Episode 2:
   Level: 3
-  Reward: -473.24
-  Steps: 1713
+  Reward: 100.50
+  Steps: 279
   Epsilon: 0.995
+  Loss: 0.8370
 ---------------
 Episode 3:
   Level: 3
-  Reward: -254.65
-  Steps: 620
+  Reward: -53.00
+  Steps: 96
   Epsilon: 0.990
+  Loss: 0.8400
 ---------------
 Episode 4:
   Level: 3
-  Reward: -263.02
-  Steps: 609
+  Reward: 2.50
+  Steps: 134
   Epsilon: 0.985
+  Loss: 1.5960
 ---------------
 Episode 5:
   Level: 3
-  Reward: -347.35
-  Steps: 1429
+  Reward: -42.50
+  Steps: 108
   Epsilon: 0.980
+  Loss: 0.0388
 ---------------
 Episode 6:
   Level: 3
-  Reward: -253.37
-  Steps: 496
+  Reward: 168.00
+  Steps: 277
   Epsilon: 0.975
+  Loss: 1.6028
 ---------------
 Episode 7:
   Level: 3
-  Reward: -272.00
-  Steps: 534
+  Reward: -34.50
+  Steps: 126
   Epsilon: 0.970
+  Loss: 0.8113
 ---------------
 Episode 8:
   Level: 3
-  Reward: -224.50
-  Steps: 355
+  Reward: 184.00
+  Steps: 300
   Epsilon: 0.966
+  Loss: 0.8293
 ---------------
 Episode 9:
   Level: 3
-  Reward: -359.84
-  Steps: 1451
+  Reward: -66.50
+  Steps: 96
   Epsilon: 0.961
+  Loss: 0.0295
 ---------------
 Episode 10:
   Level: 3
-  Reward: -262.17
-  Steps: 604
+  Reward: -40.50
+  Steps: 100
   Epsilon: 0.956
+  Loss: 0.0560
 ---------------
 Episode 11:
   Level: 3
-  Reward: -200.61
-  Steps: 273
+  Reward: -20.00
+  Steps: 141
   Epsilon: 0.951
+  Loss: 1.2094
 ---------------
 Episode 12:
   Level: 3
-  Reward: -233.84
-  Steps: 435
+  Reward: -69.50
+  Steps: 113
   Epsilon: 0.946
+  Loss: 0.1230
 ---------------
 Episode 13:
   Level: 3
-  Reward: -231.23
-  Steps: 462
+  Reward: -41.50
+  Steps: 96
   Epsilon: 0.942
+  Loss: 0.8313
 ---------------
 Episode 14:
   Level: 3
-  Reward: -266.49
-  Steps: 605
+  Reward: 174.00
+  Steps: 275
   Epsilon: 0.937
+  Loss: 0.8325
 ---------------
 Episode 15:
   Level: 3
-  Reward: -262.54
-  Steps: 724
+  Reward: -44.50
+  Steps: 97
   Epsilon: 0.932
+  Loss: 0.0514
 ---------------
 Episode 16:
   Level: 3
-  Reward: -312.38
-  Steps: 894
+  Reward: 230.00
+  Steps: 295
   Epsilon: 0.928
+  Loss: 1.9858
 ---------------
 Episode 17:
   Level: 3
-  Reward: -226.11
-  Steps: 387
+  Reward: -41.00
+  Steps: 97
   Epsilon: 0.923
+  Loss: 0.0378
 ---------------
 Episode 18:
   Level: 3
-  Reward: -186.13
-  Steps: 135
+  Reward: -3.00
+  Steps: 123
   Epsilon: 0.918
+  Loss: 0.0402
 ---------------
 Episode 19:
   Level: 3
-  Reward: -207.58
-  Steps: 259
+  Reward: -42.00
+  Steps: 100
   Epsilon: 0.914
+  Loss: 0.0481
 ---------------
 Episode 20:
   Level: 3
-  Reward: -277.54
-  Steps: 836
+  Reward: -40.00
+  Steps: 100
   Epsilon: 0.909
+  Loss: 0.8195
 ---------------
 Episode 21:
   Level: 3
-  Reward: -351.46
-  Steps: 1461
+  Reward: -40.00
+  Steps: 99
   Epsilon: 0.905
+  Loss: 0.7848
 ---------------
 Episode 22:
   Level: 3
-  Reward: -195.09
-  Steps: 239
+  Reward: -3.50
+  Steps: 127
   Epsilon: 0.900
+  Loss: 0.8270
 ---------------
 Episode 23:
   Level: 3
-  Reward: -197.39
-  Steps: 216
+  Reward: -45.50
+  Steps: 96
   Epsilon: 0.896
+  Loss: 0.0564
 ---------------
 Episode 24:
   Level: 3
-  Reward: -265.63
-  Steps: 549
+  Reward: -72.00
+  Steps: 118
   Epsilon: 0.891
+  Loss: 0.0810
 ---------------
 Episode 25:
   Level: 3
-  Reward: -196.67
-  Steps: 204
+  Reward: 162.00
+  Steps: 270
   Epsilon: 0.887
+  Loss: 0.8268
 ---------------
 Episode 26:
   Level: 3
-  Reward: -213.24
-  Steps: 292
+  Reward: 162.50
+  Steps: 269
   Epsilon: 0.882
+  Loss: 2.3884
 ---------------
 Episode 27:
   Level: 3
-  Reward: -203.83
-  Steps: 235
+  Reward: -43.50
+  Steps: 97
   Epsilon: 0.878
+  Loss: 0.8026
 ---------------
 Episode 28:
   Level: 3
-  Reward: -219.86
-  Steps: 375
+  Reward: 157.00
+  Steps: 337
   Epsilon: 0.873
+  Loss: 0.7967
 ---------------
 Episode 29:
   Level: 3
-  Reward: -227.27
-  Steps: 365
+  Reward: -10.50
+  Steps: 123
   Epsilon: 0.869
+  Loss: 0.0306
 ---------------
 Episode 30:
   Level: 3
-  Reward: -192.07
-  Steps: 176
+  Reward: 120.00
+  Steps: 259
   Epsilon: 0.865
+  Loss: 0.0258
 ---------------
 Episode 31:
   Level: 3
-  Reward: -194.65
-  Steps: 194
+  Reward: 185.50
+  Steps: 275
   Epsilon: 0.860
+  Loss: 0.8238
 ---------------
 Episode 32:
   Level: 3
-  Reward: -238.37
-  Steps: 424
+  Reward: -36.00
+  Steps: 96
   Epsilon: 0.856
+  Loss: 0.8284
 ---------------
 Episode 33:
   Level: 3
-  Reward: -197.12
-  Steps: 205
+  Reward: -38.50
+  Steps: 99
   Epsilon: 0.852
+  Loss: 1.1926
 ---------------
 Episode 34:
   Level: 3
-  Reward: -188.88
-  Steps: 132
+  Reward: -5.50
+  Steps: 145
   Epsilon: 0.848
+  Loss: 1.6024
 ---------------
 Episode 35:
   Level: 3
-  Reward: -204.32
-  Steps: 231
+  Reward: -40.00
+  Steps: 100
   Epsilon: 0.843
+  Loss: 0.0413
 ---------------
 Episode 36:
   Level: 3
-  Reward: -190.84
-  Steps: 144
+  Reward: -35.50
+  Steps: 99
   Epsilon: 0.839
+  Loss: 0.8078
 ---------------
 Episode 37:
   Level: 3
-  Reward: -190.95
-  Steps: 135
+  Reward: 346.00
+  Steps: 465
   Epsilon: 0.835
+  Loss: 0.0137
 ---------------
 Episode 38:
   Level: 3
-  Reward: -197.54
-  Steps: 204
+  Reward: -32.00
+  Steps: 96
   Epsilon: 0.831
+  Loss: 0.8238
 ---------------
 Episode 39:
   Level: 3
-  Reward: -189.83
-  Steps: 191
+  Reward: -7.50
+  Steps: 107
   Epsilon: 0.827
+  Loss: 0.0435
 ---------------
 Episode 40:
   Level: 3
-  Reward: -213.72
-  Steps: 271
+  Reward: 185.50
+  Steps: 281
   Epsilon: 0.822
+  Loss: 0.0382
 ---------------
 Episode 41:
   Level: 3
-  Reward: -201.67
-  Steps: 286
+  Reward: -36.00
+  Steps: 96
   Epsilon: 0.818
+  Loss: 0.0399
 ---------------
 Episode 42:
   Level: 3
-  Reward: -197.39
-  Steps: 177
+  Reward: -2.50
+  Steps: 113
   Epsilon: 0.814
+  Loss: 0.0472
 ---------------
 Episode 43:
   Level: 3
-  Reward: -192.26
-  Steps: 154
+  Reward: -39.00
+  Steps: 98
   Epsilon: 0.810
+  Loss: 1.1630
 ---------------
 Episode 44:
   Level: 3
-  Reward: -189.60
-  Steps: 174
+  Reward: 0.50
+  Steps: 127
   Epsilon: 0.806
+  Loss: 0.0625
 ---------------
 Episode 45:
   Level: 3
-  Reward: -192.89
-  Steps: 187
+  Reward: -39.50
+  Steps: 97
   Epsilon: 0.802
+  Loss: 0.0254
 ---------------
 Episode 46:
   Level: 3
-  Reward: -201.48
-  Steps: 225
+  Reward: -10.00
+  Steps: 109
   Epsilon: 0.798
+  Loss: 0.3500
 ---------------
 Episode 47:
   Level: 3
-  Reward: -198.97
-  Steps: 232
+  Reward: -41.00
+  Steps: 98
   Epsilon: 0.794
+  Loss: 1.5896
 ---------------
 Episode 48:
   Level: 3
-  Reward: -189.67
-  Steps: 148
+  Reward: 166.00
+  Steps: 266
   Epsilon: 0.790
+  Loss: 0.0158
 ---------------
 Episode 49:
   Level: 3
-  Reward: -195.33
-  Steps: 181
+  Reward: -38.50
+  Steps: 97
   Epsilon: 0.786
+  Loss: 0.9447
 ---------------
 Episode 50:
   Level: 3
-  Reward: -194.44
-  Steps: 158
+  Reward: 3.50
+  Steps: 112
   Epsilon: 0.782
+  Loss: 1.1638
 ---------------
 Episode 51:
   Level: 3
-  Reward: -185.57
-  Steps: 82
+  Reward: -40.00
+  Steps: 96
   Epsilon: 0.778
+  Loss: 0.3518
 ---------------
 Episode 52:
   Level: 3
-  Reward: -195.61
-  Steps: 168
+  Reward: -26.00
+  Steps: 111
   Epsilon: 0.774
+  Loss: 0.1876
 ---------------
 Episode 53:
   Level: 3
-  Reward: -192.62
-  Steps: 172
+  Reward: -52.00
+  Steps: 97
   Epsilon: 0.771
+  Loss: 0.2666
 ---------------
 Episode 54:
   Level: 3
-  Reward: -187.07
-  Steps: 130
+  Reward: -44.50
+  Steps: 102
   Epsilon: 0.767
+  Loss: 0.8230
 ---------------
 Episode 55:
   Level: 3
-  Reward: -187.34
-  Steps: 126
+  Reward: -43.50
+  Steps: 101
   Epsilon: 0.763
+  Loss: 0.0275
 ---------------
 Episode 56:
   Level: 3
-  Reward: -186.12
-  Steps: 109
+  Reward: -2.00
+  Steps: 103
   Epsilon: 0.759
+  Loss: 0.0347
 ---------------
 Episode 57:
   Level: 3
-  Reward: -186.67
-  Steps: 109
+  Reward: 155.00
+  Steps: 289
   Epsilon: 0.755
+  Loss: 0.0290
 ---------------
 Episode 58:
   Level: 3
-  Reward: -191.22
-  Steps: 162
+  Reward: -43.00
+  Steps: 97
   Epsilon: 0.751
+  Loss: 1.5978
 ---------------
 Episode 59:
   Level: 3
-  Reward: -192.32
-  Steps: 170
+  Reward: 124.00
+  Steps: 276
   Epsilon: 0.748
+  Loss: 0.0676
 ---------------
 Episode 60:
   Level: 3
-  Reward: -188.24
-  Steps: 160
+  Reward: -45.50
+  Steps: 96
   Epsilon: 0.744
+  Loss: 0.8128
 ---------------
 Episode 61:
   Level: 3
-  Reward: -193.96
-  Steps: 167
+  Reward: -8.50
+  Steps: 109
   Epsilon: 0.740
+  Loss: 0.8069
 ---------------
 Episode 62:
   Level: 3
-  Reward: -187.94
-  Steps: 150
+  Reward: -34.00
+  Steps: 96
   Epsilon: 0.737
+  Loss: 0.8134
 ---------------
 Episode 63:
   Level: 3
-  Reward: -192.55
-  Steps: 153
+  Reward: 124.00
+  Steps: 273
   Epsilon: 0.733
+  Loss: 0.8078
 ---------------
 Episode 64:
   Level: 3
-  Reward: -188.75
-  Steps: 133
+  Reward: -44.50
+  Steps: 97
   Epsilon: 0.729
+  Loss: 2.5946
 ---------------
 Episode 65:
   Level: 3
-  Reward: -191.47
-  Steps: 162
+  Reward: 182.00
+  Steps: 263
   Epsilon: 0.726
+  Loss: 0.9869
 ---------------
 Episode 66:
   Level: 3
-  Reward: -199.24
-  Steps: 243
+  Reward: -41.00
+  Steps: 96
   Epsilon: 0.722
+  Loss: 0.0374
 ---------------
 Episode 67:
   Level: 3
-  Reward: -191.08
-  Steps: 183
+  Reward: 70.00
+  Steps: 260
   Epsilon: 0.718
+  Loss: 1.5972
 ---------------
 Episode 68:
   Level: 3
-  Reward: -185.64
-  Steps: 90
+  Reward: 77.50
+  Steps: 180
   Epsilon: 0.715
+  Loss: 1.6303
 ---------------
 Episode 69:
   Level: 3
-  Reward: -186.81
-  Steps: 121
+  Reward: -38.00
+  Steps: 100
   Epsilon: 0.711
+  Loss: 0.8387
 ---------------
 Episode 70:
   Level: 3
-  Reward: -191.45
-  Steps: 146
+  Reward: 140.00
+  Steps: 274
   Epsilon: 0.708
+  Loss: 0.0264
 ---------------
 Episode 71:
   Level: 3
-  Reward: -185.04
-  Steps: 114
+  Reward: -35.50
+  Steps: 96
   Epsilon: 0.704
+  Loss: 0.8202
 ---------------
 Episode 72:
   Level: 3
-  Reward: -187.65
-  Steps: 99
+  Reward: 189.00
+  Steps: 264
   Epsilon: 0.701
+  Loss: 1.0410
 ---------------
 Episode 73:
   Level: 3
-  Reward: -186.12
-  Steps: 97
+  Reward: 156.50
+  Steps: 299
   Epsilon: 0.697
+  Loss: 0.0763
 ---------------
 Episode 74:
   Level: 3
-  Reward: -189.60
-  Steps: 101
+  Reward: -51.00
+  Steps: 111
   Epsilon: 0.694
+  Loss: 0.8052
 ---------------
 Episode 75:
   Level: 3
-  Reward: -186.91
-  Steps: 114
+  Reward: -34.50
+  Steps: 98
   Epsilon: 0.690
+  Loss: 0.0278
 ---------------
 Episode 76:
   Level: 3
-  Reward: -188.23
-  Steps: 124
+  Reward: 14.50
+  Steps: 146
   Epsilon: 0.687
+  Loss: 0.0299
 ---------------
 Episode 77:
   Level: 3
-  Reward: -187.69
-  Steps: 116
+  Reward: -41.00
+  Steps: 98
   Epsilon: 0.683
+  Loss: 0.0251
 ---------------
 Episode 78:
   Level: 3
-  Reward: -186.23
-  Steps: 94
+  Reward: -46.50
+  Steps: 100
   Epsilon: 0.680
+  Loss: 1.0658
 ---------------
 Episode 79:
   Level: 3
-  Reward: -190.97
-  Steps: 158
+  Reward: -0.50
+  Steps: 113
   Epsilon: 0.676
+  Loss: 0.7761
 ---------------
 Episode 80:
   Level: 3
-  Reward: -185.68
-  Steps: 111
+  Reward: -34.00
+  Steps: 96
   Epsilon: 0.673
+  Loss: 0.0378
 ---------------
 Episode 81:
   Level: 3
-  Reward: -185.46
-  Steps: 101
+  Reward: -47.00
+  Steps: 99
   Epsilon: 0.670
+  Loss: 0.8076
 ---------------
 Episode 82:
   Level: 3
-  Reward: -191.03
-  Steps: 155
+  Reward: 94.00
+  Steps: 252
   Epsilon: 0.666
+  Loss: 0.8188
 ---------------
 Episode 83:
   Level: 3
-  Reward: -186.43
-  Steps: 85
+  Reward: -9.50
+  Steps: 125
   Epsilon: 0.663
+  Loss: 0.0313
 ---------------
 Episode 84:
   Level: 3
-  Reward: -191.76
-  Steps: 136
+  Reward: -45.00
+  Steps: 99
   Epsilon: 0.660
+  Loss: 0.8124
 ---------------
 Episode 85:
   Level: 3
-  Reward: -185.18
-  Steps: 82
+  Reward: -36.00
+  Steps: 99
   Epsilon: 0.656
+  Loss: 0.0411
 ---------------
 Episode 86:
   Level: 3
-  Reward: -186.28
-  Steps: 103
+  Reward: 50.50
+  Steps: 171
   Epsilon: 0.653
+  Loss: 0.0415
 ---------------
 Episode 87:
   Level: 3
-  Reward: -185.73
-  Steps: 101
+  Reward: -39.00
+  Steps: 98
   Epsilon: 0.650
+  Loss: 0.8137
 ---------------
 Episode 88:
   Level: 3
-  Reward: -187.43
-  Steps: 112
+  Reward: -34.50
+  Steps: 99
   Epsilon: 0.647
+  Loss: 0.8157
 ---------------
 Episode 89:
   Level: 3
-  Reward: -191.61
-  Steps: 147
+  Reward: 105.50
+  Steps: 255
   Epsilon: 0.643
+  Loss: 1.5567
 ---------------
 Episode 90:
   Level: 3
-  Reward: -188.10
-  Steps: 110
+  Reward: 69.00
+  Steps: 257
   Epsilon: 0.640
+  Loss: 0.0761
 ---------------
 Episode 91:
   Level: 3
-  Reward: -184.71
-  Steps: 100
+  Reward: -37.00
+  Steps: 122
   Epsilon: 0.637
+  Loss: 0.0280
 ---------------
 Episode 92:
   Level: 3
-  Reward: -192.25
-  Steps: 137
+  Reward: -34.00
+  Steps: 96
   Epsilon: 0.634
+  Loss: 0.0336
 ---------------
 Episode 93:
   Level: 3
-  Reward: -187.15
-  Steps: 96
+  Reward: -44.50
+  Steps: 121
   Epsilon: 0.631
+  Loss: 0.0315
 ---------------
 Episode 94:
   Level: 3
-  Reward: -190.09
-  Steps: 121
+  Reward: -43.50
+  Steps: 97
   Epsilon: 0.627
+  Loss: 0.8095
 ---------------
 Episode 95:
   Level: 3
-  Reward: -186.04
-  Steps: 113
+  Reward: 74.50
+  Steps: 183
   Epsilon: 0.624
+  Loss: 0.0608
 ---------------
 Episode 96:
   Level: 3
-  Reward: -186.61
-  Steps: 105
+  Reward: 178.50
+  Steps: 266
   Epsilon: 0.621
+  Loss: 0.0363
 ---------------
 Episode 97:
   Level: 3
-  Reward: -184.94
-  Steps: 89
+  Reward: -36.50
+  Steps: 98
   Epsilon: 0.618
+  Loss: 0.8264
 ---------------
 Episode 98:
   Level: 3
-  Reward: -188.06
-  Steps: 131
+  Reward: -1.50
+  Steps: 111
   Epsilon: 0.615
+  Loss: 0.8024
 ---------------
 Episode 99:
   Level: 3
-  Reward: -184.74
-  Steps: 87
+  Reward: -43.00
+  Steps: 97
   Epsilon: 0.612
+  Loss: 0.1454
 ---------------
 Episode 100:
   Level: 3
-  Reward: -187.02
-  Steps: 139
+  Reward: -3.50
+  Steps: 107
   Epsilon: 0.609
+  Loss: 0.8182
 ---------------
 Episode 101:
   Level: 3
-  Reward: -184.56
-  Steps: 86
+  Reward: 181.50
+  Steps: 318
   Epsilon: 0.606
+  Loss: 2.3822
 ---------------
 Episode 102:
   Level: 3
-  Reward: -185.12
-  Steps: 95
+  Reward: -34.00
+  Steps: 98
   Epsilon: 0.603
+  Loss: 1.6185
 ---------------
 Episode 103:
   Level: 3
-  Reward: -185.50
-  Steps: 91
+  Reward: 195.50
+  Steps: 279
   Epsilon: 0.600
+  Loss: 0.0554
 ---------------
 Episode 104:
   Level: 3
-  Reward: -188.82
-  Steps: 142
+  Reward: -54.00
+  Steps: 110
   Epsilon: 0.597
+  Loss: 0.0406
 ---------------
 Episode 105:
   Level: 3
-  Reward: -188.60
-  Steps: 116
+  Reward: -37.00
+  Steps: 97
   Epsilon: 0.594
+  Loss: 0.8150
 ---------------
 Episode 106:
   Level: 3
-  Reward: -184.59
-  Steps: 95
+  Reward: 3.00
+  Steps: 109
   Epsilon: 0.591
+  Loss: 0.0372
 ---------------
 Episode 107:
   Level: 3
-  Reward: -190.00
-  Steps: 122
+  Reward: -45.00
+  Steps: 96
   Epsilon: 0.588
+  Loss: 0.8018
 ---------------
 Episode 108:
   Level: 3
-  Reward: -186.92
-  Steps: 95
+  Reward: 240.50
+  Steps: 280
   Epsilon: 0.585
+  Loss: 0.8189
 ---------------
 Episode 109:
   Level: 3
-  Reward: -185.54
-  Steps: 91
+  Reward: -36.00
+  Steps: 97
   Epsilon: 0.582
+  Loss: 0.0160
 ---------------
 Episode 110:
   Level: 3
-  Reward: -185.69
-  Steps: 76
+  Reward: -47.50
+  Steps: 99
   Epsilon: 0.579
+  Loss: 0.8517
 ---------------
 Episode 111:
   Level: 3
-  Reward: -185.09
-  Steps: 109
+  Reward: 107.00
+  Steps: 249
   Epsilon: 0.576
+  Loss: 0.0774
 ---------------
 Episode 112:
   Level: 3
-  Reward: -184.58
-  Steps: 82
+  Reward: -26.50
+  Steps: 102
   Epsilon: 0.573
+  Loss: 0.0604
 ---------------
 Episode 113:
   Level: 3
-  Reward: -187.31
-  Steps: 99
+  Reward: 150.50
+  Steps: 280
   Epsilon: 0.570
+  Loss: 0.0467
 ---------------
 Episode 114:
   Level: 3
-  Reward: -186.73
-  Steps: 94
+  Reward: -31.00
+  Steps: 96
   Epsilon: 0.568
+  Loss: 0.0578
 ---------------
 Episode 115:
   Level: 3
-  Reward: -185.06
-  Steps: 90
+  Reward: 1.00
+  Steps: 116
   Epsilon: 0.565
+  Loss: 0.8109
 ---------------
 Episode 116:
   Level: 3
-  Reward: -188.36
-  Steps: 131
+  Reward: 260.50
+  Steps: 447
   Epsilon: 0.562
+  Loss: 0.0335
 ---------------
 Episode 117:
   Level: 3
-  Reward: -184.79
-  Steps: 118
+  Reward: -27.00
+  Steps: 119
   Epsilon: 0.559
+  Loss: 2.3906
 ---------------
 Episode 118:
   Level: 3
-  Reward: -185.17
-  Steps: 103
+  Reward: 189.00
+  Steps: 294
   Epsilon: 0.556
+  Loss: 1.0813
 ---------------
 Episode 119:
   Level: 3
-  Reward: -184.96
-  Steps: 87
+  Reward: 73.50
+  Steps: 176
   Epsilon: 0.554
+  Loss: 0.0364
 ---------------
 Episode 120:
   Level: 3
-  Reward: -186.38
-  Steps: 78
+  Reward: -15.00
+  Steps: 103
   Epsilon: 0.551
+  Loss: 0.8271
 ---------------
 Episode 121:
   Level: 3
-  Reward: -185.14
-  Steps: 85
+  Reward: 79.50
+  Steps: 179
   Epsilon: 0.548
+  Loss: 0.8382
 ---------------
 Episode 122:
   Level: 3
-  Reward: -186.01
-  Steps: 98
+  Reward: -41.00
+  Steps: 108
   Epsilon: 0.545
+  Loss: 0.0613
 ---------------
 Episode 123:
   Level: 3
-  Reward: -185.56
-  Steps: 102
+  Reward: -37.50
+  Steps: 98
   Epsilon: 0.543
+  Loss: 0.8209
 ---------------
 Episode 124:
   Level: 3
-  Reward: -187.66
-  Steps: 109
+  Reward: -30.50
+  Steps: 102
   Epsilon: 0.540
+  Loss: 0.0468
 ---------------
 Episode 125:
   Level: 3
-  Reward: -185.68
-  Steps: 107
+  Reward: -5.50
+  Steps: 111
   Epsilon: 0.537
+  Loss: 0.0340
 ---------------
 Episode 126:
   Level: 3
-  Reward: -185.33
-  Steps: 101
+  Reward: -32.50
+  Steps: 102
   Epsilon: 0.534
+  Loss: 0.4016
 ---------------
 Episode 127:
   Level: 3
-  Reward: -187.22
-  Steps: 130
+  Reward: -29.00
+  Steps: 101
   Epsilon: 0.532
+  Loss: 0.0273
 ---------------
 Episode 128:
   Level: 3
-  Reward: -187.70
-  Steps: 117
+  Reward: -1.00
+  Steps: 110
   Epsilon: 0.529
+  Loss: 0.0632
 ---------------
 Episode 129:
   Level: 3
-  Reward: -185.47
-  Steps: 83
+  Reward: -32.50
+  Steps: 96
   Epsilon: 0.526
+  Loss: 0.8306
 ---------------
 Episode 130:
   Level: 3
-  Reward: -185.18
-  Steps: 99
+  Reward: 184.50
+  Steps: 256
   Epsilon: 0.524
+  Loss: 0.8013
 ---------------
 Episode 131:
   Level: 3
-  Reward: -184.36
-  Steps: 76
+  Reward: -37.50
+  Steps: 97
   Epsilon: 0.521
+  Loss: 1.6134
 ---------------
 Episode 132:
   Level: 3
-  Reward: -185.28
-  Steps: 105
+  Reward: 148.00
+  Steps: 273
   Epsilon: 0.519
+  Loss: 0.0461
 ---------------
 Episode 133:
   Level: 3
-  Reward: -187.32
-  Steps: 110
+  Reward: -71.00
+  Steps: 121
   Epsilon: 0.516
+  Loss: 0.0394
 ---------------
 Episode 134:
   Level: 3
-  Reward: -185.39
-  Steps: 80
+  Reward: -49.50
+  Steps: 108
   Epsilon: 0.513
+  Loss: 0.0389
 ---------------
 Episode 135:
   Level: 3
-  Reward: -185.62
-  Steps: 109
+  Reward: -39.00
+  Steps: 97
   Epsilon: 0.511
+  Loss: 0.0399
 ---------------
 Episode 136:
   Level: 3
-  Reward: -192.72
-  Steps: 114
+  Reward: 672.50
+  Steps: 409
   Epsilon: 0.508
+  Loss: 0.8039
 ---------------
 Episode 137:
   Level: 3
-  Reward: -184.57
-  Steps: 75
+  Reward: -37.50
+  Steps: 97
   Epsilon: 0.506
+  Loss: 0.8266
 ---------------
 Episode 138:
   Level: 3
-  Reward: -184.10
-  Steps: 88
+  Reward: 0.00
+  Steps: 109
   Epsilon: 0.503
+  Loss: 0.8208
 ---------------
 Episode 139:
   Level: 3
-  Reward: -184.99
-  Steps: 77
+  Reward: -39.00
+  Steps: 97
   Epsilon: 0.501
+  Loss: 0.0361
 ---------------
 Episode 140:
   Level: 3
-  Reward: -186.13
-  Steps: 89
+  Reward: 2.00
+  Steps: 115
   Epsilon: 0.498
+  Loss: 0.8107
 ---------------
 Episode 141:
   Level: 3
-  Reward: -186.40
-  Steps: 90
+  Reward: -53.50
+  Steps: 110
   Epsilon: 0.496
+  Loss: 1.5910
 ---------------
 Episode 142:
   Level: 3
-  Reward: -184.95
-  Steps: 82
+  Reward: -59.00
+  Steps: 118
   Epsilon: 0.493
+  Loss: 0.8159
 ---------------
 Episode 143:
   Level: 3
-  Reward: -188.58
-  Steps: 114
+  Reward: -34.00
+  Steps: 98
   Epsilon: 0.491
+  Loss: 0.8168
 ---------------
 Episode 144:
   Level: 3
-  Reward: -185.09
-  Steps: 92
+  Reward: 683.00
+  Steps: 423
   Epsilon: 0.488
+  Loss: 0.0766
 ---------------
 Episode 145:
   Level: 3
-  Reward: -186.15
-  Steps: 87
+  Reward: -36.50
+  Steps: 96
   Epsilon: 0.486
+  Loss: 0.0557
 ---------------
 Episode 146:
   Level: 3
-  Reward: -184.23
-  Steps: 81
+  Reward: 3.50
+  Steps: 99
   Epsilon: 0.483
+  Loss: 1.6134
 ---------------
 Episode 147:
   Level: 3
-  Reward: -185.53
-  Steps: 78
+  Reward: -37.00
+  Steps: 97
   Epsilon: 0.481
+  Loss: 0.0265
 ---------------
 Episode 148:
   Level: 3
-  Reward: -186.00
-  Steps: 97
+  Reward: -1.00
+  Steps: 109
   Epsilon: 0.479
+  Loss: 1.5943
 ---------------
 Episode 149:
   Level: 3
-  Reward: -184.09
-  Steps: 73
+  Reward: 144.50
+  Steps: 268
   Epsilon: 0.476
+  Loss: 0.0439
 ---------------
 Episode 150:
   Level: 3
-  Reward: -185.47
-  Steps: 92
+  Reward: 184.00
+  Steps: 262
   Epsilon: 0.474
+  Loss: 0.8274
 ---------------
 Episode 151:
   Level: 3
-  Reward: -184.49
-  Steps: 80
+  Reward: -51.50
+  Steps: 114
   Epsilon: 0.471
+  Loss: 0.8396
 ---------------
 Episode 152:
   Level: 3
-  Reward: -184.62
-  Steps: 79
+  Reward: -34.50
+  Steps: 100
   Epsilon: 0.469
+  Loss: 0.0259
 ---------------
 Episode 153:
   Level: 3
-  Reward: -184.84
-  Steps: 75
+  Reward: 183.50
+  Steps: 258
   Epsilon: 0.467
+  Loss: 1.6133
 ---------------
 Episode 154:
   Level: 3
-  Reward: -184.37
-  Steps: 73
+  Reward: -38.50
+  Steps: 97
   Epsilon: 0.464
+  Loss: 0.0379
 ---------------
 Episode 155:
   Level: 3
-  Reward: -185.05
-  Steps: 87
+  Reward: 185.50
+  Steps: 266
   Epsilon: 0.462
+  Loss: 0.0412
 ---------------
 Episode 156:
   Level: 3
-  Reward: -186.23
-  Steps: 88
+  Reward: 149.00
+  Steps: 289
   Epsilon: 0.460
+  Loss: 0.0333
 ---------------
 Episode 157:
   Level: 3
-  Reward: -184.82
-  Steps: 93
+  Reward: -35.50
+  Steps: 97
   Epsilon: 0.458
+  Loss: 0.8207
 ---------------
 Episode 158:
   Level: 3
-  Reward: -184.41
-  Steps: 74
+  Reward: 691.00
+  Steps: 403
   Epsilon: 0.455
+  Loss: 1.1793
 ---------------
 Episode 159:
   Level: 3
-  Reward: -184.50
-  Steps: 77
+  Reward: 176.50
+  Steps: 261
   Epsilon: 0.453
+  Loss: 0.8113
 ---------------
 Episode 160:
   Level: 3
-  Reward: -184.77
-  Steps: 88
+  Reward: -42.50
+  Steps: 97
   Epsilon: 0.451
+  Loss: 0.8073
 ---------------
 Episode 161:
   Level: 3
-  Reward: -184.25
-  Steps: 73
+  Reward: -30.00
+  Steps: 100
   Epsilon: 0.448
+  Loss: 0.4137
 ---------------
 Episode 162:
   Level: 3
-  Reward: -185.13
-  Steps: 80
+  Reward: 149.50
+  Steps: 280
   Epsilon: 0.446
+  Loss: 0.0572
 ---------------
 Episode 163:
   Level: 3
-  Reward: -184.65
-  Steps: 74
+  Reward: 144.50
+  Steps: 273
   Epsilon: 0.444
+  Loss: 0.0609
 ---------------
 Episode 164:
   Level: 3
-  Reward: -187.19
-  Steps: 101
+  Reward: -22.00
+  Steps: 103
   Epsilon: 0.442
+  Loss: 0.0186
 ---------------
 Episode 165:
   Level: 3
-  Reward: -186.58
-  Steps: 101
+  Reward: -36.00
+  Steps: 100
   Epsilon: 0.440
+  Loss: 0.8268
 ---------------
 Episode 166:
   Level: 3
-  Reward: -183.95
-  Steps: 80
+  Reward: -30.00
+  Steps: 99
   Epsilon: 0.437
+  Loss: 0.8065
 ---------------
 Episode 167:
   Level: 3
-  Reward: -185.92
-  Steps: 89
+  Reward: 78.50
+  Steps: 180
   Epsilon: 0.435
+  Loss: 0.0403
 ---------------
 Episode 168:
   Level: 3
-  Reward: -184.78
-  Steps: 76
+  Reward: -95.00
+  Steps: 111
   Epsilon: 0.433
+  Loss: 2.3784
 ---------------
 Episode 169:
   Level: 3
-  Reward: -186.31
-  Steps: 85
+  Reward: -33.50
+  Steps: 98
   Epsilon: 0.431
+  Loss: 1.5907
 ---------------
 Episode 170:
   Level: 3
-  Reward: -185.44
-  Steps: 80
+  Reward: 84.50
+  Steps: 179
   Epsilon: 0.429
+  Loss: 2.0129
 ---------------
 Episode 171:
   Level: 3
-  Reward: -185.99
-  Steps: 109
+  Reward: -38.00
+  Steps: 99
   Epsilon: 0.427
+  Loss: 0.8149
 ---------------
 Episode 172:
   Level: 3
-  Reward: -185.13
-  Steps: 75
+  Reward: 659.50
+  Steps: 390
   Epsilon: 0.424
+  Loss: 0.8193
 ---------------
 Episode 173:
   Level: 3
-  Reward: -184.57
-  Steps: 88
+  Reward: -33.00
+  Steps: 97
   Epsilon: 0.422
+  Loss: 0.8120
 ---------------
 Episode 174:
   Level: 3
-  Reward: -184.77
-  Steps: 83
+  Reward: -47.50
+  Steps: 100
   Epsilon: 0.420
+  Loss: 0.0174
 ---------------
 Episode 175:
   Level: 3
-  Reward: -186.14
-  Steps: 80
+  Reward: 158.00
+  Steps: 258
   Epsilon: 0.418
+  Loss: 0.7961
 ---------------
 Episode 176:
   Level: 3
-  Reward: -184.61
-  Steps: 76
+  Reward: 83.00
+  Steps: 188
   Epsilon: 0.416
+  Loss: 0.8205
 ---------------
 Episode 177:
   Level: 3
-  Reward: -184.20
-  Steps: 76
+  Reward: -32.50
+  Steps: 102
   Epsilon: 0.414
+  Loss: 0.8102
 ---------------
 Episode 178:
   Level: 3
-  Reward: -184.13
-  Steps: 78
+  Reward: -40.00
+  Steps: 100
   Epsilon: 0.412
+  Loss: 0.0405
 ---------------
 Episode 179:
   Level: 3
-  Reward: -184.39
-  Steps: 81
+  Reward: 74.50
+  Steps: 180
   Epsilon: 0.410
+  Loss: 0.0373
 ---------------
 Episode 180:
   Level: 3
-  Reward: -184.81
-  Steps: 80
+  Reward: -37.00
+  Steps: 100
   Epsilon: 0.408
+  Loss: 2.3627
 ---------------
 Episode 181:
   Level: 3
-  Reward: -185.80
-  Steps: 84
+  Reward: -25.00
+  Steps: 100
   Epsilon: 0.406
+  Loss: 1.8638
 ---------------
 Episode 182:
   Level: 3
-  Reward: -185.03
-  Steps: 87
+  Reward: -6.00
+  Steps: 113
   Epsilon: 0.404
+  Loss: 0.8140
 ---------------
 Episode 183:
   Level: 3
-  Reward: -184.94
-  Steps: 75
+  Reward: 206.00
+  Steps: 276
   Epsilon: 0.402
+  Loss: 0.8177
 ---------------
 Episode 184:
   Level: 3
-  Reward: -185.23
-  Steps: 78
+  Reward: -35.50
+  Steps: 96
   Epsilon: 0.400
+  Loss: 0.0385
 ---------------
 Episode 185:
   Level: 3
-  Reward: -185.48
-  Steps: 79
+  Reward: 77.00
+  Steps: 176
   Epsilon: 0.398
+  Loss: 0.3662
 ---------------
 Episode 186:
   Level: 3
-  Reward: -184.75
-  Steps: 70
+  Reward: -25.00
+  Steps: 100
   Epsilon: 0.396
+  Loss: 0.8006
 ---------------
 Episode 187:
   Level: 3
-  Reward: -184.72
-  Steps: 71
+  Reward: 135.50
+  Steps: 260
   Epsilon: 0.394
+  Loss: 0.0287
 ---------------
 Episode 188:
   Level: 3
-  Reward: -184.51
-  Steps: 74
+  Reward: -36.50
+  Steps: 102
   Epsilon: 0.392
+  Loss: 1.9053
 ---------------
 Episode 189:
   Level: 3
-  Reward: -184.73
-  Steps: 86
+  Reward: -57.50
+  Steps: 111
   Epsilon: 0.390
+  Loss: 0.8111
 ---------------
 Episode 190:
   Level: 3
-  Reward: -184.49
-  Steps: 70
+  Reward: 176.00
+  Steps: 299
   Epsilon: 0.388
+  Loss: 0.0222
 ---------------
 Episode 191:
   Level: 3
-  Reward: -184.91
-  Steps: 81
+  Reward: -31.50
+  Steps: 97
   Epsilon: 0.386
+  Loss: 0.0183
 ---------------
 Episode 192:
   Level: 3
-  Reward: -185.30
-  Steps: 78
+  Reward: 89.50
+  Steps: 253
   Epsilon: 0.384
+  Loss: 2.0101
 ---------------
 Episode 193:
   Level: 3
-  Reward: -185.02
-  Steps: 73
+  Reward: -35.00
+  Steps: 96
   Epsilon: 0.382
+  Loss: 1.6234
 ---------------
 Episode 194:
   Level: 3
-  Reward: -184.23
-  Steps: 72
+  Reward: 75.50
+  Steps: 254
   Epsilon: 0.380
+  Loss: 3.9515
 ---------------
 Episode 195:
   Level: 3
-  Reward: -184.92
-  Steps: 74
+  Reward: 156.00
+  Steps: 268
   Epsilon: 0.378
+  Loss: 0.0344
 ---------------
 Episode 196:
   Level: 3
-  Reward: -184.17
-  Steps: 77
+  Reward: 150.00
+  Steps: 263
   Epsilon: 0.376
+  Loss: 2.3866
 ---------------
 Episode 197:
   Level: 3
-  Reward: -185.94
-  Steps: 80
+  Reward: -34.50
+  Steps: 96
   Epsilon: 0.374
+  Loss: 0.8275
 ---------------
 Episode 198:
   Level: 3
-  Reward: -184.60
-  Steps: 78
+  Reward: -64.00
+  Steps: 107
   Epsilon: 0.373
+  Loss: 0.0344
 ---------------
 Episode 199:
   Level: 3
-  Reward: -185.55
-  Steps: 80
+  Reward: -34.50
+  Steps: 96
   Epsilon: 0.371
+  Loss: 0.8317
 ---------------
 Episode 200:
   Level: 3
-  Reward: -184.50
-  Steps: 75
+  Reward: 143.50
+  Steps: 257
   Epsilon: 0.369
+  Loss: 0.0469
 ---------------
 Episode 201:
   Level: 3
-  Reward: -184.49
-  Steps: 84
+  Reward: -41.50
+  Steps: 108
   Epsilon: 0.367
+  Loss: 0.0565
 ---------------
 Episode 202:
   Level: 3
-  Reward: -187.26
+  Reward: -37.00
   Steps: 97
   Epsilon: 0.365
+  Loss: 1.6107
 ---------------
 Episode 203:
   Level: 3
-  Reward: -184.13
-  Steps: 70
+  Reward: 3.00
+  Steps: 97
   Epsilon: 0.363
+  Loss: 0.0350
 ---------------
 Episode 204:
   Level: 3
-  Reward: -185.22
-  Steps: 73
+  Reward: -31.50
+  Steps: 96
   Epsilon: 0.361
+  Loss: 0.0367
 ---------------
 Episode 205:
   Level: 3
-  Reward: -184.06
-  Steps: 80
+  Reward: 66.00
+  Steps: 170
   Epsilon: 0.360
+  Loss: 1.6111
 ---------------
 Episode 206:
   Level: 3
-  Reward: -185.13
-  Steps: 87
+  Reward: 5.50
+  Steps: 103
   Epsilon: 0.358
+  Loss: 1.6068
 ---------------
 Episode 207:
   Level: 3
-  Reward: -185.08
-  Steps: 72
+  Reward: 138.00
+  Steps: 268
   Epsilon: 0.356
+  Loss: 0.8169
 ---------------
 Episode 208:
   Level: 3
-  Reward: -184.84
-  Steps: 77
+  Reward: -33.00
+  Steps: 98
   Epsilon: 0.354
+  Loss: 0.0467
 ---------------
 Episode 209:
   Level: 3
-  Reward: -184.53
-  Steps: 77
+  Reward: 167.50
+  Steps: 275
   Epsilon: 0.353
+  Loss: 0.8160
 ---------------
 Episode 210:
   Level: 3
-  Reward: -184.25
-  Steps: 76
+  Reward: -61.50
+  Steps: 101
   Epsilon: 0.351
+  Loss: 0.0479
 ---------------
 Episode 211:
   Level: 3
-  Reward: -184.83
-  Steps: 69
+  Reward: 133.00
+  Steps: 256
   Epsilon: 0.349
+  Loss: 1.5965
 ---------------
 Episode 212:
   Level: 3
-  Reward: -185.11
-  Steps: 75
+  Reward: -31.50
+  Steps: 96
   Epsilon: 0.347
+  Loss: 1.6196
 ---------------
 Episode 213:
   Level: 3
-  Reward: -185.22
-  Steps: 80
+  Reward: 662.00
+  Steps: 375
   Epsilon: 0.346
+  Loss: 0.8072
 ---------------
 Episode 214:
   Level: 3
-  Reward: -185.03
-  Steps: 79
+  Reward: -37.00
+  Steps: 97
   Epsilon: 0.344
+  Loss: 0.0925
 ---------------
 Episode 215:
   Level: 3
-  Reward: -184.57
-  Steps: 76
+  Reward: -23.00
+  Steps: 104
   Epsilon: 0.342
+  Loss: 0.8204
 ---------------
 Episode 216:
   Level: 3
-  Reward: -184.37
-  Steps: 77
+  Reward: -29.00
+  Steps: 107
   Epsilon: 0.340
+  Loss: 0.4690
 ---------------
 Episode 217:
   Level: 3
-  Reward: -184.71
-  Steps: 76
+  Reward: 73.50
+  Steps: 171
   Epsilon: 0.339
+  Loss: 0.8021
 ---------------
 Episode 218:
   Level: 3
-  Reward: -184.64
-  Steps: 66
+  Reward: 151.00
+  Steps: 275
   Epsilon: 0.337
+  Loss: 0.8030
 ---------------
 Episode 219:
   Level: 3
-  Reward: -186.63
-  Steps: 96
+  Reward: 203.50
+  Steps: 267
   Epsilon: 0.335
+  Loss: 1.5960
 ---------------
 Episode 220:
   Level: 3
-  Reward: -184.02
-  Steps: 67
+  Reward: -32.50
+  Steps: 96
   Epsilon: 0.334
+  Loss: 0.8754
 ---------------
 Episode 221:
   Level: 3
-  Reward: -184.27
-  Steps: 74
+  Reward: 23.00
+  Steps: 147
   Epsilon: 0.332
+  Loss: 1.6167
 ---------------
 Episode 222:
   Level: 3
-  Reward: -184.37
-  Steps: 80
+  Reward: -38.00
+  Steps: 108
   Epsilon: 0.330
+  Loss: 0.0438
 ---------------
 Episode 223:
   Level: 3
-  Reward: -183.93
-  Steps: 74
+  Reward: -31.50
+  Steps: 97
   Epsilon: 0.329
+  Loss: 1.6184
 ---------------
 Episode 224:
   Level: 3
-  Reward: -184.84
-  Steps: 75
+  Reward: 5.00
+  Steps: 105
   Epsilon: 0.327
+  Loss: 0.8342
 ---------------
 Episode 225:
   Level: 3
-  Reward: -184.37
-  Steps: 81
+  Reward: -34.50
+  Steps: 96
   Epsilon: 0.325
+  Loss: 0.0251
 ---------------
 Episode 226:
   Level: 3
-  Reward: -183.92
-  Steps: 75
+  Reward: 230.50
+  Steps: 259
   Epsilon: 0.324
+  Loss: 0.8103
 ---------------
 Episode 227:
   Level: 3
-  Reward: -184.52
-  Steps: 77
+  Reward: 133.00
+  Steps: 263
   Epsilon: 0.322
+  Loss: 0.0310
 ---------------
 Episode 228:
   Level: 3
-  Reward: -184.55
-  Steps: 72
+  Reward: 72.00
+  Steps: 163
   Epsilon: 0.321
+  Loss: 0.0538
 ---------------
 Episode 229:
   Level: 3
-  Reward: -184.63
-  Steps: 73
+  Reward: -34.50
+  Steps: 96
   Epsilon: 0.319
+  Loss: 0.8283
 ---------------
 Episode 230:
   Level: 3
-  Reward: -183.96
-  Steps: 75
+  Reward: -32.50
+  Steps: 99
   Epsilon: 0.317
+  Loss: 2.4109
 ---------------
 Episode 231:
   Level: 3
-  Reward: -183.67
-  Steps: 74
+  Reward: -29.00
+  Steps: 125
   Epsilon: 0.316
+  Loss: 0.8177
 ---------------
 Episode 232:
   Level: 3
-  Reward: -184.81
-  Steps: 72
+  Reward: -40.50
+  Steps: 98
   Epsilon: 0.314
+  Loss: 0.7962
 ---------------
 Episode 233:
   Level: 3
-  Reward: -183.75
-  Steps: 72
+  Reward: 155.00
+  Steps: 261
   Epsilon: 0.313
+  Loss: 0.8160
 ---------------
 Episode 234:
   Level: 3
-  Reward: -183.67
-  Steps: 74
+  Reward: -30.50
+  Steps: 96
   Epsilon: 0.311
+  Loss: 0.8310
 ---------------
 Episode 235:
   Level: 3
-  Reward: -183.92
-  Steps: 69
+  Reward: 79.00
+  Steps: 174
   Epsilon: 0.309
+  Loss: 0.0260
 ---------------
 Episode 236:
   Level: 3
-  Reward: -183.82
-  Steps: 81
+  Reward: -27.00
+  Steps: 100
   Epsilon: 0.308
+  Loss: 1.9293
 ---------------
 Episode 237:
   Level: 3
-  Reward: -183.70
-  Steps: 76
+  Reward: 140.50
+  Steps: 182
   Epsilon: 0.306
+  Loss: 0.0212
 ---------------
 Episode 238:
   Level: 3
-  Reward: -184.50
-  Steps: 75
+  Reward: -30.00
+  Steps: 101
   Epsilon: 0.305
+  Loss: 0.8124
 ---------------
 Episode 239:
   Level: 3
-  Reward: -183.80
-  Steps: 76
+  Reward: -13.50
+  Steps: 91
   Epsilon: 0.303
+  Loss: 0.8398
 ---------------
 Episode 240:
   Level: 3
-  Reward: -184.77
-  Steps: 77
+  Reward: -30.00
+  Steps: 97
   Epsilon: 0.302
+  Loss: 0.2440
 ---------------
 Episode 241:
   Level: 3
-  Reward: -184.43
-  Steps: 78
+  Reward: 1.50
+  Steps: 105
   Epsilon: 0.300
+  Loss: 0.8305
 ---------------
 Episode 242:
   Level: 3
-  Reward: -185.86
-  Steps: 74
+  Reward: -32.00
+  Steps: 97
   Epsilon: 0.299
+  Loss: 1.6015
 ---------------
 Episode 243:
   Level: 3
-  Reward: -184.53
-  Steps: 74
+  Reward: 74.00
+  Steps: 176
   Epsilon: 0.297
+  Loss: 0.0517
 ---------------
 Episode 244:
   Level: 3
-  Reward: -185.03
-  Steps: 73
+  Reward: -35.50
+  Steps: 103
   Epsilon: 0.296
+  Loss: 0.0338
 ---------------
 Episode 245:
   Level: 3
-  Reward: -183.87
-  Steps: 72
+  Reward: -38.00
+  Steps: 99
   Epsilon: 0.294
+  Loss: 1.6244
 ---------------
 Episode 246:
   Level: 3
-  Reward: -185.34
-  Steps: 69
+  Reward: 153.50
+  Steps: 263
   Epsilon: 0.293
+  Loss: 0.0334
 ---------------
 Episode 247:
   Level: 3
-  Reward: -183.60
-  Steps: 66
+  Reward: -37.50
+  Steps: 97
   Epsilon: 0.291
+  Loss: 0.8037
 ---------------
 Episode 248:
   Level: 3
-  Reward: -184.75
-  Steps: 72
+  Reward: 152.50
+  Steps: 265
   Epsilon: 0.290
+  Loss: 0.0296
 ---------------
 Episode 249:
   Level: 3
-  Reward: -183.93
-  Steps: 68
+  Reward: 133.50
+  Steps: 259
   Epsilon: 0.288
+  Loss: 0.8252
 ---------------
 Episode 250:
   Level: 3
-  Reward: -183.76
-  Steps: 80
+  Reward: -34.00
+  Steps: 97
   Epsilon: 0.287
+  Loss: 0.4044
 ---------------
 Episode 251:
   Level: 3
-  Reward: -184.21
-  Steps: 85
+  Reward: 163.00
+  Steps: 260
   Epsilon: 0.286
+  Loss: 0.0560
 ---------------
 Episode 252:
   Level: 3
-  Reward: -184.02
-  Steps: 75
+  Reward: 150.00
+  Steps: 260
   Epsilon: 0.284
+  Loss: 0.0259
 ---------------
 Episode 253:
   Level: 3
-  Reward: -184.25
-  Steps: 71
+  Reward: -35.00
+  Steps: 96
   Epsilon: 0.283
+  Loss: 1.5621
 ---------------
 Episode 254:
   Level: 3
-  Reward: -183.82
-  Steps: 74
+  Reward: 80.00
+  Steps: 175
   Epsilon: 0.281
+  Loss: 0.0321
 ---------------
 Episode 255:
   Level: 3
-  Reward: -183.68
-  Steps: 78
+  Reward: 685.50
+  Steps: 399
   Epsilon: 0.280
+  Loss: 0.8357
 ---------------
 Episode 256:
   Level: 3
-  Reward: -183.85
-  Steps: 68
+  Reward: -36.50
+  Steps: 96
   Epsilon: 0.279
+  Loss: 0.8151
 ---------------
 Episode 257:
   Level: 3
-  Reward: -184.41
-  Steps: 83
+  Reward: 74.50
+  Steps: 177
   Epsilon: 0.277
+  Loss: 0.8112
 ---------------
 Episode 258:
   Level: 3
-  Reward: -184.28
-  Steps: 92
+  Reward: 6.00
+  Steps: 110
   Epsilon: 0.276
+  Loss: 1.5813
 ---------------
 Episode 259:
   Level: 3
-  Reward: -184.11
-  Steps: 69
+  Reward: 134.00
+  Steps: 253
   Epsilon: 0.274
+  Loss: 0.0414
 ---------------
 Episode 260:
   Level: 3
-  Reward: -184.92
-  Steps: 88
+  Reward: 143.50
+  Steps: 253
   Epsilon: 0.273
+  Loss: 0.0373
 ---------------
 Episode 261:
   Level: 3
-  Reward: -183.99
-  Steps: 84
+  Reward: 86.00
+  Steps: 180
   Epsilon: 0.272
+  Loss: 1.6025
 ---------------
 Episode 262:
   Level: 3
-  Reward: -184.64
-  Steps: 76
+  Reward: 108.50
+  Steps: 244
   Epsilon: 0.270
+  Loss: 1.1837
 ---------------
 Episode 263:
   Level: 3
-  Reward: -183.80
-  Steps: 80
+  Reward: 74.50
+  Steps: 170
   Epsilon: 0.269
+  Loss: 1.5947
 ---------------
 Episode 264:
   Level: 3
-  Reward: -183.73
-  Steps: 71
+  Reward: -33.00
+  Steps: 99
   Epsilon: 0.268
+  Loss: 1.5874
 ---------------
 Episode 265:
   Level: 3
-  Reward: -184.27
-  Steps: 74
+  Reward: -36.00
+  Steps: 101
   Epsilon: 0.266
+  Loss: 0.8174
 ---------------
 Episode 266:
   Level: 3
-  Reward: -183.80
-  Steps: 73
+  Reward: 121.50
+  Steps: 167
   Epsilon: 0.265
+  Loss: 0.0171
 ---------------
 Episode 267:
   Level: 3
-  Reward: -184.45
-  Steps: 71
+  Reward: -37.00
+  Steps: 96
   Epsilon: 0.264
+  Loss: 0.0774
 ---------------
 Episode 268:
   Level: 3
-  Reward: -183.82
-  Steps: 77
+  Reward: 189.50
+  Steps: 261
   Epsilon: 0.262
+  Loss: 0.4076
 ---------------
 Episode 269:
   Level: 3
-  Reward: -183.75
-  Steps: 69
+  Reward: -35.50
+  Steps: 97
   Epsilon: 0.261
+  Loss: 2.3522
 ---------------
 Episode 270:
   Level: 3
-  Reward: -183.55
-  Steps: 74
+  Reward: 83.00
+  Steps: 178
   Epsilon: 0.260
+  Loss: 0.0238
 ---------------
 Episode 271:
   Level: 3
-  Reward: -187.06
-  Steps: 78
+  Reward: 172.00
+  Steps: 272
   Epsilon: 0.258
+  Loss: 1.6146
 ---------------
 Episode 272:
   Level: 3
-  Reward: -183.78
-  Steps: 69
+  Reward: -21.50
+  Steps: 107
   Epsilon: 0.257
+  Loss: 0.4241
 ---------------
 Episode 273:
   Level: 3
-  Reward: -183.48
-  Steps: 65
+  Reward: 66.50
+  Steps: 164
   Epsilon: 0.256
+  Loss: 0.8418
 ---------------
 Episode 274:
   Level: 3
-  Reward: -184.26
-  Steps: 75
+  Reward: -28.00
+  Steps: 97
   Epsilon: 0.255
+  Loss: 2.3997
 ---------------
 Episode 275:
   Level: 3
-  Reward: -183.74
-  Steps: 70
+  Reward: 688.00
+  Steps: 396
   Epsilon: 0.253
+  Loss: 0.0582
 ---------------
 Episode 276:
   Level: 3
-  Reward: -184.05
-  Steps: 75
+  Reward: -34.00
+  Steps: 99
   Epsilon: 0.252
+  Loss: 0.8215
 ---------------
 Episode 277:
   Level: 3
-  Reward: -183.82
-  Steps: 68
+  Reward: 193.00
+  Steps: 254
   Epsilon: 0.251
+  Loss: 1.9802
 ---------------
 Episode 278:
   Level: 3
-  Reward: -183.65
-  Steps: 68
+  Reward: -31.50
+  Steps: 96
   Epsilon: 0.249
+  Loss: 1.6126
 ---------------
 Episode 279:
   Level: 3
-  Reward: -184.21
-  Steps: 69
+  Reward: 135.00
+  Steps: 253
   Epsilon: 0.248
+  Loss: 0.0181
 ---------------
 Episode 280:
   Level: 3
-  Reward: -183.55
-  Steps: 75
+  Reward: -42.00
+  Steps: 108
   Epsilon: 0.247
+  Loss: 0.0199
 ---------------
 Episode 281:
   Level: 3
-  Reward: -183.85
-  Steps: 69
+  Reward: -35.50
+  Steps: 96
   Epsilon: 0.246
+  Loss: 1.9982
 ---------------
 Episode 282:
   Level: 3
-  Reward: -183.80
-  Steps: 76
+  Reward: 165.50
+  Steps: 273
   Epsilon: 0.245
+  Loss: 0.8589
 ---------------
 Episode 283:
   Level: 3
-  Reward: -183.81
-  Steps: 77
+  Reward: 266.00
+  Steps: 434
   Epsilon: 0.243
+  Loss: 0.0331
 ---------------
 Episode 284:
   Level: 3
-  Reward: -187.06
-  Steps: 71
+  Reward: -34.00
+  Steps: 97
   Epsilon: 0.242
+  Loss: 2.7776
 ---------------
 Episode 285:
   Level: 3
-  Reward: -183.98
-  Steps: 72
+  Reward: 2.00
+  Steps: 95
   Epsilon: 0.241
+  Loss: 0.0264
 ---------------
 Episode 286:
   Level: 3
-  Reward: -183.68
-  Steps: 66
+  Reward: 77.50
+  Steps: 170
   Epsilon: 0.240
+  Loss: 2.3832
 ---------------
 Episode 287:
   Level: 3
-  Reward: -183.87
-  Steps: 69
+  Reward: 8.00
+  Steps: 110
   Epsilon: 0.238
+  Loss: 1.5866
 ---------------
 Episode 288:
   Level: 3
-  Reward: -184.00
-  Steps: 71
+  Reward: 82.00
+  Steps: 173
   Epsilon: 0.237
+  Loss: 0.0342
 ---------------
 Episode 289:
   Level: 3
-  Reward: -183.75
-  Steps: 73
+  Reward: 3.00
+  Steps: 95
   Epsilon: 0.236
+  Loss: 0.0345
 ---------------
 Episode 290:
   Level: 3
-  Reward: -184.31
-  Steps: 82
+  Reward: -35.00
+  Steps: 107
   Epsilon: 0.235
+  Loss: 2.3942
 ---------------
 Episode 291:
   Level: 3
-  Reward: -183.87
-  Steps: 70
+  Reward: -26.50
+  Steps: 102
   Epsilon: 0.234
+  Loss: 0.8148
 ---------------
 Episode 292:
   Level: 3
-  Reward: -183.82
-  Steps: 68
+  Reward: 7.00
+  Steps: 101
   Epsilon: 0.233
+  Loss: 0.8207
 ---------------
 Episode 293:
   Level: 3
-  Reward: -183.48
-  Steps: 67
+  Reward: -32.50
+  Steps: 96
   Epsilon: 0.231
+  Loss: 0.0676
 ---------------
 Episode 294:
   Level: 3
-  Reward: -184.13
-  Steps: 77
+  Reward: 86.00
+  Steps: 177
   Epsilon: 0.230
+  Loss: 0.0288
 ---------------
 Episode 295:
   Level: 3
-  Reward: -184.49
-  Steps: 80
+  Reward: -39.50
+  Steps: 110
   Epsilon: 0.229
+  Loss: 0.0159
 ---------------
 Episode 296:
   Level: 3
-  Reward: -183.91
-  Steps: 68
+  Reward: -31.50
+  Steps: 96
   Epsilon: 0.228
+  Loss: 0.0114
 ---------------
 Episode 297:
   Level: 3
-  Reward: -183.82
-  Steps: 69
+  Reward: 229.50
+  Steps: 261
   Epsilon: 0.227
+  Loss: 1.1945
 ---------------
 Episode 298:
   Level: 3
-  Reward: -183.75
-  Steps: 74
+  Reward: 126.50
+  Steps: 169
   Epsilon: 0.226
+  Loss: 0.8065
 ---------------
 Episode 299:
   Level: 3
-  Reward: -183.80
-  Steps: 70
+  Reward: -20.50
+  Steps: 106
   Epsilon: 0.225
+  Loss: 0.8218
 ---------------
 Episode 300:
   Level: 3
-  Reward: -183.48
-  Steps: 69
+  Reward: -31.00
+  Steps: 99
   Epsilon: 0.223
+  Loss: 0.0862
 ---------------
 Episode 301:
   Level: 3
-  Reward: -183.67
-  Steps: 69
+  Reward: 698.50
+  Steps: 392
   Epsilon: 0.222
+  Loss: 0.0191
 ---------------
 Episode 302:
   Level: 3
-  Reward: -183.58
-  Steps: 69
+  Reward: -26.00
+  Steps: 103
   Epsilon: 0.221
+  Loss: 0.0372
 ---------------
 Episode 303:
   Level: 3
-  Reward: -183.65
-  Steps: 71
+  Reward: 83.50
+  Steps: 174
   Epsilon: 0.220
+  Loss: 1.6075
 ---------------
 Episode 304:
   Level: 3
-  Reward: -183.65
-  Steps: 76
+  Reward: -0.50
+  Steps: 99
   Epsilon: 0.219
+  Loss: 1.6178
 ---------------
 Episode 305:
   Level: 3
-  Reward: -183.77
-  Steps: 70
+  Reward: -51.00
+  Steps: 103
   Epsilon: 0.218
+  Loss: 0.0213
 ---------------
 Episode 306:
   Level: 3
-  Reward: -184.17
-  Steps: 85
+  Reward: -28.00
+  Steps: 100
   Epsilon: 0.217
+  Loss: 0.0161
 ---------------
 Episode 307:
   Level: 3
-  Reward: -184.31
-  Steps: 68
+  Reward: 70.50
+  Steps: 168
   Epsilon: 0.216
+  Loss: 1.5970
 ---------------
 Episode 308:
   Level: 3
-  Reward: -183.67
-  Steps: 67
+  Reward: 1.00
+  Steps: 91
   Epsilon: 0.215
+  Loss: 0.0143
 ---------------
 Episode 309:
   Level: 3
-  Reward: -183.55
-  Steps: 72
+  Reward: -37.00
+  Steps: 108
   Epsilon: 0.214
+  Loss: 0.8186
 ---------------
 Episode 310:
   Level: 3
-  Reward: -183.87
-  Steps: 68
+  Reward: 147.00
+  Steps: 265
   Epsilon: 0.212
+  Loss: 0.0085
 ---------------
 Episode 311:
   Level: 3
-  Reward: -183.82
-  Steps: 72
+  Reward: -34.50
+  Steps: 97
   Epsilon: 0.211
+  Loss: 0.2108
 ---------------
 Episode 312:
   Level: 3
-  Reward: -183.73
-  Steps: 69
+  Reward: 158.00
+  Steps: 266
   Epsilon: 0.210
+  Loss: 0.0213
 ---------------
 Episode 313:
   Level: 3
-  Reward: -183.85
-  Steps: 73
+  Reward: 143.00
+  Steps: 186
   Epsilon: 0.209
+  Loss: 0.8025
 ---------------
 Episode 314:
   Level: 3
-  Reward: -184.59
-  Steps: 65
+  Reward: -23.00
+  Steps: 104
   Epsilon: 0.208
+  Loss: 0.8224
 ---------------
 Episode 315:
   Level: 3
-  Reward: -184.13
-  Steps: 73
+  Reward: 75.00
+  Steps: 182
   Epsilon: 0.207
+  Loss: 0.0150
 ---------------
 Episode 316:
   Level: 3
-  Reward: -183.58
-  Steps: 68
+  Reward: -31.00
+  Steps: 99
   Epsilon: 0.206
+  Loss: 0.8095
 ---------------
 Episode 317:
   Level: 3
-  Reward: -183.65
-  Steps: 70
+  Reward: 136.00
+  Steps: 252
   Epsilon: 0.205
+  Loss: 0.3153
 ---------------
 Episode 318:
   Level: 3
-  Reward: -183.67
-  Steps: 67
+  Reward: -34.00
+  Steps: 97
   Epsilon: 0.204
+  Loss: 0.0436
 ---------------
 Episode 319:
   Level: 3
-  Reward: -183.67
-  Steps: 66
+  Reward: 74.00
+  Steps: 172
   Epsilon: 0.203
+  Loss: 0.0338
 ---------------
 Episode 320:
   Level: 3
-  Reward: -183.93
-  Steps: 68
+  Reward: 77.00
+  Steps: 170
   Epsilon: 0.202
+  Loss: 1.5918
 ---------------
 Episode 321:
   Level: 3
-  Reward: -183.95
-  Steps: 67
+  Reward: 670.50
+  Steps: 381
   Epsilon: 0.201
+  Loss: 0.0415
 ---------------
 Episode 322:
   Level: 3
-  Reward: -184.27
-  Steps: 68
+  Reward: 698.50
+  Steps: 394
   Epsilon: 0.200
+  Loss: 0.7936
 ---------------
 Episode 323:
   Level: 3
-  Reward: -183.67
-  Steps: 68
+  Reward: -37.50
+  Steps: 96
   Epsilon: 0.199
+  Loss: 0.0192
 ---------------
 Episode 324:
   Level: 3
-  Reward: -183.60
-  Steps: 68
+  Reward: 141.50
+  Steps: 181
   Epsilon: 0.198
+  Loss: 0.8231
 ---------------
 Episode 325:
   Level: 3
-  Reward: -184.07
-  Steps: 71
+  Reward: 88.50
+  Steps: 178
   Epsilon: 0.197
+  Loss: 0.7915
 ---------------
 Episode 326:
   Level: 3
-  Reward: -183.67
-  Steps: 69
+  Reward: 136.00
+  Steps: 184
   Epsilon: 0.196
+  Loss: 0.2502
 ---------------
 Episode 327:
   Level: 3
-  Reward: -184.05
-  Steps: 67
+  Reward: 3.00
+  Steps: 95
   Epsilon: 0.195
+  Loss: 1.9912
 ---------------
 Episode 328:
   Level: 3
-  Reward: -183.73
-  Steps: 74
+  Reward: -36.00
+  Steps: 96
   Epsilon: 0.194
+  Loss: 0.8100
 ---------------
 Episode 329:
   Level: 3
-  Reward: -183.67
-  Steps: 70
+  Reward: 120.50
+  Steps: 169
   Epsilon: 0.193
+  Loss: 1.5919
 ---------------
 Episode 330:
   Level: 3
-  Reward: -183.88
-  Steps: 74
+  Reward: -36.50
+  Steps: 97
   Epsilon: 0.192
+  Loss: 0.8267
 ---------------
 Episode 331:
   Level: 3
-  Reward: -184.22
-  Steps: 79
+  Reward: 140.50
+  Steps: 181
   Epsilon: 0.191
+  Loss: 0.8290
 ---------------
 Episode 332:
   Level: 3
-  Reward: -184.05
-  Steps: 73
+  Reward: 157.50
+  Steps: 259
   Epsilon: 0.190
+  Loss: 0.8262
 ---------------
 Episode 333:
   Level: 3
-  Reward: -183.78
-  Steps: 67
+  Reward: 84.00
+  Steps: 188
   Epsilon: 0.189
+  Loss: 0.0302
 ---------------
 Episode 334:
   Level: 3
-  Reward: -184.00
-  Steps: 69
+  Reward: -39.50
+  Steps: 114
   Epsilon: 0.188
+  Loss: 0.0415
 ---------------
 Episode 335:
   Level: 3
-  Reward: -183.75
-  Steps: 71
+  Reward: 184.50
+  Steps: 254
   Epsilon: 0.187
+  Loss: 0.8135
 ---------------
 Episode 336:
   Level: 3
-  Reward: -183.75
-  Steps: 67
+  Reward: -51.50
+  Steps: 104
   Epsilon: 0.187
+  Loss: 0.0158
 ---------------
 Episode 337:
   Level: 3
-  Reward: -183.65
-  Steps: 67
+  Reward: 180.00
+  Steps: 277
   Epsilon: 0.186
+  Loss: 1.1859
 ---------------
 Episode 338:
   Level: 3
-  Reward: -183.62
-  Steps: 70
+  Reward: 783.50
+  Steps: 412
   Epsilon: 0.185
+  Loss: 0.0230
 ---------------
 Episode 339:
   Level: 3
-  Reward: -183.82
-  Steps: 71
+  Reward: 126.00
+  Steps: 168
   Epsilon: 0.184
+  Loss: 1.5819
 ---------------
 Episode 340:
   Level: 3
-  Reward: -183.76
-  Steps: 69
+  Reward: 675.00
+  Steps: 383
   Epsilon: 0.183
+  Loss: 0.0417
 ---------------
 Episode 341:
   Level: 3
-  Reward: -184.15
-  Steps: 73
+  Reward: -38.00
+  Steps: 98
   Epsilon: 0.182
+  Loss: 0.0500
 ---------------
 Episode 342:
   Level: 3
-  Reward: -183.78
-  Steps: 66
+  Reward: 1.00
+  Steps: 95
   Epsilon: 0.181
+  Loss: 1.5811
 ---------------
 Episode 343:
   Level: 3
-  Reward: -183.96
-  Steps: 67
+  Reward: 680.50
+  Steps: 389
   Epsilon: 0.180
+  Loss: 0.8060
 ---------------
 Episode 344:
   Level: 3
-  Reward: -183.85
-  Steps: 68
+  Reward: 122.00
+  Steps: 167
   Epsilon: 0.179
+  Loss: 2.3730
 ---------------
 Episode 345:
   Level: 3
-  Reward: -184.54
-  Steps: 69
+  Reward: -39.50
+  Steps: 98
   Epsilon: 0.178
+  Loss: 0.8085
 ---------------
 Episode 346:
   Level: 3
-  Reward: -184.20
-  Steps: 74
+  Reward: -22.00
+  Steps: 105
   Epsilon: 0.177
+  Loss: 0.3758
 ---------------
 Episode 347:
   Level: 3
-  Reward: -184.60
-  Steps: 77
+  Reward: 84.50
+  Steps: 176
   Epsilon: 0.177
+  Loss: 0.0118
 ---------------
 Episode 348:
   Level: 3
-  Reward: -183.94
-  Steps: 71
+  Reward: 80.50
+  Steps: 169
   Epsilon: 0.176
+  Loss: 0.8256
 ---------------
 Episode 349:
   Level: 3
-  Reward: -184.15
-  Steps: 67
+  Reward: 696.00
+  Steps: 393
   Epsilon: 0.175
+  Loss: 0.0426
 ---------------
 Episode 350:
   Level: 3
-  Reward: -183.94
-  Steps: 69
+  Reward: 145.50
+  Steps: 265
   Epsilon: 0.174
+  Loss: 0.0370
 ---------------
 Episode 351:
   Level: 3
-  Reward: -183.85
-  Steps: 69
+  Reward: 143.00
+  Steps: 247
   Epsilon: 0.173
+  Loss: 0.0556
 ---------------
 Episode 352:
   Level: 3
-  Reward: -184.45
-  Steps: 71
+  Reward: -54.00
+  Steps: 101
   Epsilon: 0.172
+  Loss: 0.7994
 ---------------
 Episode 353:
   Level: 3
-  Reward: -183.67
-  Steps: 68
+  Reward: 141.50
+  Steps: 249
   Epsilon: 0.171
+  Loss: 0.0144
 ---------------
 Episode 354:
   Level: 3
-  Reward: -183.93
-  Steps: 67
+  Reward: -18.00
+  Steps: 125
   Epsilon: 0.170
+  Loss: 0.0281
 ---------------
 Episode 355:
   Level: 3
-  Reward: -183.77
-  Steps: 68
+  Reward: 80.50
+  Steps: 178
   Epsilon: 0.170
+  Loss: 0.0397
 ---------------
 Episode 356:
   Level: 3
-  Reward: -184.00
-  Steps: 72
+  Reward: 139.50
+  Steps: 186
   Epsilon: 0.169
+  Loss: 1.5742
 ---------------
 Episode 357:
   Level: 3
-  Reward: -184.33
-  Steps: 71
+  Reward: 131.00
+  Steps: 253
   Epsilon: 0.168
+  Loss: 2.4047
 ---------------
 Episode 358:
   Level: 3
-  Reward: -183.84
-  Steps: 69
+  Reward: 680.00
+  Steps: 386
   Epsilon: 0.167
+  Loss: 1.1832
 ---------------
 Episode 359:
   Level: 3
-  Reward: -183.85
-  Steps: 72
+  Reward: 123.50
+  Steps: 251
   Epsilon: 0.166
+  Loss: 1.9848
 ---------------
 Episode 360:
   Level: 3
-  Reward: -183.85
-  Steps: 66
+  Reward: 157.00
+  Steps: 259
   Epsilon: 0.165
+  Loss: 0.0275
 ---------------
 Episode 361:
   Level: 3
-  Reward: -184.05
-  Steps: 67
+  Reward: 122.50
+  Steps: 170
   Epsilon: 0.165
+  Loss: 0.8076
 ---------------
 Episode 362:
   Level: 3
-  Reward: -183.96
-  Steps: 72
+  Reward: 74.50
+  Steps: 178
   Epsilon: 0.164
+  Loss: 0.8076
 ---------------
 Episode 363:
   Level: 3
-  Reward: -183.87
-  Steps: 66
+  Reward: -0.50
+  Steps: 95
   Epsilon: 0.163
+  Loss: 1.5864
 ---------------
 Episode 364:
   Level: 3
-  Reward: -184.61
-  Steps: 70
+  Reward: -29.00
+  Steps: 96
   Epsilon: 0.162
+  Loss: 1.5850
 ---------------
 Episode 365:
   Level: 3
-  Reward: -183.77
-  Steps: 68
+  Reward: 76.50
+  Steps: 177
   Epsilon: 0.161
+  Loss: 0.0446
 ---------------
 Episode 366:
   Level: 3
-  Reward: -184.17
-  Steps: 67
+  Reward: 122.50
+  Steps: 165
   Epsilon: 0.160
+  Loss: 0.0390
 ---------------
 Episode 367:
   Level: 3
-  Reward: -183.65
-  Steps: 67
+  Reward: -34.00
+  Steps: 126
   Epsilon: 0.160
+  Loss: 0.8136
 ---------------
 Episode 368:
   Level: 3
-  Reward: -183.86
-  Steps: 70
+  Reward: -30.00
+  Steps: 97
   Epsilon: 0.159
+  Loss: 0.8071
 ---------------
 Episode 369:
   Level: 3
-  Reward: -183.68
-  Steps: 68
+  Reward: 163.00
+  Steps: 267
   Epsilon: 0.158
+  Loss: 0.0265
 ---------------
 Episode 370:
   Level: 3
-  Reward: -183.92
-  Steps: 68
+  Reward: -47.50
+  Steps: 100
   Epsilon: 0.157
+  Loss: 1.6046
 ---------------
 Episode 371:
   Level: 3
-  Reward: -184.14
-  Steps: 68
+  Reward: 195.50
+  Steps: 245
   Epsilon: 0.157
+  Loss: 0.0222
 ---------------
 Episode 372:
   Level: 3
-  Reward: -183.77
-  Steps: 66
+  Reward: 144.00
+  Steps: 254
   Epsilon: 0.156
+  Loss: 0.8253
 ---------------
 Episode 373:
   Level: 3
-  Reward: -184.57
-  Steps: 79
+  Reward: 150.50
+  Steps: 257
   Epsilon: 0.155
+  Loss: 0.0586
 ---------------
 Episode 374:
   Level: 3
-  Reward: -184.33
-  Steps: 69
+  Reward: -33.50
+  Steps: 96
   Epsilon: 0.154
+  Loss: 0.0843
 ---------------
 Episode 375:
   Level: 3
-  Reward: -184.18
-  Steps: 73
+  Reward: -27.00
+  Steps: 104
   Epsilon: 0.153
+  Loss: 1.6142
 ---------------
 Episode 376:
   Level: 3
-  Reward: -184.63
-  Steps: 71
+  Reward: 128.00
+  Steps: 169
   Epsilon: 0.153
+  Loss: 0.8587
 ---------------
 Episode 377:
   Level: 3
-  Reward: -183.78
-  Steps: 67
+  Reward: 235.00
+  Steps: 276
   Epsilon: 0.152
+  Loss: 0.8101
 ---------------
 Episode 378:
   Level: 3
-  Reward: -184.43
-  Steps: 69
+  Reward: -33.50
+  Steps: 97
   Epsilon: 0.151
+  Loss: 1.1839
 ---------------
 Episode 379:
   Level: 3
-  Reward: -184.55
-  Steps: 72
+  Reward: 19.00
+  Steps: 123
   Epsilon: 0.150
+  Loss: 0.0266
 ---------------
 Episode 380:
   Level: 3
-  Reward: -183.75
-  Steps: 67
+  Reward: 84.00
+  Steps: 180
   Epsilon: 0.150
+  Loss: 0.0405
 ---------------
 Episode 381:
   Level: 3
-  Reward: -184.03
-  Steps: 70
+  Reward: 694.50
+  Steps: 393
   Epsilon: 0.149
+  Loss: 0.8120
 ---------------
 Episode 382:
   Level: 3
-  Reward: -183.67
-  Steps: 66
+  Reward: 144.00
+  Steps: 254
   Epsilon: 0.148
+  Loss: 1.6084
 ---------------
 Episode 383:
   Level: 3
-  Reward: -183.68
-  Steps: 69
+  Reward: -32.00
+  Steps: 99
   Epsilon: 0.147
+  Loss: 0.8096
 ---------------
 Episode 384:
   Level: 3
-  Reward: -183.64
-  Steps: 68
+  Reward: 154.00
+  Steps: 265
   Epsilon: 0.147
+  Loss: 1.6032
 ---------------
 Episode 385:
   Level: 3
-  Reward: -184.33
-  Steps: 67
+  Reward: 129.00
+  Steps: 165
   Epsilon: 0.146
+  Loss: 0.8100
 ---------------
 Episode 386:
   Level: 3
-  Reward: -184.38
-  Steps: 72
+  Reward: -37.50
+  Steps: 98
   Epsilon: 0.145
+  Loss: 0.8189
 ---------------
 Episode 387:
   Level: 3
-  Reward: -183.77
-  Steps: 66
+  Reward: 690.50
+  Steps: 394
   Epsilon: 0.144
+  Loss: 0.0257
 ---------------
 Episode 388:
   Level: 3
-  Reward: -183.63
-  Steps: 70
+  Reward: 66.00
+  Steps: 244
   Epsilon: 0.144
+  Loss: 0.0262
 ---------------
 Episode 389:
   Level: 3
-  Reward: -184.94
-  Steps: 68
+  Reward: 78.50
+  Steps: 168
   Epsilon: 0.143
+  Loss: 0.1183
 ---------------
 Episode 390:
   Level: 3
-  Reward: -185.71
-  Steps: 79
+  Reward: 83.50
+  Steps: 173
   Epsilon: 0.142
+  Loss: 0.0462
 ---------------
 Episode 391:
   Level: 3
-  Reward: -184.20
-  Steps: 69
+  Reward: 138.00
+  Steps: 178
   Epsilon: 0.142
+  Loss: 0.0186
 ---------------
 Episode 392:
   Level: 3
-  Reward: -185.34
-  Steps: 68
+  Reward: -22.00
+  Steps: 116
   Epsilon: 0.141
+  Loss: 1.5560
 ---------------
 Episode 393:
   Level: 3
-  Reward: -183.57
-  Steps: 67
+  Reward: -24.50
+  Steps: 103
   Epsilon: 0.140
+  Loss: 0.8081
 ---------------
 Episode 394:
   Level: 3
-  Reward: -183.82
-  Steps: 68
+  Reward: 83.00
+  Steps: 171
   Epsilon: 0.139
+  Loss: 0.0164
 ---------------
 Episode 395:
   Level: 3
-  Reward: -184.89
-  Steps: 71
+  Reward: 733.00
+  Steps: 377
   Epsilon: 0.139
+  Loss: 0.0100
 ---------------
 Episode 396:
   Level: 3
-  Reward: -184.45
-  Steps: 69
+  Reward: -33.50
+  Steps: 97
   Epsilon: 0.138
+  Loss: 1.8410
 ---------------
 Episode 397:
   Level: 3
-  Reward: -183.57
-  Steps: 71
+  Reward: 71.00
+  Steps: 161
   Epsilon: 0.137
+  Loss: 0.4213
 ---------------
 Episode 398:
   Level: 3
-  Reward: -185.92
-  Steps: 79
+  Reward: -47.50
+  Steps: 112
   Epsilon: 0.137
+  Loss: 0.8164
 ---------------
 Episode 399:
   Level: 3
-  Reward: -185.01
-  Steps: 68
+  Reward: 186.00
+  Steps: 250
   Epsilon: 0.136
+  Loss: 0.3128
 ---------------
 Episode 400:
   Level: 3
-  Reward: -187.13
-  Steps: 95
+  Reward: -37.50
+  Steps: 96
   Epsilon: 0.135
+  Loss: 1.6139
 ---------------
 Episode 401:
   Level: 3
-  Reward: -183.48
-  Steps: 65
+  Reward: -35.50
+  Steps: 100
   Epsilon: 0.135
+  Loss: 0.4074
 ---------------
 Episode 402:
   Level: 3
-  Reward: -184.58
-  Steps: 70
+  Reward: 74.50
+  Steps: 163
   Epsilon: 0.134
+  Loss: 0.8009
 ---------------
 Episode 403:
   Level: 3
-  Reward: -187.89
+  Reward: -35.50
   Steps: 110
   Epsilon: 0.133
+  Loss: 0.0341
 ---------------
 Episode 404:
   Level: 3
-  Reward: -183.88
-  Steps: 72
+  Reward: 229.00
+  Steps: 279
   Epsilon: 0.133
+  Loss: 0.8070
 ---------------
 Episode 405:
   Level: 3
-  Reward: -183.65
-  Steps: 69
+  Reward: 142.50
+  Steps: 180
   Epsilon: 0.132
+  Loss: 1.6101
 ---------------
 Episode 406:
   Level: 3
-  Reward: -183.77
-  Steps: 65
+  Reward: 137.00
+  Steps: 174
   Epsilon: 0.131
+  Loss: 0.0162
 ---------------
 Episode 407:
   Level: 3
-  Reward: -183.88
-  Steps: 72
+  Reward: -35.50
+  Steps: 105
   Epsilon: 0.131
+  Loss: 0.0214
 ---------------
 Episode 408:
   Level: 3
-  Reward: -183.77
-  Steps: 65
+  Reward: -31.50
+  Steps: 96
   Epsilon: 0.130
+  Loss: 1.1934
 ---------------
 Episode 409:
   Level: 3
-  Reward: -187.36
-  Steps: 110
+  Reward: -29.50
+  Steps: 101
   Epsilon: 0.129
+  Loss: 0.8203
 ---------------
 Episode 410:
   Level: 3
-  Reward: -183.57
-  Steps: 69
+  Reward: -33.50
+  Steps: 99
   Epsilon: 0.129
+  Loss: 0.7943
 ---------------
 Episode 411:
   Level: 3
-  Reward: -208.53
-  Steps: 312
+  Reward: 4.00
+  Steps: 97
   Epsilon: 0.128
+  Loss: 1.5705
 ---------------
 Episode 412:
   Level: 3
-  Reward: -183.66
-  Steps: 71
+  Reward: 129.00
+  Steps: 163
   Epsilon: 0.127
+  Loss: 1.5972
 ---------------
 Episode 413:
   Level: 3
-  Reward: -183.78
-  Steps: 71
+  Reward: 134.00
+  Steps: 163
   Epsilon: 0.127
+  Loss: 0.0437
 ---------------
 Episode 414:
   Level: 3
-  Reward: -183.85
-  Steps: 71
+  Reward: -32.00
+  Steps: 96
   Epsilon: 0.126
+  Loss: 0.0256
 ---------------
 Episode 415:
   Level: 3
-  Reward: -183.48
-  Steps: 65
+  Reward: 85.50
+  Steps: 180
   Epsilon: 0.126
+  Loss: 1.1981
 ---------------
 Episode 416:
   Level: 3
-  Reward: -183.84
-  Steps: 67
+  Reward: 151.00
+  Steps: 260
   Epsilon: 0.125
+  Loss: 0.0232
 ---------------
 Episode 417:
   Level: 3
-  Reward: -287.67
-  Steps: 1162
+  Reward: -19.00
+  Steps: 136
   Epsilon: 0.124
+  Loss: 1.9322
 ---------------
 Episode 418:
   Level: 3
-  Reward: -183.67
-  Steps: 68
+  Reward: -30.00
+  Steps: 153
   Epsilon: 0.124
+  Loss: 0.0240
 ---------------
 Episode 419:
   Level: 3
-  Reward: -183.58
-  Steps: 65
+  Reward: -52.50
+  Steps: 105
   Epsilon: 0.123
+  Loss: 0.0446
 ---------------
 Episode 420:
   Level: 3
-  Reward: -184.82
-  Steps: 68
+  Reward: -54.00
+  Steps: 105
   Epsilon: 0.122
+  Loss: 0.0161
 ---------------
 Episode 421:
   Level: 3
-  Reward: -183.67
-  Steps: 65
+  Reward: -33.50
+  Steps: 118
   Epsilon: 0.122
+  Loss: 0.0137
 ---------------
 Episode 422:
   Level: 3
-  Reward: -184.41
-  Steps: 69
+  Reward: 729.50
+  Steps: 382
   Epsilon: 0.121
+  Loss: 1.1935
 ---------------
 Episode 423:
   Level: 3
-  Reward: -189.94
-  Steps: 142
+  Reward: -34.50
+  Steps: 98
   Epsilon: 0.121
+  Loss: 0.8262
 ---------------
 Episode 424:
   Level: 3
-  Reward: -195.16
-  Steps: 86
+  Reward: 76.00
+  Steps: 172
   Epsilon: 0.120
+  Loss: 1.5910
 ---------------
 Episode 425:
   Level: 3
-  Reward: -251.60
-  Steps: 778
+  Reward: 6.50
+  Steps: 91
   Epsilon: 0.119
+  Loss: 0.8252
 ---------------
 Episode 426:
   Level: 3
-  Reward: -186.02
-  Steps: 97
+  Reward: 150.00
+  Steps: 273
   Epsilon: 0.119
+  Loss: 0.4002
 ---------------
 Episode 427:
   Level: 3
-  Reward: -187.30
-  Steps: 107
+  Reward: 84.00
+  Steps: 177
   Epsilon: 0.118
+  Loss: 0.0199
 ---------------
 Episode 428:
   Level: 3
-  Reward: -184.36
-  Steps: 76
+  Reward: 0.50
+  Steps: 93
   Epsilon: 0.118
+  Loss: 0.0317
 ---------------
 Episode 429:
   Level: 3
-  Reward: -189.36
-  Steps: 140
+  Reward: -36.50
+  Steps: 97
   Epsilon: 0.117
+  Loss: 0.0294
 ---------------
 Episode 430:
   Level: 3
-  Reward: -183.57
-  Steps: 69
+  Reward: 229.00
+  Steps: 269
   Epsilon: 0.116
+  Loss: 0.0265
 ---------------
 Episode 431:
   Level: 3
-  Reward: -184.13
-  Steps: 72
+  Reward: 131.50
+  Steps: 238
   Epsilon: 0.116
+  Loss: 0.0413
 ---------------
 Episode 432:
   Level: 3
-  Reward: -183.57
-  Steps: 65
+  Reward: -29.00
+  Steps: 96
   Epsilon: 0.115
+  Loss: 1.6136
 ---------------
 Episode 433:
   Level: 3
-  Reward: -185.11
-  Steps: 85
+  Reward: 678.00
+  Steps: 392
   Epsilon: 0.115
+  Loss: 0.8081
 ---------------
 Episode 434:
   Level: 3
-  Reward: -196.54
-  Steps: 110
+  Reward: 62.50
+  Steps: 163
   Epsilon: 0.114
+  Loss: 1.6027
 ---------------
 Episode 435:
   Level: 3
-  Reward: -198.19
-  Steps: 234
+  Reward: 67.50
+  Steps: 176
   Epsilon: 0.114
+  Loss: 0.0548
 ---------------
 Episode 436:
   Level: 3
-  Reward: -184.40
-  Steps: 77
+  Reward: 144.50
+  Steps: 263
   Epsilon: 0.113
+  Loss: 0.7974
 ---------------
 Episode 437:
   Level: 3
-  Reward: -183.77
-  Steps: 66
+  Reward: 132.00
+  Steps: 169
   Epsilon: 0.112
+  Loss: 0.8173
 ---------------
 Episode 438:
   Level: 3
-  Reward: -186.44
-  Steps: 103
+  Reward: -31.50
+  Steps: 97
   Epsilon: 0.112
+  Loss: 0.0205
 ---------------
 Episode 439:
   Level: 3
-  Reward: -194.23
-  Steps: 91
+  Reward: -33.50
+  Steps: 99
   Epsilon: 0.111
+  Loss: 0.8300
 ---------------
 Episode 440:
   Level: 3
-  Reward: -183.60
-  Steps: 65
+  Reward: 3.50
+  Steps: 95
   Epsilon: 0.111
+  Loss: 2.3685
 ---------------
 Episode 441:
   Level: 3
-  Reward: -183.95
-  Steps: 75
+  Reward: -53.50
+  Steps: 104
   Epsilon: 0.110
+  Loss: 0.0183
 ---------------
 Episode 442:
   Level: 3
-  Reward: -183.68
-  Steps: 68
+  Reward: 151.50
+  Steps: 252
   Epsilon: 0.110
+  Loss: 0.7987
 ---------------
 Episode 443:
   Level: 3
-  Reward: -188.41
-  Steps: 121
+  Reward: 143.00
+  Steps: 251
   Epsilon: 0.109
+  Loss: 0.0507
 ---------------
 Episode 444:
   Level: 3
-  Reward: -183.85
-  Steps: 68
+  Reward: 195.50
+  Steps: 251
   Epsilon: 0.109
+  Loss: 1.5995
 ---------------
 Episode 445:
   Level: 3
-  Reward: -189.13
-  Steps: 137
+  Reward: 716.50
+  Steps: 368
   Epsilon: 0.108
+  Loss: 0.0518
 ---------------
 Episode 446:
   Level: 3
-  Reward: -183.78
-  Steps: 69
+  Reward: 79.00
+  Steps: 171
   Epsilon: 0.107
+  Loss: 0.0352
 ---------------
 Episode 447:
   Level: 3
-  Reward: -192.01
-  Steps: 90
+  Reward: -27.50
+  Steps: 103
   Epsilon: 0.107
+  Loss: 0.0521
 ---------------
 Episode 448:
   Level: 3
-  Reward: -192.99
-  Steps: 94
+  Reward: 198.00
+  Steps: 244
   Epsilon: 0.106
+  Loss: 0.7932
 ---------------
 Episode 449:
   Level: 3
-  Reward: -187.19
-  Steps: 66
+  Reward: -46.50
+  Steps: 98
   Epsilon: 0.106
+  Loss: 1.6935
 ---------------
 Episode 450:
   Level: 3
-  Reward: -187.84
-  Steps: 74
+  Reward: 3.00
+  Steps: 93
   Epsilon: 0.105
+  Loss: 0.8112
 ---------------
 Episode 451:
   Level: 3
-  Reward: -187.05
-  Steps: 72
+  Reward: 140.50
+  Steps: 178
   Epsilon: 0.105
+  Loss: 0.0393
 ---------------
 Episode 452:
   Level: 3
-  Reward: -189.19
-  Steps: 94
+  Reward: -26.50
+  Steps: 100
   Epsilon: 0.104
+  Loss: 0.0405
 ---------------
 Episode 453:
   Level: 3
-  Reward: -186.55
-  Steps: 67
+  Reward: 134.50
+  Steps: 256
   Epsilon: 0.104
+  Loss: 1.5827
 ---------------
 Episode 454:
   Level: 3
-  Reward: -195.12
-  Steps: 96
+  Reward: 133.00
+  Steps: 162
   Epsilon: 0.103
+  Loss: 0.0342
 ---------------
 Episode 455:
   Level: 3
-  Reward: -193.99
-  Steps: 92
+  Reward: 144.00
+  Steps: 178
   Epsilon: 0.103
+  Loss: 0.8212
 ---------------
 Episode 456:
   Level: 3
-  Reward: -187.09
-  Steps: 71
+  Reward: 155.50
+  Steps: 260
   Epsilon: 0.102
+  Loss: 0.0232
 ---------------
 Episode 457:
   Level: 3
-  Reward: -187.26
-  Steps: 71
+  Reward: -35.00
+  Steps: 97
   Epsilon: 0.102
+  Loss: 0.0361
 ---------------
 Episode 458:
   Level: 3
-  Reward: -187.05
-  Steps: 71
+  Reward: 82.50
+  Steps: 171
   Epsilon: 0.101
+  Loss: 0.0207
 ---------------
 Episode 459:
   Level: 3
-  Reward: -193.62
-  Steps: 90
+  Reward: 127.50
+  Steps: 161
   Epsilon: 0.101
+  Loss: 0.0191
 ---------------
 Episode 460:
   Level: 3
-  Reward: -191.49
-  Steps: 93
+  Reward: 117.00
+  Steps: 169
   Epsilon: 0.100
+  Loss: 0.8303
 ---------------
 Episode 461:
   Level: 3
-  Reward: -190.92
-  Steps: 85
+  Reward: 131.00
+  Steps: 164
   Epsilon: 0.100
+  Loss: 0.0370
 ---------------
 Episode 462:
   Level: 3
-  Reward: -193.68
-  Steps: 110
+  Reward: 144.50
+  Steps: 270
   Epsilon: 0.099
+  Loss: 0.0358
 ---------------
 Episode 463:
   Level: 3
-  Reward: -195.52
-  Steps: 136
+  Reward: 132.00
+  Steps: 169
   Epsilon: 0.099
+  Loss: 0.0210
 ---------------
 Episode 464:
   Level: 3
-  Reward: -187.81
-  Steps: 65
+  Reward: -61.00
+  Steps: 107
   Epsilon: 0.098
+  Loss: 0.8216
 ---------------
 Episode 465:
   Level: 3
-  Reward: -202.29
-  Steps: 184
+  Reward: 220.50
+  Steps: 265
   Epsilon: 0.098
+  Loss: 0.8339
 ---------------
 Episode 466:
   Level: 3
-  Reward: -187.43
-  Steps: 68
+  Reward: 176.50
+  Steps: 255
   Epsilon: 0.097
+  Loss: 0.8146
 ---------------
 Episode 467:
   Level: 3
-  Reward: -197.38
-  Steps: 96
+  Reward: -32.50
+  Steps: 97
   Epsilon: 0.097
+  Loss: 0.0142
 ---------------
 Episode 468:
   Level: 3
-  Reward: -201.45
-  Steps: 169
+  Reward: 129.00
+  Steps: 161
   Epsilon: 0.096
+  Loss: 0.0252
 ---------------
 Episode 469:
   Level: 3
-  Reward: -211.97
-  Steps: 314
+  Reward: 93.00
+  Steps: 175
   Epsilon: 0.096
+  Loss: 1.5898
 ---------------
 Episode 470:
   Level: 3
-  Reward: -202.08
-  Steps: 144
+  Reward: -25.50
+  Steps: 105
   Epsilon: 0.095
+  Loss: 0.8249
 ---------------
 Episode 471:
   Level: 3
-  Reward: -190.06
-  Steps: 75
+  Reward: -35.50
+  Steps: 112
   Epsilon: 0.095
+  Loss: 1.6071
 ---------------
 Episode 472:
   Level: 3
-  Reward: -212.50
-  Steps: 308
+  Reward: -34.00
+  Steps: 118
   Epsilon: 0.094
+  Loss: 0.8031
 ---------------
 Episode 473:
   Level: 3
-  Reward: -228.62
-  Steps: 378
+  Reward: -20.00
+  Steps: 108
   Epsilon: 0.094
+  Loss: 0.0285
 ---------------
 Episode 474:
   Level: 3
-  Reward: -204.39
-  Steps: 230
+  Reward: 127.50
+  Steps: 170
   Epsilon: 0.093
+  Loss: 0.0218
 ---------------
 Episode 475:
   Level: 3
-  Reward: -195.56
-  Steps: 106
+  Reward: 682.00
+  Steps: 382
   Epsilon: 0.093
+  Loss: 0.0424
 ---------------
 Episode 476:
   Level: 3
-  Reward: -206.19
-  Steps: 242
+  Reward: 125.00
+  Steps: 166
   Epsilon: 0.092
+  Loss: 0.0199
 ---------------
 Episode 477:
   Level: 3
-  Reward: -210.75
-  Steps: 271
+  Reward: 719.50
+  Steps: 367
   Epsilon: 0.092
+  Loss: 2.3783
 ---------------
 Episode 478:
   Level: 3
-  Reward: -186.77
-  Steps: 66
+  Reward: 82.00
+  Steps: 169
   Epsilon: 0.092
+  Loss: 0.3979
 ---------------
 Episode 479:
   Level: 3
-  Reward: -189.98
-  Steps: 78
+  Reward: 714.00
+  Steps: 368
   Epsilon: 0.091
+  Loss: 0.0221
 ---------------
 Episode 480:
   Level: 3
-  Reward: -211.66
-  Steps: 326
+  Reward: 122.00
+  Steps: 162
   Epsilon: 0.091
+  Loss: 0.8134
 ---------------
 Episode 481:
   Level: 3
-  Reward: -188.06
-  Steps: 79
+  Reward: -35.00
+  Steps: 107
   Epsilon: 0.090
+  Loss: 0.0371
 ---------------
 Episode 482:
   Level: 3
-  Reward: -186.49
-  Steps: 65
+  Reward: 76.50
+  Steps: 165
   Epsilon: 0.090
+  Loss: 0.8306
 ---------------
 Episode 483:
   Level: 3
-  Reward: -216.50
-  Steps: 387
+  Reward: -26.50
+  Steps: 100
   Epsilon: 0.089
+  Loss: 1.9706
 ---------------
 Episode 484:
   Level: 3
-  Reward: -192.21
-  Steps: 128
+  Reward: 126.50
+  Steps: 172
   Epsilon: 0.089
+  Loss: 1.1339
 ---------------
 Episode 485:
   Level: 3
-  Reward: -187.16
-  Steps: 74
+  Reward: 160.00
+  Steps: 196
   Epsilon: 0.088
+  Loss: 1.6006
 ---------------
 Episode 486:
   Level: 3
-  Reward: -217.93
-  Steps: 343
+  Reward: -37.00
+  Steps: 96
   Epsilon: 0.088
+  Loss: 0.8224
 ---------------
 Episode 487:
   Level: 3
-  Reward: -219.02
-  Steps: 348
+  Reward: 127.50
+  Steps: 163
   Epsilon: 0.088
+  Loss: 0.8404
 ---------------
 Episode 488:
   Level: 3
-  Reward: -198.93
-  Steps: 195
+  Reward: -39.00
+  Steps: 96
   Epsilon: 0.087
+  Loss: 2.3978
 ---------------
 Episode 489:
   Level: 3
-  Reward: -287.27
-  Steps: 838
+  Reward: 125.50
+  Steps: 167
   Epsilon: 0.087
+  Loss: 1.6061
 ---------------
 Episode 490:
   Level: 3
-  Reward: -187.02
-  Steps: 69
+  Reward: -51.00
+  Steps: 104
   Epsilon: 0.086
+  Loss: 3.1458
 ---------------
 Episode 491:
   Level: 3
-  Reward: -217.30
-  Steps: 334
+  Reward: -40.00
+  Steps: 96
   Epsilon: 0.086
+  Loss: 0.0396
 ---------------
 Episode 492:
   Level: 3
-  Reward: -254.12
-  Steps: 608
+  Reward: 123.50
+  Steps: 165
   Epsilon: 0.085
+  Loss: 0.0286
 ---------------
 Episode 493:
   Level: 3
-  Reward: -187.85
-  Steps: 78
+  Reward: -36.00
+  Steps: 96
   Epsilon: 0.085
+  Loss: 0.0336
 ---------------
 Episode 494:
   Level: 3
-  Reward: -188.10
-  Steps: 69
+  Reward: 76.00
+  Steps: 176
   Epsilon: 0.084
+  Loss: 0.8410
 ---------------
 Episode 495:
   Level: 3
-  Reward: -254.01
-  Steps: 864
+  Reward: 124.50
+  Steps: 171
   Epsilon: 0.084
+  Loss: 0.0227
 ---------------
 Episode 496:
   Level: 3
-  Reward: -295.67
-  Steps: 951
+  Reward: 142.50
+  Steps: 183
   Epsilon: 0.084
+  Loss: 0.0193
 ---------------
 Episode 497:
   Level: 3
-  Reward: -238.93
-  Steps: 710
+  Reward: 7.00
+  Steps: 102
   Epsilon: 0.083
+  Loss: 0.0738
 ---------------
 Episode 498:
   Level: 3
-  Reward: -207.53
-  Steps: 2501
+  Reward: -33.00
+  Steps: 99
   Epsilon: 0.083
+  Loss: 0.8003
 ---------------
 Episode 499:
   Level: 3
-  Reward: -204.34
-  Steps: 2501
+  Reward: 124.50
+  Steps: 163
   Epsilon: 0.082
+  Loss: 1.1594
 ---------------
 Episode 500:
   Level: 3
-  Reward: -208.74
-  Steps: 2501
+  Reward: -44.00
+  Steps: 110
   Epsilon: 0.082
+  Loss: 2.3805
+---------------
+Episode 501:
+  Level: 3
+  Reward: 735.00
+  Steps: 385
+  Epsilon: 0.082
+  Loss: 0.8093
+---------------
+Episode 502:
+  Level: 3
+  Reward: 148.00
+  Steps: 253
+  Epsilon: 0.081
+  Loss: 0.8346
+---------------
+Episode 503:
+  Level: 3
+  Reward: 124.50
+  Steps: 165
+  Epsilon: 0.081
+  Loss: 0.3892
+---------------
+Episode 504:
+  Level: 3
+  Reward: -32.50
+  Steps: 97
+  Epsilon: 0.080
+  Loss: 0.0453
+---------------
+Episode 505:
+  Level: 3
+  Reward: -25.00
+  Steps: 105
+  Epsilon: 0.080
+  Loss: 0.0210
+---------------
+Episode 506:
+  Level: 3
+  Reward: 168.00
+  Steps: 268
+  Epsilon: 0.080
+  Loss: 0.0171
+---------------
+Episode 507:
+  Level: 3
+  Reward: 397.00
+  Steps: 354
+  Epsilon: 0.079
+  Loss: 0.8092
+---------------
+Episode 508:
+  Level: 3
+  Reward: 146.50
+  Steps: 259
+  Epsilon: 0.079
+  Loss: 0.0507
+---------------
+Episode 509:
+  Level: 3
+  Reward: -40.00
+  Steps: 97
+  Epsilon: 0.078
+  Loss: 0.0403
+---------------
+Episode 510:
+  Level: 3
+  Reward: 129.00
+  Steps: 163
+  Epsilon: 0.078
+  Loss: 0.8289
+---------------
+Episode 511:
+  Level: 3
+  Reward: 130.00
+  Steps: 182
+  Epsilon: 0.078
+  Loss: 0.0397
+---------------
+Episode 512:
+  Level: 3
+  Reward: 125.00
+  Steps: 170
+  Epsilon: 0.077
+  Loss: 0.0383
+---------------
+Episode 513:
+  Level: 3
+  Reward: 151.50
+  Steps: 272
+  Epsilon: 0.077
+  Loss: 0.0286
+---------------
+Episode 514:
+  Level: 3
+  Reward: 125.50
+  Steps: 164
+  Epsilon: 0.076
+  Loss: 0.0205
+---------------
+Episode 515:
+  Level: 3
+  Reward: -34.50
+  Steps: 99
+  Epsilon: 0.076
+  Loss: 2.7057
+---------------
+Episode 516:
+  Level: 3
+  Reward: 72.50
+  Steps: 171
+  Epsilon: 0.076
+  Loss: 0.0302
+---------------
+Episode 517:
+  Level: 3
+  Reward: 82.00
+  Steps: 171
+  Epsilon: 0.075
+  Loss: 0.8114
+---------------
+Episode 518:
+  Level: 3
+  Reward: -22.00
+  Steps: 111
+  Epsilon: 0.075
+  Loss: 0.0582
+---------------
+Episode 519:
+  Level: 3
+  Reward: 128.00
+  Steps: 161
+  Epsilon: 0.075
+  Loss: 0.0403
+---------------
+Episode 520:
+  Level: 3
+  Reward: -28.00
+  Steps: 96
+  Epsilon: 0.074
+  Loss: 0.0163
+---------------
+Episode 521:
+  Level: 3
+  Reward: 3.00
+  Steps: 99
+  Epsilon: 0.074
+  Loss: 0.0330
+---------------
+Episode 522:
+  Level: 3
+  Reward: -27.50
+  Steps: 99
+  Epsilon: 0.073
+  Loss: 0.8020
+---------------
+Episode 523:
+  Level: 3
+  Reward: 5.50
+  Steps: 103
+  Epsilon: 0.073
+  Loss: 2.6683
+---------------
+Episode 524:
+  Level: 3
+  Reward: -34.50
+  Steps: 110
+  Epsilon: 0.073
+  Loss: 0.8100
+---------------
+Episode 525:
+  Level: 3
+  Reward: -34.50
+  Steps: 107
+  Epsilon: 0.072
+  Loss: 2.4041
+---------------
+Episode 526:
+  Level: 3
+  Reward: -54.50
+  Steps: 100
+  Epsilon: 0.072
+  Loss: 0.3519
+---------------
+Episode 527:
+  Level: 3
+  Reward: -30.50
+  Steps: 98
+  Epsilon: 0.072
+  Loss: 0.0417
+---------------
+Episode 528:
+  Level: 3
+  Reward: 775.50
+  Steps: 431
+  Epsilon: 0.071
+  Loss: 0.0256
+---------------
+Episode 529:
+  Level: 3
+  Reward: 80.50
+  Steps: 169
+  Epsilon: 0.071
+  Loss: 0.7980
+---------------
+Episode 530:
+  Level: 3
+  Reward: -19.00
+  Steps: 106
+  Epsilon: 0.071
+  Loss: 3.1871
+---------------
+Episode 531:
+  Level: 3
+  Reward: 127.00
+  Steps: 169
+  Epsilon: 0.070
+  Loss: 0.2568
+---------------
+Episode 532:
+  Level: 3
+  Reward: 147.50
+  Steps: 253
+  Epsilon: 0.070
+  Loss: 0.4035
+---------------
+Episode 533:
+  Level: 3
+  Reward: -40.00
+  Steps: 97
+  Epsilon: 0.069
+  Loss: 1.6039
+---------------
+Episode 534:
+  Level: 3
+  Reward: 129.00
+  Steps: 182
+  Epsilon: 0.069
+  Loss: 0.0389
+---------------
+Episode 535:
+  Level: 3
+  Reward: -27.00
+  Steps: 101
+  Epsilon: 0.069
+  Loss: 0.8127
+---------------
+Episode 536:
+  Level: 3
+  Reward: 78.50
+  Steps: 166
+  Epsilon: 0.068
+  Loss: 0.0105
+---------------
+Episode 537:
+  Level: 3
+  Reward: 81.50
+  Steps: 184
+  Epsilon: 0.068
+  Loss: 0.0550
+---------------
+Episode 538:
+  Level: 3
+  Reward: -52.00
+  Steps: 108
+  Epsilon: 0.068
+  Loss: 2.3955
+---------------
+Episode 539:
+  Level: 3
+  Reward: 255.50
+  Steps: 323
+  Epsilon: 0.067
+  Loss: 0.8365
+---------------
+Episode 540:
+  Level: 3
+  Reward: 124.50
+  Steps: 164
+  Epsilon: 0.067
+  Loss: 1.5838
+---------------
+Episode 541:
+  Level: 3
+  Reward: 126.00
+  Steps: 165
+  Epsilon: 0.067
+  Loss: 0.0394
+---------------
+Episode 542:
+  Level: 3
+  Reward: 132.50
+  Steps: 164
+  Epsilon: 0.066
+  Loss: 0.0394
+---------------
+Episode 543:
+  Level: 3
+  Reward: 155.50
+  Steps: 266
+  Epsilon: 0.066
+  Loss: 0.7967
+---------------
+Episode 544:
+  Level: 3
+  Reward: 139.00
+  Steps: 206
+  Epsilon: 0.066
+  Loss: 0.8334
+---------------
+Episode 545:
+  Level: 3
+  Reward: 400.50
+  Steps: 355
+  Epsilon: 0.065
+  Loss: 0.0264
+---------------
+Episode 546:
+  Level: 3
+  Reward: 143.50
+  Steps: 180
+  Epsilon: 0.065
+  Loss: 0.0495
+---------------
+Episode 547:
+  Level: 3
+  Reward: -23.00
+  Steps: 107
+  Epsilon: 0.065
+  Loss: 0.0481
+---------------
+Episode 548:
+  Level: 3
+  Reward: 767.00
+  Steps: 400
+  Epsilon: 0.064
+  Loss: 0.8061
+---------------
+Episode 549:
+  Level: 3
+  Reward: -26.00
+  Steps: 101
+  Epsilon: 0.064
+  Loss: 0.0322
+---------------
+Episode 550:
+  Level: 3
+  Reward: 131.00
+  Steps: 171
+  Epsilon: 0.064
+  Loss: 1.5845
+---------------
+Episode 551:
+  Level: 3
+  Reward: -36.00
+  Steps: 96
+  Epsilon: 0.063
+  Loss: 1.9508
+---------------
+Episode 552:
+  Level: 3
+  Reward: 157.50
+  Steps: 258
+  Epsilon: 0.063
+  Loss: 0.8346
+---------------
+Episode 553:
+  Level: 3
+  Reward: 124.50
+  Steps: 165
+  Epsilon: 0.063
+  Loss: 0.0196
+---------------
+Episode 554:
+  Level: 3
+  Reward: 167.50
+  Steps: 262
+  Epsilon: 0.063
+  Loss: 0.0187
+---------------
+Episode 555:
+  Level: 3
+  Reward: 74.00
+  Steps: 164
+  Epsilon: 0.062
+  Loss: 1.1003
+---------------
+Episode 556:
+  Level: 3
+  Reward: 141.50
+  Steps: 181
+  Epsilon: 0.062
+  Loss: 0.0163
+---------------
+Episode 557:
+  Level: 3
+  Reward: 4.00
+  Steps: 103
+  Epsilon: 0.062
+  Loss: 2.3743
+---------------
+Episode 558:
+  Level: 3
+  Reward: 129.00
+  Steps: 171
+  Epsilon: 0.061
+  Loss: 1.5857
+---------------
+Episode 559:
+  Level: 3
+  Reward: -24.00
+  Steps: 137
+  Epsilon: 0.061
+  Loss: 1.0071
+---------------
+Episode 560:
+  Level: 3
+  Reward: 133.50
+  Steps: 163
+  Epsilon: 0.061
+  Loss: 0.0208
+---------------
+Episode 561:
+  Level: 3
+  Reward: -31.50
+  Steps: 96
+  Epsilon: 0.060
+  Loss: 1.5903
+---------------
+Episode 562:
+  Level: 3
+  Reward: 123.50
+  Steps: 167
+  Epsilon: 0.060
+  Loss: 0.8097
+---------------
+Episode 563:
+  Level: 3
+  Reward: -33.50
+  Steps: 97
+  Epsilon: 0.060
+  Loss: 1.5837
+---------------
+Episode 564:
+  Level: 3
+  Reward: 143.00
+  Steps: 194
+  Epsilon: 0.059
+  Loss: 0.8492
+---------------
+Episode 565:
+  Level: 3
+  Reward: 129.00
+  Steps: 164
+  Epsilon: 0.059
+  Loss: 0.0388
+---------------
+Episode 566:
+  Level: 3
+  Reward: 161.50
+  Steps: 263
+  Epsilon: 0.059
+  Loss: 0.9747
+---------------
+Episode 567:
+  Level: 3
+  Reward: 187.50
+  Steps: 262
+  Epsilon: 0.059
+  Loss: 0.0420
+---------------
+Episode 568:
+  Level: 3
+  Reward: 137.00
+  Steps: 171
+  Epsilon: 0.058
+  Loss: 0.0232
+---------------
+Episode 569:
+  Level: 3
+  Reward: 3.00
+  Steps: 129
+  Epsilon: 0.058
+  Loss: 0.8259
+---------------
+Episode 570:
+  Level: 3
+  Reward: 126.50
+  Steps: 174
+  Epsilon: 0.058
+  Loss: 0.2317
+---------------
+Episode 571:
+  Level: 3
+  Reward: 147.50
+  Steps: 252
+  Epsilon: 0.057
+  Loss: 0.9891
+---------------
+Episode 572:
+  Level: 3
+  Reward: 127.00
+  Steps: 165
+  Epsilon: 0.057
+  Loss: 1.5968
+---------------
+Episode 573:
+  Level: 3
+  Reward: 137.00
+  Steps: 176
+  Epsilon: 0.057
+  Loss: 0.8253
+---------------
+Episode 574:
+  Level: 3
+  Reward: 1.00
+  Steps: 99
+  Epsilon: 0.057
+  Loss: 0.3521
+---------------
+Episode 575:
+  Level: 3
+  Reward: -23.00
+  Steps: 102
+  Epsilon: 0.056
+  Loss: 0.8278
+---------------
+Episode 576:
+  Level: 3
+  Reward: 240.00
+  Steps: 264
+  Epsilon: 0.056
+  Loss: 0.8064
+---------------
+Episode 577:
+  Level: 3
+  Reward: 143.00
+  Steps: 176
+  Epsilon: 0.056
+  Loss: 0.8076
+---------------
+Episode 578:
+  Level: 3
+  Reward: 751.00
+  Steps: 390
+  Epsilon: 0.055
+  Loss: 1.5863
+---------------
+Episode 579:
+  Level: 3
+  Reward: -26.00
+  Steps: 105
+  Epsilon: 0.055
+  Loss: 0.8178
+---------------
+Episode 580:
+  Level: 3
+  Reward: 122.00
+  Steps: 162
+  Epsilon: 0.055
+  Loss: 0.0267
+---------------
+Episode 581:
+  Level: 3
+  Reward: -32.00
+  Steps: 96
+  Epsilon: 0.055
+  Loss: 0.7933
+---------------
+Episode 582:
+  Level: 3
+  Reward: 122.00
+  Steps: 169
+  Epsilon: 0.054
+  Loss: 0.0289
+---------------
+Episode 583:
+  Level: 3
+  Reward: 132.50
+  Steps: 175
+  Epsilon: 0.054
+  Loss: 0.7968
+---------------
+Episode 584:
+  Level: 3
+  Reward: 127.50
+  Steps: 173
+  Epsilon: 0.054
+  Loss: 0.8216
+---------------
+Episode 585:
+  Level: 3
+  Reward: 142.50
+  Steps: 185
+  Epsilon: 0.054
+  Loss: 0.0226
+---------------
+Episode 586:
+  Level: 3
+  Reward: 129.00
+  Steps: 161
+  Epsilon: 0.053
+  Loss: 0.8030
+---------------
+Episode 587:
+  Level: 3
+  Reward: 214.50
+  Steps: 260
+  Epsilon: 0.053
+  Loss: 0.1753
+---------------
+Episode 588:
+  Level: 3
+  Reward: -28.00
+  Steps: 101
+  Epsilon: 0.053
+  Loss: 0.8342
+---------------
+Episode 589:
+  Level: 3
+  Reward: 158.50
+  Steps: 259
+  Epsilon: 0.052
+  Loss: 0.0518
+---------------
+Episode 590:
+  Level: 3
+  Reward: 137.00
+  Steps: 172
+  Epsilon: 0.052
+  Loss: 1.5881
+---------------
+Episode 591:
+  Level: 3
+  Reward: 148.00
+  Steps: 258
+  Epsilon: 0.052
+  Loss: 1.6050
+---------------
+Episode 592:
+  Level: 3
+  Reward: -32.50
+  Steps: 97
+  Epsilon: 0.052
+  Loss: 0.0481
+---------------
+Episode 593:
+  Level: 3
+  Reward: 761.00
+  Steps: 398
+  Epsilon: 0.051
+  Loss: 0.0517
+---------------
+Episode 594:
+  Level: 3
+  Reward: -31.00
+  Steps: 98
+  Epsilon: 0.051
+  Loss: 1.6094
+---------------
+Episode 595:
+  Level: 3
+  Reward: -20.00
+  Steps: 107
+  Epsilon: 0.051
+  Loss: 0.8233
+---------------
+Episode 596:
+  Level: 3
+  Reward: 683.50
+  Steps: 379
+  Epsilon: 0.051
+  Loss: 0.8007
+---------------
+Episode 597:
+  Level: 3
+  Reward: -46.00
+  Steps: 116
+  Epsilon: 0.050
+  Loss: 0.8167
+---------------
+Episode 598:
+  Level: 3
+  Reward: 139.00
+  Steps: 195
+  Epsilon: 0.050
+  Loss: 0.0063
+---------------
+Episode 599:
+  Level: 3
+  Reward: 732.50
+  Steps: 375
+  Epsilon: 0.050
+  Loss: 3.1814
+---------------
+Episode 600:
+  Level: 3
+  Reward: 760.00
+  Steps: 393
+  Epsilon: 0.050
+  Loss: 1.5976
+---------------
+Episode 601:
+  Level: 3
+  Reward: 213.00
+  Steps: 264
+  Epsilon: 0.049
+  Loss: 0.8248
+---------------
+Episode 602:
+  Level: 3
+  Reward: 80.50
+  Steps: 178
+  Epsilon: 0.049
+  Loss: 0.0469
+---------------
+Episode 603:
+  Level: 3
+  Reward: 120.50
+  Steps: 162
+  Epsilon: 0.049
+  Loss: 0.0307
+---------------
+Episode 604:
+  Level: 3
+  Reward: -30.00
+  Steps: 96
+  Epsilon: 0.049
+  Loss: 0.0401
+---------------
+Episode 605:
+  Level: 3
+  Reward: -31.00
+  Steps: 100
+  Epsilon: 0.048
+  Loss: 0.0324
+---------------
+Episode 606:
+  Level: 3
+  Reward: 268.00
+  Steps: 266
+  Epsilon: 0.048
+  Loss: 0.0246
+---------------
+Episode 607:
+  Level: 3
+  Reward: -38.50
+  Steps: 97
+  Epsilon: 0.048
+  Loss: 0.8021
+---------------
+Episode 608:
+  Level: 3
+  Reward: 5.00
+  Steps: 93
+  Epsilon: 0.048
+  Loss: 0.8419
+---------------
+Episode 609:
+  Level: 3
+  Reward: -28.00
+  Steps: 97
+  Epsilon: 0.047
+  Loss: 0.0358
+---------------
+Episode 610:
+  Level: 3
+  Reward: 3.00
+  Steps: 93
+  Epsilon: 0.047
+  Loss: 0.8255
+---------------
+Episode 611:
+  Level: 3
+  Reward: 129.00
+  Steps: 161
+  Epsilon: 0.047
+  Loss: 0.0573
+---------------
+Episode 612:
+  Level: 3
+  Reward: -32.50
+  Steps: 96
+  Epsilon: 0.047
+  Loss: 3.1308
+---------------
+Episode 613:
+  Level: 3
+  Reward: 125.00
+  Steps: 174
+  Epsilon: 0.047
+  Loss: 3.1600
+---------------
+Episode 614:
+  Level: 3
+  Reward: 129.00
+  Steps: 177
+  Epsilon: 0.046
+  Loss: 0.0257
+---------------
+Episode 615:
+  Level: 3
+  Reward: 776.00
+  Steps: 363
+  Epsilon: 0.046
+  Loss: 0.1961
+---------------
+Episode 616:
+  Level: 3
+  Reward: 127.00
+  Steps: 164
+  Epsilon: 0.046
+  Loss: 0.0204
+---------------
+Episode 617:
+  Level: 3
+  Reward: -35.50
+  Steps: 99
+  Epsilon: 0.046
+  Loss: 0.0251
+---------------
+Episode 618:
+  Level: 3
+  Reward: 127.50
+  Steps: 162
+  Epsilon: 0.045
+  Loss: 0.0210
+---------------
+Episode 619:
+  Level: 3
+  Reward: -54.00
+  Steps: 102
+  Epsilon: 0.045
+  Loss: 1.0078
+---------------
+Episode 620:
+  Level: 3
+  Reward: 88.50
+  Steps: 179
+  Epsilon: 0.045
+  Loss: 0.8598
+---------------
+Episode 621:
+  Level: 3
+  Reward: 124.50
+  Steps: 165
+  Epsilon: 0.045
+  Loss: 0.0368
+---------------
+Episode 622:
+  Level: 3
+  Reward: 641.00
+  Steps: 445
+  Epsilon: 0.044
+  Loss: 0.1296
+---------------
+Episode 623:
+  Level: 3
+  Reward: 1.00
+  Steps: 101
+  Epsilon: 0.044
+  Loss: 0.0743
+---------------
+Episode 624:
+  Level: 3
+  Reward: 129.50
+  Steps: 162
+  Epsilon: 0.044
+  Loss: 0.8785
+---------------
+Episode 625:
+  Level: 3
+  Reward: 125.50
+  Steps: 203
+  Epsilon: 0.044
+  Loss: 0.8799
+---------------
+Episode 626:
+  Level: 3
+  Reward: 92.50
+  Steps: 171
+  Epsilon: 0.044
+  Loss: 1.5732
+---------------
+Episode 627:
+  Level: 3
+  Reward: -26.50
+  Steps: 107
+  Epsilon: 0.043
+  Loss: 0.7929
+---------------
+Episode 628:
+  Level: 3
+  Reward: 127.50
+  Steps: 166
+  Epsilon: 0.043
+  Loss: 0.0310
+---------------
+Episode 629:
+  Level: 3
+  Reward: 666.00
+  Steps: 369
+  Epsilon: 0.043
+  Loss: 0.8106
+---------------
+Episode 630:
+  Level: 3
+  Reward: 81.00
+  Steps: 182
+  Epsilon: 0.043
+  Loss: 0.8210
+---------------
+Episode 631:
+  Level: 3
+  Reward: 76.00
+  Steps: 169
+  Epsilon: 0.043
+  Loss: 0.0833
+---------------
+Episode 632:
+  Level: 3
+  Reward: 144.00
+  Steps: 179
+  Epsilon: 0.042
+  Loss: 0.7979
+---------------
+Episode 633:
+  Level: 3
+  Reward: 126.50
+  Steps: 164
+  Epsilon: 0.042
+  Loss: 0.8174
+---------------
+Episode 634:
+  Level: 3
+  Reward: 129.00
+  Steps: 162
+  Epsilon: 0.042
+  Loss: 0.0135
+---------------
+Episode 635:
+  Level: 3
+  Reward: 141.50
+  Steps: 176
+  Epsilon: 0.042
+  Loss: 0.9227
+---------------
+Episode 636:
+  Level: 3
+  Reward: 0.00
+  Steps: 103
+  Epsilon: 0.041
+  Loss: 0.0398
+---------------
+Episode 637:
+  Level: 3
+  Reward: 127.00
+  Steps: 163
+  Epsilon: 0.041
+  Loss: 0.0335
+---------------
+Episode 638:
+  Level: 3
+  Reward: -52.00
+  Steps: 100
+  Epsilon: 0.041
+  Loss: 0.8221
+---------------
+Episode 639:
+  Level: 3
+  Reward: 132.00
+  Steps: 180
+  Epsilon: 0.041
+  Loss: 0.1500
+---------------
+Episode 640:
+  Level: 3
+  Reward: 126.00
+  Steps: 189
+  Epsilon: 0.041
+  Loss: 0.8032
+---------------
+Episode 641:
+  Level: 3
+  Reward: 158.50
+  Steps: 257
+  Epsilon: 0.040
+  Loss: 0.8195
+---------------
+Episode 642:
+  Level: 3
+  Reward: 219.50
+  Steps: 279
+  Epsilon: 0.040
+  Loss: 2.1001
+---------------
+Episode 643:
+  Level: 3
+  Reward: 135.50
+  Steps: 254
+  Epsilon: 0.040
+  Loss: 0.8155
+---------------
+Episode 644:
+  Level: 3
+  Reward: 128.50
+  Steps: 180
+  Epsilon: 0.040
+  Loss: 1.6941
+---------------
+Episode 645:
+  Level: 3
+  Reward: 74.50
+  Steps: 171
+  Epsilon: 0.040
+  Loss: 0.0106
+---------------
+Episode 646:
+  Level: 3
+  Reward: 619.50
+  Steps: 367
+  Epsilon: 0.039
+  Loss: 2.3722
+---------------
+Episode 647:
+  Level: 3
+  Reward: 153.00
+  Steps: 255
+  Epsilon: 0.039
+  Loss: 1.5991
+---------------
+Episode 648:
+  Level: 3
+  Reward: -34.00
+  Steps: 97
+  Epsilon: 0.039
+  Loss: 0.0883
+---------------
+Episode 649:
+  Level: 3
+  Reward: 128.50
+  Steps: 162
+  Epsilon: 0.039
+  Loss: 2.3738
+---------------
+Episode 650:
+  Level: 3
+  Reward: 79.50
+  Steps: 167
+  Epsilon: 0.039
+  Loss: 0.0411
+---------------
+Episode 651:
+  Level: 3
+  Reward: -38.00
+  Steps: 104
+  Epsilon: 0.038
+  Loss: 0.7989
+---------------
+Episode 652:
+  Level: 3
+  Reward: 721.00
+  Steps: 395
+  Epsilon: 0.038
+  Loss: 1.5877
+---------------
+Episode 653:
+  Level: 3
+  Reward: 128.00
+  Steps: 166
+  Epsilon: 0.038
+  Loss: 0.0250
+---------------
+Episode 654:
+  Level: 3
+  Reward: 127.50
+  Steps: 165
+  Epsilon: 0.038
+  Loss: 0.8057
+---------------
+Episode 655:
+  Level: 3
+  Reward: 126.00
+  Steps: 165
+  Epsilon: 0.038
+  Loss: 0.8232
+---------------
+Episode 656:
+  Level: 3
+  Reward: 62.50
+  Steps: 163
+  Epsilon: 0.038
+  Loss: 0.0312
+---------------
+Episode 657:
+  Level: 3
+  Reward: 400.50
+  Steps: 338
+  Epsilon: 0.037
+  Loss: 1.5949
+---------------
+Episode 658:
+  Level: 3
+  Reward: -32.00
+  Steps: 99
+  Epsilon: 0.037
+  Loss: 0.8127
+---------------
+Episode 659:
+  Level: 3
+  Reward: 125.00
+  Steps: 165
+  Epsilon: 0.037
+  Loss: 0.8012
+---------------
+Episode 660:
+  Level: 3
+  Reward: 127.00
+  Steps: 163
+  Epsilon: 0.037
+  Loss: 0.8451
+---------------
+Episode 661:
+  Level: 3
+  Reward: 720.50
+  Steps: 369
+  Epsilon: 0.037
+  Loss: 0.0207
+---------------
+Episode 662:
+  Level: 3
+  Reward: 127.00
+  Steps: 166
+  Epsilon: 0.036
+  Loss: 0.7957
+---------------
+Episode 663:
+  Level: 3
+  Reward: 701.00
+  Steps: 409
+  Epsilon: 0.036
+  Loss: 0.0286
+---------------
+Episode 664:
+  Level: 3
+  Reward: 614.00
+  Steps: 362
+  Epsilon: 0.036
+  Loss: 0.8144
+---------------
+Episode 665:
+  Level: 3
+  Reward: 124.50
+  Steps: 166
+  Epsilon: 0.036
+  Loss: 0.0381
+---------------
+Episode 666:
+  Level: 3
+  Reward: 120.50
+  Steps: 164
+  Epsilon: 0.036
+  Loss: 2.4190
+---------------
+Episode 667:
+  Level: 3
+  Reward: 120.00
+  Steps: 165
+  Epsilon: 0.035
+  Loss: 0.0342
+---------------
+Episode 668:
+  Level: 3
+  Reward: 129.00
+  Steps: 171
+  Epsilon: 0.035
+  Loss: 0.0486
+---------------
+Episode 669:
+  Level: 3
+  Reward: 123.00
+  Steps: 162
+  Epsilon: 0.035
+  Loss: 1.5990
+---------------
+Episode 670:
+  Level: 3
+  Reward: 139.50
+  Steps: 175
+  Epsilon: 0.035
+  Loss: 0.2149
+---------------
+Episode 671:
+  Level: 3
+  Reward: 220.50
+  Steps: 271
+  Epsilon: 0.035
+  Loss: 0.0298
+---------------
+Episode 672:
+  Level: 3
+  Reward: 198.50
+  Steps: 259
+  Epsilon: 0.035
+  Loss: 0.8106
+---------------
+Episode 673:
+  Level: 3
+  Reward: 717.50
+  Steps: 372
+  Epsilon: 0.034
+  Loss: 0.0423
+---------------
+Episode 674:
+  Level: 3
+  Reward: 326.50
+  Steps: 344
+  Epsilon: 0.034
+  Loss: 0.0175
+---------------
+Episode 675:
+  Level: 3
+  Reward: 127.00
+  Steps: 169
+  Epsilon: 0.034
+  Loss: 0.0525
+---------------
+Episode 676:
+  Level: 3
+  Reward: 126.50
+  Steps: 176
+  Epsilon: 0.034
+  Loss: 1.5884
+---------------
+Episode 677:
+  Level: 3
+  Reward: 87.00
+  Steps: 187
+  Epsilon: 0.034
+  Loss: 0.0061
+---------------
+Episode 678:
+  Level: 3
+  Reward: 78.00
+  Steps: 169
+  Epsilon: 0.034
+  Loss: 0.0342
+---------------
+Episode 679:
+  Level: 3
+  Reward: 121.50
+  Steps: 162
+  Epsilon: 0.033
+  Loss: 0.0137
+---------------
+Episode 680:
+  Level: 3
+  Reward: 130.00
+  Steps: 161
+  Epsilon: 0.033
+  Loss: 0.8180
+---------------
+Episode 681:
+  Level: 3
+  Reward: 122.50
+  Steps: 176
+  Epsilon: 0.033
+  Loss: 0.0173
+---------------
+Episode 682:
+  Level: 3
+  Reward: 313.00
+  Steps: 331
+  Epsilon: 0.033
+  Loss: 0.0225
+---------------
+Episode 683:
+  Level: 3
+  Reward: 255.50
+  Steps: 407
+  Epsilon: 0.033
+  Loss: 0.0265
+---------------
+Episode 684:
+  Level: 3
+  Reward: 141.50
+  Steps: 178
+  Epsilon: 0.033
+  Loss: 0.0239
+---------------
+Episode 685:
+  Level: 3
+  Reward: 1.50
+  Steps: 91
+  Epsilon: 0.032
+  Loss: 1.2849
+---------------
+Episode 686:
+  Level: 3
+  Reward: 124.50
+  Steps: 163
+  Epsilon: 0.032
+  Loss: 0.0372
+---------------
+Episode 687:
+  Level: 3
+  Reward: 126.50
+  Steps: 163
+  Epsilon: 0.032
+  Loss: 1.5688
+---------------
+Episode 688:
+  Level: 3
+  Reward: 677.00
+  Steps: 394
+  Epsilon: 0.032
+  Loss: 0.0227
+---------------
+Episode 689:
+  Level: 3
+  Reward: 84.50
+  Steps: 163
+  Epsilon: 0.032
+  Loss: 0.9863
+---------------
+Episode 690:
+  Level: 3
+  Reward: 3.50
+  Steps: 93
+  Epsilon: 0.032
+  Loss: 0.0187
+---------------
+Episode 691:
+  Level: 3
+  Reward: 156.50
+  Steps: 257
+  Epsilon: 0.031
+  Loss: 0.0182
+---------------
+Episode 692:
+  Level: 3
+  Reward: 76.00
+  Steps: 177
+  Epsilon: 0.031
+  Loss: 0.8371
+---------------
+Episode 693:
+  Level: 3
+  Reward: 688.50
+  Steps: 388
+  Epsilon: 0.031
+  Loss: 0.0225
+---------------
+Episode 694:
+  Level: 3
+  Reward: 126.50
+  Steps: 166
+  Epsilon: 0.031
+  Loss: 2.3830
+---------------
+Episode 695:
+  Level: 3
+  Reward: 86.00
+  Steps: 171
+  Epsilon: 0.031
+  Loss: 0.0427
+---------------
+Episode 696:
+  Level: 3
+  Reward: 4.00
+  Steps: 105
+  Epsilon: 0.031
+  Loss: 0.8099
+---------------
+Episode 697:
+  Level: 3
+  Reward: 142.00
+  Steps: 170
+  Epsilon: 0.031
+  Loss: 1.5618
+---------------
+Episode 698:
+  Level: 3
+  Reward: 165.50
+  Steps: 201
+  Epsilon: 0.030
+  Loss: 2.3706
+---------------
+Episode 699:
+  Level: 3
+  Reward: 5.50
+  Steps: 97
+  Epsilon: 0.030
+  Loss: 0.1011
+---------------
+Episode 700:
+  Level: 3
+  Reward: -32.00
+  Steps: 99
+  Epsilon: 0.030
+  Loss: 0.3396
+---------------
+Episode 701:
+  Level: 3
+  Reward: 3.00
+  Steps: 91
+  Epsilon: 0.030
+  Loss: 0.1283
+---------------
+Episode 702:
+  Level: 3
+  Reward: -25.50
+  Steps: 104
+  Epsilon: 0.030
+  Loss: 1.5848
+---------------
+Episode 703:
+  Level: 3
+  Reward: 207.00
+  Steps: 287
+  Epsilon: 0.030
+  Loss: 1.5998
+---------------
+Episode 704:
+  Level: 3
+  Reward: 128.00
+  Steps: 161
+  Epsilon: 0.029
+  Loss: 0.0188
+---------------
+Episode 705:
+  Level: 3
+  Reward: 128.50
+  Steps: 166
+  Epsilon: 0.029
+  Loss: 0.8033
+---------------
+Episode 706:
+  Level: 3
+  Reward: 125.50
+  Steps: 164
+  Epsilon: 0.029
+  Loss: 0.0174
+---------------
+Episode 707:
+  Level: 3
+  Reward: -23.00
+  Steps: 109
+  Epsilon: 0.029
+  Loss: 0.6289
+---------------
+Episode 708:
+  Level: 3
+  Reward: 7.00
+  Steps: 94
+  Epsilon: 0.029
+  Loss: 1.2060
+---------------
+Episode 709:
+  Level: 3
+  Reward: 129.00
+  Steps: 166
+  Epsilon: 0.029
+  Loss: 0.0399
+---------------
+Episode 710:
+  Level: 3
+  Reward: 126.50
+  Steps: 168
+  Epsilon: 0.029
+  Loss: 1.5800
+---------------
+Episode 711:
+  Level: 3
+  Reward: 263.50
+  Steps: 332
+  Epsilon: 0.028
+  Loss: 1.1732
+---------------
+Episode 712:
+  Level: 3
+  Reward: 126.50
+  Steps: 180
+  Epsilon: 0.028
+  Loss: 2.5875
+---------------
+Episode 713:
+  Level: 3
+  Reward: 127.00
+  Steps: 165
+  Epsilon: 0.028
+  Loss: 0.0145
+---------------
+Episode 714:
+  Level: 3
+  Reward: -27.00
+  Steps: 102
+  Epsilon: 0.028
+  Loss: 0.0229
+---------------
+Episode 715:
+  Level: 3
+  Reward: 126.00
+  Steps: 165
+  Epsilon: 0.028
+  Loss: 0.0217
+---------------
+Episode 716:
+  Level: 3
+  Reward: 128.00
+  Steps: 170
+  Epsilon: 0.028
+  Loss: 1.5990
+---------------
+Episode 717:
+  Level: 3
+  Reward: 126.00
+  Steps: 171
+  Epsilon: 0.028
+  Loss: 0.1064
+---------------
+Episode 718:
+  Level: 3
+  Reward: 130.50
+  Steps: 162
+  Epsilon: 0.027
+  Loss: 0.0357
+---------------
+Episode 719:
+  Level: 3
+  Reward: 231.00
+  Steps: 282
+  Epsilon: 0.027
+  Loss: 2.3730
+---------------
+Episode 720:
+  Level: 3
+  Reward: -35.50
+  Steps: 128
+  Epsilon: 0.027
+  Loss: 0.8154
+---------------
+Episode 721:
+  Level: 3
+  Reward: 130.50
+  Steps: 162
+  Epsilon: 0.027
+  Loss: 1.5932
+---------------
+Episode 722:
+  Level: 3
+  Reward: 124.50
+  Steps: 170
+  Epsilon: 0.027
+  Loss: 0.8538
+---------------
+Episode 723:
+  Level: 3
+  Reward: 649.50
+  Steps: 410
+  Epsilon: 0.027
+  Loss: 2.3759
+---------------
+Episode 724:
+  Level: 3
+  Reward: 124.50
+  Steps: 179
+  Epsilon: 0.027
+  Loss: 0.1005
+---------------
+Episode 725:
+  Level: 3
+  Reward: 83.50
+  Steps: 190
+  Epsilon: 0.027
+  Loss: 2.3717
+---------------
+Episode 726:
+  Level: 3
+  Reward: 395.00
+  Steps: 354
+  Epsilon: 0.026
+  Loss: 0.7951
+---------------
+Episode 727:
+  Level: 3
+  Reward: 7.00
+  Steps: 94
+  Epsilon: 0.026
+  Loss: 0.8242
+---------------
+Episode 728:
+  Level: 3
+  Reward: 126.50
+  Steps: 162
+  Epsilon: 0.026
+  Loss: 0.7991
+---------------
+Episode 729:
+  Level: 3
+  Reward: 155.00
+  Steps: 214
+  Epsilon: 0.026
+  Loss: 0.0093
+---------------
+Episode 730:
+  Level: 3
+  Reward: 625.00
+  Steps: 391
+  Epsilon: 0.026
+  Loss: 0.0393
+---------------
+Episode 731:
+  Level: 3
+  Reward: 121.50
+  Steps: 162
+  Epsilon: 0.026
+  Loss: 1.5795
+---------------
+Episode 732:
+  Level: 3
+  Reward: 129.50
+  Steps: 161
+  Epsilon: 0.026
+  Loss: 0.0330
+---------------
+Episode 733:
+  Level: 3
+  Reward: 125.50
+  Steps: 205
+  Epsilon: 0.025
+  Loss: 0.7958
+---------------
+Episode 734:
+  Level: 3
+  Reward: 142.50
+  Steps: 193
+  Epsilon: 0.025
+  Loss: 0.0253
+---------------
+Episode 735:
+  Level: 3
+  Reward: -1.00
+  Steps: 103
+  Epsilon: 0.025
+  Loss: 0.7952
+---------------
+Episode 736:
+  Level: 3
+  Reward: 129.00
+  Steps: 165
+  Epsilon: 0.025
+  Loss: 0.0404
+---------------
+Episode 737:
+  Level: 3
+  Reward: 87.50
+  Steps: 169
+  Epsilon: 0.025
+  Loss: 0.0201
+---------------
+Episode 738:
+  Level: 3
+  Reward: 2.50
+  Steps: 97
+  Epsilon: 0.025
+  Loss: 2.7983
+---------------
+Episode 739:
+  Level: 3
+  Reward: 121.00
+  Steps: 162
+  Epsilon: 0.025
+  Loss: 0.0083
+---------------
+Episode 740:
+  Level: 3
+  Reward: 132.00
+  Steps: 162
+  Epsilon: 0.025
+  Loss: 0.7938
+---------------
+Episode 741:
+  Level: 3
+  Reward: 128.00
+  Steps: 166
+  Epsilon: 0.024
+  Loss: 1.6170
+---------------
+Episode 742:
+  Level: 3
+  Reward: 127.50
+  Steps: 176
+  Epsilon: 0.024
+  Loss: 0.0140
+---------------
+Episode 743:
+  Level: 3
+  Reward: 129.00
+  Steps: 161
+  Epsilon: 0.024
+  Loss: 0.8053
+---------------
+Episode 744:
+  Level: 3
+  Reward: 145.50
+  Steps: 176
+  Epsilon: 0.024
+  Loss: 0.0160
+---------------
+Episode 745:
+  Level: 3
+  Reward: 78.00
+  Steps: 173
+  Epsilon: 0.024
+  Loss: 0.8216
+---------------
+Episode 746:
+  Level: 3
+  Reward: 125.50
+  Steps: 167
+  Epsilon: 0.024
+  Loss: 0.0329
+---------------
+Episode 747:
+  Level: 3
+  Reward: 139.00
+  Steps: 191
+  Epsilon: 0.024
+  Loss: 0.3126
+---------------
+Episode 748:
+  Level: 3
+  Reward: 1.50
+  Steps: 99
+  Epsilon: 0.024
+  Loss: 1.8427
+---------------
+Episode 749:
+  Level: 3
+  Reward: 143.00
+  Steps: 251
+  Epsilon: 0.024
+  Loss: 0.0164
+---------------
+Episode 750:
+  Level: 3
+  Reward: 126.00
+  Steps: 163
+  Epsilon: 0.023
+  Loss: 1.5875
+---------------
+Episode 751:
+  Level: 3
+  Reward: 143.50
+  Steps: 254
+  Epsilon: 0.023
+  Loss: 0.0444
+---------------
+Episode 752:
+  Level: 3
+  Reward: 396.50
+  Steps: 349
+  Epsilon: 0.023
+  Loss: 1.8490
+---------------
+Episode 753:
+  Level: 3
+  Reward: 239.00
+  Steps: 253
+  Epsilon: 0.023
+  Loss: 0.7937
+---------------
+Episode 754:
+  Level: 3
+  Reward: 131.00
+  Steps: 173
+  Epsilon: 0.023
+  Loss: 0.0729
+---------------
+Episode 755:
+  Level: 3
+  Reward: 125.50
+  Steps: 166
+  Epsilon: 0.023
+  Loss: 0.7934
+---------------
+Episode 756:
+  Level: 3
+  Reward: 129.00
+  Steps: 162
+  Epsilon: 0.023
+  Loss: 0.0226
+---------------
+Episode 757:
+  Level: 3
+  Reward: 79.00
+  Steps: 162
+  Epsilon: 0.023
+  Loss: 0.3986
+---------------
+Episode 758:
+  Level: 3
+  Reward: 3.00
+  Steps: 91
+  Epsilon: 0.022
+  Loss: 0.7946
+---------------
+Episode 759:
+  Level: 3
+  Reward: 229.00
+  Steps: 312
+  Epsilon: 0.022
+  Loss: 0.8163
+---------------
+Episode 760:
+  Level: 3
+  Reward: 129.00
+  Steps: 176
+  Epsilon: 0.022
+  Loss: 0.8261
+---------------
+Episode 761:
+  Level: 3
+  Reward: 125.50
+  Steps: 185
+  Epsilon: 0.022
+  Loss: 0.0418
+---------------
+Episode 762:
+  Level: 3
+  Reward: 151.50
+  Steps: 253
+  Epsilon: 0.022
+  Loss: 0.0183
+---------------
+Episode 763:
+  Level: 3
+  Reward: 125.00
+  Steps: 165
+  Epsilon: 0.022
+  Loss: 2.4086
+---------------
+Episode 764:
+  Level: 3
+  Reward: 127.50
+  Steps: 163
+  Epsilon: 0.022
+  Loss: 0.0407
+---------------
+Episode 765:
+  Level: 3
+  Reward: 129.00
+  Steps: 169
+  Epsilon: 0.022
+  Loss: 0.8028
+---------------
+Episode 766:
+  Level: 3
+  Reward: 127.00
+  Steps: 164
+  Epsilon: 0.022
+  Loss: 0.8468
+---------------
+Episode 767:
+  Level: 3
+  Reward: 130.00
+  Steps: 163
+  Epsilon: 0.022
+  Loss: 0.9447
+---------------
+Episode 768:
+  Level: 3
+  Reward: 126.50
+  Steps: 179
+  Epsilon: 0.021
+  Loss: 1.6120
+---------------
+Episode 769:
+  Level: 3
+  Reward: -32.00
+  Steps: 113
+  Epsilon: 0.021
+  Loss: 0.0201
+---------------
+Episode 770:
+  Level: 3
+  Reward: 32.50
+  Steps: 118
+  Epsilon: 0.021
+  Loss: 0.8108
+---------------
+Episode 771:
+  Level: 3
+  Reward: 78.50
+  Steps: 175
+  Epsilon: 0.021
+  Loss: 0.8029
+---------------
+Episode 772:
+  Level: 3
+  Reward: 126.50
+  Steps: 164
+  Epsilon: 0.021
+  Loss: 0.0396
+---------------
+Episode 773:
+  Level: 3
+  Reward: 126.50
+  Steps: 213
+  Epsilon: 0.021
+  Loss: 0.9646
+---------------
+Episode 774:
+  Level: 3
+  Reward: 126.50
+  Steps: 163
+  Epsilon: 0.021
+  Loss: 0.8365
+---------------
+Episode 775:
+  Level: 3
+  Reward: 126.50
+  Steps: 182
+  Epsilon: 0.021
+  Loss: 0.8095
+---------------
+Episode 776:
+  Level: 3
+  Reward: -27.00
+  Steps: 112
+  Epsilon: 0.021
+  Loss: 0.0304
+---------------
+Episode 777:
+  Level: 3
+  Reward: 130.50
+  Steps: 169
+  Epsilon: 0.020
+  Loss: 0.0296
+---------------
+Episode 778:
+  Level: 3
+  Reward: 142.50
+  Steps: 185
+  Epsilon: 0.020
+  Loss: 0.1250
+---------------
+Episode 779:
+  Level: 3
+  Reward: 125.50
+  Steps: 163
+  Epsilon: 0.020
+  Loss: 0.0117
+---------------
+Episode 780:
+  Level: 3
+  Reward: 121.00
+  Steps: 167
+  Epsilon: 0.020
+  Loss: 0.0222
+---------------
+Episode 781:
+  Level: 3
+  Reward: 125.50
+  Steps: 164
+  Epsilon: 0.020
+  Loss: 1.7471
+---------------
+Episode 782:
+  Level: 3
+  Reward: 259.00
+  Steps: 306
+  Epsilon: 0.020
+  Loss: 0.8387
+---------------
+Episode 783:
+  Level: 3
+  Reward: 141.50
+  Steps: 181
+  Epsilon: 0.020
+  Loss: 1.1873
+---------------
+Episode 784:
+  Level: 3
+  Reward: 127.50
+  Steps: 161
+  Epsilon: 0.020
+  Loss: 1.6000
+---------------
+Episode 785:
+  Level: 3
+  Reward: 129.00
+  Steps: 163
+  Epsilon: 0.020
+  Loss: 1.5860
+---------------
+Episode 786:
+  Level: 3
+  Reward: 126.00
+  Steps: 163
+  Epsilon: 0.020
+  Loss: 0.8019
+---------------
+Episode 787:
+  Level: 3
+  Reward: 126.50
+  Steps: 163
+  Epsilon: 0.019
+  Loss: 0.8074
+---------------
+Episode 788:
+  Level: 3
+  Reward: 129.50
+  Steps: 161
+  Epsilon: 0.019
+  Loss: 0.0390
+---------------
+Episode 789:
+  Level: 3
+  Reward: 87.00
+  Steps: 163
+  Epsilon: 0.019
+  Loss: 0.8225
+---------------
+Episode 790:
+  Level: 3
+  Reward: 86.00
+  Steps: 163
+  Epsilon: 0.019
+  Loss: 0.0299
+---------------
+Episode 791:
+  Level: 3
+  Reward: 139.00
+  Steps: 172
+  Epsilon: 0.019
+  Loss: 0.0241
+---------------
+Episode 792:
+  Level: 3
+  Reward: 130.50
+  Steps: 170
+  Epsilon: 0.019
+  Loss: 0.0255
+---------------
+Episode 793:
+  Level: 3
+  Reward: 124.50
+  Steps: 165
+  Epsilon: 0.019
+  Loss: 0.0320
+---------------
+Episode 794:
+  Level: 3
+  Reward: 218.00
+  Steps: 253
+  Epsilon: 0.019
+  Loss: 1.5996
+---------------
+Episode 795:
+  Level: 3
+  Reward: 3.00
+  Steps: 93
+  Epsilon: 0.019
+  Loss: 0.0418
+---------------
+Episode 796:
+  Level: 3
+  Reward: 129.00
+  Steps: 164
+  Epsilon: 0.019
+  Loss: 0.0096
+---------------
+Episode 797:
+  Level: 3
+  Reward: 129.00
+  Steps: 168
+  Epsilon: 0.019
+  Loss: 1.5919
+---------------
+Episode 798:
+  Level: 3
+  Reward: 129.00
+  Steps: 171
+  Epsilon: 0.018
+  Loss: 0.8158
+---------------
+Episode 799:
+  Level: 3
+  Reward: 130.50
+  Steps: 162
+  Epsilon: 0.018
+  Loss: 0.8086
+---------------
+Episode 800:
+  Level: 3
+  Reward: 128.50
+  Steps: 161
+  Epsilon: 0.018
+  Loss: 2.3866
+---------------
+Episode 801:
+  Level: 3
+  Reward: 128.50
+  Steps: 178
+  Epsilon: 0.018
+  Loss: 0.8085
+---------------
+Episode 802:
+  Level: 3
+  Reward: -23.50
+  Steps: 107
+  Epsilon: 0.018
+  Loss: 0.7881
+---------------
+Episode 803:
+  Level: 3
+  Reward: 227.50
+  Steps: 266
+  Epsilon: 0.018
+  Loss: 0.0170
+---------------
+Episode 804:
+  Level: 3
+  Reward: 128.50
+  Steps: 199
+  Epsilon: 0.018
+  Loss: 1.5979
+---------------
+Episode 805:
+  Level: 3
+  Reward: 125.00
+  Steps: 163
+  Epsilon: 0.018
+  Loss: 0.0285
+---------------
+Episode 806:
+  Level: 3
+  Reward: 126.50
+  Steps: 164
+  Epsilon: 0.018
+  Loss: 0.0401
+---------------
+Episode 807:
+  Level: 3
+  Reward: 145.00
+  Steps: 188
+  Epsilon: 0.018
+  Loss: 1.6032
+---------------
+Episode 808:
+  Level: 3
+  Reward: 5.00
+  Steps: 93
+  Epsilon: 0.018
+  Loss: 0.0330
+---------------
+Episode 809:
+  Level: 3
+  Reward: 323.00
+  Steps: 334
+  Epsilon: 0.017
+  Loss: 0.7981
+---------------
+Episode 810:
+  Level: 3
+  Reward: 126.00
+  Steps: 163
+  Epsilon: 0.017
+  Loss: 0.0237
+---------------
+Episode 811:
+  Level: 3
+  Reward: 127.50
+  Steps: 165
+  Epsilon: 0.017
+  Loss: 0.3686
+---------------
+Episode 812:
+  Level: 3
+  Reward: 170.00
+  Steps: 208
+  Epsilon: 0.017
+  Loss: 0.7978
+---------------
+Episode 813:
+  Level: 3
+  Reward: 808.50
+  Steps: 394
+  Epsilon: 0.017
+  Loss: 0.0526
+---------------
+Episode 814:
+  Level: 3
+  Reward: 126.00
+  Steps: 164
+  Epsilon: 0.017
+  Loss: 0.0416
+---------------
+Episode 815:
+  Level: 3
+  Reward: 87.00
+  Steps: 171
+  Epsilon: 0.017
+  Loss: 0.0426
+---------------
+Episode 816:
+  Level: 3
+  Reward: 128.50
+  Steps: 164
+  Epsilon: 0.017
+  Loss: 0.0127
+---------------
+Episode 817:
+  Level: 3
+  Reward: 82.00
+  Steps: 177
+  Epsilon: 0.017
+  Loss: 0.0508
+---------------
+Episode 818:
+  Level: 3
+  Reward: 125.50
+  Steps: 164
+  Epsilon: 0.017
+  Loss: 0.0368
+---------------
+Episode 819:
+  Level: 3
+  Reward: 127.00
+  Steps: 165
+  Epsilon: 0.017
+  Loss: 0.0158
+---------------
+Episode 820:
+  Level: 3
+  Reward: 126.50
+  Steps: 163
+  Epsilon: 0.016
+  Loss: 0.0149
+---------------
+Episode 821:
+  Level: 3
+  Reward: 375.50
+  Steps: 333
+  Epsilon: 0.016
+  Loss: 0.0525
+---------------
+Episode 822:
+  Level: 3
+  Reward: 83.00
+  Steps: 181
+  Epsilon: 0.016
+  Loss: 0.0447
+---------------
+Episode 823:
+  Level: 3
+  Reward: 773.50
+  Steps: 385
+  Epsilon: 0.016
+  Loss: 0.8232
+---------------
+Episode 824:
+  Level: 3
+  Reward: 78.00
+  Steps: 168
+  Epsilon: 0.016
+  Loss: 1.5897
+---------------
+Episode 825:
+  Level: 3
+  Reward: 125.00
+  Steps: 166
+  Epsilon: 0.016
+  Loss: 0.7896
+---------------
+Episode 826:
+  Level: 3
+  Reward: 122.50
+  Steps: 173
+  Epsilon: 0.016
+  Loss: 0.8172
+---------------
+Episode 827:
+  Level: 3
+  Reward: 123.50
+  Steps: 217
+  Epsilon: 0.016
+  Loss: 0.8075
+---------------
+Episode 828:
+  Level: 3
+  Reward: 110.00
+  Steps: 195
+  Epsilon: 0.016
+  Loss: 0.0447
+---------------
+Episode 829:
+  Level: 3
+  Reward: 113.00
+  Steps: 195
+  Epsilon: 0.016
+  Loss: 0.8115
+---------------
+Episode 830:
+  Level: 3
+  Reward: 184.50
+  Steps: 298
+  Epsilon: 0.016
+  Loss: 0.8001
+---------------
+Episode 831:
+  Level: 3
+  Reward: 4.00
+  Steps: 101
+  Epsilon: 0.016
+  Loss: 0.8205
+---------------
+Episode 832:
+  Level: 3
+  Reward: 127.50
+  Steps: 161
+  Epsilon: 0.016
+  Loss: 1.6122
+---------------
+Episode 833:
+  Level: 3
+  Reward: 86.50
+  Steps: 181
+  Epsilon: 0.015
+  Loss: 0.0335
+---------------
+Episode 834:
+  Level: 3
+  Reward: 128.50
+  Steps: 164
+  Epsilon: 0.015
+  Loss: 0.3802
+---------------
+Episode 835:
+  Level: 3
+  Reward: 133.00
+  Steps: 161
+  Epsilon: 0.015
+  Loss: 0.8016
+---------------
+Episode 836:
+  Level: 3
+  Reward: 729.00
+  Steps: 419
+  Epsilon: 0.015
+  Loss: 0.0316
+---------------
+Episode 837:
+  Level: 3
+  Reward: 126.00
+  Steps: 163
+  Epsilon: 0.015
+  Loss: 0.8193
+---------------
+Episode 838:
+  Level: 3
+  Reward: 263.50
+  Steps: 331
+  Epsilon: 0.015
+  Loss: 0.0280
+---------------
+Episode 839:
+  Level: 3
+  Reward: 126.50
+  Steps: 163
+  Epsilon: 0.015
+  Loss: 1.1145
+---------------
+Episode 840:
+  Level: 3
+  Reward: 262.50
+  Steps: 332
+  Epsilon: 0.015
+  Loss: 0.0451
+---------------
+Episode 841:
+  Level: 3
+  Reward: 750.50
+  Steps: 405
+  Epsilon: 0.015
+  Loss: 1.5801
+---------------
+Episode 842:
+  Level: 3
+  Reward: 126.50
+  Steps: 163
+  Epsilon: 0.015
+  Loss: 0.0145
+---------------
+Episode 843:
+  Level: 3
+  Reward: 129.50
+  Steps: 171
+  Epsilon: 0.015
+  Loss: 2.3428
+---------------
+Episode 844:
+  Level: 3
+  Reward: 79.00
+  Steps: 165
+  Epsilon: 0.015
+  Loss: 1.6037
+---------------
+Episode 845:
+  Level: 3
+  Reward: 186.00
+  Steps: 243
+  Epsilon: 0.015
+  Loss: 0.0780
+---------------
+Episode 846:
+  Level: 3
+  Reward: 141.00
+  Steps: 170
+  Epsilon: 0.014
+  Loss: 1.5570
+---------------
+Episode 847:
+  Level: 3
+  Reward: 86.00
+  Steps: 161
+  Epsilon: 0.014
+  Loss: 0.2154
+---------------
+Episode 848:
+  Level: 3
+  Reward: 130.00
+  Steps: 164
+  Epsilon: 0.014
+  Loss: 1.1414
+---------------
+Episode 849:
+  Level: 3
+  Reward: 90.50
+  Steps: 161
+  Epsilon: 0.014
+  Loss: 0.0222
+---------------
+Episode 850:
+  Level: 3
+  Reward: 85.00
+  Steps: 161
+  Epsilon: 0.014
+  Loss: 0.0332
+---------------
+Episode 851:
+  Level: 3
+  Reward: 126.00
+  Steps: 163
+  Epsilon: 0.014
+  Loss: 0.7885
+---------------
+Episode 852:
+  Level: 3
+  Reward: 348.50
+  Steps: 342
+  Epsilon: 0.014
+  Loss: 0.0187
+---------------
+Episode 853:
+  Level: 3
+  Reward: 125.50
+  Steps: 168
+  Epsilon: 0.014
+  Loss: 0.7920
+---------------
+Episode 854:
+  Level: 3
+  Reward: 165.50
+  Steps: 201
+  Epsilon: 0.014
+  Loss: 0.0237
+---------------
+Episode 855:
+  Level: 3
+  Reward: 761.00
+  Steps: 418
+  Epsilon: 0.014
+  Loss: 1.7038
+---------------
+Episode 856:
+  Level: 3
+  Reward: 191.00
+  Steps: 262
+  Epsilon: 0.014
+  Loss: 0.0359
+---------------
+Episode 857:
+  Level: 3
+  Reward: 131.00
+  Steps: 163
+  Epsilon: 0.014
+  Loss: 0.0250
+---------------
+Episode 858:
+  Level: 3
+  Reward: 129.00
+  Steps: 161
+  Epsilon: 0.014
+  Loss: 0.0171
+---------------
+Episode 859:
+  Level: 3
+  Reward: 85.00
+  Steps: 163
+  Epsilon: 0.014
+  Loss: 0.0105
+---------------
+Episode 860:
+  Level: 3
+  Reward: 125.00
+  Steps: 163
+  Epsilon: 0.013
+  Loss: 0.0101
+---------------
+Episode 861:
+  Level: 3
+  Reward: 395.00
+  Steps: 350
+  Epsilon: 0.013
+  Loss: 0.0257
+---------------
+Episode 862:
+  Level: 3
+  Reward: 208.50
+  Steps: 265
+  Epsilon: 0.013
+  Loss: 0.0338
+---------------
+Episode 863:
+  Level: 3
+  Reward: 152.00
+  Steps: 196
+  Epsilon: 0.013
+  Loss: 0.0299
+---------------
+Episode 864:
+  Level: 3
+  Reward: -25.50
+  Steps: 116
+  Epsilon: 0.013
+  Loss: 0.0391
+---------------
+Episode 865:
+  Level: 3
+  Reward: 129.00
+  Steps: 161
+  Epsilon: 0.013
+  Loss: 0.0276
+---------------
+Episode 866:
+  Level: 3
+  Reward: 267.00
+  Steps: 338
+  Epsilon: 0.013
+  Loss: 0.3530
+---------------
+Episode 867:
+  Level: 3
+  Reward: 126.50
+  Steps: 164
+  Epsilon: 0.013
+  Loss: 0.8143
+---------------
+Episode 868:
+  Level: 3
+  Reward: 337.00
+  Steps: 343
+  Epsilon: 0.013
+  Loss: 0.8306
+---------------
+Episode 869:
+  Level: 3
+  Reward: 130.50
+  Steps: 161
+  Epsilon: 0.013
+  Loss: 0.1597
+---------------
+Episode 870:
+  Level: 3
+  Reward: 128.50
+  Steps: 161
+  Epsilon: 0.013
+  Loss: 0.0195
+---------------
+Episode 871:
+  Level: 3
+  Reward: 126.00
+  Steps: 172
+  Epsilon: 0.013
+  Loss: 0.0405
+---------------
+Episode 872:
+  Level: 3
+  Reward: 133.50
+  Steps: 187
+  Epsilon: 0.013
+  Loss: 0.8047
+---------------
+Episode 873:
+  Level: 3
+  Reward: 760.50
+  Steps: 400
+  Epsilon: 0.013
+  Loss: 0.0335
+---------------
+Episode 874:
+  Level: 3
+  Reward: 130.50
+  Steps: 161
+  Epsilon: 0.013
+  Loss: 0.0241
+---------------
+Episode 875:
+  Level: 3
+  Reward: 140.00
+  Steps: 250
+  Epsilon: 0.013
+  Loss: 0.0091
+---------------
+Episode 876:
+  Level: 3
+  Reward: 177.50
+  Steps: 216
+  Epsilon: 0.012
+  Loss: 0.0149
+---------------
+Episode 877:
+  Level: 3
+  Reward: 3.00
+  Steps: 93
+  Epsilon: 0.012
+  Loss: 0.0460
+---------------
+Episode 878:
+  Level: 3
+  Reward: 129.00
+  Steps: 161
+  Epsilon: 0.012
+  Loss: 0.0623
+---------------
+Episode 879:
+  Level: 3
+  Reward: 90.50
+  Steps: 161
+  Epsilon: 0.012
+  Loss: 0.0160
+---------------
+Episode 880:
+  Level: 3
+  Reward: 81.00
+  Steps: 159
+  Epsilon: 0.012
+  Loss: 0.0103
+---------------
+Episode 881:
+  Level: 3
+  Reward: 199.00
+  Steps: 258
+  Epsilon: 0.012
+  Loss: 1.5790
+---------------
+Episode 882:
+  Level: 3
+  Reward: 126.00
+  Steps: 165
+  Epsilon: 0.012
+  Loss: 0.0196
+---------------
+Episode 883:
+  Level: 3
+  Reward: 127.00
+  Steps: 164
+  Epsilon: 0.012
+  Loss: 1.1144
+---------------
+Episode 884:
+  Level: 3
+  Reward: 114.50
+  Steps: 196
+  Epsilon: 0.012
+  Loss: 0.8066
+---------------
+Episode 885:
+  Level: 3
+  Reward: 126.50
+  Steps: 165
+  Epsilon: 0.012
+  Loss: 1.6272
+---------------
+Episode 886:
+  Level: 3
+  Reward: 115.00
+  Steps: 201
+  Epsilon: 0.012
+  Loss: 0.8117
+---------------
+Episode 887:
+  Level: 3
+  Reward: 130.00
+  Steps: 163
+  Epsilon: 0.012
+  Loss: 0.0269
+---------------
+Episode 888:
+  Level: 3
+  Reward: 129.50
+  Steps: 163
+  Epsilon: 0.012
+  Loss: 0.0351
+---------------
+Episode 889:
+  Level: 3
+  Reward: 125.00
+  Steps: 163
+  Epsilon: 0.012
+  Loss: 0.8191
+---------------
+Episode 890:
+  Level: 3
+  Reward: 126.00
+  Steps: 178
+  Epsilon: 0.012
+  Loss: 0.0368
+---------------
+Episode 891:
+  Level: 3
+  Reward: 661.00
+  Steps: 433
+  Epsilon: 0.012
+  Loss: 1.6076
+---------------
+Episode 892:
+  Level: 3
+  Reward: 726.00
+  Steps: 405
+  Epsilon: 0.011
+  Loss: 1.1312
+---------------
+Episode 893:
+  Level: 3
+  Reward: 129.50
+  Steps: 161
+  Epsilon: 0.011
+  Loss: 0.0574
+---------------
+Episode 894:
+  Level: 3
+  Reward: 143.50
+  Steps: 171
+  Epsilon: 0.011
+  Loss: 2.3806
+---------------
+Episode 895:
+  Level: 3
+  Reward: -44.00
+  Steps: 110
+  Epsilon: 0.011
+  Loss: 0.0227
+---------------
+Episode 896:
+  Level: 3
+  Reward: 126.50
+  Steps: 161
+  Epsilon: 0.011
+  Loss: 1.5645
+---------------
+Episode 897:
+  Level: 3
+  Reward: 122.50
+  Steps: 164
+  Epsilon: 0.011
+  Loss: 1.8961
+---------------
+Episode 898:
+  Level: 3
+  Reward: 373.00
+  Steps: 332
+  Epsilon: 0.011
+  Loss: 0.0135
+---------------
+Episode 899:
+  Level: 3
+  Reward: -32.00
+  Steps: 98
+  Epsilon: 0.011
+  Loss: 0.0330
+---------------
+Episode 900:
+  Level: 3
+  Reward: 79.00
+  Steps: 169
+  Epsilon: 0.011
+  Loss: 1.5889
+---------------
+Episode 901:
+  Level: 3
+  Reward: 126.00
+  Steps: 166
+  Epsilon: 0.011
+  Loss: 0.0278
+---------------
+Episode 902:
+  Level: 3
+  Reward: 126.50
+  Steps: 163
+  Epsilon: 0.011
+  Loss: 0.8167
+---------------
+Episode 903:
+  Level: 3
+  Reward: 282.00
+  Steps: 265
+  Epsilon: 0.011
+  Loss: 0.0066
+---------------
+Episode 904:
+  Level: 3
+  Reward: 128.50
+  Steps: 162
+  Epsilon: 0.011
+  Loss: 0.8833
+---------------
+Episode 905:
+  Level: 3
+  Reward: -33.00
+  Steps: 96
+  Epsilon: 0.011
+  Loss: 0.8142
+---------------
+Episode 906:
+  Level: 3
+  Reward: 95.50
+  Steps: 229
+  Epsilon: 0.011
+  Loss: 0.0429
+---------------
+Episode 907:
+  Level: 3
+  Reward: 127.00
+  Steps: 165
+  Epsilon: 0.011
+  Loss: 0.0187
+---------------
+Episode 908:
+  Level: 3
+  Reward: 263.50
+  Steps: 331
+  Epsilon: 0.011
+  Loss: 1.6070
+---------------
+Episode 909:
+  Level: 3
+  Reward: 74.50
+  Steps: 165
+  Epsilon: 0.011
+  Loss: 0.8128
+---------------
+Episode 910:
+  Level: 3
+  Reward: 86.00
+  Steps: 164
+  Epsilon: 0.010
+  Loss: 0.0241
+---------------
+Episode 911:
+  Level: 3
+  Reward: 91.50
+  Steps: 168
+  Epsilon: 0.010
+  Loss: 0.0311
+---------------
+Episode 912:
+  Level: 3
+  Reward: 3.00
+  Steps: 91
+  Epsilon: 0.010
+  Loss: 0.3477
+---------------
+Episode 913:
+  Level: 3
+  Reward: 84.00
+  Steps: 161
+  Epsilon: 0.010
+  Loss: 2.6592
+---------------
+Episode 914:
+  Level: 3
+  Reward: 123.50
+  Steps: 167
+  Epsilon: 0.010
+  Loss: 0.8959
+---------------
+Episode 915:
+  Level: 3
+  Reward: -27.50
+  Steps: 103
+  Epsilon: 0.010
+  Loss: 0.9494
+---------------
+Episode 916:
+  Level: 3
+  Reward: 83.00
+  Steps: 195
+  Epsilon: 0.010
+  Loss: 0.8069
+---------------
+Episode 917:
+  Level: 3
+  Reward: 93.00
+  Steps: 169
+  Epsilon: 0.010
+  Loss: 0.0071
+---------------
+Episode 918:
+  Level: 3
+  Reward: 33.00
+  Steps: 120
+  Epsilon: 0.010
+  Loss: 0.3936
+---------------
+Episode 919:
+  Level: 3
+  Reward: 130.00
+  Steps: 162
+  Epsilon: 0.010
+  Loss: 0.3060
+---------------
+Episode 920:
+  Level: 3
+  Reward: 148.50
+  Steps: 258
+  Epsilon: 0.010
+  Loss: 0.0323
+---------------
+Episode 921:
+  Level: 3
+  Reward: 85.50
+  Steps: 164
+  Epsilon: 0.010
+  Loss: 1.5973
+---------------
+Episode 922:
+  Level: 3
+  Reward: 182.00
+  Steps: 252
+  Epsilon: 0.010
+  Loss: 0.0355
+---------------
+Episode 923:
+  Level: 3
+  Reward: 124.00
+  Steps: 163
+  Epsilon: 0.010
+  Loss: 0.0271
+---------------
+Episode 924:
+  Level: 3
+  Reward: 129.50
+  Steps: 161
+  Epsilon: 0.010
+  Loss: 2.3435
+---------------
+Episode 925:
+  Level: 3
+  Reward: 88.00
+  Steps: 163
+  Epsilon: 0.010
+  Loss: 0.9134
+---------------
+Episode 926:
+  Level: 3
+  Reward: 3.00
+  Steps: 93
+  Epsilon: 0.010
+  Loss: 0.0335
+---------------
+Episode 927:
+  Level: 3
+  Reward: 753.00
+  Steps: 393
+  Epsilon: 0.010
+  Loss: 0.0232
+---------------
+Episode 928:
+  Level: 3
+  Reward: 318.50
+  Steps: 332
+  Epsilon: 0.010
+  Loss: 0.0173
+---------------
+Episode 929:
+  Level: 3
+  Reward: 402.00
+  Steps: 344
+  Epsilon: 0.010
+  Loss: 0.2676
+---------------
+Episode 930:
+  Level: 3
+  Reward: 123.50
+  Steps: 161
+  Epsilon: 0.010
+  Loss: 0.0313
+---------------
+Episode 931:
+  Level: 3
+  Reward: 89.50
+  Steps: 161
+  Epsilon: 0.010
+  Loss: 0.0167
+---------------
+Episode 932:
+  Level: 3
+  Reward: 33.00
+  Steps: 118
+  Epsilon: 0.010
+  Loss: 0.8070
+---------------
+Episode 933:
+  Level: 3
+  Reward: 130.00
+  Steps: 184
+  Epsilon: 0.010
+  Loss: 1.1554
+---------------
+Episode 934:
+  Level: 3
+  Reward: 131.00
+  Steps: 163
+  Epsilon: 0.010
+  Loss: 0.7984
+---------------
+Episode 935:
+  Level: 3
+  Reward: 86.50
+  Steps: 163
+  Epsilon: 0.010
+  Loss: 2.3384
+---------------
+Episode 936:
+  Level: 3
+  Reward: 78.00
+  Steps: 163
+  Epsilon: 0.010
+  Loss: 1.6619
+---------------
+Episode 937:
+  Level: 3
+  Reward: 140.50
+  Steps: 189
+  Epsilon: 0.010
+  Loss: 0.8190
+---------------
+Episode 938:
+  Level: 3
+  Reward: 179.00
+  Steps: 247
+  Epsilon: 0.010
+  Loss: 0.0222
+---------------
+Episode 939:
+  Level: 3
+  Reward: 127.50
+  Steps: 167
+  Epsilon: 0.010
+  Loss: 0.8445
+---------------
+Episode 940:
+  Level: 3
+  Reward: 82.50
+  Steps: 159
+  Epsilon: 0.010
+  Loss: 0.0135
+---------------
+Episode 941:
+  Level: 3
+  Reward: 126.50
+  Steps: 164
+  Epsilon: 0.010
+  Loss: 0.0300
+---------------
+Episode 942:
+  Level: 3
+  Reward: 332.00
+  Steps: 332
+  Epsilon: 0.010
+  Loss: 0.8146
+---------------
+Episode 943:
+  Level: 3
+  Reward: 77.50
+  Steps: 165
+  Epsilon: 0.010
+  Loss: 1.9054
+---------------
+Episode 944:
+  Level: 3
+  Reward: 75.00
+  Steps: 165
+  Epsilon: 0.010
+  Loss: 0.8239
+---------------
+Episode 945:
+  Level: 3
+  Reward: 77.50
+  Steps: 165
+  Epsilon: 0.010
+  Loss: 0.9772
+---------------
+Episode 946:
+  Level: 3
+  Reward: 77.50
+  Steps: 165
+  Epsilon: 0.010
+  Loss: 0.0232
+---------------
+Episode 947:
+  Level: 3
+  Reward: 126.50
+  Steps: 164
+  Epsilon: 0.010
+  Loss: 0.8200
+---------------
+Episode 948:
+  Level: 3
+  Reward: 265.50
+  Steps: 332
+  Epsilon: 0.010
+  Loss: 0.0132
+---------------
+Episode 949:
+  Level: 3
+  Reward: 675.00
+  Steps: 376
+  Epsilon: 0.010
+  Loss: 2.3653
+---------------
+Episode 950:
+  Level: 3
+  Reward: 85.00
+  Steps: 169
+  Epsilon: 0.010
+  Loss: 1.5844
+---------------
+Episode 951:
+  Level: 3
+  Reward: 83.00
+  Steps: 163
+  Epsilon: 0.010
+  Loss: 0.8001
+---------------
+Episode 952:
+  Level: 3
+  Reward: 160.00
+  Steps: 272
+  Epsilon: 0.010
+  Loss: 0.0206
+---------------
+Episode 953:
+  Level: 3
+  Reward: -32.00
+  Steps: 107
+  Epsilon: 0.010
+  Loss: 0.1639
+---------------
+Episode 954:
+  Level: 3
+  Reward: 310.00
+  Steps: 307
+  Epsilon: 0.010
+  Loss: 0.0230
+---------------
+Episode 955:
+  Level: 3
+  Reward: -33.00
+  Steps: 96
+  Epsilon: 0.010
+  Loss: 0.8242
+---------------
+Episode 956:
+  Level: 3
+  Reward: 191.50
+  Steps: 235
+  Epsilon: 0.010
+  Loss: 1.5930
+---------------
+Episode 957:
+  Level: 3
+  Reward: -31.50
+  Steps: 96
+  Epsilon: 0.010
+  Loss: 0.8083
+---------------
+Episode 958:
+  Level: 3
+  Reward: -86.00
+  Steps: 191
+  Epsilon: 0.010
+  Loss: 0.0148
+---------------
+Episode 959:
+  Level: 3
+  Reward: 127.50
+  Steps: 164
+  Epsilon: 0.010
+  Loss: 0.0387
+---------------
+Episode 960:
+  Level: 3
+  Reward: 126.50
+  Steps: 165
+  Epsilon: 0.010
+  Loss: 0.1117
+---------------
+Episode 961:
+  Level: 3
+  Reward: 323.50
+  Steps: 344
+  Epsilon: 0.010
+  Loss: 0.7958
+---------------
+Episode 962:
+  Level: 3
+  Reward: 127.00
+  Steps: 165
+  Epsilon: 0.010
+  Loss: 0.2508
+---------------
+Episode 963:
+  Level: 3
+  Reward: 126.00
+  Steps: 163
+  Epsilon: 0.010
+  Loss: 0.8007
+---------------
+Episode 964:
+  Level: 3
+  Reward: 278.50
+  Steps: 343
+  Epsilon: 0.010
+  Loss: 0.2243
+---------------
+Episode 965:
+  Level: 3
+  Reward: 84.50
+  Steps: 160
+  Epsilon: 0.010
+  Loss: 0.0170
+---------------
+Episode 966:
+  Level: 3
+  Reward: 86.00
+  Steps: 163
+  Epsilon: 0.010
+  Loss: 0.0117
+---------------
+Episode 967:
+  Level: 3
+  Reward: 1.50
+  Steps: 91
+  Epsilon: 0.010
+  Loss: 0.7974
+---------------
+Episode 968:
+  Level: 3
+  Reward: 128.00
+  Steps: 162
+  Epsilon: 0.010
+  Loss: 0.0352
+---------------
+Episode 969:
+  Level: 3
+  Reward: 72.50
+  Steps: 163
+  Epsilon: 0.010
+  Loss: 1.5817
+---------------
+Episode 970:
+  Level: 3
+  Reward: 77.00
+  Steps: 165
+  Epsilon: 0.010
+  Loss: 0.3956
+---------------
+Episode 971:
+  Level: 3
+  Reward: 127.00
+  Steps: 164
+  Epsilon: 0.010
+  Loss: 0.0152
+---------------
+Episode 972:
+  Level: 3
+  Reward: 125.00
+  Steps: 168
+  Epsilon: 0.010
+  Loss: 0.0308
+---------------
+Episode 973:
+  Level: 3
+  Reward: 122.50
+  Steps: 163
+  Epsilon: 0.010
+  Loss: 0.7915
+---------------
+Episode 974:
+  Level: 3
+  Reward: 77.00
+  Steps: 165
+  Epsilon: 0.010
+  Loss: 0.0187
+---------------
+Episode 975:
+  Level: 3
+  Reward: 155.50
+  Steps: 254
+  Epsilon: 0.010
+  Loss: 0.0354
+---------------
+Episode 976:
+  Level: 3
+  Reward: 77.50
+  Steps: 165
+  Epsilon: 0.010
+  Loss: 0.6863
+---------------
+Episode 977:
+  Level: 3
+  Reward: 373.00
+  Steps: 455
+  Epsilon: 0.010
+  Loss: 0.8193
+---------------
+Episode 978:
+  Level: 3
+  Reward: 119.00
+  Steps: 161
+  Epsilon: 0.010
+  Loss: 0.0927
+---------------
+Episode 979:
+  Level: 3
+  Reward: 75.50
+  Steps: 165
+  Epsilon: 0.010
+  Loss: 0.8029
+---------------
+Episode 980:
+  Level: 3
+  Reward: 76.50
+  Steps: 165
+  Epsilon: 0.010
+  Loss: 0.8654
+---------------
+Episode 981:
+  Level: 3
+  Reward: 64.50
+  Steps: 163
+  Epsilon: 0.010
+  Loss: 0.0337
+---------------
+Episode 982:
+  Level: 3
+  Reward: 268.00
+  Steps: 331
+  Epsilon: 0.010
+  Loss: 0.8685
+---------------
+Episode 983:
+  Level: 3
+  Reward: -31.00
+  Steps: 96
+  Epsilon: 0.010
+  Loss: 0.0201
+---------------
+Episode 984:
+  Level: 3
+  Reward: 0.50
+  Steps: 95
+  Epsilon: 0.010
+  Loss: 0.0081
+---------------
+Episode 985:
+  Level: 3
+  Reward: -31.00
+  Steps: 96
+  Epsilon: 0.010
+  Loss: 0.8180
+---------------
+Episode 986:
+  Level: 3
+  Reward: 122.00
+  Steps: 163
+  Epsilon: 0.010
+  Loss: 0.8112
+---------------
+Episode 987:
+  Level: 3
+  Reward: 86.50
+  Steps: 165
+  Epsilon: 0.010
+  Loss: 1.6007
+---------------
+Episode 988:
+  Level: 3
+  Reward: 122.00
+  Steps: 163
+  Epsilon: 0.010
+  Loss: 0.0321
+---------------
+Episode 989:
+  Level: 3
+  Reward: 340.50
+  Steps: 343
+  Epsilon: 0.010
+  Loss: 0.0160
+---------------
+Episode 990:
+  Level: 3
+  Reward: 77.00
+  Steps: 167
+  Epsilon: 0.010
+  Loss: 0.0203
+---------------
+Episode 991:
+  Level: 3
+  Reward: 286.50
+  Steps: 343
+  Epsilon: 0.010
+  Loss: 0.0255
+---------------
+Episode 992:
+  Level: 3
+  Reward: 142.00
+  Steps: 175
+  Epsilon: 0.010
+  Loss: 1.5884
+---------------
+Episode 993:
+  Level: 3
+  Reward: 155.00
+  Steps: 188
+  Epsilon: 0.010
+  Loss: 0.0174
+---------------
+Episode 994:
+  Level: 3
+  Reward: 225.00
+  Steps: 272
+  Epsilon: 0.010
+  Loss: 0.8773
+---------------
+Episode 995:
+  Level: 3
+  Reward: 127.50
+  Steps: 164
+  Epsilon: 0.010
+  Loss: 1.2129
+---------------
+Episode 996:
+  Level: 3
+  Reward: 85.00
+  Steps: 164
+  Epsilon: 0.010
+  Loss: 0.8280
+---------------
+Episode 997:
+  Level: 3
+  Reward: 126.00
+  Steps: 165
+  Epsilon: 0.010
+  Loss: 0.8169
+---------------
+Episode 998:
+  Level: 3
+  Reward: 645.00
+  Steps: 401
+  Epsilon: 0.010
+  Loss: 0.0163
+---------------
+Episode 999:
+  Level: 3
+  Reward: 86.00
+  Steps: 161
+  Epsilon: 0.010
+  Loss: 0.3044
+---------------
+Episode 1000:
+  Level: 3
+  Reward: 85.00
+  Steps: 163
+  Epsilon: 0.010
+  Loss: 1.5921
 ---------------
