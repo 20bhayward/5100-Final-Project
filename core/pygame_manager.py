@@ -122,7 +122,8 @@ class PygameManager:
             self.game.level_completed()
 
     def tick(self, fps=60):
-        self.clock.tick(fps)
+        """Lock the frame rate to the specified FPS."""
+        pygame.time.Clock().tick(fps)
 
     def is_running(self):
         return self.running

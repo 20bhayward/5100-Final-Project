@@ -378,6 +378,7 @@ class Trainer:
 
                 if self.render_enabled:
                     self.pygame_manager.draw(self.pygame_manager.get_all_sprites(), None)
+                    self.pygame_manager.tick(60)  # Lock to 60 FPS
 
                 if done:
                     break
