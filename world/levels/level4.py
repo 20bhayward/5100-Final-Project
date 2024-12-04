@@ -9,7 +9,7 @@ from world.components.blocks.interactive.trap_block import TrapBlock
 
 class Level4(Level):
     def __init__(self):
-        self.width = 1800  # Slightly reduced the level width
+        self.width = 1800
         self.height = 800
         super().__init__()
 

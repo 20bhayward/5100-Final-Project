@@ -25,7 +25,7 @@ class PygameManager:
             self.screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
         else:
             self.screen = pygame.Surface([SCREEN_WIDTH, SCREEN_HEIGHT])
-            pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])  # Still need to set mode for image loading
+            pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
 
         self.camera_x = 0
         self.camera_y = 0
@@ -192,11 +192,6 @@ class PygameManager:
         agent_screen_x = agent.rect.x + self.camera_x
         agent_screen_y = agent.rect.y + self.camera_y
 
-        # # Draw max jump distance
-        # max_jump_distance = precepts.calculate_max_jump_distance()
-        # jump_line_end_x = agent_screen_x + max_jump_distance
-        # pygame.draw.line(self.screen, Color('purple'), (agent_screen_x, agent_screen_y), (jump_line_end_x, agent_screen_y), 2)
-
         # Draw current platform in green
         if percepts_data['platforms']['current_platform']:
             platform_rect = percepts_data['platforms']['current_platform']['rect']
@@ -238,7 +233,6 @@ class PygameManager:
         movement_text = f"Vel X: {movement['velocity_x']:.2f}, Vel Y: {movement['velocity_y']:.2f}, On Ground: {movement['on_ground']}"
         movement_surface = font.render(movement_text, True, Color('white'))
         self.screen.blit(movement_surface, (10, SCREEN_HEIGHT - 30))
-
 
     def clear_sprites(self):
         """Clear all sprite groups"""

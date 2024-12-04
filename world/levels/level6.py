@@ -19,7 +19,6 @@ class Level6(Level):
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
-        # === EASY PATH (BOTTOM) ===
         # First straight section with a small gap
         for i in range(480, 1000, 40):
             block = SquareBlock(i, 560)
@@ -32,31 +31,28 @@ class Level6(Level):
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
-
-        # === PARKOUR PATH (UPPER) ===
-        # First elevated platform (using height difference from Level 2)
         for i in range(480, 680, 40):
-            block = SquareBlock(i, 520)  # Only 40 pixels higher than base
+            block = SquareBlock(i, 520) 
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
         # Second elevated platform (similar to Level 4's first elevation)
         for i in range(760, 960, 40):
-            block = SquareBlock(i, 480)  # 40 pixels higher than previous
+            block = SquareBlock(i, 480)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
         # Third elevated platform
         for i in range(1040, 1240, 40):
-            block = SquareBlock(i, 440)  # Again, 40 pixels higher
+            block = SquareBlock(i, 440) 
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
         # Moving platform sequence (upper path)
         moving_platform2 = MovingBlock(
             x=1320,
-            y=440,  # Same height as previous platform
-            width=160,  # Wide platform
+            y=440,
+            width=160,
             height=40,
             color=(255, 255, 255),
             speed=1.5,
@@ -69,12 +65,11 @@ class Level6(Level):
 
         # Final upper platform (gentle slope down to goal)
         for i in range(1600, 1800, 40):
-            block = SquareBlock(i, 480)  # Coming down towards goal
+            block = SquareBlock(i, 480)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
-        # === FINAL SECTION AND GOAL ===
-        # Final platform (accessible from both paths)
+        # Final platform
         for i in range(1800, 2000, 40):
             block = SquareBlock(i, 560)
             self.block_list.add(block)

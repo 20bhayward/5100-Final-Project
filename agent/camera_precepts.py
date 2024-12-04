@@ -11,17 +11,17 @@ class CameraBasedPrecepts:
         self.pygame_manager = pygame_manager
 
         # Camera view parameters
-        self.screen_width = 800  # From config.SCREEN_WIDTH
-        self.screen_height = 600  # From config.SCREEN_HEIGHT
+        self.screen_width = 800
+        self.screen_height = 600
 
-        # Adjusted platform analysis parameters
-        self.min_gap_width = 35  # Minimum gap width to consider for jumping (slightly less than the actual 40)
-        self.max_gap_width = 300  # Maximum gap width the agent can jump
-        self.safe_landing_width = 40  # Minimum width needed for safe landing
+        # platform analysis parameters
+        self.min_gap_width = 35
+        self.max_gap_width = 300 
+        self.safe_landing_width = 40
 
         # Jump trajectory parameters
         self.gravity = abs(self.agent.gravity_acc)
-        self.jump_velocity = self.agent.jump_speed  # Should match agent's jump_speed
+        self.jump_velocity = self.agent.jump_speed
 
     def get_visible_state(self):
         """Get the state of objects visible in the camera view."""
@@ -127,12 +127,12 @@ class CameraBasedPrecepts:
                 # Consider maximum possible gap width when platforms are moving
                 max_gap_width = base_gap_width
                 if current['is_moving']:
-                    max_gap_width += abs(current['speed']) * 2  # Account for full movement range
+                    max_gap_width += abs(current['speed']) * 2
                 if next_platform['is_moving']:
                     max_gap_width += abs(next_platform['speed']) * 2
 
                 # Use the maximum gap width for jumpability check
-                if self.min_gap_width <= max_gap_width <= self.max_gap_width * 1.5:  # Increased tolerance
+                if self.min_gap_width <= max_gap_width <= self.max_gap_width * 1.5:
                     height_diff = current['rect'].y - next_platform['rect'].y
                     jumpable = self._is_gap_jumpable(
                         max_gap_width,
@@ -143,8 +143,8 @@ class CameraBasedPrecepts:
 
                     gaps.append({
                         'start_x': current['rect'].right,
-                        'width': base_gap_width,  # Store actual current width
-                        'max_width': max_gap_width,  # Store maximum possible width
+                        'width': base_gap_width,
+                        'max_width': max_gap_width,
                         'start_y': current['rect'].y,
                         'end_y': next_platform['rect'].y,
                         'jumpable': jumpable,
@@ -190,9 +190,9 @@ class CameraBasedPrecepts:
             dy = hazard.centery - self.agent.rect.centery
             distance = np.sqrt(dx*dx + dy*dy)
 
-            if distance < 200:  # Adjusted threshold for visibility
+            if distance < 200:
                 immediate_threats.append({
-                    'rect': hazard,  # Include the rect for visualization
+                    'rect': hazard,
                     'distance': distance,
                     'direction': np.sign(dx),
                     'above': dy < 0,
@@ -226,11 +226,6 @@ class CameraBasedPrecepts:
 
         can_jump = width_jumpable and close_enough
 
-        # print(f"\nGap Analysis:")
-        # print(f"  Width: {width} (jumpable: {width_jumpable})")
-        # print(f"  Distance to gap: {distance_to_gap} (close enough: {close_enough})")
-        # print(f"  Can jump: {can_jump}")
-
         return can_jump
 
     def _analyze_jump_opportunities(self, platforms, hazards):
@@ -256,7 +251,7 @@ class CameraBasedPrecepts:
 
             v0_x = self.agent.max_speed_x
             if v0_x == 0:
-                continue  # Avoid division by zero
+                continue
             t_flight = dx / v0_x
 
             if platform_info['is_moving'] and platform_info['direction'] == 'horizontal':
@@ -277,7 +272,7 @@ class CameraBasedPrecepts:
                     'end_x': platform_rect.left + 20,
                     'height_diff': dy,
                     'distance': adjusted_dx,
-                    'safe_landing': True,  # Simplified; should check hazards
+                    'safe_landing': True,
                     'success_prob': success_prob
                 })
 
@@ -290,11 +285,7 @@ class CameraBasedPrecepts:
 
         # Base probability inversely proportional to distance (normalized)
         base_prob = max(0.0, 1.0 - (distance / self.max_gap_width))
-
-        # Adjust for height difference
-        height_factor = max(0.0, 1.0 - (abs(height_diff) / 100.0))  # Penalize large height differences
-
-        # Combine factors
+        height_factor = max(0.0, 1.0 - (abs(height_diff) / 100.0))
         success_prob = base_prob * height_factor
 
         return success_prob
@@ -346,7 +337,7 @@ class CameraBasedPrecepts:
     def _get_goal_direction(self, visible_goals):
         """Get normalized direction to visible goal."""
         if not visible_goals:
-            goal = next(iter(self.level.goal_list))  # Get the level's goal
+            goal = next(iter(self.level.goal_list))
             return np.sign(goal.rect.centerx - self.agent.rect.centerx)
 
         goal = visible_goals[0]
@@ -356,13 +347,10 @@ class CameraBasedPrecepts:
     def calculate_max_jump_distance(self):
         """Calculate the maximum horizontal distance the agent can jump."""
         v0_x = self.agent.max_speed_x
-        v0_y = self.agent.jump_speed  # Should be negative
+        v0_y = self.agent.jump_speed
         gravity = self.gravity
 
-        # Time to reach the peak
         t_up = -v0_y / gravity
-        # Total time of flight
         t_total = 2 * t_up
-        # Maximum horizontal distance
         max_distance = v0_x * t_total
         return max_distance

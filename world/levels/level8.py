@@ -37,7 +37,7 @@ class Level8(Level):
         moving_platform1 = MovingBlock(
             x=720,
             y=560,
-            width=120,  # Wide enough for stable landing
+            width=120,
             height=40,
             color=(255, 255, 255),
             speed=1.5,
@@ -50,7 +50,7 @@ class Level8(Level):
 
         # Third challenge: Elevated section with precise jumps
         for i in range(960, 1160, 40):
-            block = SquareBlock(i, 520)  # Slight elevation
+            block = SquareBlock(i, 520)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 

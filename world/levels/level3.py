@@ -8,7 +8,7 @@ from world.components.blocks.interactive.trap_block import TrapBlock
 
 class Level3(Level):
     def __init__(self):
-        self.width = 1400  # Shortened the level width
+        self.width = 1400
         self.height = 800
         super().__init__()
 
@@ -27,7 +27,7 @@ class Level3(Level):
 
         # Second platform with slight elevation
         for i in range(480, 640, 40):
-            block = SquareBlock(i, 530)  # Slightly higher
+            block = SquareBlock(i, 530)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
 
@@ -36,11 +36,6 @@ class Level3(Level):
             block = SquareBlock(i, 520)
             self.block_list.add(block)
             self.all_sprites_list.add(block)
-
-        # # Single trap
-        # trap = TrapBlock(800, 500)
-        # self.trap_list.add(trap)
-        # self.all_sprites_list.add(trap)
 
         # Final stretch towards the goal
         for i in range(960, 1200, 40):

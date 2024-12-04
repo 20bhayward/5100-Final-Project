@@ -10,7 +10,7 @@ from world.components.blocks.interactive.goal_block import GoalBlock
 
 class Level5(Level):
     def __init__(self):
-        self.width = 1600  # Reduced level width
+        self.width = 1600
         self.height = 800
         super().__init__()
 
@@ -40,7 +40,7 @@ class Level5(Level):
             self.block_list.add(platform)
             self.all_sprites_list.add(platform)
 
-        # Moving platform (optional)
+        # Moving platform
         moving_platform = MovingBlock(
             x=750, y=500, width=80, height=20, color=(255, 255, 255),
             speed=1, direction='horizontal', start_pos=700, end_pos=1000

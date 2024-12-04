@@ -21,17 +21,13 @@ from dqn.replay_buffer import ReplayBuffer
 from core.pygame_manager import PygameManager
 from core.config import SCREEN_WIDTH, SCREEN_HEIGHT, ACTION_DIM, MOVEMENT_ACTIONS
 from trainer.trainer import Trainer
-from agent.agent_precepts_old import AgentPrecepts
 
 class Game:
     def __init__(self, manual_control=False, level_number=1, training_mode=False, render_enabled=True, load_model=None):
-        """Initialize game components in correct order."""
-        # First, initialize pygame manager to set up display
         self.pygame_manager = PygameManager(render_enabled, self, agent=None)
 
-        # Now load level since pygame is properly initialized
         self.level_number = level_number
-        self.max_levels = 8  # Add this line to define max_levels
+        self.max_levels = 8
         self.load_level()
 
         # Create agent after pygame and level initialization
@@ -54,9 +50,6 @@ class Game:
         # Add jump cooldown tracking
         self.last_jump_time = 0
         self.jump_cooldown = 400
-
-        # Create precepts after all components are initialized
-        self.precepts = AgentPrecepts(self.agent, self.level, self.pygame_manager)
 
         # Initialize trainer last
         self.trainer = Trainer(

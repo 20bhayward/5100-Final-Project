@@ -28,7 +28,7 @@ class Level7(Level):
 
         # First trap covering the gap
         for i in range(280, 360, 40):
-            trap = TrapBlock(i, 580, 40, 40)  # Fill the gap with trap blocks
+            trap = TrapBlock(i, 580, 40, 40)
             self.trap_list.add(trap)
             self.all_sprites_list.add(trap)
 
@@ -40,7 +40,7 @@ class Level7(Level):
 
         # Second trap covering the wider gap
         for i in range(600, 680, 40):
-            trap = TrapBlock(i, 580, 40, 40)  # Fill the gap with trap blocks
+            trap = TrapBlock(i, 580, 40, 40)
             self.trap_list.add(trap)
             self.all_sprites_list.add(trap)
 
@@ -48,10 +48,10 @@ class Level7(Level):
         moving_platform = MovingBlock(
             x=1000,
             y=560,
-            width=160,  # Wide enough for safe landing
+            width=160,
             height=40,
             color=(255, 255, 255),
-            speed=1,  # Slow speed for learnable timing
+            speed=1,
             direction='horizontal',
             start_pos=950,
             end_pos=1250
