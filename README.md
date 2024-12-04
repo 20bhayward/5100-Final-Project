@@ -3,6 +3,30 @@
 
 In this project, we've created a platform game where an AI agent learns to navigate through increasingly challenging levels. What makes this project unique is its focus on combining traditional gaming elements with reinforcement learning techniques. The agent must complete levels and perform actions that humans are capable of doing: timing jumps perfectly, avoiding hazards, and finding optimal paths to goals.
 
+## Installation and Setup
+
+### Prerequisites
+
+Before installing, ensure you have:
+1. Python 3.8 or higher
+2. CUDA-capable GPU (recommended for training)
+3. Git for version control
+
+## Usage Guide
+
+### Training the AI
+Command Line Arguments Summary
+- --m: Enable manual control
+- --l \<number\>: Select level (1-8)
+- --t: Enable training mode
+- --r: Enable visualization during training
+- --episodes \<number\>: Set number of training episodes
+- --lm \<path\>: Load a previously trained model
+
+Start a basic training session:
+```bash
+python game.py --t --l 1 --r --episodes 1000
+```
 ### Reinforcement Learning Implementation
 
 Our implementation uses Deep Q-Learning (DQN)
@@ -159,31 +183,6 @@ class DQNAgent:
         self.learning_rate = 0.0003
         self.batch_size = 128
         self.update_frequency = 500
-```
-
-## Installation and Setup
-
-### Prerequisites
-
-Before installing, ensure you have:
-1. Python 3.8 or higher
-2. CUDA-capable GPU (recommended for training)
-3. Git for version control
-
-## Usage Guide
-
-### Training the AI
-Command Line Arguments Summary
-    --m: Enable manual control
-    --l <number>: Select level (1-8)
-    --t: Enable training mode
-    --r: Enable visualization during training
-    --episodes <number>: Set number of training episodes
-    --lm <path>: Load a previously trained model
-
-Start a basic training session:
-```bash
-python game.py --t --l 1 --r --episodes 1000
 ```
 
 ### Monitoring Training Progress
