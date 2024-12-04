@@ -174,12 +174,12 @@ Before installing, ensure you have:
 
 ### Training the AI
 Command Line Arguments Summary
---m: Enable manual control
---l <number>: Select level (1-8)
---t: Enable training mode
---r: Enable visualization during training
---episodes <number>: Set number of training episodes
---lm <path>: Load a previously trained model
+    --m: Enable manual control
+    --l <number>: Select level (1-8)
+    --t: Enable training mode
+    --r: Enable visualization during training
+    --episodes <number>: Set number of training episodes
+    --lm <path>: Load a previously trained model
 
 Start a basic training session:
 ```bash
