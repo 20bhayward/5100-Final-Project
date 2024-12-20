@@ -2,7 +2,8 @@
 import numpy as np
 import pygame
 from PIL import Image
-from world.components.blocks.interactive.goal_block import GoalBlock
+# from world.components.blocks.interactive.goal_block import GoalBlock
+from world.components.blocks.interactive.trap_block import TrapBlock
 
 AGENT_COLOR = (0, 0, 255)
 
@@ -96,27 +97,32 @@ class Agent(pygame.sprite.Sprite):
         super().__init__()
         self.height = 40
         self.width = 40
-        self.frames = self.load_gif_frames("world/assets/runner-sprite.gif")
-        self.current_frame = 0  # Start on the first frame
-        self.image = self.frames[self.current_frame]
-        self.rect = self.image.get_rect(topleft=(x, 589))
+        self.image = pygame.Surface((self.width, self.height))
+        self.image.fill(AGENT_COLOR)  # Fallback: solid blue square
+        self.rect = self.image.get_rect(topleft=(x, y))
+        self.y = y
+        # self.frames = self.load_gif_frames("world/assets/runner-sprite.gif")
+        # self.current_frame = 0  # Start on the first frame
+        # self.image = self.frames[self.current_frame]
+        # self.rect = self.image.get_rect(topleft=(x, 589))
         self.animation_speed = 5  # Number of game cycles per frame
         self.frame_counter = 0
 
         # Movement physics
-        self.change_x = 0
+        self.change_x = 2
         self.change_y = 0
-        self.direction = 0  # -1 for left, 1 for right, 0 for no movement
+        # self.gravity_acc = 0.4
+        # self.direction = 0  # -1 for left, 1 for right, 0 for no movement
         self.acceleration = 0.5
-        self.friction = -0.12
-        self.max_speed_x = 3
-        self.screen_height = screen_height
+        # self.friction = -0.12
+        # self.max_speed_x = 3
+        # self.screen_height = screen_height
 
         # Jump physics
         self.gravity_acc = 0.4
         self.terminal_velocity = 3
-        self.on_ground = False  # Initialize on_ground attribute
-        self.jump_speed = -7
+        self.jump_speed = -8
+        self.on_ground = True  # Initialize on_ground attribute
 
         self.mask = pygame.mask.from_surface(self.image)
 
@@ -146,50 +152,40 @@ class Agent(pygame.sprite.Sprite):
         5. Checks for collisions with blocks after vertical movement.
         """
         # Apply horizontal movement
-        self.accelerate()
-        self.rect.x += self.change_x
-        self.collide_with_blocks(self.change_x, 0, blocks)
+        # self.accelerate()
+        # self.rect.x += self.change_x
+        # self.collide_with_blocks(self.change_x, 0, blocks)
 
-        # Apply gravity and vertical movement
+        # # Apply gravity and vertical movement
+        # self.apply_gravity()
+        # self.rect.y += self.change_y
+        # self.collide_with_blocks(0, self.change_y, blocks)
+    
+        # self.animate()
+        
+        self.rect.x += self.change_x
+
+        # Apply gravity
         self.apply_gravity()
         self.rect.y += self.change_y
+
+        # Check collisions
         self.collide_with_blocks(0, self.change_y, blocks)
-    
+
+        if self.on_ground:
+            self.change_y = 0
+
+        # Animate the agent
         self.animate()
 
     def animate(self):
         """Animate by cycling through GIF frames."""
         self.frame_counter += 1
         if self.frame_counter >= self.animation_speed:
-            self.current_frame = (self.current_frame + 1) % len(self.frames)
-            self.image = self.frames[self.current_frame]
+            # self.current_frame = (self.current_frame + 1) % len(self.frames)
+            # self.image = self.frames[self.current_frame]
             self.mask = pygame.mask.from_surface(self.image)
             self.frame_counter = 0
-
-    def accelerate(self):
-        """
-        Accelerates the agent by modifying its horizontal velocity.
-
-        This method adjusts the agent's horizontal velocity (`change_x`) based on its
-        current direction and acceleration. If the agent is on the ground, friction
-        is also applied to the horizontal velocity. The horizontal velocity is then
-        limited to ensure it does not exceed the maximum allowed speed.
-
-        Attributes:
-            direction (float): The current direction of the agent (positive for right, negative for left).
-            acceleration (float): The rate at which the agent accelerates.
-            on_ground (bool): Whether the agent is currently on the ground.
-            friction (float): The friction coefficient applied when the agent is on the ground.
-            max_speed_x (float): The maximum horizontal speed the agent can achieve.
-            change_x (float): The current horizontal velocity of the agent.
-        """
-        # Apply acceleration based on direction
-        self.change_x += self.direction * self.acceleration
-        # Apply friction only when on the ground
-        if self.on_ground:
-            self.change_x += self.change_x * self.friction
-        # Limit speed
-        self.change_x = max(-self.max_speed_x, min(self.change_x, self.max_speed_x))
 
     def apply_gravity(self):
         """
@@ -197,10 +193,10 @@ class Agent(pygame.sprite.Sprite):
         by the gravity acceleration (gravity_acc). If the resulting change_y exceeds the 
         terminal velocity, it is capped at the terminal velocity to limit the falling speed.
         """
-        self.change_y += self.gravity_acc
-        # Limit falling speed
-        if self.change_y > self.terminal_velocity:
-            self.change_y = self.terminal_velocity
+        if not self.on_ground:
+            self.change_y += self.gravity_acc
+            if self.change_y > self.terminal_velocity:
+                self.change_y = self.terminal_velocity
 
     def jump(self):
         """
@@ -233,22 +229,32 @@ class Agent(pygame.sprite.Sprite):
         """
         # Collision detection
         for block in blocks:
+            # print(f"Block position: {block.rect}, Agent position: {self.rect}")  # Debug block positions
             if pygame.sprite.collide_mask(self, block):
-                if isinstance(block, GoalBlock):
-                    continue
-                if dx > 0:
-                    self.rect.right = block.rect.left
-                    self.change_x = 0
-                if dx < 0:
-                    self.rect.left = block.rect.right
-                    self.change_x = 0
-                if dy > 0:
+
+                if isinstance(block, TrapBlock):
+                    print("Agent died!")  # Debug message
+                    self.die()  # Call a method to handle death
+                    return
+                
+                print("hello", block)  # Debug collision detection
+                if dy > 0:  # Falling down
                     self.rect.bottom = block.rect.top
                     self.change_y = 0
                     self.on_ground = True  # Set on_ground to True when landing
-                if dy < 0:
+                elif dy < 0:  # Jumping up
                     self.rect.top = block.rect.bottom
                     self.change_y = 0
+                if dx > 0:  # Moving right
+                    self.rect.right = block.rect.left
+                    self.change_x = 0
+                elif dx < 0:  # Moving left
+                    self.rect.left = block.rect.right
+                    self.change_x = 0
+    def die(self):
+        # Reset the agent's position or trigger game-over logic
+        print("Game Over! The agent touched a trap.")  # Debug message
+        self.reset()
 
     def go_left(self):
         """
@@ -272,3 +278,30 @@ class Agent(pygame.sprite.Sprite):
         Stops the agent by setting its direction to 0.
         """
         self.direction = 0
+    
+    def test_obstacle_sequence(self, sequence):
+        """
+        Simulates the agent interacting with a given sequence of obstacles.
+
+        Args:
+            sequence (list): A list of obstacles (each represented as a dictionary).
+
+        Returns:
+            bool: True if the agent can successfully "complete" the sequence, False otherwise.
+        """
+        # Simulate testing by evaluating the sequence
+        for obstacle in sequence:
+            obstacle_type = obstacle.get("type", "unknown")
+            height = obstacle.get("height", 0)
+
+            # Example logic: the agent fails if the obstacle height exceeds a threshold
+            if obstacle_type == "spike" and height > 50:
+                return False
+        return True
+
+    def reset(self):
+        """Reset the agent's position, velocity, and state."""
+        self.rect.x = 50  # Reset to the starting x position
+        self.rect.y = self.y  # Reset above the platform
+        self.change_y = 0  # Stop vertical movement
+        self.on_ground = False

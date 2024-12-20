@@ -1,183 +1,144 @@
-# game.py
-import argparse
 import pygame
-import sys
-import numpy as np
-import torch
-import random
-import os
-
 from agent.agent import Agent
-from world.levels.level1 import Level1
-from world.levels.level2 import Level2
-from world.levels.level3 import Level3
-from world.levels.level4 import Level4
-from world.levels.level5 import Level5
-from world.levels.level6 import Level6
-from world.levels.level7 import Level7
-from world.levels.level8 import Level8
-from dqn.dqn_agent import DQNAgent
-from dqn.replay_buffer import ReplayBuffer
-from core.pygame_manager import PygameManager
-from core.config import SCREEN_WIDTH, SCREEN_HEIGHT, ACTION_DIM, MOVEMENT_ACTIONS
-from trainer.trainer import Trainer
-from agent.agent_precepts import AgentPrecepts
+from core.geneticAlgorithm import genetic_algorithm
+from world.components.blocks.interactive.trap_block import TrapBlock
+from world.components.blocks.static.square_block import SquareBlock
+import random
 
-class Game:
-    def __init__(self, manual_control=False, level_number=1, training_mode=False, render_enabled=True, load_model=None):
-        """
-        Initialize the game environment.
-        """
-        self.agent = Agent(50, SCREEN_HEIGHT - 80, screen_height=SCREEN_HEIGHT)
-        self.pygame_manager = PygameManager(render_enabled, self, agent=self.agent)
-        self.screen = self.pygame_manager.get_screen()
+pygame.init()
 
-        self.level_number = level_number
-        self.max_levels = 3
-        self.load_level()  # Load level first so it's available for other components
+# Screen dimensions
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption("f(AI) Dash")
 
-        self.manual_control = manual_control
-        self.training_mode = training_mode
-        self.render_enabled = render_enabled
+# Game parameters
+scroll_speed = 3  # How fast the screen scrolls
+camera_offset = 0  # Tracks the camera's horizontal scroll offset
 
-        # Add level to PygameManager after initialization
-        self.pygame_manager.level = self.level
+# Platform setup
+platform = pygame.sprite.Group()
+PLATFORM_Y = SCREEN_HEIGHT - 50  # Fixed height for the platform
+PLATFORM_BLOCK_SIZE = 40         # Size of each platform block
+PLATFORM_LENGTH = SCREEN_WIDTH // PLATFORM_BLOCK_SIZE + 2  # Blocks to fill the screen
 
-        # Add sprites to PygameManager
-        self.pygame_manager.add_sprites(self.level.get_all_sprites())
-        self.pygame_manager.add_sprites(self.agent)
-        self.pygame_manager.set_blocks(self.level.get_blocks())
+# Generate platform
+for i in range(PLATFORM_LENGTH):
+    block = SquareBlock(x=i * PLATFORM_BLOCK_SIZE, y=PLATFORM_Y, size=PLATFORM_BLOCK_SIZE)
+    platform.add(block)
 
-        # Add jump cooldown tracking
-        self.last_jump_time = 0
-        self.jump_cooldown = 400  # milliseconds
+# Agent setup
+agent = Agent(50, PLATFORM_Y - 40, screen_height=SCREEN_HEIGHT)  # Place agent on top of the platform
+all_sprites = pygame.sprite.Group(agent)
 
-        # Create AgentPrecepts before Trainer
-        self.precepts = AgentPrecepts(self.agent, self.level, self.pygame_manager)
+# Obstacle generation
+OBSTACLE_WIDTH = 50
+OBSTACLE_HEIGHT = 30
+OBSTACLE_Y = PLATFORM_Y - OBSTACLE_HEIGHT  # Place obstacles on the platform
 
-        # Initialize Trainer with all necessary components
-        self.trainer = Trainer(
-            load_model=load_model,
-            training_mode=training_mode,
-            pygame_manager=self.pygame_manager,
-            render_enabled=render_enabled,
-            level=self.level,
-            level_number=level_number,
-            agent=self.agent
+def generate_cyclic_obstacles(initial_distance, obstacle_group, obstacle_y, obstacle_width, obstacle_height):
+    distances = [300, 350, 400]  # Cycle distances for obstacle spacing
+    distance_index = 0
+    obstacles_to_generate = 1000
+    obstacles_per_distance = 5
+
+    current_position = initial_distance
+    for i in range(obstacles_to_generate):
+        trap = TrapBlock(
+            x=current_position,
+            y=obstacle_y,
+            width=obstacle_width,
+            height=obstacle_height
+        )
+        obstacle_group.add(trap)
+        current_position += distances[distance_index]
+
+        # Cycle through the distances
+        if (i + 1) % obstacles_per_distance == 0:
+            distance_index = (distance_index + 1) % len(distances)
+
+    return current_position
+
+obstacles = pygame.sprite.Group()
+last_position = generate_cyclic_obstacles(
+    initial_distance=100,
+    obstacle_group=obstacles,
+    obstacle_y=OBSTACLE_Y,
+    obstacle_width=OBSTACLE_WIDTH,
+    obstacle_height=OBSTACLE_HEIGHT
+)
+# Train AI using a genetic algorithm
+best_dna, _ = genetic_algorithm(agent, generations=500, population_size=500, num_actions=2000, obstacles=obstacles)
+
+# Main game loop
+running = True
+clock = pygame.time.Clock()
+# Play the best solution
+action_index = 0
+
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # Clear the screen
+    screen.fill((135, 206, 250))  # Sky-blue background
+
+    # Scroll platform
+    for block in platform:
+        block.rect.x -= scroll_speed
+        if block.rect.right < 0:
+            platform.remove(block)
+
+    # Dynamically add blocks to platform
+    last_block = max(block.rect.right for block in platform)
+    if last_block < SCREEN_WIDTH:
+        platform.add(SquareBlock(x=last_block, y=PLATFORM_Y, size=PLATFORM_BLOCK_SIZE))
+
+    platform.draw(screen)
+
+    # Scroll obstacles
+    for obstacle in obstacles:
+        obstacle.rect.x -= scroll_speed
+    
+    # Remove off-screen obstacles
+    obstacles = pygame.sprite.Group(obstacle for obstacle in obstacles if obstacle.rect.right > 0)
+
+    # Dynamically generate new obstacles
+    if len(obstacles) < 10:  # Ensure enough traps on-screen
+        last_position = generate_cyclic_obstacles(
+            initial_distance=last_position,
+            obstacle_group=obstacles,
+            obstacle_y=OBSTACLE_Y,
+            obstacle_width=OBSTACLE_WIDTH,
+            obstacle_height=OBSTACLE_HEIGHT
         )
 
-        # Add trainer reference to PygameManager
-        self.pygame_manager.trainer = self.trainer
+    obstacles.draw(screen)
 
-    def get_agent(self):
-        return self.agent
-
-    def run(self):
-        """
-        Runs the main game loop.
-        """
-        if not self.render_enabled:
-            raise ValueError("Cannot run game with visualization disabled")
-
-        while self.pygame_manager.running:
-            self.pygame_manager.event_handler()
-            self.update()
-            self.pygame_manager.draw(all_sprites_list=self.pygame_manager.get_all_sprites(), background_image_path=None)
-            self.pygame_manager.tick(60)  # Limit to 60 FPS
-        self.quit()
-
-    def update(self):
-        """Update game state"""
-        self.pygame_manager.update(self.level, self.agent)
-
-    def restart_level(self):
-        """
-        Restart the current level by resetting the agent's position and other necessary states.
-        """
-        print("Restarting level...")
-        self.agent.rect.x = 50
-        self.agent.rect.y = SCREEN_HEIGHT - 80
-        self.agent.change_x = 0
-        self.agent.change_y = 0
-
-    def level_completed(self):
-        """
-        Handles the completion of a level in the game.
-        """
-        if self.training_mode:
-            return
-
-        print(f"Level {self.level_number} Completed!")
-
-        if self.level_number < self.max_levels:
-            self.level_number += 1
-            print(f"Loading level {self.level_number}...")
-            self.load_level()
-
-            # Update PygameManager with new level
-            self.pygame_manager.level = self.level
-            self.pygame_manager.clear_sprites()
-            self.pygame_manager.add_sprites(self.level.get_all_sprites())
-            self.pygame_manager.add_sprites(self.agent)
-            self.pygame_manager.set_blocks(self.level.get_blocks())
-
-            # Update trainer with new level
-            self.trainer.level = self.level
-        else:
-            print("Congratulations! You've completed all levels!")
-            self.pygame_manager.running = False
-
-    def quit(self):
-        """
-        Quits the game by shutting down the Pygame library and exiting the program.
-        """
-        pygame.quit()
-        sys.exit()
-
-    def load_level(self):
-        """
-        Load the current level based on the level number.
-        """
-        level_classes = {
-            1: Level1,
-            2: Level2,
-            3: Level3,
-            4: Level4,
-            5: Level5,
-            6: Level6,
-            7: Level7,
-            8: Level8
-        }
-
-        level_class = level_classes.get(self.level_number, Level1)
-        self.level = level_class()
-
-    def train_ai(self, num_episodes):
-        """
-        Start AI training with the specified number of episodes
-        """
-        self.trainer.train_ai(num_episodes)
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="AI Agent World")
-    parser.add_argument('--m', action='store_true', help='Enable manual control for testing.')
-    parser.add_argument('--l', type=int, default=1, help='Select level number to load.')
-    parser.add_argument('--t', action='store_true', help='Enable AI training mode.')
-    parser.add_argument('--r', action='store_true', help='Enable visualization during training.')
-    parser.add_argument('--lm', type=str, help='Load Model: Path to the trained model file.')
-    parser.add_argument('--episodes', type=int, default=1000, help='Number of episodes to train')
-
-    args = parser.parse_args()
-
-    game = Game(
-        manual_control=args.m,
-        level_number=args.l,
-        training_mode=args.t,
-        render_enabled=args.r if args.t else True,
-        load_model=args.lm
-    )
-
-    if args.t:
-        game.train_ai(num_episodes=args.episodes)
+    # Execute the AI's actions
+    if action_index < len(best_dna):
+        action = best_dna[action_index]
+        if action == "jump":
+            agent.jump()
+        action_index += 1
     else:
-        game.run()
+        print("Replay finished")
+        running = False  # Stop the game when all actions are executed
+
+    # Update and draw the agent
+    collision_blocks = pygame.sprite.Group(platform, obstacles)
+    all_sprites.update(collision_blocks)
+    all_sprites.draw(screen)
+
+    # Display the agent's current distance
+    font = pygame.font.Font(None, 36)
+    distance_text = font.render(f"Distance: {agent.rect.x}px", True, (0, 0, 0))
+    screen.blit(distance_text, (10, 10))
+
+    # Update the display
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
